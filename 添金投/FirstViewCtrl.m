@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
 #import "SDImageCache.h"
+#import "DetailViewController.h"
 
 @interface FirstViewCtrl ()
 {
@@ -137,7 +138,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     });
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.dimBackground = YES; //加层阴影
+    //hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -333,13 +334,13 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
    // lab1.textAlignment = NSTextAlignmentCenter;
     
     
-     CGSize titleSize = [lab1.text sizeWithFont:[UIFont systemFontOfSize:55] constrainedToSize:CGSizeMake(MAXFLOAT, 55)];
-    lab1.frame = CGRectMake1(105, 52.5, titleSize.width, 55);
-    lab1.font = [UIFont systemFontOfSize:55*sizeScaleX];
+     CGSize titleSize = [lab1.text sizeWithFont:[UIFont systemFontOfSize:45] constrainedToSize:CGSizeMake(MAXFLOAT, 55)];
+    lab1.frame = CGRectMake1(100, 55, titleSize.width, 45);
+    lab1.font = [UIFont systemFontOfSize:45*sizeScaleX];
     lab1.backgroundColor = [UIColor clearColor];
     [backimgView addSubview:lab1];
     
-     UILabel *labBai = [[UILabel alloc] initWithFrame:CGRectMake1(105 + titleSize.width, 100 - 14, 14, 14)];
+     UILabel *labBai = [[UILabel alloc] initWithFrame:CGRectMake1(100 + titleSize.width, 100 - 19 , 14, 14)];
     labBai.text = @"%";
     labBai.textColor = [ColorUtil colorWithHexString:@"fe8103"];
     labBai.font = [UIFont systemFontOfSize:14*sizeScaleX];
@@ -357,7 +358,17 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     
     UILabel *labgressTip = [[UILabel alloc] initWithFrame:CGRectMake1(60, 170, 70, 25)];
-    labgressTip.text = [NSString stringWithFormat:@"%.2f%@",[[[dataListFirst objectAtIndex:0] objectForKey:@"TZJD"] doubleValue],@"%"];
+    
+    float kt;
+    if ([[[dataListFirst objectAtIndex:0] objectForKey:@"flag"] boolValue]) {
+        kt = [[[dataListFirst objectAtIndex:0] objectForKey:@"TZJD"] floatValue];
+        
+    } else {
+        kt = 100;
+    }
+    
+    
+    labgressTip.text = [NSString stringWithFormat:@"%.2f%@",kt,@"%"];
     labgressTip.textColor = [ColorUtil colorWithHexString:@"898989"];
     labgressTip.textAlignment = NSTextAlignmentCenter;
     labgressTip.font = [UIFont systemFontOfSize:15*sizeScaleX];
@@ -426,7 +437,20 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 
 -(void)pushDetail{
-
+    DetailViewController *cv = [[DetailViewController alloc] init];
+    
+    
+    cv.flagStr = [[dataListFirst objectAtIndex:0] objectForKey:@"flag"];
+    
+    cv.title = [[dataListFirst objectAtIndex:0] objectForKey:@"GQMC"];
+    cv.strGqdm = [[dataListFirst objectAtIndex:0] objectForKey:@"GQDM"];
+     cv.hidesBottomBarWhenPushed = YES;
+    //  [menuController pushViewController:cv animated:YES];
+    
+    // cv.modalTransitionStyle = UIModalTransitionStyle;
+    
+    // [self presentViewController:cv animated:YES completion:nil];
+    [self.navigationController pushViewController:cv animated:YES];
 
 }
 
