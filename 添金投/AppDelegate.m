@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewCtrl.h"
+#import "ProductViewCtrl.h"
+#import "TransferViewCtrl.h"
+#import "MoreViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +20,76 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.dic = [[NSMutableDictionary alloc] init];
+    self.logingUser = [[NSMutableDictionary alloc] init];
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor whiteColor];
+    
+    [self initTabBarControllerUI];
+    
+    [_window makeKeyAndVisible];
+    
+    
     return YES;
 }
+
+-(void)initTabBarControllerUI{
+    _tabBarController = [[UITabBarController alloc] init];
+    
+    FirstViewCtrl *fisrtVC = [[FirstViewCtrl alloc] init];
+     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:fisrtVC];
+    nav1.delegate = self;
+    nav1.tabBarItem.title = @"首页";
+   
+   nav1.tabBarItem.image = [[UIImage imageNamed:@"11"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+   nav1.tabBarItem.selectedImage = [[UIImage imageNamed:@"1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+  
+    ProductViewCtrl *proVC = [[ProductViewCtrl alloc] init];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:proVC];
+    nav2.delegate = self;
+    nav2.tabBarItem.title = @"产品";
+    
+    nav2.tabBarItem.image = [[UIImage imageNamed:@"22"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav2.tabBarItem.selectedImage = [[UIImage imageNamed:@"2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    TransferViewCtrl *tranferVC = [[TransferViewCtrl alloc] init];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:tranferVC];
+    nav3.delegate = self;
+    nav3.tabBarItem.title = @"转让";
+    
+    nav3.tabBarItem.image = [[UIImage imageNamed:@"33"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav3.tabBarItem.selectedImage = [[UIImage imageNamed:@"3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+
+    MoreViewController *myVC = [[MoreViewController alloc] init];
+    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:myVC];
+    nav4.delegate = self;
+    nav4.tabBarItem.title = @"我";
+    
+    nav4.tabBarItem.image = [[UIImage imageNamed:@"44"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav4.tabBarItem.selectedImage = [[UIImage imageNamed:@"4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+     _tabBarController.viewControllers =[[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4, nil];
+    [_tabBarController.tabBar setTintColor:[ColorUtil colorWithHexString:@"fe8103"]];
+    
+    
+    self.window.rootViewController = _tabBarController;
+}
+
+
+#pragma mark - UINavigationController Delegate Methods
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    navigationController.navigationBarHidden = YES;
+}
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
