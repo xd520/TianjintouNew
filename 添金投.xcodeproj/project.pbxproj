@@ -1725,11 +1725,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1351066-8803-492d-a024-4bcd69018fb7";
 			};
 			name = Debug;
 		};
@@ -1738,11 +1740,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1351066-8803-492d-a024-4bcd69018fb7";
 			};
 			name = Release;
 		};
