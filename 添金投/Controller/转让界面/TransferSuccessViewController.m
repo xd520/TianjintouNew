@@ -65,8 +65,8 @@
     
     [self.navigationController setViewControllers:array];
     
-   // AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-   // delegate.menuController.delegate = self;
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    delegate.tabBarController.selectedIndex = 2;
     //[delegate.menuController showLeftController:YES];
     
     

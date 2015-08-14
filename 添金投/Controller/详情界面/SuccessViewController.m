@@ -77,7 +77,7 @@
         [navVC popViewControllerAnimated:NO];
         osTabbarVC.selectedViewController = navVC;
         */
-    } else if ([vc.nibName isEqualToString:@"MainViewController"]){
+    } else if ([vc.nibName isEqualToString:@"ProductViewCtrl"]){
     
     //删除最后一个，也就是自己
     [array removeObjectAtIndex:array.count-1];
@@ -87,7 +87,7 @@
     [self.navigationController setViewControllers:array];
         
         AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-       // delegate.menuController.delegate = self;
+        delegate.tabBarController.selectedIndex = 2;
       //  [delegate.menuController showLeftController:YES];
         
         
@@ -122,7 +122,7 @@
         
         [self.navigationController setViewControllers:array];
   
-    }  else if ([vc.nibName isEqualToString:@"MainViewController"]) {
+    }  else if ([vc.nibName isEqualToString:@"ProductViewCtrl"]) {
         /*
         DetailViewController *vc = [[DetailViewController alloc] init];
         MyInvestViewController *vc1 = [[MyInvestViewController alloc] initWithNibName:@"MyInvestViewController" bundle:nil];
