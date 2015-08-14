@@ -58,20 +58,20 @@
     TransferViewCtrl *tranferVC = [[TransferViewCtrl alloc] init];
     UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:tranferVC];
     nav3.delegate = self;
-    nav3.tabBarItem.title = @"转让";
+    nav3.tabBarItem.title = @"账户";
     
-    nav3.tabBarItem.image = [[UIImage imageNamed:@"33"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    nav3.tabBarItem.selectedImage = [[UIImage imageNamed:@"3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav3.tabBarItem.image = [[UIImage imageNamed:@"44"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav3.tabBarItem.selectedImage = [[UIImage imageNamed:@"4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
 
     MoreViewController *myVC = [[MoreViewController alloc] init];
     UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:myVC];
     nav4.delegate = self;
-    nav4.tabBarItem.title = @"我";
+    nav4.tabBarItem.title = @"更多";
     
-    nav4.tabBarItem.image = [[UIImage imageNamed:@"44"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    nav4.tabBarItem.selectedImage = [[UIImage imageNamed:@"4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav4.tabBarItem.image = [[UIImage imageNamed:@"33"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav4.tabBarItem.selectedImage = [[UIImage imageNamed:@"3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
      _tabBarController.viewControllers =[[NSArray alloc] initWithObjects:nav1,nav2,nav3,nav4, nil];
     [_tabBarController.tabBar setTintColor:[ColorUtil colorWithHexString:@"fe8103"]];

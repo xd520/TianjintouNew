@@ -240,6 +240,7 @@
    // self.scrollView.tag = TSEGSCROLLVIEW;
     [self.scrollView setPagingEnabled:YES];
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
+    self.scrollView.bounces = NO;
     [self.scrollView setContentSize:CGSizeMake(ScreenWidth*2, scrollViewHeight)];
     [self.scrollView scrollRectToVisible:CGRectMake(0, 64, ScreenWidth, scrollViewHeight) animated:NO];
     [self.scrollView setDelegate:self];
@@ -1613,6 +1614,61 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         CGFloat pageWidth = ScreenWidth;
         NSInteger page = _scrollView.contentOffset.x / pageWidth ;
         segmented.selectedSegmentIndex = page;
+        
+        if (page == 0) {
+            
+            if (dataList.count > 0) {
+                [dataList removeAllObjects];
+            }
+            
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.dimBackground = YES;
+            hud.delegate = self;
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.labelText = @"加载中...";
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                //[self requestCategoryList:start limit:limit tag:kBusinessTagGetJRwdtzloadData];
+                start = @"1";
+                //投资专区
+                [self requestList:start limit:limit sortName:sortName val:sortVal tag:kBusinessTagGetJRwdtzloadData];
+                
+                //转让专区
+                // [self requestTransferList:startPast limit:limitPast sortName:sortNamePast val:sortValPast tag:kBusinessTagGetJRcpzrwytz1];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                });
+            });
+            
+            
+            
+        } else if (page == 1) {
+            
+            if (dataListPast.count > 0) {
+                [dataListPast removeAllObjects];
+            }
+            
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.dimBackground = YES;
+            hud.delegate = self;
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.labelText = @"加载中...";
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                //[self requestCategoryList:start limit:limit tag:kBusinessTagGetJRwdtzloadData];
+                //投资专区
+                // [self requestList:start limit:limit sortName:sortName val:sortVal tag:kBusinessTagGetJRwdtzloadData];
+                startPast = @"1";
+                //转让专区
+                [self requestTransferList:startPast limit:limitPast sortName:sortNamePast val:sortValPast tag:kBusinessTagGetJRcpzrwytz1];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                });
+            });
+        }
+        
     }
 }
 

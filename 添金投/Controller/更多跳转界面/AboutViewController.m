@@ -54,7 +54,7 @@
     
     
     UILabel *lablast = [[UILabel alloc] initWithFrame:CGRectMake(15, ScreenHeight -25 - 14, ScreenWidth - 30, 13)];
-    lablast.text = @"Copyright Xiamen Financial Asset Exchange";
+    lablast.text = @"津ICP备08102316号";
     lablast.textAlignment = NSTextAlignmentCenter;
     lablast.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:lablast];
@@ -62,7 +62,7 @@
     
     
     UILabel *lab= [[UILabel alloc] initWithFrame:CGRectMake(10, ScreenHeight -30 - 28, ScreenWidth - 20, 12)];
-    lab.text = @"版权所有 © 厦门两岸金融资产交易中心股份有限公司";
+    lab.text = @"版权所有 © 天津股权交易所";
     lab.textAlignment = NSTextAlignmentCenter;
     lab.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:lab];
