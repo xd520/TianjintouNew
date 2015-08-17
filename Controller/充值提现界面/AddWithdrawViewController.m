@@ -1,20 +1,20 @@
 //
-//  AddRechargeViewController.m
+//  AddWithdrawViewController.m
 //  贵州金融资产股权交易
 //
 //  Created by Yonghui Xiong on 15-4-2.
 //  Copyright (c) 2015年 ApexSoft. All rights reserved.
 //
 
-#import "AddRechargeViewController.h"
+#import "AddWithdrawViewController.h"
 #import "AppDelegate.h"
 #import "WithdarwProtroclViewController.h"
+#import "LPLabel.h"
 #import "AccountViewController.h"
 #import "MoneyAccountViewController.h"
 #import "Child.h"
 
-
-@interface AddRechargeViewController ()
+@interface AddWithdrawViewController ()
 {
     UILabel *sheetLab;
     float addHight;
@@ -28,9 +28,10 @@
     UITextField *bankAccountPW;
     UILabel *bigLab;
 }
+
 @end
 
-@implementation AddRechargeViewController
+@implementation AddWithdrawViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,20 +44,15 @@
         
         [self.view addSubview:statusBarView];
     } else {
-        
         addHight = 0;
     }
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44 + addHight, ScreenWidth, ScreenHeight - 64)];
     scrollView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
-    // scrollView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
+    
     [self.view addSubview:scrollView];
     
     [self getScrollViewUI];
-    
-    //此方法只能适用于十亿以下
-    // NSLog(@"%@",[self digitUppercase:@"500000000"]);
-    
 }
 
 
@@ -66,7 +62,7 @@
     [scrollView addSubview:tip];
     
     UILabel *tiplab = [[UILabel alloc] initWithFrame:CGRectMake(32, 10, ScreenWidth - 42, 15)];
-    tiplab.text = @"请在周一到周五9：00-16：00时间段充值";
+    tiplab.text = @"请在周一到周五9：00-16：00时间段提现";
     tiplab.font = [UIFont systemFontOfSize:13];
      tiplab.backgroundColor = [UIColor clearColor];
     tiplab.textColor = [ColorUtil colorWithHexString:@"999999"];
@@ -109,6 +105,7 @@
     valueLabelTip.font = [UIFont boldSystemFontOfSize:15];
     [valueLabelTip setTextColor:[ColorUtil colorWithHexString:@"fe8103"]];
     valueLabelTip.textAlignment = NSTextAlignmentLeft;
+    
     NSString *kyzi = [NSString stringWithFormat:@"%.2f",[[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KYZJ"] doubleValue]];
     
     NSRange range1 = [kyzi rangeOfString:@"."];//匹配得到的下标
@@ -198,8 +195,9 @@
     changerText.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
     changerText.placeholder = @"提现金额";
     changerText.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    changerText.clearButtonMode = UITextFieldViewModeWhileEditing;
     changerText.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    changerText.clearButtonMode = UITextFieldViewModeWhileEditing;
+    // sureText.keyboardType = UIKeyboardTypeNumberPad;
     changerText.font = [UIFont systemFontOfSize:15];
     changerText.textColor = [ColorUtil colorWithHexString:@"333333"];
     changerText.delegate = self;
@@ -235,10 +233,10 @@
     passWord.placeholder = @"请输入交易密码";
     passWord.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     passWord.clearButtonMode = UITextFieldViewModeWhileEditing;
-    passWord.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     passWord.textColor = [ColorUtil colorWithHexString:@"333333"];
     passWord.font = [UIFont systemFontOfSize:15];
     passWord.secureTextEntry = YES;
+    passWord.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     passWord.delegate = self;
     [viewSecond addSubview:passWord];
     [scrollView addSubview:viewSecond];
@@ -279,12 +277,12 @@
     sheetLab.textAlignment = NSTextAlignmentCenter;
     sheetLab.textColor = [UIColor whiteColor];
     sheetLab.layer.cornerRadius = 2;
-    //sheetLab.layer.borderWidth = 1;
+   // sheetLab.layer.borderWidth = 1;
     sheetLab.layer.masksToBounds = YES;
     sheetLab.userInteractionEnabled = YES;
     sheetLab.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
     //sheetLab.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
-    UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sheetMethods:)];
+    UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(codeMethodes:)];
     //单点触摸
     singleTap1.numberOfTouchesRequired = 1;
     //点击几次，如果是1就是单击
@@ -295,7 +293,7 @@
     [viewthird addSubview:sheetLab];
     [scrollView addSubview:viewthird];
     
-    //银行卡密码
+ //银行卡密码
     
     
     UIView *viewfourh = [[UIView alloc] initWithFrame:CGRectMake(0, 95 + 185 + 55, ScreenWidth, 45)];
@@ -321,7 +319,7 @@
     [viewfourh addSubview:bankAccountPW];
     [scrollView addSubview:viewfourh];
     
-    
+
     
     
     
@@ -335,13 +333,14 @@
     [sureBtn setTitle:@"确认" forState:UIControlStateNormal];
     [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     sureBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    [sureBtn addTarget:self action:@selector(rechargeBtnMethods:) forControlEvents:UIControlEventTouchUpInside];
+    [sureBtn addTarget:self action:@selector(withdtawMehtods:) forControlEvents:UIControlEventTouchUpInside];
     
     [scrollView addSubview:sureBtn];
     
     [scrollView setContentSize:CGSizeMake(ScreenWidth, 504 + 55)];
 }
 
+/*
 -(void)getBankUIData:(NSString *)str withLab:(UILabel *)lab withImgView:(UIImageView *)img withTail:(UILabel *)tail{
     NSString *string =[[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHZH"] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
@@ -366,9 +365,83 @@
     }
     
 }
+*/
 
 
-
+-(void)getBankUIData:(NSString *)str withLab:(UILabel *)lab withImgView:(UIImageView *)img withTail:(UILabel *)tail{
+    NSString *string =[[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHZH"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSRange range;
+    NSString *strZJBH;
+    
+    range.length = [string length] - 9;
+    range.location = 5;
+    strZJBH  = [string stringByReplacingCharactersInRange:range withString:@"******"];
+    
+    
+    
+    if ([str isEqualToString:@"ZGYH"]) {
+        lab.text = @"中国银行";
+        
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_zgyh"];
+    } else if ([str isEqualToString:@"JSYH"]){
+        lab.text = @"建设银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jsyh"];
+    } else if ([str isEqualToString:@"NYYH"]) {
+        lab.text = @"农业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_nyyh"];
+        
+    } else if ([str isEqualToString:@"GSYH"]) {
+        lab.text = @"工商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gsyh"];
+        
+    }else if ([str isEqualToString:@"ZSYH"]) {
+        lab.text = @"招商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_yh"];
+        
+    }else if ([str isEqualToString:@"GDYH"]) {
+        lab.text = @"光大银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gdyh"];
+        
+    }else if ([str isEqualToString:@"GFYH"]) {
+        lab.text = @"广发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gfyh"];
+        
+    }else if ([str isEqualToString:@"XYYH"]) {
+        lab.text = @"兴业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_xyyh"];
+        
+    } else if ([str isEqualToString:@"ZXYH"]) {
+        lab.text = @"中信银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_zxyh"];
+        
+    } else if ([str isEqualToString:@"JTYH"]) {
+        lab.text = @"交通银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jtyh"];
+        
+    } else if ([str isEqualToString:@"PAYH"]) {
+        lab.text = @"平安银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_payh"];
+        
+    } else if ([str isEqualToString:@"PFYH"]) {
+        lab.text = @"浦发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_pfyh"];
+        
+    }
+    
+}
 
 #pragma mark-文本框代理方法
 
@@ -425,11 +498,10 @@
                 [self.view makeToast:@"请输入大于0的金额" duration:2.0 position:@"center"];
                 
             }
-             
+            
         }
     }
 }
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -469,177 +541,6 @@
     
 }
 
-
-
-#pragma mark - Request Methods
-//请求登陆
-- (void)requestLogin:(NSString *)_jymm withZhje:(NSString *)_zzje withyzm:(NSString *)_yzm withyhmm:(NSString *)_yhmm tag:(kBusinessTag)_tag
-{
-    NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
-    
-    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    
-    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_ZJZH"] forKey:@"zjzh"];
-    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_BZ"] forKey:@"bz"];
-    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHDM"] forKey:@"yhdm"];
-    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHZH"] forKey:@"yhzh"];
-    [paraDic setObject:_zzje forKey:@"zzje"];
-    [paraDic setObject:_yzm forKey:@"yzm"];
-    [paraDic setObject:_yhmm forKey:@"yhmm"];
-    [paraDic setObject:_jymm forKey:@"jymm"];
-    //[paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] forKey:@"jgdm"];
-    
-    if ([[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] == nil) {
-        NSLog(@"1233");
-    } else {
-        [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] forKey:@"jgdm"];
-        
-    }
-
-    
-    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
-}
-
-
-#pragma mark - NetworkModuleDelegate Methods
--(void)beginPost:(kBusinessTag)tag{
-    
-}
--(void)endPost:(NSString *)result business:(kBusinessTag)tag{
-    NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
-    NSMutableDictionary *jsonDic = [result JSONValue];
-    
-    if (tag== kBusinessTagGetJRReCharger) {
-        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
-            //数据异常处理
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.view makeToast:[jsonDic objectForKey:@"msg"]];
-            //            subing = NO;
-        } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            //[self.view makeToast:@"登录成功!"];
-            
-            //注册观察者
-            child = [[Child alloc] init];
-            child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
-            [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
-            
-            
-           // [self startTime:(int)[[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue]];
-        }
-    }  else if (tag == kBusinessTagGetJRbindCardcheckResult){
-        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
-        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
-            [self.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
-        }else {
-            __block int timeout = 2; //倒计时时间
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-            dispatch_source_set_event_handler(_timer, ^{
-                if (timeout <= 0) { //倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //设置界面的按钮显示 根据自己需求设置
-                        /*
-                          AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-                        if ([delegate.strVC isEqualToString:@"1"]) {
-                            
-                            MoneyAccountViewController *VC = [[MoneyAccountViewController alloc]init];
-                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-                            
-                            
-                            
-                        } else {
-                            AccountViewController *VC = [[AccountViewController alloc]init];
-                            VC.view.tag = 3;
-                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-                            
-                            
-                        }
-                         */
-                         [self.navigationController popViewControllerAnimated:YES];
-                    });
-                    
-                    
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
-                    });
-                    timeout--;
-                }
-            });
-            dispatch_resume(_timer);
-            
-        }
-    } else if (tag == kBusinessTagGetJRApplySaveMoneySubmit) {
-        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
-        child.age = 0;
-        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
-            //数据异常处理
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.view makeToast:@"获取数据异常处理"];
-            //            subing = NO;
-        } else {
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-            
-            [paraDic setObject:[dataArray objectForKey:@"FID_SQH"] forKey:@"sqh"];
-            
-            [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRbindCardcheckResult owner:self];
-        }
-        
-    }
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    [[NetworkModule sharedNetworkModule] cancel:tag];
-}
--(void)errorPost:(NSError *)err business:(kBusinessTag)tag{
-    NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alert show];
-    // if (tag==kBusinessTagGetProjectDetail) {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    //}
-    [[NetworkModule sharedNetworkModule] cancel:tag];
-}
-
-
-
-
-
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-    //UIStatusBarStyleDefault
-    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
-    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
-}
-
-//添加逗号
-- (NSString *)AddComma:(NSString *)string{
-    
-    NSString *str=[string stringByReplacingOccurrencesOfString:@"," withString:@""];
-    int numl=(int)[str length];
-    NSLog(@"%d",numl);
-    
-    if (numl>3&&numl<7) {
-        return [NSString stringWithFormat:@"%@,%@",
-                [str substringWithRange:NSMakeRange(0,numl-3)],
-                [str substringWithRange:NSMakeRange(numl-3,3)]];
-    }else if (numl>6){
-        return [NSString stringWithFormat:@"%@,%@,%@",
-                [str substringWithRange:NSMakeRange(0,numl-6)],
-                [str substringWithRange:NSMakeRange(numl-6,3)],
-                [str substringWithRange:NSMakeRange(numl-3,3)]];
-    }else{
-        return str;
-    }
-    
-}
 
 -(NSString *)changetochinese:(NSString *)numstr
 {
@@ -765,13 +666,177 @@
     return M;
 }
 */
- 
+
+
+- (NSString *)AddComma:(NSString *)string{//添加逗号
+    
+    NSString *str=[string stringByReplacingOccurrencesOfString:@"," withString:@""];
+    int numl=(int)[str length];
+    NSLog(@"%d",numl);
+    
+    if (numl>3&&numl<7) {
+        return [NSString stringWithFormat:@"%@,%@",
+                [str substringWithRange:NSMakeRange(0,numl-3)],
+                [str substringWithRange:NSMakeRange(numl-3,3)]];
+    }else if (numl>6){
+        return [NSString stringWithFormat:@"%@,%@,%@",
+                [str substringWithRange:NSMakeRange(0,numl-6)],
+                [str substringWithRange:NSMakeRange(numl-6,3)],
+                [str substringWithRange:NSMakeRange(numl-3,3)]];
+    }else{
+        return str;
+    }
+    
+}
+
+
+#pragma mark - Request Methods
+//请求登陆
+- (void)requestLogin:(NSString *)_jymm withZhje:(NSString *)_zzje withyzm:(NSString *)_yzm withyhmm:(NSString *)_yhmm tag:(kBusinessTag)_tag
+{
+    NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
+    
+    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+    
+    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_ZJZH"] forKey:@"zjzh"];
+    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_BZ"] forKey:@"bz"];
+    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHDM"] forKey:@"yhdm"];
+    [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHZH"] forKey:@"yhzh"];
+    [paraDic setObject:_zzje forKey:@"zzje"];
+    [paraDic setObject:_yzm forKey:@"yzm"];
+    [paraDic setObject:_yhmm forKey:@"yhmm"];
+    [paraDic setObject:_jymm forKey:@"jymm"];
+    //[paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] forKey:@"jgdm"];
+    
+    if ([[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] == nil) {
+        NSLog(@"1233");
+    } else {
+        [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] forKey:@"jgdm"];
+        
+    }
+
+    
+    
+    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
+}
+
+
+
+#pragma mark - NetworkModuleDelegate Methods
+-(void)beginPost:(kBusinessTag)tag{
+    
+}
+-(void)endPost:(NSString *)result business:(kBusinessTag)tag{
+    NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
+    NSMutableDictionary *jsonDic = [result JSONValue];
+    
+    if (tag== kBusinessTagGetJRReCharger) {
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:[jsonDic objectForKey:@"msg"]];
+            //            subing = NO;
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            //[self.view makeToast:@"登录成功!"];
+            
+            //注册观察者
+            child = [[Child alloc] init];
+            child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
+            [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
+            
+            
+           // [self startTime:(int)[[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue]];
+        }
+    } else if (tag== kBusinessTagGetJRApplyOutMoneySubmit) {
+        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+        
+        child.age = 0;
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:@"获取数据异常处理"];
+            //            subing = NO;
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+            
+            [paraDic setObject:[dataArray objectForKey:@"FID_SQH"] forKey:@"sqh"];
+            
+            [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRbindCardcheckResult owner:self];
+            
+        }
+    } else if (tag == kBusinessTagGetJRbindCardcheckResult){
+        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            [self.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
+        }else {
+            __block int timeout = 2; //倒计时时间
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
+            dispatch_source_set_event_handler(_timer, ^{
+                if (timeout <= 0) { //倒计时结束，关闭
+                    dispatch_source_cancel(_timer);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //设置界面的按钮显示 根据自己需求设置
+                       /*
+                        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                        if ([delegate.strVC isEqualToString:@"1"]) {
+                            
+                            MoneyAccountViewController *VC = [[MoneyAccountViewController alloc]init];
+                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
+                            
+                            
+                            
+                        } else {
+                            AccountViewController *VC = [[AccountViewController alloc]init];
+                            VC.view.tag = 3;
+                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
+                            
+                            
+                        }
+                        */
+                        //[self.navigationController popViewControllerAnimated:YES];
+                       [self.navigationController popViewControllerAnimated:YES];
+                        
+                        
+                    });
+                    
+                    
+                } else {
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
+                    });
+                    timeout--;
+                }
+            });
+            dispatch_resume(_timer);
+            
+            
+        }
+        
+    }
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[NetworkModule sharedNetworkModule] cancel:tag];
+}
+-(void)errorPost:(NSError *)err business:(kBusinessTag)tag{
+    NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    // if (tag==kBusinessTagGetProjectDetail) {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //}
+    [[NetworkModule sharedNetworkModule] cancel:tag];
+}
+
+
 #pragma mark - 消除键盘
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
 
 //监听方法
 
@@ -791,9 +856,27 @@
         sheetLab.text = [NSString stringWithFormat:@"%@秒后获取",[change objectForKey:@"new"]];
         
         sheetLab.userInteractionEnabled = NO;
-         sheetLab.backgroundColor = [UIColor grayColor];
+         sheetLab.backgroundColor = [UIColor whiteColor];
+        
         
     }
+}
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+    //UIStatusBarStyleDefault
+    //UIStatusBarStyleDefault = 0 黑色文字，浅色背景时使用
+    //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
+}
+
+
+#pragma mark - UITextField Delegate Methods
+- (void)resignKeyboard:(id)sender
+{
+    //[_passWord resignFirstResponder];
+    //[_numberCode resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -804,29 +887,21 @@
 
 - (IBAction)back:(id)sender {
     
+   // [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-}
-- (IBAction)sheetMethods:(id)sender {
-    
-    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    
-    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRReCharger owner:self];
-    //
 }
 
 
-- (IBAction)rechargeBtnMethods:(id)sender {
-    [self.view endEditing:YES];
+
+- (IBAction)withdtawMehtods:(id)sender {
     
     if ([changerText.text isEqualToString:@""]||[changerText.text floatValue] == 0) {
-        [self.view makeToast:@"请输入正确金额" duration:2.0 position:@"center"];
+        [self.view makeToast:@"请输入正确的金额" duration:2.0 position:@"center"];
+    }else if ([changerText.text floatValue] > [[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KYZJ"] floatValue]) {
+        [self.view makeToast:@"请输入小于账户可用余额" duration:2.0 position:@"center"];
     }else if([changerText.text hasPrefix:@"."]){
         [self.view makeToast:@"请输入正确的金额" duration:2.0 position:@"center"];
-        //_inPutMoney.text = @"";
+        changerText.text = @"";
     }else if([self rangeString:changerText.text] > 1){
         [self.view makeToast:@"请输入正确的金额" duration:2.0 position:@"center"];
         //_inPutMoney.text = @"";
@@ -837,12 +912,13 @@
         
         [self.view makeToast:@"请输入十亿以下的金额" duration:2.0 position:@"center"];
         //_inPutMoney.text = @"";
-    } else if ([passWord.text isEqualToString:@""]) {
+    }else if ([passWord.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入交易密码" duration:2 position:@"center"];
-    } else if([numberCode.text isEqualToString:@""]) {
-        [self.view makeToast:@"请输入验证码" duration:2 position:@"center"];
-    } else if ([bankAccountPW.text isEqualToString:@""]) {
+    }else if ([bankAccountPW.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入银行卡密码" duration:2 position:@"center"];
+    } else if ([numberCode.text isEqualToString:@""]) {
+        [self.view makeToast:@"请输入手机验证码密码" duration:1.0 position:@"center"];
+        
     }else {
 
     
@@ -852,14 +928,19 @@
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [self requestLogin:passWord.text withZhje:changerText.text withyzm:numberCode.text withyhmm:bankAccountPW.text tag:kBusinessTagGetJRApplySaveMoneySubmit];
+        [self requestLogin:passWord.text withZhje:changerText.text withyzm:numberCode.text withyhmm:bankAccountPW.text tag:kBusinessTagGetJRApplyOutMoneySubmit];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
     });
     }
+}
+- (IBAction)codeMethodes:(id)sender {
     
+    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+    
+    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRReCharger owner:self];
 }
 
 - (NSInteger)rangeString:(NSString *)string {
@@ -875,7 +956,6 @@
     }
     return Num;
 }
-
 
 
 @end

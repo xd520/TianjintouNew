@@ -810,7 +810,7 @@
                 endLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                 [backView addSubview:endLabTip];
                 
-                UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth/2 - 85 , 15)];
+                UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth - 85 , 15)];
                 endLab.text =[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
                 endLab.font = [UIFont systemFontOfSize:15];
                 endLab.textColor = [ColorUtil colorWithHexString:@"333333"];
@@ -982,7 +982,7 @@
                     endLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                     [backView addSubview:endLabTip];
                     
-                    UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth/2 - 85 , 15)];
+                    UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth - 85 , 15)];
                     endLab.text =[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
                     endLab.font = [UIFont systemFontOfSize:15];
                     endLab.textColor = [ColorUtil colorWithHexString:@"333333"];
@@ -1302,6 +1302,5 @@
 
 - (IBAction)back:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
-}
+   [self.navigationController popViewControllerAnimated:YES];}
 @end

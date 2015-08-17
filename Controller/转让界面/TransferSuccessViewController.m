@@ -9,7 +9,7 @@
 #import "TransferSuccessViewController.h"
 #import "AppDelegate.h"
 #import "TransferDetailsViewController.h"
-//#import "DDMenuController.h"
+
 
 @interface TransferSuccessViewController ()
 
@@ -67,7 +67,6 @@
     
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     delegate.tabBarController.selectedIndex = 2;
-    //[delegate.menuController showLeftController:YES];
     
     
     /*

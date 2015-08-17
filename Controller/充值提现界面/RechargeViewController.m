@@ -81,7 +81,7 @@
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 35, ScreenWidth, 50)];
     view1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
     
-    UIImageView *tipBank = [[UIImageView alloc] initWithFrame:CGRectMake(15, 7.5, 35, 35)];
+    UIImageView *tipBank = [[UIImageView alloc] initWithFrame:CGRectMake(15, 9, 32, 32)];
     
     UILabel *tiplabBank = [[UILabel alloc] initWithFrame:CGRectMake(55, 10, ScreenWidth - 65, 15)];
     tiplabBank.font = [UIFont systemFontOfSize:15];
@@ -345,6 +345,56 @@
         lab.text = @"建设银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_jsyh"];
+    } else if ([str isEqualToString:@"NYYH"]) {
+        lab.text = @"农业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_nyyh"];
+    
+    } else if ([str isEqualToString:@"GSYH"]) {
+        lab.text = @"工商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gsyh"];
+        
+    }else if ([str isEqualToString:@"ZSYH"]) {
+        lab.text = @"招商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_yh"];
+        
+    }else if ([str isEqualToString:@"GDYH"]) {
+        lab.text = @"光大银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gdyh"];
+        
+    }else if ([str isEqualToString:@"GFYH"]) {
+        lab.text = @"广发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gfyh"];
+        
+    }else if ([str isEqualToString:@"XYYH"]) {
+        lab.text = @"兴业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_xyyh"];
+        
+    } else if ([str isEqualToString:@"ZXYH"]) {
+        lab.text = @"中信银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_zxyh"];
+        
+    } else if ([str isEqualToString:@"JTYH"]) {
+        lab.text = @"交通银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jtyh"];
+        
+    } else if ([str isEqualToString:@"PAYH"]) {
+        lab.text = @"平安银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_payh"];
+        
+    } else if ([str isEqualToString:@"PFYH"]) {
+        lab.text = @"浦发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_pfyh"];
+        
     }
     
 }
@@ -787,7 +837,8 @@
 
 - (IBAction)back:(id)sender {
     
-  [self.navigationController popViewControllerAnimated:YES];
+   
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)sheetMethods:(id)sender {
     

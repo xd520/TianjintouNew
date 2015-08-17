@@ -334,6 +334,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
    // lab1.textAlignment = NSTextAlignmentCenter;
     
     
+    
      CGSize titleSize = [lab1.text sizeWithFont:[UIFont systemFontOfSize:45] constrainedToSize:CGSizeMake(MAXFLOAT, 55)];
     lab1.frame = CGRectMake1(100, 55, titleSize.width, 45);
     lab1.font = [UIFont systemFontOfSize:45*sizeScaleX];

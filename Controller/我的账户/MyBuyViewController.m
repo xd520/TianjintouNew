@@ -180,7 +180,7 @@
     tooBar.hidden = YES;
     [self.view addSubview:tooBar];
     
-    timeTooBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, ScreenHeight - 200 - 30, ScreenWidth, 40)];
+    timeTooBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 200 - 30, ScreenWidth, 40)];
     //tooBar.backgroundColor = [UIColor redColor];
     [timeTooBar setBackgroundImage:[UIImage imageNamed:@"title_bg"] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     UIButton *okBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -946,6 +946,6 @@
 
 - (IBAction)back:(id)sender {
     
-     [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

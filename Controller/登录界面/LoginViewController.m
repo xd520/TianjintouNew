@@ -10,9 +10,8 @@
 #import "RegesterViewController.h"
 #import "AppDelegate.h"
 #import "FoggterViewController.h"
-//#import "MainViewController.h"
 #import "Base64XD.h"
-//#import "MainViewController.h"
+
 
 
 @interface LoginViewController ()
@@ -220,8 +219,8 @@
             delate.dictionary = dataArray;
             
             
-           
                 [self.navigationController popViewControllerAnimated:YES];
+          
         
 
             
@@ -261,9 +260,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    //delegate.baseView.hidden = NO;
-   
     
     
     
@@ -297,8 +293,7 @@
     // [[UIApplication sharedApplication] setStatusBarHidden:NO animated:NO];
      self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-   // delegate.baseView.hidden = YES;
+    
     
     
     
@@ -453,7 +448,7 @@
 
 - (IBAction)quit:(id)sender {
     
-        NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+    NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
     //删除最后一个，也就是自己
     
     UIViewController *vc = [array objectAtIndex:array.count-2];
@@ -464,21 +459,21 @@
         //CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
         //UINavigationController *navVC = [osTabbarVC viewControllers][0];
         //[navVC popViewControllerAnimated:NO];
-       // osTabbarVC.selectedViewController = navVC;
+        // osTabbarVC.selectedViewController = navVC;
         
         
-       
+        
     } else {
-       [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
         
     }
-
     
     
-   
-       // [self.navigationController popViewControllerAnimated:YES];
-   
-   }
+    
+    
+    // [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 
 - (void)animationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {

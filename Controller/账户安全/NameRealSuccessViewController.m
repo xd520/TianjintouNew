@@ -10,7 +10,6 @@
 #import "AppDelegate.h"
 #import "PhoneViewController.h"
 #import "LoginViewController.h"
-//#import "MainViewController.h"
 
 @interface NameRealSuccessViewController ()
 
@@ -53,7 +52,7 @@
     
     if (array.count == 2) {
         [array removeObjectAtIndex:array.count-1];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
         
         
        // [array removeObjectAtIndex:array.count-1];

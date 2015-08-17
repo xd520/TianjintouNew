@@ -11,7 +11,6 @@
 #import "DetailViewController.h"
 #import "MyInvestViewController.h"
 #import "HideViewController.h"
-//#import "MainViewController.h"
 
 
 @interface SuccessViewController ()
@@ -70,46 +69,47 @@
         [array removeObjectAtIndex:array.count-1];
         [self.navigationController setViewControllers:array];
         /*
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
-        UINavigationController *navVC = [osTabbarVC viewControllers][2];
-        [navVC popViewControllerAnimated:NO];
-        osTabbarVC.selectedViewController = navVC;
-        */
+         AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+         
+         CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
+         UINavigationController *navVC = [osTabbarVC viewControllers][2];
+         [navVC popViewControllerAnimated:NO];
+         osTabbarVC.selectedViewController = navVC;
+         */
     } else if ([vc.nibName isEqualToString:@"ProductViewCtrl"]){
-    
-    //删除最后一个，也就是自己
-    [array removeObjectAtIndex:array.count-1];
-    [array removeObjectAtIndex:array.count-1];
-    [array removeObjectAtIndex:array.count-1];
-    //[array removeObjectAtIndex:array.count-1];
-    [self.navigationController setViewControllers:array];
+        
+        //删除最后一个，也就是自己
+        [array removeObjectAtIndex:array.count-1];
+        [array removeObjectAtIndex:array.count-1];
+        [array removeObjectAtIndex:array.count-1];
+        //[array removeObjectAtIndex:array.count-1];
+        [self.navigationController setViewControllers:array];
         
         AppDelegate *delegate = [UIApplication sharedApplication].delegate;
         delegate.tabBarController.selectedIndex = 2;
-      //  [delegate.menuController showLeftController:YES];
+        //  [delegate.menuController showLeftController:YES];
         
         
-      //  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        //  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         /*
-        CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
-        UINavigationController *navVC = [osTabbarVC viewControllers][2];
-        [navVC popViewControllerAnimated:NO];
-        osTabbarVC.selectedViewController = navVC;
+         CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
+         UINavigationController *navVC = [osTabbarVC viewControllers][2];
+         [navVC popViewControllerAnimated:NO];
+         osTabbarVC.selectedViewController = navVC;
          */
     } else if ([vc.nibName isEqualToString:@"HideViewController"]){
         [array removeObjectAtIndex:array.count-1];
         [array removeObjectAtIndex:array.count-1];
         [array removeObjectAtIndex:array.count-1];
         [array removeObjectAtIndex:array.count-1];
-       
+        
         [self.navigationController setViewControllers:array];
-    
+        
     }
-   
+    
     
 }
+
 - (IBAction)goOnMethods:(id)sender {
     
     NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
@@ -121,21 +121,21 @@
         [array removeObjectAtIndex:array.count-1];
         
         [self.navigationController setViewControllers:array];
-  
+        
     }  else if ([vc.nibName isEqualToString:@"ProductViewCtrl"]) {
         /*
-        DetailViewController *vc = [[DetailViewController alloc] init];
-        MyInvestViewController *vc1 = [[MyInvestViewController alloc] initWithNibName:@"MyInvestViewController" bundle:nil];
-        vc1.view.tag =2;
-        [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],vc,vc1]];
-        
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
-        UINavigationController *navVC = [osTabbarVC viewControllers][2];
-        [navVC popViewControllerAnimated:NO];
-        osTabbarVC.selectedViewController = navVC;
-       */
+         DetailViewController *vc = [[DetailViewController alloc] init];
+         MyInvestViewController *vc1 = [[MyInvestViewController alloc] initWithNibName:@"MyInvestViewController" bundle:nil];
+         vc1.view.tag =2;
+         [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],vc,vc1]];
+         
+         AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+         
+         CPVSTabBarViewController *osTabbarVC = delegate.osTabVC;
+         UINavigationController *navVC = [osTabbarVC viewControllers][2];
+         [navVC popViewControllerAnimated:NO];
+         osTabbarVC.selectedViewController = navVC;
+         */
         [array removeObjectAtIndex:array.count-1];
         [array removeObjectAtIndex:array.count-1];
         [array removeObjectAtIndex:array.count-1];

@@ -13,145 +13,6 @@
 		04E8B5DB1B72E8DC000332F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B5DA1B72E8DC000332F0 /* Images.xcassets */; };
 		04E8B5DE1B72E8DC000332F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B5DC1B72E8DC000332F0 /* LaunchScreen.xib */; };
 		04E8B5EA1B72E8DC000332F0 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5E91B72E8DC000332F0 /* ___Tests.m */; };
-		04E8B6D11B72EEDA000332F0 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5F61B72EED9000332F0 /* AccountViewController.m */; };
-		04E8B6D21B72EEDA000332F0 /* MainViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5F81B72EED9000332F0 /* MainViewController1.m */; };
-		04E8B6D31B72EEDA000332F0 /* MainViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B5F91B72EED9000332F0 /* MainViewController1.xib */; };
-		04E8B6D41B72EEDA000332F0 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5FB1B72EED9000332F0 /* MoreViewController.m */; };
-		04E8B6D51B72EEDA000332F0 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B5FC1B72EED9000332F0 /* MoreViewController.xib */; };
-		04E8B6D61B72EEDA000332F0 /* MyInvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5FE1B72EED9000332F0 /* MyInvestViewController.m */; };
-		04E8B6D71B72EEDA000332F0 /* MyInvestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B5FF1B72EED9000332F0 /* MyInvestViewController.xib */; };
-		04E8B6D81B72EEDA000332F0 /* PorductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6011B72EED9000332F0 /* PorductViewController.m */; };
-		04E8B6D91B72EEDA000332F0 /* PorductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6021B72EED9000332F0 /* PorductViewController.xib */; };
-		04E8B6DA1B72EEDA000332F0 /* AddRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6051B72EED9000332F0 /* AddRechargeViewController.m */; };
-		04E8B6DB1B72EEDA000332F0 /* AddRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6061B72EED9000332F0 /* AddRechargeViewController.xib */; };
-		04E8B6DC1B72EEDA000332F0 /* AddWithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6081B72EED9000332F0 /* AddWithdrawViewController.m */; };
-		04E8B6DD1B72EEDA000332F0 /* AddWithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6091B72EED9000332F0 /* AddWithdrawViewController.xib */; };
-		04E8B6DE1B72EEDA000332F0 /* RechargeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B60B1B72EED9000332F0 /* RechargeFirstViewController.m */; };
-		04E8B6DF1B72EEDA000332F0 /* RechargeFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B60C1B72EED9000332F0 /* RechargeFirstViewController.xib */; };
-		04E8B6E01B72EEDA000332F0 /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B60E1B72EED9000332F0 /* RechargeViewController.m */; };
-		04E8B6E11B72EEDA000332F0 /* RechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B60F1B72EED9000332F0 /* RechargeViewController.xib */; };
-		04E8B6E21B72EEDA000332F0 /* WithdarwProtroclViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6111B72EED9000332F0 /* WithdarwProtroclViewController.m */; };
-		04E8B6E31B72EEDA000332F0 /* WithdarwProtroclViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6121B72EED9000332F0 /* WithdarwProtroclViewController.xib */; };
-		04E8B6E41B72EEDA000332F0 /* WithdrawFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6141B72EED9000332F0 /* WithdrawFirstViewController.m */; };
-		04E8B6E51B72EEDA000332F0 /* WithdrawFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6151B72EED9000332F0 /* WithdrawFirstViewController.xib */; };
-		04E8B6E61B72EEDA000332F0 /* WithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6171B72EED9000332F0 /* WithdrawViewController.m */; };
-		04E8B6E71B72EEDA000332F0 /* WithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6181B72EED9000332F0 /* WithdrawViewController.xib */; };
-		04E8B6E81B72EEDA000332F0 /* AccountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B61B1B72EED9000332F0 /* AccountInfoViewController.m */; };
-		04E8B6E91B72EEDA000332F0 /* AccountInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B61C1B72EED9000332F0 /* AccountInfoViewController.xib */; };
-		04E8B6EA1B72EEDA000332F0 /* BussizeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B61E1B72EED9000332F0 /* BussizeDetailViewController.m */; };
-		04E8B6EB1B72EEDA000332F0 /* BussizeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B61F1B72EED9000332F0 /* BussizeDetailViewController.xib */; };
-		04E8B6EC1B72EEDA000332F0 /* DelegateTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6211B72EED9000332F0 /* DelegateTodayViewController.m */; };
-		04E8B6ED1B72EEDA000332F0 /* DelegateTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6221B72EED9000332F0 /* DelegateTodayViewController.xib */; };
-		04E8B6EE1B72EEDA000332F0 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6241B72EED9000332F0 /* FriendsViewController.m */; };
-		04E8B6EF1B72EEDA000332F0 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6251B72EED9000332F0 /* FriendsViewController.xib */; };
-		04E8B6F01B72EEDA000332F0 /* HideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6271B72EED9000332F0 /* HideViewController.m */; };
-		04E8B6F11B72EEDA000332F0 /* HideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6281B72EED9000332F0 /* HideViewController.xib */; };
-		04E8B6F21B72EEDA000332F0 /* MoneyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B62A1B72EED9000332F0 /* MoneyAccountViewController.m */; };
-		04E8B6F31B72EEDA000332F0 /* MoneyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B62B1B72EED9000332F0 /* MoneyAccountViewController.xib */; };
-		04E8B6F41B72EEDA000332F0 /* MoneyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B62D1B72EED9000332F0 /* MoneyInfoViewController.m */; };
-		04E8B6F51B72EEDA000332F0 /* MoneyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B62E1B72EED9000332F0 /* MoneyInfoViewController.xib */; };
-		04E8B6F61B72EEDA000332F0 /* MyBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6301B72EED9000332F0 /* MyBuyViewController.m */; };
-		04E8B6F71B72EEDA000332F0 /* MyBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6311B72EED9000332F0 /* MyBuyViewController.xib */; };
-		04E8B6F81B72EEDA000332F0 /* MyGainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6331B72EED9000332F0 /* MyGainViewController.m */; };
-		04E8B6F91B72EEDA000332F0 /* MyGainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6341B72EED9000332F0 /* MyGainViewController.xib */; };
-		04E8B6FA1B72EEDA000332F0 /* MyMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6361B72EED9000332F0 /* MyMoneyViewController.m */; };
-		04E8B6FB1B72EEDA000332F0 /* MyMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6371B72EED9000332F0 /* MyMoneyViewController.xib */; };
-		04E8B6FC1B72EEDA000332F0 /* MyTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B63A1B72EED9000332F0 /* MyTransferDetailViewController.m */; };
-		04E8B6FD1B72EEDA000332F0 /* MyTransferDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B63B1B72EED9000332F0 /* MyTransferDetailViewController.xib */; };
-		04E8B6FE1B72EEDA000332F0 /* MyTransferPrococalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B63D1B72EED9000332F0 /* MyTransferPrococalViewController.m */; };
-		04E8B6FF1B72EEDA000332F0 /* MyTransferPrococalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B63E1B72EED9000332F0 /* MyTransferPrococalViewController.xib */; };
-		04E8B7001B72EEDA000332F0 /* MyTransferSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6401B72EED9000332F0 /* MyTransferSuccessViewController.m */; };
-		04E8B7011B72EEDA000332F0 /* MyTransferSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6411B72EED9000332F0 /* MyTransferSuccessViewController.xib */; };
-		04E8B7021B72EEDA000332F0 /* MyTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6431B72EED9000332F0 /* MyTransferViewController.m */; };
-		04E8B7031B72EEDA000332F0 /* MyTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6441B72EED9000332F0 /* MyTransferViewController.xib */; };
-		04E8B7041B72EEDA000332F0 /* TransferApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6461B72EED9000332F0 /* TransferApplicationViewController.m */; };
-		04E8B7051B72EEDA000332F0 /* TransferApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6471B72EED9000332F0 /* TransferApplicationViewController.xib */; };
-		04E8B7061B72EEDA000332F0 /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6491B72EED9000332F0 /* TransferViewController.m */; };
-		04E8B7071B72EEDA000332F0 /* TransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B64A1B72EED9000332F0 /* TransferViewController.xib */; };
-		04E8B7081B72EEDA000332F0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B64D1B72EED9000332F0 /* AboutViewController.m */; };
-		04E8B7091B72EEDA000332F0 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B64E1B72EED9000332F0 /* AboutViewController.xib */; };
-		04E8B70A1B72EEDA000332F0 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6501B72EED9000332F0 /* PublicViewController.m */; };
-		04E8B70B1B72EEDA000332F0 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6511B72EED9000332F0 /* PublicViewController.xib */; };
-		04E8B70C1B72EEDA000332F0 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6541B72EED9000332F0 /* CheckViewController.m */; };
-		04E8B70D1B72EEDA000332F0 /* CheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6551B72EED9000332F0 /* CheckViewController.xib */; };
-		04E8B70E1B72EEDA000332F0 /* PassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6571B72EED9000332F0 /* PassWordViewController.m */; };
-		04E8B70F1B72EEDA000332F0 /* PassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6581B72EED9000332F0 /* PassWordViewController.xib */; };
-		04E8B7101B72EEDA000332F0 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B65A1B72EED9000332F0 /* PhoneViewController.m */; };
-		04E8B7111B72EEDA000332F0 /* PhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B65B1B72EED9000332F0 /* PhoneViewController.xib */; };
-		04E8B7121B72EEDA000332F0 /* RegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B65D1B72EED9000332F0 /* RegesterViewController.m */; };
-		04E8B7131B72EEDA000332F0 /* RegesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B65E1B72EED9000332F0 /* RegesterViewController.xib */; };
-		04E8B7141B72EEDA000332F0 /* UserProcrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6601B72EED9000332F0 /* UserProcrolViewController.m */; };
-		04E8B7151B72EEDA000332F0 /* UserProcrolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6611B72EED9000332F0 /* UserProcrolViewController.xib */; };
-		04E8B7161B72EEDA000332F0 /* FoggterAgainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6641B72EED9000332F0 /* FoggterAgainViewController.m */; };
-		04E8B7171B72EEDA000332F0 /* FoggterAgainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6651B72EED9000332F0 /* FoggterAgainViewController.xib */; };
-		04E8B7181B72EEDA000332F0 /* FoggterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6671B72EED9000332F0 /* FoggterViewController.m */; };
-		04E8B7191B72EEDA000332F0 /* FoggterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6681B72EED9000332F0 /* FoggterViewController.xib */; };
-		04E8B71A1B72EEDA000332F0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B66A1B72EED9000332F0 /* LoginViewController.m */; };
-		04E8B71B1B72EEDA000332F0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B66B1B72EED9000332F0 /* LoginViewController.xib */; };
-		04E8B71C1B72EEDA000332F0 /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B66D1B72EED9000332F0 /* LogOutViewController.m */; };
-		04E8B71D1B72EEDA000332F0 /* LogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B66E1B72EED9000332F0 /* LogOutViewController.xib */; };
-		04E8B71E1B72EEDA000332F0 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6711B72EED9000332F0 /* ConfirmViewController.m */; };
-		04E8B71F1B72EEDA000332F0 /* ConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6721B72EED9000332F0 /* ConfirmViewController.xib */; };
-		04E8B7201B72EEDA000332F0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6741B72EED9000332F0 /* DetailViewController.m */; };
-		04E8B7211B72EEDA000332F0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6751B72EED9000332F0 /* DetailViewController.xib */; };
-		04E8B7221B72EEDA000332F0 /* EstimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6771B72EED9000332F0 /* EstimateViewController.m */; };
-		04E8B7231B72EEDA000332F0 /* EstimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6781B72EED9000332F0 /* EstimateViewController.xib */; };
-		04E8B7241B72EEDA000332F0 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B67A1B72EED9000332F0 /* ProductDetailViewController.m */; };
-		04E8B7251B72EEDA000332F0 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B67B1B72EED9000332F0 /* ProductDetailViewController.xib */; };
-		04E8B7261B72EEDA000332F0 /* ProductProcoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B67D1B72EED9000332F0 /* ProductProcoalViewController.m */; };
-		04E8B7271B72EEDA000332F0 /* ProductProcoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B67E1B72EED9000332F0 /* ProductProcoalViewController.xib */; };
-		04E8B7281B72EEDA000332F0 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6801B72EED9000332F0 /* SuccessViewController.m */; };
-		04E8B7291B72EEDA000332F0 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6811B72EED9000332F0 /* SuccessViewController.xib */; };
-		04E8B72A1B72EEDA000332F0 /* ChangeLoginPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6841B72EED9000332F0 /* ChangeLoginPWViewController.m */; };
-		04E8B72B1B72EEDA000332F0 /* ChangeLoginPWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6851B72EED9000332F0 /* ChangeLoginPWViewController.xib */; };
-		04E8B72C1B72EEDA000332F0 /* ChangerPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6871B72EED9000332F0 /* ChangerPassWordViewController.m */; };
-		04E8B72D1B72EEDA000332F0 /* ChangerPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6881B72EED9000332F0 /* ChangerPassWordViewController.xib */; };
-		04E8B72E1B72EEDA000332F0 /* CheckVersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B68A1B72EED9000332F0 /* CheckVersonViewController.m */; };
-		04E8B72F1B72EEDA000332F0 /* CheckVersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B68B1B72EED9000332F0 /* CheckVersonViewController.xib */; };
-		04E8B7301B72EEDA000332F0 /* LoginPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B68D1B72EED9000332F0 /* LoginPassWordViewController.m */; };
-		04E8B7311B72EEDA000332F0 /* LoginPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B68E1B72EED9000332F0 /* LoginPassWordViewController.xib */; };
-		04E8B7321B72EEDA000332F0 /* NameRealSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6901B72EED9000332F0 /* NameRealSuccessViewController.m */; };
-		04E8B7331B72EEDA000332F0 /* NameRealSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6911B72EED9000332F0 /* NameRealSuccessViewController.xib */; };
-		04E8B7341B72EEDA000332F0 /* PassWordMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6931B72EED9000332F0 /* PassWordMangerViewController.m */; };
-		04E8B7351B72EEDA000332F0 /* PassWordMangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6941B72EED9000332F0 /* PassWordMangerViewController.xib */; };
-		04E8B7361B72EEDA000332F0 /* ReSetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6961B72EED9000332F0 /* ReSetPassWordViewController.m */; };
-		04E8B7371B72EEDA000332F0 /* ReSetPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6971B72EED9000332F0 /* ReSetPassWordViewController.xib */; };
-		04E8B7381B72EEDA000332F0 /* ConfirmTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B69A1B72EED9000332F0 /* ConfirmTransferViewController.m */; };
-		04E8B7391B72EEDA000332F0 /* ConfirmTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B69B1B72EED9000332F0 /* ConfirmTransferViewController.xib */; };
-		04E8B73A1B72EEDA000332F0 /* InvestmentApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B69D1B72EED9000332F0 /* InvestmentApplicationsViewController.m */; };
-		04E8B73B1B72EEDA000332F0 /* InvestmentApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B69E1B72EED9000332F0 /* InvestmentApplicationsViewController.xib */; };
-		04E8B73C1B72EEDA000332F0 /* TransferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6A01B72EED9000332F0 /* TransferDetailsViewController.m */; };
-		04E8B73D1B72EEDA000332F0 /* TransferDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6A11B72EED9000332F0 /* TransferDetailsViewController.xib */; };
-		04E8B73E1B72EEDA000332F0 /* TransferProcoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6A31B72EED9000332F0 /* TransferProcoalViewController.m */; };
-		04E8B73F1B72EEDA000332F0 /* TransferProcoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6A41B72EED9000332F0 /* TransferProcoalViewController.xib */; };
-		04E8B7401B72EEDA000332F0 /* TransferSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6A61B72EED9000332F0 /* TransferSuccessViewController.m */; };
-		04E8B7411B72EEDA000332F0 /* TransferSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6A71B72EED9000332F0 /* TransferSuccessViewController.xib */; };
-		04E8B7421B72EEDA000332F0 /* AddreesssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6AA1B72EED9000332F0 /* AddreesssViewController.m */; };
-		04E8B7431B72EEDA000332F0 /* AddreesssViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6AB1B72EED9000332F0 /* AddreesssViewController.xib */; };
-		04E8B7441B72EEDA000332F0 /* BindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6AD1B72EED9000332F0 /* BindCardViewController.m */; };
-		04E8B7451B72EEDA000332F0 /* BindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6AE1B72EED9000332F0 /* BindCardViewController.xib */; };
-		04E8B7461B72EEDA000332F0 /* CardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6B01B72EED9000332F0 /* CardBindViewController.m */; };
-		04E8B7471B72EEDA000332F0 /* CardBindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6B11B72EED9000332F0 /* CardBindViewController.xib */; };
-		04E8B7481B72EEDA000332F0 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6B31B72EED9000332F0 /* CityViewController.m */; };
-		04E8B7491B72EEDA000332F0 /* CityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6B41B72EED9000332F0 /* CityViewController.xib */; };
-		04E8B74A1B72EEDA000332F0 /* ClassBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6B61B72EED9000332F0 /* ClassBankCardViewController.m */; };
-		04E8B74B1B72EEDA000332F0 /* ClassBankCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6B71B72EED9000332F0 /* ClassBankCardViewController.xib */; };
-		04E8B74C1B72EEDA000332F0 /* NoBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6B91B72EED9000332F0 /* NoBindCardViewController.m */; };
-		04E8B74D1B72EEDA000332F0 /* NoBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6BA1B72EED9000332F0 /* NoBindCardViewController.xib */; };
-		04E8B74E1B72EEDA000332F0 /* ProviousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6BC1B72EED9000332F0 /* ProviousViewController.m */; };
-		04E8B74F1B72EEDA000332F0 /* ProviousViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6BD1B72EED9000332F0 /* ProviousViewController.xib */; };
-		04E8B7501B72EEDA000332F0 /* TradingAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6BF1B72EED9000332F0 /* TradingAccountViewController.m */; };
-		04E8B7511B72EEDA000332F0 /* TradingAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6C01B72EED9000332F0 /* TradingAccountViewController.xib */; };
-		04E8B7521B72EEDA000332F0 /* UnBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6C21B72EED9000332F0 /* UnBindCardViewController.m */; };
-		04E8B7531B72EEDA000332F0 /* UnBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6C31B72EED9000332F0 /* UnBindCardViewController.xib */; };
-		04E8B7541B72EEDA000332F0 /* MessgeCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6C61B72EED9000332F0 /* MessgeCenterViewController.m */; };
-		04E8B7551B72EEDA000332F0 /* MessgeCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6C71B72EED9000332F0 /* MessgeCenterViewController.xib */; };
-		04E8B7561B72EEDA000332F0 /* MyUserMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6C91B72EED9000332F0 /* MyUserMangerViewController.m */; };
-		04E8B7571B72EEDA000332F0 /* MyUserMangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6CA1B72EED9000332F0 /* MyUserMangerViewController.xib */; };
-		04E8B7581B72EEDA000332F0 /* UserBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6CC1B72EED9000332F0 /* UserBackViewController.m */; };
-		04E8B7591B72EEDA000332F0 /* UserBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6CD1B72EED9000332F0 /* UserBackViewController.xib */; };
-		04E8B75A1B72EEDA000332F0 /* WebDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B6CF1B72EED9000332F0 /* WebDetailViewController.m */; };
-		04E8B75B1B72EEDA000332F0 /* WebDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B6D01B72EEDA000332F0 /* WebDetailViewController.xib */; };
 		04E8B7601B72EF88000332F0 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B75F1B72EF88000332F0 /* MyView.m */; };
 		04E8B7641B72EFA4000332F0 /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B7631B72EFA4000332F0 /* MyLabel.m */; };
 		04E8B76C1B72EFC3000332F0 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B7671B72EFC3000332F0 /* MDRadialProgressView.m */; };
@@ -222,6 +83,145 @@
 		04E8B83C1B72F916000332F0 /* ProductViewCtrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B83A1B72F916000332F0 /* ProductViewCtrl.xib */; };
 		04E8B8401B72F932000332F0 /* TransferViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B83E1B72F932000332F0 /* TransferViewCtrl.m */; };
 		04E8B8411B72F932000332F0 /* TransferViewCtrl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8B83F1B72F932000332F0 /* TransferViewCtrl.xib */; };
+		04EF61671B818C8A005700C9 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF608C1B818C89005700C9 /* AccountViewController.m */; };
+		04EF61681B818C8A005700C9 /* MainViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF608E1B818C89005700C9 /* MainViewController1.m */; };
+		04EF61691B818C8A005700C9 /* MainViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF608F1B818C89005700C9 /* MainViewController1.xib */; };
+		04EF616C1B818C8A005700C9 /* MyInvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60941B818C89005700C9 /* MyInvestViewController.m */; };
+		04EF616D1B818C8A005700C9 /* MyInvestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60951B818C89005700C9 /* MyInvestViewController.xib */; };
+		04EF616E1B818C8A005700C9 /* PorductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60971B818C89005700C9 /* PorductViewController.m */; };
+		04EF616F1B818C8A005700C9 /* PorductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60981B818C89005700C9 /* PorductViewController.xib */; };
+		04EF61701B818C8A005700C9 /* AddRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF609B1B818C89005700C9 /* AddRechargeViewController.m */; };
+		04EF61711B818C8A005700C9 /* AddRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF609C1B818C89005700C9 /* AddRechargeViewController.xib */; };
+		04EF61721B818C8A005700C9 /* AddWithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF609E1B818C89005700C9 /* AddWithdrawViewController.m */; };
+		04EF61731B818C8A005700C9 /* AddWithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF609F1B818C89005700C9 /* AddWithdrawViewController.xib */; };
+		04EF61741B818C8A005700C9 /* RechargeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60A11B818C89005700C9 /* RechargeFirstViewController.m */; };
+		04EF61751B818C8A005700C9 /* RechargeFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60A21B818C89005700C9 /* RechargeFirstViewController.xib */; };
+		04EF61761B818C8A005700C9 /* RechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60A41B818C89005700C9 /* RechargeViewController.m */; };
+		04EF61771B818C8A005700C9 /* RechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60A51B818C89005700C9 /* RechargeViewController.xib */; };
+		04EF61781B818C8A005700C9 /* WithdarwProtroclViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60A71B818C89005700C9 /* WithdarwProtroclViewController.m */; };
+		04EF61791B818C8A005700C9 /* WithdarwProtroclViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60A81B818C89005700C9 /* WithdarwProtroclViewController.xib */; };
+		04EF617A1B818C8A005700C9 /* WithdrawFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60AA1B818C89005700C9 /* WithdrawFirstViewController.m */; };
+		04EF617B1B818C8A005700C9 /* WithdrawFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60AB1B818C89005700C9 /* WithdrawFirstViewController.xib */; };
+		04EF617C1B818C8A005700C9 /* WithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60AD1B818C89005700C9 /* WithdrawViewController.m */; };
+		04EF617D1B818C8A005700C9 /* WithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60AE1B818C89005700C9 /* WithdrawViewController.xib */; };
+		04EF617E1B818C8A005700C9 /* AccountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60B11B818C89005700C9 /* AccountInfoViewController.m */; };
+		04EF617F1B818C8A005700C9 /* AccountInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60B21B818C89005700C9 /* AccountInfoViewController.xib */; };
+		04EF61801B818C8A005700C9 /* BussizeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60B41B818C89005700C9 /* BussizeDetailViewController.m */; };
+		04EF61811B818C8A005700C9 /* BussizeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60B51B818C89005700C9 /* BussizeDetailViewController.xib */; };
+		04EF61821B818C8A005700C9 /* DelegateTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60B71B818C89005700C9 /* DelegateTodayViewController.m */; };
+		04EF61831B818C8A005700C9 /* DelegateTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60B81B818C89005700C9 /* DelegateTodayViewController.xib */; };
+		04EF61841B818C8A005700C9 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60BA1B818C89005700C9 /* FriendsViewController.m */; };
+		04EF61851B818C8A005700C9 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60BB1B818C89005700C9 /* FriendsViewController.xib */; };
+		04EF61861B818C8A005700C9 /* HideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60BD1B818C89005700C9 /* HideViewController.m */; };
+		04EF61871B818C8A005700C9 /* HideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60BE1B818C89005700C9 /* HideViewController.xib */; };
+		04EF61881B818C8A005700C9 /* MoneyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60C01B818C89005700C9 /* MoneyAccountViewController.m */; };
+		04EF61891B818C8A005700C9 /* MoneyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60C11B818C89005700C9 /* MoneyAccountViewController.xib */; };
+		04EF618A1B818C8A005700C9 /* MoneyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60C31B818C89005700C9 /* MoneyInfoViewController.m */; };
+		04EF618B1B818C8A005700C9 /* MoneyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60C41B818C89005700C9 /* MoneyInfoViewController.xib */; };
+		04EF618C1B818C8A005700C9 /* MyBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60C61B818C89005700C9 /* MyBuyViewController.m */; };
+		04EF618D1B818C8A005700C9 /* MyBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60C71B818C89005700C9 /* MyBuyViewController.xib */; };
+		04EF618E1B818C8A005700C9 /* MyGainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60C91B818C89005700C9 /* MyGainViewController.m */; };
+		04EF618F1B818C8A005700C9 /* MyGainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60CA1B818C89005700C9 /* MyGainViewController.xib */; };
+		04EF61901B818C8A005700C9 /* MyMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60CC1B818C89005700C9 /* MyMoneyViewController.m */; };
+		04EF61911B818C8A005700C9 /* MyMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60CD1B818C89005700C9 /* MyMoneyViewController.xib */; };
+		04EF61921B818C8A005700C9 /* MyTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60D01B818C89005700C9 /* MyTransferDetailViewController.m */; };
+		04EF61931B818C8A005700C9 /* MyTransferDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60D11B818C89005700C9 /* MyTransferDetailViewController.xib */; };
+		04EF61941B818C8A005700C9 /* MyTransferPrococalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60D31B818C89005700C9 /* MyTransferPrococalViewController.m */; };
+		04EF61951B818C8A005700C9 /* MyTransferPrococalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60D41B818C89005700C9 /* MyTransferPrococalViewController.xib */; };
+		04EF61961B818C8A005700C9 /* MyTransferSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60D61B818C89005700C9 /* MyTransferSuccessViewController.m */; };
+		04EF61971B818C8A005700C9 /* MyTransferSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60D71B818C89005700C9 /* MyTransferSuccessViewController.xib */; };
+		04EF61981B818C8A005700C9 /* MyTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60D91B818C89005700C9 /* MyTransferViewController.m */; };
+		04EF61991B818C8A005700C9 /* MyTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60DA1B818C89005700C9 /* MyTransferViewController.xib */; };
+		04EF619A1B818C8A005700C9 /* TransferApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60DC1B818C89005700C9 /* TransferApplicationViewController.m */; };
+		04EF619B1B818C8A005700C9 /* TransferApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60DD1B818C89005700C9 /* TransferApplicationViewController.xib */; };
+		04EF619C1B818C8A005700C9 /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60DF1B818C89005700C9 /* TransferViewController.m */; };
+		04EF619D1B818C8A005700C9 /* TransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60E01B818C89005700C9 /* TransferViewController.xib */; };
+		04EF61A21B818C8A005700C9 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60EA1B818C89005700C9 /* CheckViewController.m */; };
+		04EF61A31B818C8A005700C9 /* CheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60EB1B818C89005700C9 /* CheckViewController.xib */; };
+		04EF61A41B818C8A005700C9 /* PassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60ED1B818C89005700C9 /* PassWordViewController.m */; };
+		04EF61A51B818C8A005700C9 /* PassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60EE1B818C89005700C9 /* PassWordViewController.xib */; };
+		04EF61A61B818C8A005700C9 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60F01B818C89005700C9 /* PhoneViewController.m */; };
+		04EF61A71B818C8A005700C9 /* PhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60F11B818C89005700C9 /* PhoneViewController.xib */; };
+		04EF61A81B818C8A005700C9 /* RegesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60F31B818C89005700C9 /* RegesterViewController.m */; };
+		04EF61A91B818C8A005700C9 /* RegesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60F41B818C89005700C9 /* RegesterViewController.xib */; };
+		04EF61AA1B818C8A005700C9 /* UserProcrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60F61B818C89005700C9 /* UserProcrolViewController.m */; };
+		04EF61AB1B818C8A005700C9 /* UserProcrolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60F71B818C89005700C9 /* UserProcrolViewController.xib */; };
+		04EF61AC1B818C8A005700C9 /* FoggterAgainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60FA1B818C89005700C9 /* FoggterAgainViewController.m */; };
+		04EF61AD1B818C8A005700C9 /* FoggterAgainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60FB1B818C89005700C9 /* FoggterAgainViewController.xib */; };
+		04EF61AE1B818C8A005700C9 /* FoggterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF60FD1B818C89005700C9 /* FoggterViewController.m */; };
+		04EF61AF1B818C8A005700C9 /* FoggterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF60FE1B818C89005700C9 /* FoggterViewController.xib */; };
+		04EF61B01B818C8A005700C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61001B818C89005700C9 /* LoginViewController.m */; };
+		04EF61B11B818C8A005700C9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61011B818C89005700C9 /* LoginViewController.xib */; };
+		04EF61B21B818C8A005700C9 /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61031B818C89005700C9 /* LogOutViewController.m */; };
+		04EF61B31B818C8A005700C9 /* LogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61041B818C89005700C9 /* LogOutViewController.xib */; };
+		04EF61B41B818C8A005700C9 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61071B818C89005700C9 /* ConfirmViewController.m */; };
+		04EF61B51B818C8A005700C9 /* ConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61081B818C89005700C9 /* ConfirmViewController.xib */; };
+		04EF61B61B818C8A005700C9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF610A1B818C89005700C9 /* DetailViewController.m */; };
+		04EF61B71B818C8A005700C9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF610B1B818C89005700C9 /* DetailViewController.xib */; };
+		04EF61B81B818C8A005700C9 /* EstimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF610D1B818C89005700C9 /* EstimateViewController.m */; };
+		04EF61B91B818C8A005700C9 /* EstimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF610E1B818C89005700C9 /* EstimateViewController.xib */; };
+		04EF61BA1B818C8A005700C9 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61101B818C89005700C9 /* ProductDetailViewController.m */; };
+		04EF61BB1B818C8A005700C9 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61111B818C89005700C9 /* ProductDetailViewController.xib */; };
+		04EF61BC1B818C8A005700C9 /* ProductProcoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61131B818C89005700C9 /* ProductProcoalViewController.m */; };
+		04EF61BD1B818C8A005700C9 /* ProductProcoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61141B818C89005700C9 /* ProductProcoalViewController.xib */; };
+		04EF61BE1B818C8A005700C9 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61161B818C89005700C9 /* SuccessViewController.m */; };
+		04EF61BF1B818C8A005700C9 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61171B818C8A005700C9 /* SuccessViewController.xib */; };
+		04EF61C01B818C8A005700C9 /* ChangeLoginPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF611A1B818C8A005700C9 /* ChangeLoginPWViewController.m */; };
+		04EF61C11B818C8A005700C9 /* ChangeLoginPWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF611B1B818C8A005700C9 /* ChangeLoginPWViewController.xib */; };
+		04EF61C21B818C8A005700C9 /* ChangerPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF611D1B818C8A005700C9 /* ChangerPassWordViewController.m */; };
+		04EF61C31B818C8A005700C9 /* ChangerPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF611E1B818C8A005700C9 /* ChangerPassWordViewController.xib */; };
+		04EF61C41B818C8A005700C9 /* CheckVersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61201B818C8A005700C9 /* CheckVersonViewController.m */; };
+		04EF61C51B818C8A005700C9 /* CheckVersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61211B818C8A005700C9 /* CheckVersonViewController.xib */; };
+		04EF61C61B818C8A005700C9 /* LoginPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61231B818C8A005700C9 /* LoginPassWordViewController.m */; };
+		04EF61C71B818C8A005700C9 /* LoginPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61241B818C8A005700C9 /* LoginPassWordViewController.xib */; };
+		04EF61C81B818C8A005700C9 /* NameRealSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61261B818C8A005700C9 /* NameRealSuccessViewController.m */; };
+		04EF61C91B818C8A005700C9 /* NameRealSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61271B818C8A005700C9 /* NameRealSuccessViewController.xib */; };
+		04EF61CA1B818C8A005700C9 /* PassWordMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61291B818C8A005700C9 /* PassWordMangerViewController.m */; };
+		04EF61CB1B818C8A005700C9 /* PassWordMangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF612A1B818C8A005700C9 /* PassWordMangerViewController.xib */; };
+		04EF61CC1B818C8A005700C9 /* ReSetPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF612C1B818C8A005700C9 /* ReSetPassWordViewController.m */; };
+		04EF61CD1B818C8A005700C9 /* ReSetPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF612D1B818C8A005700C9 /* ReSetPassWordViewController.xib */; };
+		04EF61CE1B818C8A005700C9 /* ConfirmTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61301B818C8A005700C9 /* ConfirmTransferViewController.m */; };
+		04EF61CF1B818C8A005700C9 /* ConfirmTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61311B818C8A005700C9 /* ConfirmTransferViewController.xib */; };
+		04EF61D01B818C8A005700C9 /* InvestmentApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61331B818C8A005700C9 /* InvestmentApplicationsViewController.m */; };
+		04EF61D11B818C8A005700C9 /* InvestmentApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61341B818C8A005700C9 /* InvestmentApplicationsViewController.xib */; };
+		04EF61D21B818C8A005700C9 /* TransferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61361B818C8A005700C9 /* TransferDetailsViewController.m */; };
+		04EF61D31B818C8A005700C9 /* TransferDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61371B818C8A005700C9 /* TransferDetailsViewController.xib */; };
+		04EF61D41B818C8A005700C9 /* TransferProcoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61391B818C8A005700C9 /* TransferProcoalViewController.m */; };
+		04EF61D51B818C8A005700C9 /* TransferProcoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF613A1B818C8A005700C9 /* TransferProcoalViewController.xib */; };
+		04EF61D61B818C8A005700C9 /* TransferSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF613C1B818C8A005700C9 /* TransferSuccessViewController.m */; };
+		04EF61D71B818C8A005700C9 /* TransferSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF613D1B818C8A005700C9 /* TransferSuccessViewController.xib */; };
+		04EF61D81B818C8A005700C9 /* AddreesssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61401B818C8A005700C9 /* AddreesssViewController.m */; };
+		04EF61D91B818C8A005700C9 /* AddreesssViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61411B818C8A005700C9 /* AddreesssViewController.xib */; };
+		04EF61DA1B818C8A005700C9 /* BindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61431B818C8A005700C9 /* BindCardViewController.m */; };
+		04EF61DB1B818C8A005700C9 /* BindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61441B818C8A005700C9 /* BindCardViewController.xib */; };
+		04EF61DC1B818C8A005700C9 /* CardBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61461B818C8A005700C9 /* CardBindViewController.m */; };
+		04EF61DD1B818C8A005700C9 /* CardBindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61471B818C8A005700C9 /* CardBindViewController.xib */; };
+		04EF61DE1B818C8A005700C9 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61491B818C8A005700C9 /* CityViewController.m */; };
+		04EF61DF1B818C8A005700C9 /* CityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF614A1B818C8A005700C9 /* CityViewController.xib */; };
+		04EF61E01B818C8A005700C9 /* ClassBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF614C1B818C8A005700C9 /* ClassBankCardViewController.m */; };
+		04EF61E11B818C8A005700C9 /* ClassBankCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF614D1B818C8A005700C9 /* ClassBankCardViewController.xib */; };
+		04EF61E21B818C8A005700C9 /* NoBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF614F1B818C8A005700C9 /* NoBindCardViewController.m */; };
+		04EF61E31B818C8A005700C9 /* NoBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61501B818C8A005700C9 /* NoBindCardViewController.xib */; };
+		04EF61E41B818C8A005700C9 /* ProviousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61521B818C8A005700C9 /* ProviousViewController.m */; };
+		04EF61E51B818C8A005700C9 /* ProviousViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61531B818C8A005700C9 /* ProviousViewController.xib */; };
+		04EF61E61B818C8A005700C9 /* TradingAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61551B818C8A005700C9 /* TradingAccountViewController.m */; };
+		04EF61E71B818C8A005700C9 /* TradingAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61561B818C8A005700C9 /* TradingAccountViewController.xib */; };
+		04EF61E81B818C8A005700C9 /* UnBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61581B818C8A005700C9 /* UnBindCardViewController.m */; };
+		04EF61E91B818C8A005700C9 /* UnBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61591B818C8A005700C9 /* UnBindCardViewController.xib */; };
+		04EF61EA1B818C8A005700C9 /* MessgeCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF615C1B818C8A005700C9 /* MessgeCenterViewController.m */; };
+		04EF61EB1B818C8A005700C9 /* MessgeCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF615D1B818C8A005700C9 /* MessgeCenterViewController.xib */; };
+		04EF61EC1B818C8A005700C9 /* MyUserMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF615F1B818C8A005700C9 /* MyUserMangerViewController.m */; };
+		04EF61ED1B818C8A005700C9 /* MyUserMangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61601B818C8A005700C9 /* MyUserMangerViewController.xib */; };
+		04EF61EE1B818C8A005700C9 /* UserBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61621B818C8A005700C9 /* UserBackViewController.m */; };
+		04EF61EF1B818C8A005700C9 /* UserBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61631B818C8A005700C9 /* UserBackViewController.xib */; };
+		04EF61F01B818C8A005700C9 /* WebDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61651B818C8A005700C9 /* WebDetailViewController.m */; };
+		04EF61F11B818C8A005700C9 /* WebDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61661B818C8A005700C9 /* WebDetailViewController.xib */; };
+		04EF61F51B818F03005700C9 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF61F31B818F03005700C9 /* MoreViewController.m */; };
+		04EF61F61B818F03005700C9 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF61F41B818F03005700C9 /* MoreViewController.xib */; };
+		04EF62081B819ACD005700C9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF62031B819ACD005700C9 /* AboutViewController.m */; };
+		04EF62091B819ACD005700C9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF62041B819ACD005700C9 /* AboutViewController.xib */; };
+		04EF620A1B819ACD005700C9 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF62061B819ACD005700C9 /* PublicViewController.m */; };
+		04EF620B1B819ACD005700C9 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF62071B819ACD005700C9 /* PublicViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,215 +247,6 @@
 		04E8B5E31B72E8DC000332F0 /* 添金投Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "添金投Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8B5E81B72E8DC000332F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E8B5E91B72E8DC000332F0 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
-		04E8B5F51B72EED9000332F0 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
-		04E8B5F61B72EED9000332F0 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		04E8B5F71B72EED9000332F0 /* MainViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController1.h; sourceTree = "<group>"; };
-		04E8B5F81B72EED9000332F0 /* MainViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController1.m; sourceTree = "<group>"; };
-		04E8B5F91B72EED9000332F0 /* MainViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController1.xib; sourceTree = "<group>"; };
-		04E8B5FA1B72EED9000332F0 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreViewController.h; path = "Controller/主界面/MoreViewController.h"; sourceTree = "<group>"; };
-		04E8B5FB1B72EED9000332F0 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreViewController.m; path = "Controller/主界面/MoreViewController.m"; sourceTree = "<group>"; };
-		04E8B5FC1B72EED9000332F0 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreViewController.xib; path = "Controller/主界面/MoreViewController.xib"; sourceTree = "<group>"; };
-		04E8B5FD1B72EED9000332F0 /* MyInvestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvestViewController.h; sourceTree = "<group>"; };
-		04E8B5FE1B72EED9000332F0 /* MyInvestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvestViewController.m; sourceTree = "<group>"; };
-		04E8B5FF1B72EED9000332F0 /* MyInvestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInvestViewController.xib; sourceTree = "<group>"; };
-		04E8B6001B72EED9000332F0 /* PorductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PorductViewController.h; sourceTree = "<group>"; };
-		04E8B6011B72EED9000332F0 /* PorductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PorductViewController.m; sourceTree = "<group>"; };
-		04E8B6021B72EED9000332F0 /* PorductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PorductViewController.xib; sourceTree = "<group>"; };
-		04E8B6041B72EED9000332F0 /* AddRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRechargeViewController.h; sourceTree = "<group>"; };
-		04E8B6051B72EED9000332F0 /* AddRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRechargeViewController.m; sourceTree = "<group>"; };
-		04E8B6061B72EED9000332F0 /* AddRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRechargeViewController.xib; sourceTree = "<group>"; };
-		04E8B6071B72EED9000332F0 /* AddWithdrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWithdrawViewController.h; sourceTree = "<group>"; };
-		04E8B6081B72EED9000332F0 /* AddWithdrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWithdrawViewController.m; sourceTree = "<group>"; };
-		04E8B6091B72EED9000332F0 /* AddWithdrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddWithdrawViewController.xib; sourceTree = "<group>"; };
-		04E8B60A1B72EED9000332F0 /* RechargeFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeFirstViewController.h; sourceTree = "<group>"; };
-		04E8B60B1B72EED9000332F0 /* RechargeFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFirstViewController.m; sourceTree = "<group>"; };
-		04E8B60C1B72EED9000332F0 /* RechargeFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeFirstViewController.xib; sourceTree = "<group>"; };
-		04E8B60D1B72EED9000332F0 /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
-		04E8B60E1B72EED9000332F0 /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
-		04E8B60F1B72EED9000332F0 /* RechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeViewController.xib; sourceTree = "<group>"; };
-		04E8B6101B72EED9000332F0 /* WithdarwProtroclViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdarwProtroclViewController.h; sourceTree = "<group>"; };
-		04E8B6111B72EED9000332F0 /* WithdarwProtroclViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdarwProtroclViewController.m; sourceTree = "<group>"; };
-		04E8B6121B72EED9000332F0 /* WithdarwProtroclViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdarwProtroclViewController.xib; sourceTree = "<group>"; };
-		04E8B6131B72EED9000332F0 /* WithdrawFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawFirstViewController.h; sourceTree = "<group>"; };
-		04E8B6141B72EED9000332F0 /* WithdrawFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawFirstViewController.m; sourceTree = "<group>"; };
-		04E8B6151B72EED9000332F0 /* WithdrawFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawFirstViewController.xib; sourceTree = "<group>"; };
-		04E8B6161B72EED9000332F0 /* WithdrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawViewController.h; sourceTree = "<group>"; };
-		04E8B6171B72EED9000332F0 /* WithdrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawViewController.m; sourceTree = "<group>"; };
-		04E8B6181B72EED9000332F0 /* WithdrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawViewController.xib; sourceTree = "<group>"; };
-		04E8B61A1B72EED9000332F0 /* AccountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoViewController.h; sourceTree = "<group>"; };
-		04E8B61B1B72EED9000332F0 /* AccountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoViewController.m; sourceTree = "<group>"; };
-		04E8B61C1B72EED9000332F0 /* AccountInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountInfoViewController.xib; sourceTree = "<group>"; };
-		04E8B61D1B72EED9000332F0 /* BussizeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BussizeDetailViewController.h; sourceTree = "<group>"; };
-		04E8B61E1B72EED9000332F0 /* BussizeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BussizeDetailViewController.m; sourceTree = "<group>"; };
-		04E8B61F1B72EED9000332F0 /* BussizeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BussizeDetailViewController.xib; sourceTree = "<group>"; };
-		04E8B6201B72EED9000332F0 /* DelegateTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateTodayViewController.h; sourceTree = "<group>"; };
-		04E8B6211B72EED9000332F0 /* DelegateTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelegateTodayViewController.m; sourceTree = "<group>"; };
-		04E8B6221B72EED9000332F0 /* DelegateTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DelegateTodayViewController.xib; sourceTree = "<group>"; };
-		04E8B6231B72EED9000332F0 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
-		04E8B6241B72EED9000332F0 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
-		04E8B6251B72EED9000332F0 /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
-		04E8B6261B72EED9000332F0 /* HideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideViewController.h; sourceTree = "<group>"; };
-		04E8B6271B72EED9000332F0 /* HideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideViewController.m; sourceTree = "<group>"; };
-		04E8B6281B72EED9000332F0 /* HideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HideViewController.xib; sourceTree = "<group>"; };
-		04E8B6291B72EED9000332F0 /* MoneyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyAccountViewController.h; sourceTree = "<group>"; };
-		04E8B62A1B72EED9000332F0 /* MoneyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyAccountViewController.m; sourceTree = "<group>"; };
-		04E8B62B1B72EED9000332F0 /* MoneyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyAccountViewController.xib; sourceTree = "<group>"; };
-		04E8B62C1B72EED9000332F0 /* MoneyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyInfoViewController.h; sourceTree = "<group>"; };
-		04E8B62D1B72EED9000332F0 /* MoneyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyInfoViewController.m; sourceTree = "<group>"; };
-		04E8B62E1B72EED9000332F0 /* MoneyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyInfoViewController.xib; sourceTree = "<group>"; };
-		04E8B62F1B72EED9000332F0 /* MyBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBuyViewController.h; sourceTree = "<group>"; };
-		04E8B6301B72EED9000332F0 /* MyBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBuyViewController.m; sourceTree = "<group>"; };
-		04E8B6311B72EED9000332F0 /* MyBuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyViewController.xib; sourceTree = "<group>"; };
-		04E8B6321B72EED9000332F0 /* MyGainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGainViewController.h; sourceTree = "<group>"; };
-		04E8B6331B72EED9000332F0 /* MyGainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGainViewController.m; sourceTree = "<group>"; };
-		04E8B6341B72EED9000332F0 /* MyGainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGainViewController.xib; sourceTree = "<group>"; };
-		04E8B6351B72EED9000332F0 /* MyMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoneyViewController.h; sourceTree = "<group>"; };
-		04E8B6361B72EED9000332F0 /* MyMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyViewController.m; sourceTree = "<group>"; };
-		04E8B6371B72EED9000332F0 /* MyMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMoneyViewController.xib; sourceTree = "<group>"; };
-		04E8B6391B72EED9000332F0 /* MyTransferDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferDetailViewController.h; sourceTree = "<group>"; };
-		04E8B63A1B72EED9000332F0 /* MyTransferDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferDetailViewController.m; sourceTree = "<group>"; };
-		04E8B63B1B72EED9000332F0 /* MyTransferDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferDetailViewController.xib; sourceTree = "<group>"; };
-		04E8B63C1B72EED9000332F0 /* MyTransferPrococalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferPrococalViewController.h; sourceTree = "<group>"; };
-		04E8B63D1B72EED9000332F0 /* MyTransferPrococalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferPrococalViewController.m; sourceTree = "<group>"; };
-		04E8B63E1B72EED9000332F0 /* MyTransferPrococalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferPrococalViewController.xib; sourceTree = "<group>"; };
-		04E8B63F1B72EED9000332F0 /* MyTransferSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferSuccessViewController.h; sourceTree = "<group>"; };
-		04E8B6401B72EED9000332F0 /* MyTransferSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferSuccessViewController.m; sourceTree = "<group>"; };
-		04E8B6411B72EED9000332F0 /* MyTransferSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferSuccessViewController.xib; sourceTree = "<group>"; };
-		04E8B6421B72EED9000332F0 /* MyTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferViewController.h; sourceTree = "<group>"; };
-		04E8B6431B72EED9000332F0 /* MyTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferViewController.m; sourceTree = "<group>"; };
-		04E8B6441B72EED9000332F0 /* MyTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferViewController.xib; sourceTree = "<group>"; };
-		04E8B6451B72EED9000332F0 /* TransferApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferApplicationViewController.h; sourceTree = "<group>"; };
-		04E8B6461B72EED9000332F0 /* TransferApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferApplicationViewController.m; sourceTree = "<group>"; };
-		04E8B6471B72EED9000332F0 /* TransferApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferApplicationViewController.xib; sourceTree = "<group>"; };
-		04E8B6481B72EED9000332F0 /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
-		04E8B6491B72EED9000332F0 /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
-		04E8B64A1B72EED9000332F0 /* TransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferViewController.xib; sourceTree = "<group>"; };
-		04E8B64C1B72EED9000332F0 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		04E8B64D1B72EED9000332F0 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		04E8B64E1B72EED9000332F0 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		04E8B64F1B72EED9000332F0 /* PublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
-		04E8B6501B72EED9000332F0 /* PublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicViewController.m; sourceTree = "<group>"; };
-		04E8B6511B72EED9000332F0 /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
-		04E8B6531B72EED9000332F0 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
-		04E8B6541B72EED9000332F0 /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
-		04E8B6551B72EED9000332F0 /* CheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckViewController.xib; sourceTree = "<group>"; };
-		04E8B6561B72EED9000332F0 /* PassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordViewController.h; sourceTree = "<group>"; };
-		04E8B6571B72EED9000332F0 /* PassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordViewController.m; sourceTree = "<group>"; };
-		04E8B6581B72EED9000332F0 /* PassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassWordViewController.xib; sourceTree = "<group>"; };
-		04E8B6591B72EED9000332F0 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
-		04E8B65A1B72EED9000332F0 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
-		04E8B65B1B72EED9000332F0 /* PhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneViewController.xib; sourceTree = "<group>"; };
-		04E8B65C1B72EED9000332F0 /* RegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegesterViewController.h; sourceTree = "<group>"; };
-		04E8B65D1B72EED9000332F0 /* RegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegesterViewController.m; sourceTree = "<group>"; };
-		04E8B65E1B72EED9000332F0 /* RegesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegesterViewController.xib; sourceTree = "<group>"; };
-		04E8B65F1B72EED9000332F0 /* UserProcrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProcrolViewController.h; sourceTree = "<group>"; };
-		04E8B6601B72EED9000332F0 /* UserProcrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProcrolViewController.m; sourceTree = "<group>"; };
-		04E8B6611B72EED9000332F0 /* UserProcrolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProcrolViewController.xib; sourceTree = "<group>"; };
-		04E8B6631B72EED9000332F0 /* FoggterAgainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoggterAgainViewController.h; sourceTree = "<group>"; };
-		04E8B6641B72EED9000332F0 /* FoggterAgainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoggterAgainViewController.m; sourceTree = "<group>"; };
-		04E8B6651B72EED9000332F0 /* FoggterAgainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoggterAgainViewController.xib; sourceTree = "<group>"; };
-		04E8B6661B72EED9000332F0 /* FoggterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoggterViewController.h; sourceTree = "<group>"; };
-		04E8B6671B72EED9000332F0 /* FoggterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoggterViewController.m; sourceTree = "<group>"; };
-		04E8B6681B72EED9000332F0 /* FoggterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoggterViewController.xib; sourceTree = "<group>"; };
-		04E8B6691B72EED9000332F0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		04E8B66A1B72EED9000332F0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		04E8B66B1B72EED9000332F0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		04E8B66C1B72EED9000332F0 /* LogOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
-		04E8B66D1B72EED9000332F0 /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
-		04E8B66E1B72EED9000332F0 /* LogOutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogOutViewController.xib; sourceTree = "<group>"; };
-		04E8B6701B72EED9000332F0 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
-		04E8B6711B72EED9000332F0 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
-		04E8B6721B72EED9000332F0 /* ConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmViewController.xib; sourceTree = "<group>"; };
-		04E8B6731B72EED9000332F0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		04E8B6741B72EED9000332F0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		04E8B6751B72EED9000332F0 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		04E8B6761B72EED9000332F0 /* EstimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateViewController.h; sourceTree = "<group>"; };
-		04E8B6771B72EED9000332F0 /* EstimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateViewController.m; sourceTree = "<group>"; };
-		04E8B6781B72EED9000332F0 /* EstimateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstimateViewController.xib; sourceTree = "<group>"; };
-		04E8B6791B72EED9000332F0 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
-		04E8B67A1B72EED9000332F0 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
-		04E8B67B1B72EED9000332F0 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
-		04E8B67C1B72EED9000332F0 /* ProductProcoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductProcoalViewController.h; sourceTree = "<group>"; };
-		04E8B67D1B72EED9000332F0 /* ProductProcoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductProcoalViewController.m; sourceTree = "<group>"; };
-		04E8B67E1B72EED9000332F0 /* ProductProcoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductProcoalViewController.xib; sourceTree = "<group>"; };
-		04E8B67F1B72EED9000332F0 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
-		04E8B6801B72EED9000332F0 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
-		04E8B6811B72EED9000332F0 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
-		04E8B6831B72EED9000332F0 /* ChangeLoginPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeLoginPWViewController.h; sourceTree = "<group>"; };
-		04E8B6841B72EED9000332F0 /* ChangeLoginPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeLoginPWViewController.m; sourceTree = "<group>"; };
-		04E8B6851B72EED9000332F0 /* ChangeLoginPWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLoginPWViewController.xib; sourceTree = "<group>"; };
-		04E8B6861B72EED9000332F0 /* ChangerPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangerPassWordViewController.h; sourceTree = "<group>"; };
-		04E8B6871B72EED9000332F0 /* ChangerPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangerPassWordViewController.m; sourceTree = "<group>"; };
-		04E8B6881B72EED9000332F0 /* ChangerPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangerPassWordViewController.xib; sourceTree = "<group>"; };
-		04E8B6891B72EED9000332F0 /* CheckVersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckVersonViewController.h; sourceTree = "<group>"; };
-		04E8B68A1B72EED9000332F0 /* CheckVersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckVersonViewController.m; sourceTree = "<group>"; };
-		04E8B68B1B72EED9000332F0 /* CheckVersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckVersonViewController.xib; sourceTree = "<group>"; };
-		04E8B68C1B72EED9000332F0 /* LoginPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPassWordViewController.h; sourceTree = "<group>"; };
-		04E8B68D1B72EED9000332F0 /* LoginPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPassWordViewController.m; sourceTree = "<group>"; };
-		04E8B68E1B72EED9000332F0 /* LoginPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPassWordViewController.xib; sourceTree = "<group>"; };
-		04E8B68F1B72EED9000332F0 /* NameRealSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameRealSuccessViewController.h; sourceTree = "<group>"; };
-		04E8B6901B72EED9000332F0 /* NameRealSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameRealSuccessViewController.m; sourceTree = "<group>"; };
-		04E8B6911B72EED9000332F0 /* NameRealSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameRealSuccessViewController.xib; sourceTree = "<group>"; };
-		04E8B6921B72EED9000332F0 /* PassWordMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordMangerViewController.h; sourceTree = "<group>"; };
-		04E8B6931B72EED9000332F0 /* PassWordMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordMangerViewController.m; sourceTree = "<group>"; };
-		04E8B6941B72EED9000332F0 /* PassWordMangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassWordMangerViewController.xib; sourceTree = "<group>"; };
-		04E8B6951B72EED9000332F0 /* ReSetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetPassWordViewController.h; sourceTree = "<group>"; };
-		04E8B6961B72EED9000332F0 /* ReSetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReSetPassWordViewController.m; sourceTree = "<group>"; };
-		04E8B6971B72EED9000332F0 /* ReSetPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReSetPassWordViewController.xib; sourceTree = "<group>"; };
-		04E8B6991B72EED9000332F0 /* ConfirmTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmTransferViewController.h; sourceTree = "<group>"; };
-		04E8B69A1B72EED9000332F0 /* ConfirmTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmTransferViewController.m; sourceTree = "<group>"; };
-		04E8B69B1B72EED9000332F0 /* ConfirmTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmTransferViewController.xib; sourceTree = "<group>"; };
-		04E8B69C1B72EED9000332F0 /* InvestmentApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvestmentApplicationsViewController.h; sourceTree = "<group>"; };
-		04E8B69D1B72EED9000332F0 /* InvestmentApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvestmentApplicationsViewController.m; sourceTree = "<group>"; };
-		04E8B69E1B72EED9000332F0 /* InvestmentApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvestmentApplicationsViewController.xib; sourceTree = "<group>"; };
-		04E8B69F1B72EED9000332F0 /* TransferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferDetailsViewController.h; sourceTree = "<group>"; };
-		04E8B6A01B72EED9000332F0 /* TransferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferDetailsViewController.m; sourceTree = "<group>"; };
-		04E8B6A11B72EED9000332F0 /* TransferDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferDetailsViewController.xib; sourceTree = "<group>"; };
-		04E8B6A21B72EED9000332F0 /* TransferProcoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferProcoalViewController.h; sourceTree = "<group>"; };
-		04E8B6A31B72EED9000332F0 /* TransferProcoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferProcoalViewController.m; sourceTree = "<group>"; };
-		04E8B6A41B72EED9000332F0 /* TransferProcoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferProcoalViewController.xib; sourceTree = "<group>"; };
-		04E8B6A51B72EED9000332F0 /* TransferSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferSuccessViewController.h; sourceTree = "<group>"; };
-		04E8B6A61B72EED9000332F0 /* TransferSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferSuccessViewController.m; sourceTree = "<group>"; };
-		04E8B6A71B72EED9000332F0 /* TransferSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferSuccessViewController.xib; sourceTree = "<group>"; };
-		04E8B6A91B72EED9000332F0 /* AddreesssViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddreesssViewController.h; sourceTree = "<group>"; };
-		04E8B6AA1B72EED9000332F0 /* AddreesssViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddreesssViewController.m; sourceTree = "<group>"; };
-		04E8B6AB1B72EED9000332F0 /* AddreesssViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddreesssViewController.xib; sourceTree = "<group>"; };
-		04E8B6AC1B72EED9000332F0 /* BindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindCardViewController.h; sourceTree = "<group>"; };
-		04E8B6AD1B72EED9000332F0 /* BindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindCardViewController.m; sourceTree = "<group>"; };
-		04E8B6AE1B72EED9000332F0 /* BindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindCardViewController.xib; sourceTree = "<group>"; };
-		04E8B6AF1B72EED9000332F0 /* CardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBindViewController.h; sourceTree = "<group>"; };
-		04E8B6B01B72EED9000332F0 /* CardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBindViewController.m; sourceTree = "<group>"; };
-		04E8B6B11B72EED9000332F0 /* CardBindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardBindViewController.xib; sourceTree = "<group>"; };
-		04E8B6B21B72EED9000332F0 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
-		04E8B6B31B72EED9000332F0 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
-		04E8B6B41B72EED9000332F0 /* CityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityViewController.xib; sourceTree = "<group>"; };
-		04E8B6B51B72EED9000332F0 /* ClassBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBankCardViewController.h; sourceTree = "<group>"; };
-		04E8B6B61B72EED9000332F0 /* ClassBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBankCardViewController.m; sourceTree = "<group>"; };
-		04E8B6B71B72EED9000332F0 /* ClassBankCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassBankCardViewController.xib; sourceTree = "<group>"; };
-		04E8B6B81B72EED9000332F0 /* NoBindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoBindCardViewController.h; sourceTree = "<group>"; };
-		04E8B6B91B72EED9000332F0 /* NoBindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoBindCardViewController.m; sourceTree = "<group>"; };
-		04E8B6BA1B72EED9000332F0 /* NoBindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoBindCardViewController.xib; sourceTree = "<group>"; };
-		04E8B6BB1B72EED9000332F0 /* ProviousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviousViewController.h; sourceTree = "<group>"; };
-		04E8B6BC1B72EED9000332F0 /* ProviousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviousViewController.m; sourceTree = "<group>"; };
-		04E8B6BD1B72EED9000332F0 /* ProviousViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviousViewController.xib; sourceTree = "<group>"; };
-		04E8B6BE1B72EED9000332F0 /* TradingAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradingAccountViewController.h; sourceTree = "<group>"; };
-		04E8B6BF1B72EED9000332F0 /* TradingAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradingAccountViewController.m; sourceTree = "<group>"; };
-		04E8B6C01B72EED9000332F0 /* TradingAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradingAccountViewController.xib; sourceTree = "<group>"; };
-		04E8B6C11B72EED9000332F0 /* UnBindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnBindCardViewController.h; sourceTree = "<group>"; };
-		04E8B6C21B72EED9000332F0 /* UnBindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnBindCardViewController.m; sourceTree = "<group>"; };
-		04E8B6C31B72EED9000332F0 /* UnBindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnBindCardViewController.xib; sourceTree = "<group>"; };
-		04E8B6C51B72EED9000332F0 /* MessgeCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessgeCenterViewController.h; sourceTree = "<group>"; };
-		04E8B6C61B72EED9000332F0 /* MessgeCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessgeCenterViewController.m; sourceTree = "<group>"; };
-		04E8B6C71B72EED9000332F0 /* MessgeCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessgeCenterViewController.xib; sourceTree = "<group>"; };
-		04E8B6C81B72EED9000332F0 /* MyUserMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserMangerViewController.h; sourceTree = "<group>"; };
-		04E8B6C91B72EED9000332F0 /* MyUserMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserMangerViewController.m; sourceTree = "<group>"; };
-		04E8B6CA1B72EED9000332F0 /* MyUserMangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyUserMangerViewController.xib; sourceTree = "<group>"; };
-		04E8B6CB1B72EED9000332F0 /* UserBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBackViewController.h; sourceTree = "<group>"; };
-		04E8B6CC1B72EED9000332F0 /* UserBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBackViewController.m; sourceTree = "<group>"; };
-		04E8B6CD1B72EED9000332F0 /* UserBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBackViewController.xib; sourceTree = "<group>"; };
-		04E8B6CE1B72EED9000332F0 /* WebDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDetailViewController.h; sourceTree = "<group>"; };
-		04E8B6CF1B72EED9000332F0 /* WebDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDetailViewController.m; sourceTree = "<group>"; };
-		04E8B6D01B72EEDA000332F0 /* WebDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebDetailViewController.xib; sourceTree = "<group>"; };
 		04E8B75E1B72EF88000332F0 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		04E8B75F1B72EF88000332F0 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		04E8B7621B72EFA4000332F0 /* MyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLabel.h; sourceTree = "<group>"; };
@@ -595,6 +386,215 @@
 		04E8B83D1B72F932000332F0 /* TransferViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewCtrl.h; sourceTree = "<group>"; };
 		04E8B83E1B72F932000332F0 /* TransferViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewCtrl.m; sourceTree = "<group>"; };
 		04E8B83F1B72F932000332F0 /* TransferViewCtrl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferViewCtrl.xib; sourceTree = "<group>"; };
+		04EF608B1B818C89005700C9 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		04EF608C1B818C89005700C9 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		04EF608D1B818C89005700C9 /* MainViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController1.h; sourceTree = "<group>"; };
+		04EF608E1B818C89005700C9 /* MainViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController1.m; sourceTree = "<group>"; };
+		04EF608F1B818C89005700C9 /* MainViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController1.xib; sourceTree = "<group>"; };
+		04EF60931B818C89005700C9 /* MyInvestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvestViewController.h; sourceTree = "<group>"; };
+		04EF60941B818C89005700C9 /* MyInvestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvestViewController.m; sourceTree = "<group>"; };
+		04EF60951B818C89005700C9 /* MyInvestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInvestViewController.xib; sourceTree = "<group>"; };
+		04EF60961B818C89005700C9 /* PorductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PorductViewController.h; sourceTree = "<group>"; };
+		04EF60971B818C89005700C9 /* PorductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PorductViewController.m; sourceTree = "<group>"; };
+		04EF60981B818C89005700C9 /* PorductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PorductViewController.xib; sourceTree = "<group>"; };
+		04EF609A1B818C89005700C9 /* AddRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRechargeViewController.h; sourceTree = "<group>"; };
+		04EF609B1B818C89005700C9 /* AddRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRechargeViewController.m; sourceTree = "<group>"; };
+		04EF609C1B818C89005700C9 /* AddRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRechargeViewController.xib; sourceTree = "<group>"; };
+		04EF609D1B818C89005700C9 /* AddWithdrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWithdrawViewController.h; sourceTree = "<group>"; };
+		04EF609E1B818C89005700C9 /* AddWithdrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWithdrawViewController.m; sourceTree = "<group>"; };
+		04EF609F1B818C89005700C9 /* AddWithdrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddWithdrawViewController.xib; sourceTree = "<group>"; };
+		04EF60A01B818C89005700C9 /* RechargeFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeFirstViewController.h; sourceTree = "<group>"; };
+		04EF60A11B818C89005700C9 /* RechargeFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeFirstViewController.m; sourceTree = "<group>"; };
+		04EF60A21B818C89005700C9 /* RechargeFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeFirstViewController.xib; sourceTree = "<group>"; };
+		04EF60A31B818C89005700C9 /* RechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeViewController.h; sourceTree = "<group>"; };
+		04EF60A41B818C89005700C9 /* RechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeViewController.m; sourceTree = "<group>"; };
+		04EF60A51B818C89005700C9 /* RechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeViewController.xib; sourceTree = "<group>"; };
+		04EF60A61B818C89005700C9 /* WithdarwProtroclViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdarwProtroclViewController.h; sourceTree = "<group>"; };
+		04EF60A71B818C89005700C9 /* WithdarwProtroclViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdarwProtroclViewController.m; sourceTree = "<group>"; };
+		04EF60A81B818C89005700C9 /* WithdarwProtroclViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdarwProtroclViewController.xib; sourceTree = "<group>"; };
+		04EF60A91B818C89005700C9 /* WithdrawFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawFirstViewController.h; sourceTree = "<group>"; };
+		04EF60AA1B818C89005700C9 /* WithdrawFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawFirstViewController.m; sourceTree = "<group>"; };
+		04EF60AB1B818C89005700C9 /* WithdrawFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawFirstViewController.xib; sourceTree = "<group>"; };
+		04EF60AC1B818C89005700C9 /* WithdrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawViewController.h; sourceTree = "<group>"; };
+		04EF60AD1B818C89005700C9 /* WithdrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawViewController.m; sourceTree = "<group>"; };
+		04EF60AE1B818C89005700C9 /* WithdrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawViewController.xib; sourceTree = "<group>"; };
+		04EF60B01B818C89005700C9 /* AccountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoViewController.h; sourceTree = "<group>"; };
+		04EF60B11B818C89005700C9 /* AccountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoViewController.m; sourceTree = "<group>"; };
+		04EF60B21B818C89005700C9 /* AccountInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountInfoViewController.xib; sourceTree = "<group>"; };
+		04EF60B31B818C89005700C9 /* BussizeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BussizeDetailViewController.h; sourceTree = "<group>"; };
+		04EF60B41B818C89005700C9 /* BussizeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BussizeDetailViewController.m; sourceTree = "<group>"; };
+		04EF60B51B818C89005700C9 /* BussizeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BussizeDetailViewController.xib; sourceTree = "<group>"; };
+		04EF60B61B818C89005700C9 /* DelegateTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateTodayViewController.h; sourceTree = "<group>"; };
+		04EF60B71B818C89005700C9 /* DelegateTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelegateTodayViewController.m; sourceTree = "<group>"; };
+		04EF60B81B818C89005700C9 /* DelegateTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DelegateTodayViewController.xib; sourceTree = "<group>"; };
+		04EF60B91B818C89005700C9 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		04EF60BA1B818C89005700C9 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		04EF60BB1B818C89005700C9 /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		04EF60BC1B818C89005700C9 /* HideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideViewController.h; sourceTree = "<group>"; };
+		04EF60BD1B818C89005700C9 /* HideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideViewController.m; sourceTree = "<group>"; };
+		04EF60BE1B818C89005700C9 /* HideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HideViewController.xib; sourceTree = "<group>"; };
+		04EF60BF1B818C89005700C9 /* MoneyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyAccountViewController.h; sourceTree = "<group>"; };
+		04EF60C01B818C89005700C9 /* MoneyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyAccountViewController.m; sourceTree = "<group>"; };
+		04EF60C11B818C89005700C9 /* MoneyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyAccountViewController.xib; sourceTree = "<group>"; };
+		04EF60C21B818C89005700C9 /* MoneyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyInfoViewController.h; sourceTree = "<group>"; };
+		04EF60C31B818C89005700C9 /* MoneyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyInfoViewController.m; sourceTree = "<group>"; };
+		04EF60C41B818C89005700C9 /* MoneyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyInfoViewController.xib; sourceTree = "<group>"; };
+		04EF60C51B818C89005700C9 /* MyBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBuyViewController.h; sourceTree = "<group>"; };
+		04EF60C61B818C89005700C9 /* MyBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBuyViewController.m; sourceTree = "<group>"; };
+		04EF60C71B818C89005700C9 /* MyBuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyViewController.xib; sourceTree = "<group>"; };
+		04EF60C81B818C89005700C9 /* MyGainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGainViewController.h; sourceTree = "<group>"; };
+		04EF60C91B818C89005700C9 /* MyGainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGainViewController.m; sourceTree = "<group>"; };
+		04EF60CA1B818C89005700C9 /* MyGainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGainViewController.xib; sourceTree = "<group>"; };
+		04EF60CB1B818C89005700C9 /* MyMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoneyViewController.h; sourceTree = "<group>"; };
+		04EF60CC1B818C89005700C9 /* MyMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyViewController.m; sourceTree = "<group>"; };
+		04EF60CD1B818C89005700C9 /* MyMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMoneyViewController.xib; sourceTree = "<group>"; };
+		04EF60CF1B818C89005700C9 /* MyTransferDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferDetailViewController.h; sourceTree = "<group>"; };
+		04EF60D01B818C89005700C9 /* MyTransferDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferDetailViewController.m; sourceTree = "<group>"; };
+		04EF60D11B818C89005700C9 /* MyTransferDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferDetailViewController.xib; sourceTree = "<group>"; };
+		04EF60D21B818C89005700C9 /* MyTransferPrococalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferPrococalViewController.h; sourceTree = "<group>"; };
+		04EF60D31B818C89005700C9 /* MyTransferPrococalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferPrococalViewController.m; sourceTree = "<group>"; };
+		04EF60D41B818C89005700C9 /* MyTransferPrococalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferPrococalViewController.xib; sourceTree = "<group>"; };
+		04EF60D51B818C89005700C9 /* MyTransferSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferSuccessViewController.h; sourceTree = "<group>"; };
+		04EF60D61B818C89005700C9 /* MyTransferSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferSuccessViewController.m; sourceTree = "<group>"; };
+		04EF60D71B818C89005700C9 /* MyTransferSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferSuccessViewController.xib; sourceTree = "<group>"; };
+		04EF60D81B818C89005700C9 /* MyTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransferViewController.h; sourceTree = "<group>"; };
+		04EF60D91B818C89005700C9 /* MyTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransferViewController.m; sourceTree = "<group>"; };
+		04EF60DA1B818C89005700C9 /* MyTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTransferViewController.xib; sourceTree = "<group>"; };
+		04EF60DB1B818C89005700C9 /* TransferApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferApplicationViewController.h; sourceTree = "<group>"; };
+		04EF60DC1B818C89005700C9 /* TransferApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferApplicationViewController.m; sourceTree = "<group>"; };
+		04EF60DD1B818C89005700C9 /* TransferApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferApplicationViewController.xib; sourceTree = "<group>"; };
+		04EF60DE1B818C89005700C9 /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
+		04EF60DF1B818C89005700C9 /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
+		04EF60E01B818C89005700C9 /* TransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferViewController.xib; sourceTree = "<group>"; };
+		04EF60E91B818C89005700C9 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
+		04EF60EA1B818C89005700C9 /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
+		04EF60EB1B818C89005700C9 /* CheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckViewController.xib; sourceTree = "<group>"; };
+		04EF60EC1B818C89005700C9 /* PassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordViewController.h; sourceTree = "<group>"; };
+		04EF60ED1B818C89005700C9 /* PassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordViewController.m; sourceTree = "<group>"; };
+		04EF60EE1B818C89005700C9 /* PassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassWordViewController.xib; sourceTree = "<group>"; };
+		04EF60EF1B818C89005700C9 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		04EF60F01B818C89005700C9 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		04EF60F11B818C89005700C9 /* PhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneViewController.xib; sourceTree = "<group>"; };
+		04EF60F21B818C89005700C9 /* RegesterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegesterViewController.h; sourceTree = "<group>"; };
+		04EF60F31B818C89005700C9 /* RegesterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegesterViewController.m; sourceTree = "<group>"; };
+		04EF60F41B818C89005700C9 /* RegesterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegesterViewController.xib; sourceTree = "<group>"; };
+		04EF60F51B818C89005700C9 /* UserProcrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProcrolViewController.h; sourceTree = "<group>"; };
+		04EF60F61B818C89005700C9 /* UserProcrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProcrolViewController.m; sourceTree = "<group>"; };
+		04EF60F71B818C89005700C9 /* UserProcrolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProcrolViewController.xib; sourceTree = "<group>"; };
+		04EF60F91B818C89005700C9 /* FoggterAgainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoggterAgainViewController.h; sourceTree = "<group>"; };
+		04EF60FA1B818C89005700C9 /* FoggterAgainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoggterAgainViewController.m; sourceTree = "<group>"; };
+		04EF60FB1B818C89005700C9 /* FoggterAgainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoggterAgainViewController.xib; sourceTree = "<group>"; };
+		04EF60FC1B818C89005700C9 /* FoggterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoggterViewController.h; sourceTree = "<group>"; };
+		04EF60FD1B818C89005700C9 /* FoggterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoggterViewController.m; sourceTree = "<group>"; };
+		04EF60FE1B818C89005700C9 /* FoggterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoggterViewController.xib; sourceTree = "<group>"; };
+		04EF60FF1B818C89005700C9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		04EF61001B818C89005700C9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		04EF61011B818C89005700C9 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		04EF61021B818C89005700C9 /* LogOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
+		04EF61031B818C89005700C9 /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
+		04EF61041B818C89005700C9 /* LogOutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogOutViewController.xib; sourceTree = "<group>"; };
+		04EF61061B818C89005700C9 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
+		04EF61071B818C89005700C9 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
+		04EF61081B818C89005700C9 /* ConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmViewController.xib; sourceTree = "<group>"; };
+		04EF61091B818C89005700C9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		04EF610A1B818C89005700C9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		04EF610B1B818C89005700C9 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		04EF610C1B818C89005700C9 /* EstimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstimateViewController.h; sourceTree = "<group>"; };
+		04EF610D1B818C89005700C9 /* EstimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstimateViewController.m; sourceTree = "<group>"; };
+		04EF610E1B818C89005700C9 /* EstimateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstimateViewController.xib; sourceTree = "<group>"; };
+		04EF610F1B818C89005700C9 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		04EF61101B818C89005700C9 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		04EF61111B818C89005700C9 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		04EF61121B818C89005700C9 /* ProductProcoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductProcoalViewController.h; sourceTree = "<group>"; };
+		04EF61131B818C89005700C9 /* ProductProcoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductProcoalViewController.m; sourceTree = "<group>"; };
+		04EF61141B818C89005700C9 /* ProductProcoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductProcoalViewController.xib; sourceTree = "<group>"; };
+		04EF61151B818C89005700C9 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		04EF61161B818C89005700C9 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
+		04EF61171B818C8A005700C9 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
+		04EF61191B818C8A005700C9 /* ChangeLoginPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeLoginPWViewController.h; sourceTree = "<group>"; };
+		04EF611A1B818C8A005700C9 /* ChangeLoginPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeLoginPWViewController.m; sourceTree = "<group>"; };
+		04EF611B1B818C8A005700C9 /* ChangeLoginPWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLoginPWViewController.xib; sourceTree = "<group>"; };
+		04EF611C1B818C8A005700C9 /* ChangerPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangerPassWordViewController.h; sourceTree = "<group>"; };
+		04EF611D1B818C8A005700C9 /* ChangerPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangerPassWordViewController.m; sourceTree = "<group>"; };
+		04EF611E1B818C8A005700C9 /* ChangerPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangerPassWordViewController.xib; sourceTree = "<group>"; };
+		04EF611F1B818C8A005700C9 /* CheckVersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckVersonViewController.h; sourceTree = "<group>"; };
+		04EF61201B818C8A005700C9 /* CheckVersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckVersonViewController.m; sourceTree = "<group>"; };
+		04EF61211B818C8A005700C9 /* CheckVersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckVersonViewController.xib; sourceTree = "<group>"; };
+		04EF61221B818C8A005700C9 /* LoginPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPassWordViewController.h; sourceTree = "<group>"; };
+		04EF61231B818C8A005700C9 /* LoginPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPassWordViewController.m; sourceTree = "<group>"; };
+		04EF61241B818C8A005700C9 /* LoginPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPassWordViewController.xib; sourceTree = "<group>"; };
+		04EF61251B818C8A005700C9 /* NameRealSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameRealSuccessViewController.h; sourceTree = "<group>"; };
+		04EF61261B818C8A005700C9 /* NameRealSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameRealSuccessViewController.m; sourceTree = "<group>"; };
+		04EF61271B818C8A005700C9 /* NameRealSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameRealSuccessViewController.xib; sourceTree = "<group>"; };
+		04EF61281B818C8A005700C9 /* PassWordMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordMangerViewController.h; sourceTree = "<group>"; };
+		04EF61291B818C8A005700C9 /* PassWordMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordMangerViewController.m; sourceTree = "<group>"; };
+		04EF612A1B818C8A005700C9 /* PassWordMangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassWordMangerViewController.xib; sourceTree = "<group>"; };
+		04EF612B1B818C8A005700C9 /* ReSetPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetPassWordViewController.h; sourceTree = "<group>"; };
+		04EF612C1B818C8A005700C9 /* ReSetPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReSetPassWordViewController.m; sourceTree = "<group>"; };
+		04EF612D1B818C8A005700C9 /* ReSetPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReSetPassWordViewController.xib; sourceTree = "<group>"; };
+		04EF612F1B818C8A005700C9 /* ConfirmTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmTransferViewController.h; sourceTree = "<group>"; };
+		04EF61301B818C8A005700C9 /* ConfirmTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmTransferViewController.m; sourceTree = "<group>"; };
+		04EF61311B818C8A005700C9 /* ConfirmTransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmTransferViewController.xib; sourceTree = "<group>"; };
+		04EF61321B818C8A005700C9 /* InvestmentApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvestmentApplicationsViewController.h; sourceTree = "<group>"; };
+		04EF61331B818C8A005700C9 /* InvestmentApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvestmentApplicationsViewController.m; sourceTree = "<group>"; };
+		04EF61341B818C8A005700C9 /* InvestmentApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvestmentApplicationsViewController.xib; sourceTree = "<group>"; };
+		04EF61351B818C8A005700C9 /* TransferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferDetailsViewController.h; sourceTree = "<group>"; };
+		04EF61361B818C8A005700C9 /* TransferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferDetailsViewController.m; sourceTree = "<group>"; };
+		04EF61371B818C8A005700C9 /* TransferDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferDetailsViewController.xib; sourceTree = "<group>"; };
+		04EF61381B818C8A005700C9 /* TransferProcoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferProcoalViewController.h; sourceTree = "<group>"; };
+		04EF61391B818C8A005700C9 /* TransferProcoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferProcoalViewController.m; sourceTree = "<group>"; };
+		04EF613A1B818C8A005700C9 /* TransferProcoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferProcoalViewController.xib; sourceTree = "<group>"; };
+		04EF613B1B818C8A005700C9 /* TransferSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferSuccessViewController.h; sourceTree = "<group>"; };
+		04EF613C1B818C8A005700C9 /* TransferSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferSuccessViewController.m; sourceTree = "<group>"; };
+		04EF613D1B818C8A005700C9 /* TransferSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferSuccessViewController.xib; sourceTree = "<group>"; };
+		04EF613F1B818C8A005700C9 /* AddreesssViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddreesssViewController.h; sourceTree = "<group>"; };
+		04EF61401B818C8A005700C9 /* AddreesssViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddreesssViewController.m; sourceTree = "<group>"; };
+		04EF61411B818C8A005700C9 /* AddreesssViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddreesssViewController.xib; sourceTree = "<group>"; };
+		04EF61421B818C8A005700C9 /* BindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindCardViewController.h; sourceTree = "<group>"; };
+		04EF61431B818C8A005700C9 /* BindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindCardViewController.m; sourceTree = "<group>"; };
+		04EF61441B818C8A005700C9 /* BindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindCardViewController.xib; sourceTree = "<group>"; };
+		04EF61451B818C8A005700C9 /* CardBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardBindViewController.h; sourceTree = "<group>"; };
+		04EF61461B818C8A005700C9 /* CardBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardBindViewController.m; sourceTree = "<group>"; };
+		04EF61471B818C8A005700C9 /* CardBindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardBindViewController.xib; sourceTree = "<group>"; };
+		04EF61481B818C8A005700C9 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		04EF61491B818C8A005700C9 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		04EF614A1B818C8A005700C9 /* CityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityViewController.xib; sourceTree = "<group>"; };
+		04EF614B1B818C8A005700C9 /* ClassBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBankCardViewController.h; sourceTree = "<group>"; };
+		04EF614C1B818C8A005700C9 /* ClassBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBankCardViewController.m; sourceTree = "<group>"; };
+		04EF614D1B818C8A005700C9 /* ClassBankCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassBankCardViewController.xib; sourceTree = "<group>"; };
+		04EF614E1B818C8A005700C9 /* NoBindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoBindCardViewController.h; sourceTree = "<group>"; };
+		04EF614F1B818C8A005700C9 /* NoBindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoBindCardViewController.m; sourceTree = "<group>"; };
+		04EF61501B818C8A005700C9 /* NoBindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoBindCardViewController.xib; sourceTree = "<group>"; };
+		04EF61511B818C8A005700C9 /* ProviousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviousViewController.h; sourceTree = "<group>"; };
+		04EF61521B818C8A005700C9 /* ProviousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviousViewController.m; sourceTree = "<group>"; };
+		04EF61531B818C8A005700C9 /* ProviousViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProviousViewController.xib; sourceTree = "<group>"; };
+		04EF61541B818C8A005700C9 /* TradingAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradingAccountViewController.h; sourceTree = "<group>"; };
+		04EF61551B818C8A005700C9 /* TradingAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradingAccountViewController.m; sourceTree = "<group>"; };
+		04EF61561B818C8A005700C9 /* TradingAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradingAccountViewController.xib; sourceTree = "<group>"; };
+		04EF61571B818C8A005700C9 /* UnBindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnBindCardViewController.h; sourceTree = "<group>"; };
+		04EF61581B818C8A005700C9 /* UnBindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnBindCardViewController.m; sourceTree = "<group>"; };
+		04EF61591B818C8A005700C9 /* UnBindCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnBindCardViewController.xib; sourceTree = "<group>"; };
+		04EF615B1B818C8A005700C9 /* MessgeCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessgeCenterViewController.h; sourceTree = "<group>"; };
+		04EF615C1B818C8A005700C9 /* MessgeCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessgeCenterViewController.m; sourceTree = "<group>"; };
+		04EF615D1B818C8A005700C9 /* MessgeCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessgeCenterViewController.xib; sourceTree = "<group>"; };
+		04EF615E1B818C8A005700C9 /* MyUserMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserMangerViewController.h; sourceTree = "<group>"; };
+		04EF615F1B818C8A005700C9 /* MyUserMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserMangerViewController.m; sourceTree = "<group>"; };
+		04EF61601B818C8A005700C9 /* MyUserMangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyUserMangerViewController.xib; sourceTree = "<group>"; };
+		04EF61611B818C8A005700C9 /* UserBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBackViewController.h; sourceTree = "<group>"; };
+		04EF61621B818C8A005700C9 /* UserBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBackViewController.m; sourceTree = "<group>"; };
+		04EF61631B818C8A005700C9 /* UserBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBackViewController.xib; sourceTree = "<group>"; };
+		04EF61641B818C8A005700C9 /* WebDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDetailViewController.h; sourceTree = "<group>"; };
+		04EF61651B818C8A005700C9 /* WebDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDetailViewController.m; sourceTree = "<group>"; };
+		04EF61661B818C8A005700C9 /* WebDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebDetailViewController.xib; sourceTree = "<group>"; };
+		04EF61F21B818F03005700C9 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		04EF61F31B818F03005700C9 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		04EF61F41B818F03005700C9 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		04EF62021B819ACD005700C9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		04EF62031B819ACD005700C9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		04EF62041B819ACD005700C9 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		04EF62051B819ACD005700C9 /* PublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
+		04EF62061B819ACD005700C9 /* PublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicViewController.m; sourceTree = "<group>"; };
+		04EF62071B819ACD005700C9 /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,6 +627,7 @@
 		04E8B5C11B72E8DC000332F0 = {
 			isa = PBXGroup;
 			children = (
+				04EF60891B818C89005700C9 /* Controller */,
 				04E8B82F1B72F391000332F0 /* libz.1.2.5.dylib */,
 				04E8B82D1B72F387000332F0 /* QuartzCore.framework */,
 				04E8B82B1B72F37A000332F0 /* CFNetwork.framework */,
@@ -637,7 +638,6 @@
 				04E8B8211B72F342000332F0 /* UIKit.framework */,
 				04E8B81F1B72F33A000332F0 /* Foundation.framework */,
 				04E8B75C1B72EF38000332F0 /* Modle */,
-				04E8B5F31B72EED9000332F0 /* Controller */,
 				04E8B5CC1B72E8DC000332F0 /* 添金投 */,
 				04E8B5E61B72E8DC000332F0 /* 添金投Tests */,
 				04E8B5CB1B72E8DC000332F0 /* Products */,
@@ -693,316 +693,6 @@
 				04E8B5E81B72E8DC000332F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		04E8B5F31B72EED9000332F0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B5F41B72EED9000332F0 /* 主界面 */,
-				04E8B6031B72EED9000332F0 /* 充值提现界面 */,
-				04E8B6191B72EED9000332F0 /* 我的账户 */,
-				04E8B6381B72EED9000332F0 /* 我的转让 */,
-				04E8B64B1B72EED9000332F0 /* 更多跳转界面 */,
-				04E8B6521B72EED9000332F0 /* 注册界面 */,
-				04E8B6621B72EED9000332F0 /* 登录界面 */,
-				04E8B66F1B72EED9000332F0 /* 详情界面 */,
-				04E8B6821B72EED9000332F0 /* 账户安全 */,
-				04E8B6981B72EED9000332F0 /* 转让界面 */,
-				04E8B6A81B72EED9000332F0 /* 银行卡界面 */,
-				04E8B6C41B72EED9000332F0 /* 首页跳转界面 */,
-			);
-			name = Controller;
-			path = "添金投/Controller";
-			sourceTree = "<group>";
-		};
-		04E8B5F41B72EED9000332F0 /* 主界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B5F51B72EED9000332F0 /* AccountViewController.h */,
-				04E8B5F61B72EED9000332F0 /* AccountViewController.m */,
-				04E8B5F71B72EED9000332F0 /* MainViewController1.h */,
-				04E8B5F81B72EED9000332F0 /* MainViewController1.m */,
-				04E8B5F91B72EED9000332F0 /* MainViewController1.xib */,
-				04E8B5FD1B72EED9000332F0 /* MyInvestViewController.h */,
-				04E8B5FE1B72EED9000332F0 /* MyInvestViewController.m */,
-				04E8B5FF1B72EED9000332F0 /* MyInvestViewController.xib */,
-				04E8B6001B72EED9000332F0 /* PorductViewController.h */,
-				04E8B6011B72EED9000332F0 /* PorductViewController.m */,
-				04E8B6021B72EED9000332F0 /* PorductViewController.xib */,
-			);
-			path = "主界面";
-			sourceTree = "<group>";
-		};
-		04E8B6031B72EED9000332F0 /* 充值提现界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6041B72EED9000332F0 /* AddRechargeViewController.h */,
-				04E8B6051B72EED9000332F0 /* AddRechargeViewController.m */,
-				04E8B6061B72EED9000332F0 /* AddRechargeViewController.xib */,
-				04E8B6071B72EED9000332F0 /* AddWithdrawViewController.h */,
-				04E8B6081B72EED9000332F0 /* AddWithdrawViewController.m */,
-				04E8B6091B72EED9000332F0 /* AddWithdrawViewController.xib */,
-				04E8B60A1B72EED9000332F0 /* RechargeFirstViewController.h */,
-				04E8B60B1B72EED9000332F0 /* RechargeFirstViewController.m */,
-				04E8B60C1B72EED9000332F0 /* RechargeFirstViewController.xib */,
-				04E8B60D1B72EED9000332F0 /* RechargeViewController.h */,
-				04E8B60E1B72EED9000332F0 /* RechargeViewController.m */,
-				04E8B60F1B72EED9000332F0 /* RechargeViewController.xib */,
-				04E8B6101B72EED9000332F0 /* WithdarwProtroclViewController.h */,
-				04E8B6111B72EED9000332F0 /* WithdarwProtroclViewController.m */,
-				04E8B6121B72EED9000332F0 /* WithdarwProtroclViewController.xib */,
-				04E8B6131B72EED9000332F0 /* WithdrawFirstViewController.h */,
-				04E8B6141B72EED9000332F0 /* WithdrawFirstViewController.m */,
-				04E8B6151B72EED9000332F0 /* WithdrawFirstViewController.xib */,
-				04E8B6161B72EED9000332F0 /* WithdrawViewController.h */,
-				04E8B6171B72EED9000332F0 /* WithdrawViewController.m */,
-				04E8B6181B72EED9000332F0 /* WithdrawViewController.xib */,
-			);
-			path = "充值提现界面";
-			sourceTree = "<group>";
-		};
-		04E8B6191B72EED9000332F0 /* 我的账户 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B61A1B72EED9000332F0 /* AccountInfoViewController.h */,
-				04E8B61B1B72EED9000332F0 /* AccountInfoViewController.m */,
-				04E8B61C1B72EED9000332F0 /* AccountInfoViewController.xib */,
-				04E8B61D1B72EED9000332F0 /* BussizeDetailViewController.h */,
-				04E8B61E1B72EED9000332F0 /* BussizeDetailViewController.m */,
-				04E8B61F1B72EED9000332F0 /* BussizeDetailViewController.xib */,
-				04E8B6201B72EED9000332F0 /* DelegateTodayViewController.h */,
-				04E8B6211B72EED9000332F0 /* DelegateTodayViewController.m */,
-				04E8B6221B72EED9000332F0 /* DelegateTodayViewController.xib */,
-				04E8B6231B72EED9000332F0 /* FriendsViewController.h */,
-				04E8B6241B72EED9000332F0 /* FriendsViewController.m */,
-				04E8B6251B72EED9000332F0 /* FriendsViewController.xib */,
-				04E8B6261B72EED9000332F0 /* HideViewController.h */,
-				04E8B6271B72EED9000332F0 /* HideViewController.m */,
-				04E8B6281B72EED9000332F0 /* HideViewController.xib */,
-				04E8B6291B72EED9000332F0 /* MoneyAccountViewController.h */,
-				04E8B62A1B72EED9000332F0 /* MoneyAccountViewController.m */,
-				04E8B62B1B72EED9000332F0 /* MoneyAccountViewController.xib */,
-				04E8B62C1B72EED9000332F0 /* MoneyInfoViewController.h */,
-				04E8B62D1B72EED9000332F0 /* MoneyInfoViewController.m */,
-				04E8B62E1B72EED9000332F0 /* MoneyInfoViewController.xib */,
-				04E8B62F1B72EED9000332F0 /* MyBuyViewController.h */,
-				04E8B6301B72EED9000332F0 /* MyBuyViewController.m */,
-				04E8B6311B72EED9000332F0 /* MyBuyViewController.xib */,
-				04E8B6321B72EED9000332F0 /* MyGainViewController.h */,
-				04E8B6331B72EED9000332F0 /* MyGainViewController.m */,
-				04E8B6341B72EED9000332F0 /* MyGainViewController.xib */,
-				04E8B6351B72EED9000332F0 /* MyMoneyViewController.h */,
-				04E8B6361B72EED9000332F0 /* MyMoneyViewController.m */,
-				04E8B6371B72EED9000332F0 /* MyMoneyViewController.xib */,
-			);
-			path = "我的账户";
-			sourceTree = "<group>";
-		};
-		04E8B6381B72EED9000332F0 /* 我的转让 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6391B72EED9000332F0 /* MyTransferDetailViewController.h */,
-				04E8B63A1B72EED9000332F0 /* MyTransferDetailViewController.m */,
-				04E8B63B1B72EED9000332F0 /* MyTransferDetailViewController.xib */,
-				04E8B63C1B72EED9000332F0 /* MyTransferPrococalViewController.h */,
-				04E8B63D1B72EED9000332F0 /* MyTransferPrococalViewController.m */,
-				04E8B63E1B72EED9000332F0 /* MyTransferPrococalViewController.xib */,
-				04E8B63F1B72EED9000332F0 /* MyTransferSuccessViewController.h */,
-				04E8B6401B72EED9000332F0 /* MyTransferSuccessViewController.m */,
-				04E8B6411B72EED9000332F0 /* MyTransferSuccessViewController.xib */,
-				04E8B6421B72EED9000332F0 /* MyTransferViewController.h */,
-				04E8B6431B72EED9000332F0 /* MyTransferViewController.m */,
-				04E8B6441B72EED9000332F0 /* MyTransferViewController.xib */,
-				04E8B6451B72EED9000332F0 /* TransferApplicationViewController.h */,
-				04E8B6461B72EED9000332F0 /* TransferApplicationViewController.m */,
-				04E8B6471B72EED9000332F0 /* TransferApplicationViewController.xib */,
-				04E8B6481B72EED9000332F0 /* TransferViewController.h */,
-				04E8B6491B72EED9000332F0 /* TransferViewController.m */,
-				04E8B64A1B72EED9000332F0 /* TransferViewController.xib */,
-			);
-			path = "我的转让";
-			sourceTree = "<group>";
-		};
-		04E8B64B1B72EED9000332F0 /* 更多跳转界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B64C1B72EED9000332F0 /* AboutViewController.h */,
-				04E8B64D1B72EED9000332F0 /* AboutViewController.m */,
-				04E8B64E1B72EED9000332F0 /* AboutViewController.xib */,
-				04E8B64F1B72EED9000332F0 /* PublicViewController.h */,
-				04E8B6501B72EED9000332F0 /* PublicViewController.m */,
-				04E8B6511B72EED9000332F0 /* PublicViewController.xib */,
-			);
-			path = "更多跳转界面";
-			sourceTree = "<group>";
-		};
-		04E8B6521B72EED9000332F0 /* 注册界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6531B72EED9000332F0 /* CheckViewController.h */,
-				04E8B6541B72EED9000332F0 /* CheckViewController.m */,
-				04E8B6551B72EED9000332F0 /* CheckViewController.xib */,
-				04E8B6561B72EED9000332F0 /* PassWordViewController.h */,
-				04E8B6571B72EED9000332F0 /* PassWordViewController.m */,
-				04E8B6581B72EED9000332F0 /* PassWordViewController.xib */,
-				04E8B6591B72EED9000332F0 /* PhoneViewController.h */,
-				04E8B65A1B72EED9000332F0 /* PhoneViewController.m */,
-				04E8B65B1B72EED9000332F0 /* PhoneViewController.xib */,
-				04E8B65C1B72EED9000332F0 /* RegesterViewController.h */,
-				04E8B65D1B72EED9000332F0 /* RegesterViewController.m */,
-				04E8B65E1B72EED9000332F0 /* RegesterViewController.xib */,
-				04E8B65F1B72EED9000332F0 /* UserProcrolViewController.h */,
-				04E8B6601B72EED9000332F0 /* UserProcrolViewController.m */,
-				04E8B6611B72EED9000332F0 /* UserProcrolViewController.xib */,
-			);
-			path = "注册界面";
-			sourceTree = "<group>";
-		};
-		04E8B6621B72EED9000332F0 /* 登录界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6631B72EED9000332F0 /* FoggterAgainViewController.h */,
-				04E8B6641B72EED9000332F0 /* FoggterAgainViewController.m */,
-				04E8B6651B72EED9000332F0 /* FoggterAgainViewController.xib */,
-				04E8B6661B72EED9000332F0 /* FoggterViewController.h */,
-				04E8B6671B72EED9000332F0 /* FoggterViewController.m */,
-				04E8B6681B72EED9000332F0 /* FoggterViewController.xib */,
-				04E8B6691B72EED9000332F0 /* LoginViewController.h */,
-				04E8B66A1B72EED9000332F0 /* LoginViewController.m */,
-				04E8B66B1B72EED9000332F0 /* LoginViewController.xib */,
-				04E8B66C1B72EED9000332F0 /* LogOutViewController.h */,
-				04E8B66D1B72EED9000332F0 /* LogOutViewController.m */,
-				04E8B66E1B72EED9000332F0 /* LogOutViewController.xib */,
-			);
-			path = "登录界面";
-			sourceTree = "<group>";
-		};
-		04E8B66F1B72EED9000332F0 /* 详情界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6701B72EED9000332F0 /* ConfirmViewController.h */,
-				04E8B6711B72EED9000332F0 /* ConfirmViewController.m */,
-				04E8B6721B72EED9000332F0 /* ConfirmViewController.xib */,
-				04E8B6731B72EED9000332F0 /* DetailViewController.h */,
-				04E8B6741B72EED9000332F0 /* DetailViewController.m */,
-				04E8B6751B72EED9000332F0 /* DetailViewController.xib */,
-				04E8B6761B72EED9000332F0 /* EstimateViewController.h */,
-				04E8B6771B72EED9000332F0 /* EstimateViewController.m */,
-				04E8B6781B72EED9000332F0 /* EstimateViewController.xib */,
-				04E8B6791B72EED9000332F0 /* ProductDetailViewController.h */,
-				04E8B67A1B72EED9000332F0 /* ProductDetailViewController.m */,
-				04E8B67B1B72EED9000332F0 /* ProductDetailViewController.xib */,
-				04E8B67C1B72EED9000332F0 /* ProductProcoalViewController.h */,
-				04E8B67D1B72EED9000332F0 /* ProductProcoalViewController.m */,
-				04E8B67E1B72EED9000332F0 /* ProductProcoalViewController.xib */,
-				04E8B67F1B72EED9000332F0 /* SuccessViewController.h */,
-				04E8B6801B72EED9000332F0 /* SuccessViewController.m */,
-				04E8B6811B72EED9000332F0 /* SuccessViewController.xib */,
-			);
-			path = "详情界面";
-			sourceTree = "<group>";
-		};
-		04E8B6821B72EED9000332F0 /* 账户安全 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6831B72EED9000332F0 /* ChangeLoginPWViewController.h */,
-				04E8B6841B72EED9000332F0 /* ChangeLoginPWViewController.m */,
-				04E8B6851B72EED9000332F0 /* ChangeLoginPWViewController.xib */,
-				04E8B6861B72EED9000332F0 /* ChangerPassWordViewController.h */,
-				04E8B6871B72EED9000332F0 /* ChangerPassWordViewController.m */,
-				04E8B6881B72EED9000332F0 /* ChangerPassWordViewController.xib */,
-				04E8B6891B72EED9000332F0 /* CheckVersonViewController.h */,
-				04E8B68A1B72EED9000332F0 /* CheckVersonViewController.m */,
-				04E8B68B1B72EED9000332F0 /* CheckVersonViewController.xib */,
-				04E8B68C1B72EED9000332F0 /* LoginPassWordViewController.h */,
-				04E8B68D1B72EED9000332F0 /* LoginPassWordViewController.m */,
-				04E8B68E1B72EED9000332F0 /* LoginPassWordViewController.xib */,
-				04E8B68F1B72EED9000332F0 /* NameRealSuccessViewController.h */,
-				04E8B6901B72EED9000332F0 /* NameRealSuccessViewController.m */,
-				04E8B6911B72EED9000332F0 /* NameRealSuccessViewController.xib */,
-				04E8B6921B72EED9000332F0 /* PassWordMangerViewController.h */,
-				04E8B6931B72EED9000332F0 /* PassWordMangerViewController.m */,
-				04E8B6941B72EED9000332F0 /* PassWordMangerViewController.xib */,
-				04E8B6951B72EED9000332F0 /* ReSetPassWordViewController.h */,
-				04E8B6961B72EED9000332F0 /* ReSetPassWordViewController.m */,
-				04E8B6971B72EED9000332F0 /* ReSetPassWordViewController.xib */,
-			);
-			path = "账户安全";
-			sourceTree = "<group>";
-		};
-		04E8B6981B72EED9000332F0 /* 转让界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6991B72EED9000332F0 /* ConfirmTransferViewController.h */,
-				04E8B69A1B72EED9000332F0 /* ConfirmTransferViewController.m */,
-				04E8B69B1B72EED9000332F0 /* ConfirmTransferViewController.xib */,
-				04E8B69C1B72EED9000332F0 /* InvestmentApplicationsViewController.h */,
-				04E8B69D1B72EED9000332F0 /* InvestmentApplicationsViewController.m */,
-				04E8B69E1B72EED9000332F0 /* InvestmentApplicationsViewController.xib */,
-				04E8B69F1B72EED9000332F0 /* TransferDetailsViewController.h */,
-				04E8B6A01B72EED9000332F0 /* TransferDetailsViewController.m */,
-				04E8B6A11B72EED9000332F0 /* TransferDetailsViewController.xib */,
-				04E8B6A21B72EED9000332F0 /* TransferProcoalViewController.h */,
-				04E8B6A31B72EED9000332F0 /* TransferProcoalViewController.m */,
-				04E8B6A41B72EED9000332F0 /* TransferProcoalViewController.xib */,
-				04E8B6A51B72EED9000332F0 /* TransferSuccessViewController.h */,
-				04E8B6A61B72EED9000332F0 /* TransferSuccessViewController.m */,
-				04E8B6A71B72EED9000332F0 /* TransferSuccessViewController.xib */,
-			);
-			path = "转让界面";
-			sourceTree = "<group>";
-		};
-		04E8B6A81B72EED9000332F0 /* 银行卡界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6A91B72EED9000332F0 /* AddreesssViewController.h */,
-				04E8B6AA1B72EED9000332F0 /* AddreesssViewController.m */,
-				04E8B6AB1B72EED9000332F0 /* AddreesssViewController.xib */,
-				04E8B6AC1B72EED9000332F0 /* BindCardViewController.h */,
-				04E8B6AD1B72EED9000332F0 /* BindCardViewController.m */,
-				04E8B6AE1B72EED9000332F0 /* BindCardViewController.xib */,
-				04E8B6AF1B72EED9000332F0 /* CardBindViewController.h */,
-				04E8B6B01B72EED9000332F0 /* CardBindViewController.m */,
-				04E8B6B11B72EED9000332F0 /* CardBindViewController.xib */,
-				04E8B6B21B72EED9000332F0 /* CityViewController.h */,
-				04E8B6B31B72EED9000332F0 /* CityViewController.m */,
-				04E8B6B41B72EED9000332F0 /* CityViewController.xib */,
-				04E8B6B51B72EED9000332F0 /* ClassBankCardViewController.h */,
-				04E8B6B61B72EED9000332F0 /* ClassBankCardViewController.m */,
-				04E8B6B71B72EED9000332F0 /* ClassBankCardViewController.xib */,
-				04E8B6B81B72EED9000332F0 /* NoBindCardViewController.h */,
-				04E8B6B91B72EED9000332F0 /* NoBindCardViewController.m */,
-				04E8B6BA1B72EED9000332F0 /* NoBindCardViewController.xib */,
-				04E8B6BB1B72EED9000332F0 /* ProviousViewController.h */,
-				04E8B6BC1B72EED9000332F0 /* ProviousViewController.m */,
-				04E8B6BD1B72EED9000332F0 /* ProviousViewController.xib */,
-				04E8B6BE1B72EED9000332F0 /* TradingAccountViewController.h */,
-				04E8B6BF1B72EED9000332F0 /* TradingAccountViewController.m */,
-				04E8B6C01B72EED9000332F0 /* TradingAccountViewController.xib */,
-				04E8B6C11B72EED9000332F0 /* UnBindCardViewController.h */,
-				04E8B6C21B72EED9000332F0 /* UnBindCardViewController.m */,
-				04E8B6C31B72EED9000332F0 /* UnBindCardViewController.xib */,
-			);
-			path = "银行卡界面";
-			sourceTree = "<group>";
-		};
-		04E8B6C41B72EED9000332F0 /* 首页跳转界面 */ = {
-			isa = PBXGroup;
-			children = (
-				04E8B6C51B72EED9000332F0 /* MessgeCenterViewController.h */,
-				04E8B6C61B72EED9000332F0 /* MessgeCenterViewController.m */,
-				04E8B6C71B72EED9000332F0 /* MessgeCenterViewController.xib */,
-				04E8B6C81B72EED9000332F0 /* MyUserMangerViewController.h */,
-				04E8B6C91B72EED9000332F0 /* MyUserMangerViewController.m */,
-				04E8B6CA1B72EED9000332F0 /* MyUserMangerViewController.xib */,
-				04E8B6CB1B72EED9000332F0 /* UserBackViewController.h */,
-				04E8B6CC1B72EED9000332F0 /* UserBackViewController.m */,
-				04E8B6CD1B72EED9000332F0 /* UserBackViewController.xib */,
-				04E8B6CE1B72EED9000332F0 /* WebDetailViewController.h */,
-				04E8B6CF1B72EED9000332F0 /* WebDetailViewController.m */,
-				04E8B6D01B72EEDA000332F0 /* WebDetailViewController.xib */,
-			);
-			path = "首页跳转界面";
 			sourceTree = "<group>";
 		};
 		04E8B75C1B72EF38000332F0 /* Modle */ = {
@@ -1296,11 +986,320 @@
 				04E8B83D1B72F932000332F0 /* TransferViewCtrl.h */,
 				04E8B83E1B72F932000332F0 /* TransferViewCtrl.m */,
 				04E8B83F1B72F932000332F0 /* TransferViewCtrl.xib */,
-				04E8B5FA1B72EED9000332F0 /* MoreViewController.h */,
-				04E8B5FB1B72EED9000332F0 /* MoreViewController.m */,
-				04E8B5FC1B72EED9000332F0 /* MoreViewController.xib */,
+				04EF61F21B818F03005700C9 /* MoreViewController.h */,
+				04EF61F31B818F03005700C9 /* MoreViewController.m */,
+				04EF61F41B818F03005700C9 /* MoreViewController.xib */,
 			);
 			name = MainUI;
+			sourceTree = "<group>";
+		};
+		04EF60891B818C89005700C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04EF62011B819AB9005700C9 /* 更多跳转界面 */,
+				04EF608A1B818C89005700C9 /* 主界面 */,
+				04EF60991B818C89005700C9 /* 充值提现界面 */,
+				04EF60AF1B818C89005700C9 /* 我的账户 */,
+				04EF60CE1B818C89005700C9 /* 我的转让 */,
+				04EF60E81B818C89005700C9 /* 注册界面 */,
+				04EF60F81B818C89005700C9 /* 登录界面 */,
+				04EF61051B818C89005700C9 /* 详情界面 */,
+				04EF61181B818C8A005700C9 /* 账户安全 */,
+				04EF612E1B818C8A005700C9 /* 转让界面 */,
+				04EF613E1B818C8A005700C9 /* 银行卡界面 */,
+				04EF615A1B818C8A005700C9 /* 首页跳转界面 */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04EF608A1B818C89005700C9 /* 主界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF608B1B818C89005700C9 /* AccountViewController.h */,
+				04EF608C1B818C89005700C9 /* AccountViewController.m */,
+				04EF608D1B818C89005700C9 /* MainViewController1.h */,
+				04EF608E1B818C89005700C9 /* MainViewController1.m */,
+				04EF608F1B818C89005700C9 /* MainViewController1.xib */,
+				04EF60931B818C89005700C9 /* MyInvestViewController.h */,
+				04EF60941B818C89005700C9 /* MyInvestViewController.m */,
+				04EF60951B818C89005700C9 /* MyInvestViewController.xib */,
+				04EF60961B818C89005700C9 /* PorductViewController.h */,
+				04EF60971B818C89005700C9 /* PorductViewController.m */,
+				04EF60981B818C89005700C9 /* PorductViewController.xib */,
+			);
+			path = "主界面";
+			sourceTree = "<group>";
+		};
+		04EF60991B818C89005700C9 /* 充值提现界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF609A1B818C89005700C9 /* AddRechargeViewController.h */,
+				04EF609B1B818C89005700C9 /* AddRechargeViewController.m */,
+				04EF609C1B818C89005700C9 /* AddRechargeViewController.xib */,
+				04EF609D1B818C89005700C9 /* AddWithdrawViewController.h */,
+				04EF609E1B818C89005700C9 /* AddWithdrawViewController.m */,
+				04EF609F1B818C89005700C9 /* AddWithdrawViewController.xib */,
+				04EF60A01B818C89005700C9 /* RechargeFirstViewController.h */,
+				04EF60A11B818C89005700C9 /* RechargeFirstViewController.m */,
+				04EF60A21B818C89005700C9 /* RechargeFirstViewController.xib */,
+				04EF60A31B818C89005700C9 /* RechargeViewController.h */,
+				04EF60A41B818C89005700C9 /* RechargeViewController.m */,
+				04EF60A51B818C89005700C9 /* RechargeViewController.xib */,
+				04EF60A61B818C89005700C9 /* WithdarwProtroclViewController.h */,
+				04EF60A71B818C89005700C9 /* WithdarwProtroclViewController.m */,
+				04EF60A81B818C89005700C9 /* WithdarwProtroclViewController.xib */,
+				04EF60A91B818C89005700C9 /* WithdrawFirstViewController.h */,
+				04EF60AA1B818C89005700C9 /* WithdrawFirstViewController.m */,
+				04EF60AB1B818C89005700C9 /* WithdrawFirstViewController.xib */,
+				04EF60AC1B818C89005700C9 /* WithdrawViewController.h */,
+				04EF60AD1B818C89005700C9 /* WithdrawViewController.m */,
+				04EF60AE1B818C89005700C9 /* WithdrawViewController.xib */,
+			);
+			path = "充值提现界面";
+			sourceTree = "<group>";
+		};
+		04EF60AF1B818C89005700C9 /* 我的账户 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF60B01B818C89005700C9 /* AccountInfoViewController.h */,
+				04EF60B11B818C89005700C9 /* AccountInfoViewController.m */,
+				04EF60B21B818C89005700C9 /* AccountInfoViewController.xib */,
+				04EF60B31B818C89005700C9 /* BussizeDetailViewController.h */,
+				04EF60B41B818C89005700C9 /* BussizeDetailViewController.m */,
+				04EF60B51B818C89005700C9 /* BussizeDetailViewController.xib */,
+				04EF60B61B818C89005700C9 /* DelegateTodayViewController.h */,
+				04EF60B71B818C89005700C9 /* DelegateTodayViewController.m */,
+				04EF60B81B818C89005700C9 /* DelegateTodayViewController.xib */,
+				04EF60B91B818C89005700C9 /* FriendsViewController.h */,
+				04EF60BA1B818C89005700C9 /* FriendsViewController.m */,
+				04EF60BB1B818C89005700C9 /* FriendsViewController.xib */,
+				04EF60BC1B818C89005700C9 /* HideViewController.h */,
+				04EF60BD1B818C89005700C9 /* HideViewController.m */,
+				04EF60BE1B818C89005700C9 /* HideViewController.xib */,
+				04EF60BF1B818C89005700C9 /* MoneyAccountViewController.h */,
+				04EF60C01B818C89005700C9 /* MoneyAccountViewController.m */,
+				04EF60C11B818C89005700C9 /* MoneyAccountViewController.xib */,
+				04EF60C21B818C89005700C9 /* MoneyInfoViewController.h */,
+				04EF60C31B818C89005700C9 /* MoneyInfoViewController.m */,
+				04EF60C41B818C89005700C9 /* MoneyInfoViewController.xib */,
+				04EF60C51B818C89005700C9 /* MyBuyViewController.h */,
+				04EF60C61B818C89005700C9 /* MyBuyViewController.m */,
+				04EF60C71B818C89005700C9 /* MyBuyViewController.xib */,
+				04EF60C81B818C89005700C9 /* MyGainViewController.h */,
+				04EF60C91B818C89005700C9 /* MyGainViewController.m */,
+				04EF60CA1B818C89005700C9 /* MyGainViewController.xib */,
+				04EF60CB1B818C89005700C9 /* MyMoneyViewController.h */,
+				04EF60CC1B818C89005700C9 /* MyMoneyViewController.m */,
+				04EF60CD1B818C89005700C9 /* MyMoneyViewController.xib */,
+			);
+			path = "我的账户";
+			sourceTree = "<group>";
+		};
+		04EF60CE1B818C89005700C9 /* 我的转让 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF60CF1B818C89005700C9 /* MyTransferDetailViewController.h */,
+				04EF60D01B818C89005700C9 /* MyTransferDetailViewController.m */,
+				04EF60D11B818C89005700C9 /* MyTransferDetailViewController.xib */,
+				04EF60D21B818C89005700C9 /* MyTransferPrococalViewController.h */,
+				04EF60D31B818C89005700C9 /* MyTransferPrococalViewController.m */,
+				04EF60D41B818C89005700C9 /* MyTransferPrococalViewController.xib */,
+				04EF60D51B818C89005700C9 /* MyTransferSuccessViewController.h */,
+				04EF60D61B818C89005700C9 /* MyTransferSuccessViewController.m */,
+				04EF60D71B818C89005700C9 /* MyTransferSuccessViewController.xib */,
+				04EF60D81B818C89005700C9 /* MyTransferViewController.h */,
+				04EF60D91B818C89005700C9 /* MyTransferViewController.m */,
+				04EF60DA1B818C89005700C9 /* MyTransferViewController.xib */,
+				04EF60DB1B818C89005700C9 /* TransferApplicationViewController.h */,
+				04EF60DC1B818C89005700C9 /* TransferApplicationViewController.m */,
+				04EF60DD1B818C89005700C9 /* TransferApplicationViewController.xib */,
+				04EF60DE1B818C89005700C9 /* TransferViewController.h */,
+				04EF60DF1B818C89005700C9 /* TransferViewController.m */,
+				04EF60E01B818C89005700C9 /* TransferViewController.xib */,
+			);
+			path = "我的转让";
+			sourceTree = "<group>";
+		};
+		04EF60E81B818C89005700C9 /* 注册界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF60E91B818C89005700C9 /* CheckViewController.h */,
+				04EF60EA1B818C89005700C9 /* CheckViewController.m */,
+				04EF60EB1B818C89005700C9 /* CheckViewController.xib */,
+				04EF60EC1B818C89005700C9 /* PassWordViewController.h */,
+				04EF60ED1B818C89005700C9 /* PassWordViewController.m */,
+				04EF60EE1B818C89005700C9 /* PassWordViewController.xib */,
+				04EF60EF1B818C89005700C9 /* PhoneViewController.h */,
+				04EF60F01B818C89005700C9 /* PhoneViewController.m */,
+				04EF60F11B818C89005700C9 /* PhoneViewController.xib */,
+				04EF60F21B818C89005700C9 /* RegesterViewController.h */,
+				04EF60F31B818C89005700C9 /* RegesterViewController.m */,
+				04EF60F41B818C89005700C9 /* RegesterViewController.xib */,
+				04EF60F51B818C89005700C9 /* UserProcrolViewController.h */,
+				04EF60F61B818C89005700C9 /* UserProcrolViewController.m */,
+				04EF60F71B818C89005700C9 /* UserProcrolViewController.xib */,
+			);
+			path = "注册界面";
+			sourceTree = "<group>";
+		};
+		04EF60F81B818C89005700C9 /* 登录界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF60F91B818C89005700C9 /* FoggterAgainViewController.h */,
+				04EF60FA1B818C89005700C9 /* FoggterAgainViewController.m */,
+				04EF60FB1B818C89005700C9 /* FoggterAgainViewController.xib */,
+				04EF60FC1B818C89005700C9 /* FoggterViewController.h */,
+				04EF60FD1B818C89005700C9 /* FoggterViewController.m */,
+				04EF60FE1B818C89005700C9 /* FoggterViewController.xib */,
+				04EF60FF1B818C89005700C9 /* LoginViewController.h */,
+				04EF61001B818C89005700C9 /* LoginViewController.m */,
+				04EF61011B818C89005700C9 /* LoginViewController.xib */,
+				04EF61021B818C89005700C9 /* LogOutViewController.h */,
+				04EF61031B818C89005700C9 /* LogOutViewController.m */,
+				04EF61041B818C89005700C9 /* LogOutViewController.xib */,
+			);
+			path = "登录界面";
+			sourceTree = "<group>";
+		};
+		04EF61051B818C89005700C9 /* 详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF61061B818C89005700C9 /* ConfirmViewController.h */,
+				04EF61071B818C89005700C9 /* ConfirmViewController.m */,
+				04EF61081B818C89005700C9 /* ConfirmViewController.xib */,
+				04EF61091B818C89005700C9 /* DetailViewController.h */,
+				04EF610A1B818C89005700C9 /* DetailViewController.m */,
+				04EF610B1B818C89005700C9 /* DetailViewController.xib */,
+				04EF610C1B818C89005700C9 /* EstimateViewController.h */,
+				04EF610D1B818C89005700C9 /* EstimateViewController.m */,
+				04EF610E1B818C89005700C9 /* EstimateViewController.xib */,
+				04EF610F1B818C89005700C9 /* ProductDetailViewController.h */,
+				04EF61101B818C89005700C9 /* ProductDetailViewController.m */,
+				04EF61111B818C89005700C9 /* ProductDetailViewController.xib */,
+				04EF61121B818C89005700C9 /* ProductProcoalViewController.h */,
+				04EF61131B818C89005700C9 /* ProductProcoalViewController.m */,
+				04EF61141B818C89005700C9 /* ProductProcoalViewController.xib */,
+				04EF61151B818C89005700C9 /* SuccessViewController.h */,
+				04EF61161B818C89005700C9 /* SuccessViewController.m */,
+				04EF61171B818C8A005700C9 /* SuccessViewController.xib */,
+			);
+			path = "详情界面";
+			sourceTree = "<group>";
+		};
+		04EF61181B818C8A005700C9 /* 账户安全 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF61191B818C8A005700C9 /* ChangeLoginPWViewController.h */,
+				04EF611A1B818C8A005700C9 /* ChangeLoginPWViewController.m */,
+				04EF611B1B818C8A005700C9 /* ChangeLoginPWViewController.xib */,
+				04EF611C1B818C8A005700C9 /* ChangerPassWordViewController.h */,
+				04EF611D1B818C8A005700C9 /* ChangerPassWordViewController.m */,
+				04EF611E1B818C8A005700C9 /* ChangerPassWordViewController.xib */,
+				04EF611F1B818C8A005700C9 /* CheckVersonViewController.h */,
+				04EF61201B818C8A005700C9 /* CheckVersonViewController.m */,
+				04EF61211B818C8A005700C9 /* CheckVersonViewController.xib */,
+				04EF61221B818C8A005700C9 /* LoginPassWordViewController.h */,
+				04EF61231B818C8A005700C9 /* LoginPassWordViewController.m */,
+				04EF61241B818C8A005700C9 /* LoginPassWordViewController.xib */,
+				04EF61251B818C8A005700C9 /* NameRealSuccessViewController.h */,
+				04EF61261B818C8A005700C9 /* NameRealSuccessViewController.m */,
+				04EF61271B818C8A005700C9 /* NameRealSuccessViewController.xib */,
+				04EF61281B818C8A005700C9 /* PassWordMangerViewController.h */,
+				04EF61291B818C8A005700C9 /* PassWordMangerViewController.m */,
+				04EF612A1B818C8A005700C9 /* PassWordMangerViewController.xib */,
+				04EF612B1B818C8A005700C9 /* ReSetPassWordViewController.h */,
+				04EF612C1B818C8A005700C9 /* ReSetPassWordViewController.m */,
+				04EF612D1B818C8A005700C9 /* ReSetPassWordViewController.xib */,
+			);
+			path = "账户安全";
+			sourceTree = "<group>";
+		};
+		04EF612E1B818C8A005700C9 /* 转让界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF612F1B818C8A005700C9 /* ConfirmTransferViewController.h */,
+				04EF61301B818C8A005700C9 /* ConfirmTransferViewController.m */,
+				04EF61311B818C8A005700C9 /* ConfirmTransferViewController.xib */,
+				04EF61321B818C8A005700C9 /* InvestmentApplicationsViewController.h */,
+				04EF61331B818C8A005700C9 /* InvestmentApplicationsViewController.m */,
+				04EF61341B818C8A005700C9 /* InvestmentApplicationsViewController.xib */,
+				04EF61351B818C8A005700C9 /* TransferDetailsViewController.h */,
+				04EF61361B818C8A005700C9 /* TransferDetailsViewController.m */,
+				04EF61371B818C8A005700C9 /* TransferDetailsViewController.xib */,
+				04EF61381B818C8A005700C9 /* TransferProcoalViewController.h */,
+				04EF61391B818C8A005700C9 /* TransferProcoalViewController.m */,
+				04EF613A1B818C8A005700C9 /* TransferProcoalViewController.xib */,
+				04EF613B1B818C8A005700C9 /* TransferSuccessViewController.h */,
+				04EF613C1B818C8A005700C9 /* TransferSuccessViewController.m */,
+				04EF613D1B818C8A005700C9 /* TransferSuccessViewController.xib */,
+			);
+			path = "转让界面";
+			sourceTree = "<group>";
+		};
+		04EF613E1B818C8A005700C9 /* 银行卡界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF613F1B818C8A005700C9 /* AddreesssViewController.h */,
+				04EF61401B818C8A005700C9 /* AddreesssViewController.m */,
+				04EF61411B818C8A005700C9 /* AddreesssViewController.xib */,
+				04EF61421B818C8A005700C9 /* BindCardViewController.h */,
+				04EF61431B818C8A005700C9 /* BindCardViewController.m */,
+				04EF61441B818C8A005700C9 /* BindCardViewController.xib */,
+				04EF61451B818C8A005700C9 /* CardBindViewController.h */,
+				04EF61461B818C8A005700C9 /* CardBindViewController.m */,
+				04EF61471B818C8A005700C9 /* CardBindViewController.xib */,
+				04EF61481B818C8A005700C9 /* CityViewController.h */,
+				04EF61491B818C8A005700C9 /* CityViewController.m */,
+				04EF614A1B818C8A005700C9 /* CityViewController.xib */,
+				04EF614B1B818C8A005700C9 /* ClassBankCardViewController.h */,
+				04EF614C1B818C8A005700C9 /* ClassBankCardViewController.m */,
+				04EF614D1B818C8A005700C9 /* ClassBankCardViewController.xib */,
+				04EF614E1B818C8A005700C9 /* NoBindCardViewController.h */,
+				04EF614F1B818C8A005700C9 /* NoBindCardViewController.m */,
+				04EF61501B818C8A005700C9 /* NoBindCardViewController.xib */,
+				04EF61511B818C8A005700C9 /* ProviousViewController.h */,
+				04EF61521B818C8A005700C9 /* ProviousViewController.m */,
+				04EF61531B818C8A005700C9 /* ProviousViewController.xib */,
+				04EF61541B818C8A005700C9 /* TradingAccountViewController.h */,
+				04EF61551B818C8A005700C9 /* TradingAccountViewController.m */,
+				04EF61561B818C8A005700C9 /* TradingAccountViewController.xib */,
+				04EF61571B818C8A005700C9 /* UnBindCardViewController.h */,
+				04EF61581B818C8A005700C9 /* UnBindCardViewController.m */,
+				04EF61591B818C8A005700C9 /* UnBindCardViewController.xib */,
+			);
+			path = "银行卡界面";
+			sourceTree = "<group>";
+		};
+		04EF615A1B818C8A005700C9 /* 首页跳转界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF615B1B818C8A005700C9 /* MessgeCenterViewController.h */,
+				04EF615C1B818C8A005700C9 /* MessgeCenterViewController.m */,
+				04EF615D1B818C8A005700C9 /* MessgeCenterViewController.xib */,
+				04EF615E1B818C8A005700C9 /* MyUserMangerViewController.h */,
+				04EF615F1B818C8A005700C9 /* MyUserMangerViewController.m */,
+				04EF61601B818C8A005700C9 /* MyUserMangerViewController.xib */,
+				04EF61611B818C8A005700C9 /* UserBackViewController.h */,
+				04EF61621B818C8A005700C9 /* UserBackViewController.m */,
+				04EF61631B818C8A005700C9 /* UserBackViewController.xib */,
+				04EF61641B818C8A005700C9 /* WebDetailViewController.h */,
+				04EF61651B818C8A005700C9 /* WebDetailViewController.m */,
+				04EF61661B818C8A005700C9 /* WebDetailViewController.xib */,
+			);
+			path = "首页跳转界面";
+			sourceTree = "<group>";
+		};
+		04EF62011B819AB9005700C9 /* 更多跳转界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04EF62021B819ACD005700C9 /* AboutViewController.h */,
+				04EF62031B819ACD005700C9 /* AboutViewController.m */,
+				04EF62041B819ACD005700C9 /* AboutViewController.xib */,
+				04EF62051B819ACD005700C9 /* PublicViewController.h */,
+				04EF62061B819ACD005700C9 /* PublicViewController.m */,
+				04EF62071B819ACD005700C9 /* PublicViewController.xib */,
+			);
+			name = "更多跳转界面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1383,84 +1382,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EF61EF1B818C8A005700C9 /* UserBackViewController.xib in Resources */,
+				04EF61AD1B818C8A005700C9 /* FoggterAgainViewController.xib in Resources */,
+				04EF61D91B818C8A005700C9 /* AddreesssViewController.xib in Resources */,
 				04E8B8371B72F8FA000332F0 /* FirstViewCtrl.xib in Resources */,
-				04E8B71B1B72EEDA000332F0 /* LoginViewController.xib in Resources */,
+				04EF61A91B818C8A005700C9 /* RegesterViewController.xib in Resources */,
+				04EF61C91B818C8A005700C9 /* NameRealSuccessViewController.xib in Resources */,
+				04EF61AB1B818C8A005700C9 /* UserProcrolViewController.xib in Resources */,
+				04EF616D1B818C8A005700C9 /* MyInvestViewController.xib in Resources */,
+				04EF61B31B818C8A005700C9 /* LogOutViewController.xib in Resources */,
+				04EF61D31B818C8A005700C9 /* TransferDetailsViewController.xib in Resources */,
+				04EF61DD1B818C8A005700C9 /* CardBindViewController.xib in Resources */,
+				04EF61CB1B818C8A005700C9 /* PassWordMangerViewController.xib in Resources */,
+				04EF61731B818C8A005700C9 /* AddWithdrawViewController.xib in Resources */,
+				04EF616F1B818C8A005700C9 /* PorductViewController.xib in Resources */,
+				04EF617D1B818C8A005700C9 /* WithdrawViewController.xib in Resources */,
+				04EF620B1B819ACD005700C9 /* PublicViewController.xib in Resources */,
+				04EF61691B818C8A005700C9 /* MainViewController1.xib in Resources */,
+				04EF61C71B818C8A005700C9 /* LoginPassWordViewController.xib in Resources */,
+				04EF61711B818C8A005700C9 /* AddRechargeViewController.xib in Resources */,
+				04EF61DF1B818C8A005700C9 /* CityViewController.xib in Resources */,
+				04EF61F61B818F03005700C9 /* MoreViewController.xib in Resources */,
+				04EF61DB1B818C8A005700C9 /* BindCardViewController.xib in Resources */,
 				04E8B7E01B72F211000332F0 /* dropdown@2x.png in Resources */,
-				04E8B7051B72EEDA000332F0 /* TransferApplicationViewController.xib in Resources */,
-				04E8B7091B72EEDA000332F0 /* AboutViewController.xib in Resources */,
-				04E8B71D1B72EEDA000332F0 /* LogOutViewController.xib in Resources */,
-				04E8B6D51B72EEDA000332F0 /* MoreViewController.xib in Resources */,
-				04E8B72B1B72EEDA000332F0 /* ChangeLoginPWViewController.xib in Resources */,
-				04E8B6F11B72EEDA000332F0 /* HideViewController.xib in Resources */,
-				04E8B7111B72EEDA000332F0 /* PhoneViewController.xib in Resources */,
-				04E8B6D71B72EEDA000332F0 /* MyInvestViewController.xib in Resources */,
-				04E8B7571B72EEDA000332F0 /* MyUserMangerViewController.xib in Resources */,
-				04E8B70F1B72EEDA000332F0 /* PassWordViewController.xib in Resources */,
-				04E8B7291B72EEDA000332F0 /* SuccessViewController.xib in Resources */,
-				04E8B7311B72EEDA000332F0 /* LoginPassWordViewController.xib in Resources */,
-				04E8B72D1B72EEDA000332F0 /* ChangerPassWordViewController.xib in Resources */,
-				04E8B7371B72EEDA000332F0 /* ReSetPassWordViewController.xib in Resources */,
-				04E8B7511B72EEDA000332F0 /* TradingAccountViewController.xib in Resources */,
-				04E8B7031B72EEDA000332F0 /* MyTransferViewController.xib in Resources */,
-				04E8B7491B72EEDA000332F0 /* CityViewController.xib in Resources */,
-				04E8B6FD1B72EEDA000332F0 /* MyTransferDetailViewController.xib in Resources */,
-				04E8B7391B72EEDA000332F0 /* ConfirmTransferViewController.xib in Resources */,
-				04E8B70B1B72EEDA000332F0 /* PublicViewController.xib in Resources */,
-				04E8B6DD1B72EEDA000332F0 /* AddWithdrawViewController.xib in Resources */,
-				04E8B6F91B72EEDA000332F0 /* MyGainViewController.xib in Resources */,
-				04E8B6DF1B72EEDA000332F0 /* RechargeFirstViewController.xib in Resources */,
-				04E8B7171B72EEDA000332F0 /* FoggterAgainViewController.xib in Resources */,
-				04E8B6D31B72EEDA000332F0 /* MainViewController1.xib in Resources */,
-				04E8B6E71B72EEDA000332F0 /* WithdrawViewController.xib in Resources */,
-				04E8B6EB1B72EEDA000332F0 /* BussizeDetailViewController.xib in Resources */,
-				04E8B6F71B72EEDA000332F0 /* MyBuyViewController.xib in Resources */,
-				04E8B6EF1B72EEDA000332F0 /* FriendsViewController.xib in Resources */,
-				04E8B7151B72EEDA000332F0 /* UserProcrolViewController.xib in Resources */,
-				04E8B7251B72EEDA000332F0 /* ProductDetailViewController.xib in Resources */,
+				04EF61771B818C8A005700C9 /* RechargeViewController.xib in Resources */,
+				04EF61791B818C8A005700C9 /* WithdarwProtroclViewController.xib in Resources */,
+				04EF61E71B818C8A005700C9 /* TradingAccountViewController.xib in Resources */,
+				04EF61871B818C8A005700C9 /* HideViewController.xib in Resources */,
+				04EF617B1B818C8A005700C9 /* WithdrawFirstViewController.xib in Resources */,
+				04EF61751B818C8A005700C9 /* RechargeFirstViewController.xib in Resources */,
+				04EF61E31B818C8A005700C9 /* NoBindCardViewController.xib in Resources */,
 				04E8B5DE1B72E8DC000332F0 /* LaunchScreen.xib in Resources */,
-				04E8B7331B72EEDA000332F0 /* NameRealSuccessViewController.xib in Resources */,
-				04E8B6F31B72EEDA000332F0 /* MoneyAccountViewController.xib in Resources */,
-				04E8B75B1B72EEDA000332F0 /* WebDetailViewController.xib in Resources */,
 				04E8B8411B72F932000332F0 /* TransferViewCtrl.xib in Resources */,
+				04EF61BB1B818C8A005700C9 /* ProductDetailViewController.xib in Resources */,
+				04EF61D11B818C8A005700C9 /* InvestmentApplicationsViewController.xib in Resources */,
 				04E8B7D51B72F1EA000332F0 /* sr_refresh.png in Resources */,
+				04EF61AF1B818C8A005700C9 /* FoggterViewController.xib in Resources */,
+				04EF61E91B818C8A005700C9 /* UnBindCardViewController.xib in Resources */,
+				04EF61C11B818C8A005700C9 /* ChangeLoginPWViewController.xib in Resources */,
+				04EF61C51B818C8A005700C9 /* CheckVersonViewController.xib in Resources */,
+				04EF61D71B818C8A005700C9 /* TransferSuccessViewController.xib in Resources */,
+				04EF61B51B818C8A005700C9 /* ConfirmViewController.xib in Resources */,
+				04EF61CF1B818C8A005700C9 /* ConfirmTransferViewController.xib in Resources */,
+				04EF61A71B818C8A005700C9 /* PhoneViewController.xib in Resources */,
+				04EF618D1B818C8A005700C9 /* MyBuyViewController.xib in Resources */,
+				04EF61951B818C8A005700C9 /* MyTransferPrococalViewController.xib in Resources */,
+				04EF619B1B818C8A005700C9 /* TransferApplicationViewController.xib in Resources */,
+				04EF61ED1B818C8A005700C9 /* MyUserMangerViewController.xib in Resources */,
+				04EF61991B818C8A005700C9 /* MyTransferViewController.xib in Resources */,
+				04EF61BD1B818C8A005700C9 /* ProductProcoalViewController.xib in Resources */,
+				04EF618B1B818C8A005700C9 /* MoneyInfoViewController.xib in Resources */,
+				04EF61CD1B818C8A005700C9 /* ReSetPassWordViewController.xib in Resources */,
+				04EF61931B818C8A005700C9 /* MyTransferDetailViewController.xib in Resources */,
+				04EF61891B818C8A005700C9 /* MoneyAccountViewController.xib in Resources */,
+				04EF61E51B818C8A005700C9 /* ProviousViewController.xib in Resources */,
+				04EF61971B818C8A005700C9 /* MyTransferSuccessViewController.xib in Resources */,
+				04EF61EB1B818C8A005700C9 /* MessgeCenterViewController.xib in Resources */,
+				04EF617F1B818C8A005700C9 /* AccountInfoViewController.xib in Resources */,
+				04EF61C31B818C8A005700C9 /* ChangerPassWordViewController.xib in Resources */,
 				04E8B5DB1B72E8DC000332F0 /* Images.xcassets in Resources */,
-				04E8B6D91B72EEDA000332F0 /* PorductViewController.xib in Resources */,
-				04E8B6E31B72EEDA000332F0 /* WithdarwProtroclViewController.xib in Resources */,
-				04E8B7531B72EEDA000332F0 /* UnBindCardViewController.xib in Resources */,
-				04E8B73F1B72EEDA000332F0 /* TransferProcoalViewController.xib in Resources */,
-				04E8B6DB1B72EEDA000332F0 /* AddRechargeViewController.xib in Resources */,
-				04E8B7211B72EEDA000332F0 /* DetailViewController.xib in Resources */,
-				04E8B72F1B72EEDA000332F0 /* CheckVersonViewController.xib in Resources */,
-				04E8B6E11B72EEDA000332F0 /* RechargeViewController.xib in Resources */,
-				04E8B73D1B72EEDA000332F0 /* TransferDetailsViewController.xib in Resources */,
-				04E8B7451B72EEDA000332F0 /* BindCardViewController.xib in Resources */,
-				04E8B6F51B72EEDA000332F0 /* MoneyInfoViewController.xib in Resources */,
-				04E8B7191B72EEDA000332F0 /* FoggterViewController.xib in Resources */,
+				04EF61BF1B818C8A005700C9 /* SuccessViewController.xib in Resources */,
 				04E8B83C1B72F916000332F0 /* ProductViewCtrl.xib in Resources */,
-				04E8B7071B72EEDA000332F0 /* TransferViewController.xib in Resources */,
-				04E8B7591B72EEDA000332F0 /* UserBackViewController.xib in Resources */,
-				04E8B6ED1B72EEDA000332F0 /* DelegateTodayViewController.xib in Resources */,
-				04E8B73B1B72EEDA000332F0 /* InvestmentApplicationsViewController.xib in Resources */,
-				04E8B7271B72EEDA000332F0 /* ProductProcoalViewController.xib in Resources */,
-				04E8B6E91B72EEDA000332F0 /* AccountInfoViewController.xib in Resources */,
-				04E8B7431B72EEDA000332F0 /* AddreesssViewController.xib in Resources */,
-				04E8B7351B72EEDA000332F0 /* PassWordMangerViewController.xib in Resources */,
+				04EF61E11B818C8A005700C9 /* ClassBankCardViewController.xib in Resources */,
+				04EF61D51B818C8A005700C9 /* TransferProcoalViewController.xib in Resources */,
+				04EF61B71B818C8A005700C9 /* DetailViewController.xib in Resources */,
+				04EF61B91B818C8A005700C9 /* EstimateViewController.xib in Resources */,
+				04EF62091B819ACD005700C9 /* AboutViewController.xib in Resources */,
+				04EF61F11B818C8A005700C9 /* WebDetailViewController.xib in Resources */,
+				04EF61911B818C8A005700C9 /* MyMoneyViewController.xib in Resources */,
+				04EF61831B818C8A005700C9 /* DelegateTodayViewController.xib in Resources */,
+				04EF61851B818C8A005700C9 /* FriendsViewController.xib in Resources */,
+				04EF61B11B818C8A005700C9 /* LoginViewController.xib in Resources */,
+				04EF618F1B818C8A005700C9 /* MyGainViewController.xib in Resources */,
+				04EF61811B818C8A005700C9 /* BussizeDetailViewController.xib in Resources */,
 				04E8B7D61B72F1EA000332F0 /* sr_refresh@2X.png in Resources */,
-				04E8B71F1B72EEDA000332F0 /* ConfirmViewController.xib in Resources */,
-				04E8B7551B72EEDA000332F0 /* MessgeCenterViewController.xib in Resources */,
-				04E8B6E51B72EEDA000332F0 /* WithdrawFirstViewController.xib in Resources */,
-				04E8B74F1B72EEDA000332F0 /* ProviousViewController.xib in Resources */,
-				04E8B7131B72EEDA000332F0 /* RegesterViewController.xib in Resources */,
-				04E8B7471B72EEDA000332F0 /* CardBindViewController.xib in Resources */,
-				04E8B6FF1B72EEDA000332F0 /* MyTransferPrococalViewController.xib in Resources */,
-				04E8B70D1B72EEDA000332F0 /* CheckViewController.xib in Resources */,
-				04E8B74B1B72EEDA000332F0 /* ClassBankCardViewController.xib in Resources */,
-				04E8B7411B72EEDA000332F0 /* TransferSuccessViewController.xib in Resources */,
-				04E8B74D1B72EEDA000332F0 /* NoBindCardViewController.xib in Resources */,
-				04E8B7011B72EEDA000332F0 /* MyTransferSuccessViewController.xib in Resources */,
-				04E8B7231B72EEDA000332F0 /* EstimateViewController.xib in Resources */,
-				04E8B6FB1B72EEDA000332F0 /* MyMoneyViewController.xib in Resources */,
+				04EF61A31B818C8A005700C9 /* CheckViewController.xib in Resources */,
+				04EF61A51B818C8A005700C9 /* PassWordViewController.xib in Resources */,
 				04E8B7DF1B72F211000332F0 /* dropup@2x.png in Resources */,
+				04EF619D1B818C8A005700C9 /* TransferViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1478,131 +1477,131 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EF61921B818C8A005700C9 /* MyTransferDetailViewController.m in Sources */,
+				04EF61861B818C8A005700C9 /* HideViewController.m in Sources */,
 				04E8B7821B72F0C0000332F0 /* Toast+UIView.m in Sources */,
-				04E8B6F01B72EEDA000332F0 /* HideViewController.m in Sources */,
+				04EF61D61B818C8A005700C9 /* TransferSuccessViewController.m in Sources */,
 				04E8B7A71B72F15B000332F0 /* SBJsonStreamParserState.m in Sources */,
+				04EF618A1B818C8A005700C9 /* MoneyInfoViewController.m in Sources */,
+				04EF61C61B818C8A005700C9 /* LoginPassWordViewController.m in Sources */,
 				04E8B7A31B72F15B000332F0 /* SBJsonTokeniser.m in Sources */,
 				04E8B77E1B72F0A1000332F0 /* HMSegmentedControl.m in Sources */,
-				04E8B6E21B72EEDA000332F0 /* WithdarwProtroclViewController.m in Sources */,
+				04EF61D41B818C8A005700C9 /* TransferProcoalViewController.m in Sources */,
 				04E8B81E1B72F2BD000332F0 /* Base64XD.m in Sources */,
-				04E8B6D21B72EEDA000332F0 /* MainViewController1.m in Sources */,
+				04EF619C1B818C8A005700C9 /* TransferViewController.m in Sources */,
+				04EF61BC1B818C8A005700C9 /* ProductProcoalViewController.m in Sources */,
 				04E8B7E11B72F211000332F0 /* DDList.m in Sources */,
-				04E8B6EE1B72EEDA000332F0 /* FriendsViewController.m in Sources */,
 				04E8B7EC1B72F236000332F0 /* PostRequest.m in Sources */,
-				04E8B74C1B72EEDA000332F0 /* NoBindCardViewController.m in Sources */,
-				04E8B7421B72EEDA000332F0 /* AddreesssViewController.m in Sources */,
-				04E8B74E1B72EEDA000332F0 /* ProviousViewController.m in Sources */,
 				04E8B7EB1B72F236000332F0 /* NetworkModule.m in Sources */,
-				04E8B7541B72EEDA000332F0 /* MessgeCenterViewController.m in Sources */,
-				04E8B73A1B72EEDA000332F0 /* InvestmentApplicationsViewController.m in Sources */,
-				04E8B6E61B72EEDA000332F0 /* WithdrawViewController.m in Sources */,
-				04E8B7481B72EEDA000332F0 /* CityViewController.m in Sources */,
+				04EF61F01B818C8A005700C9 /* WebDetailViewController.m in Sources */,
+				04EF61781B818C8A005700C9 /* WithdarwProtroclViewController.m in Sources */,
+				04EF618C1B818C8A005700C9 /* MyBuyViewController.m in Sources */,
+				04EF61721B818C8A005700C9 /* AddWithdrawViewController.m in Sources */,
+				04EF619A1B818C8A005700C9 /* TransferApplicationViewController.m in Sources */,
+				04EF61CE1B818C8A005700C9 /* ConfirmTransferViewController.m in Sources */,
+				04EF61B81B818C8A005700C9 /* EstimateViewController.m in Sources */,
 				04E8B76D1B72EFC3000332F0 /* MDRadialProgressTheme.m in Sources */,
-				04E8B6F81B72EEDA000332F0 /* MyGainViewController.m in Sources */,
-				04E8B6D41B72EEDA000332F0 /* MoreViewController.m in Sources */,
+				04EF61EC1B818C8A005700C9 /* MyUserMangerViewController.m in Sources */,
 				04E8B7F31B72F24D000332F0 /* URLUtil.m in Sources */,
 				04E8B7A11B72F15B000332F0 /* SBJsonWriter.m in Sources */,
-				04E8B7241B72EEDA000332F0 /* ProductDetailViewController.m in Sources */,
 				04E8B7A51B72F15B000332F0 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				04E8B7D71B72F1EA000332F0 /* SRRefreshView.m in Sources */,
-				04E8B75A1B72EEDA000332F0 /* WebDetailViewController.m in Sources */,
-				04E8B7201B72EEDA000332F0 /* DetailViewController.m in Sources */,
-				04E8B7441B72EEDA000332F0 /* BindCardViewController.m in Sources */,
 				04E8B7FC1B72F288000332F0 /* OpenUDID.m in Sources */,
-				04E8B6DE1B72EEDA000332F0 /* RechargeFirstViewController.m in Sources */,
 				04E8B7601B72EF88000332F0 /* MyView.m in Sources */,
-				04E8B7281B72EEDA000332F0 /* SuccessViewController.m in Sources */,
 				04E8B7A81B72F15B000332F0 /* SBJsonStreamParserAdapter.m in Sources */,
+				04EF61941B818C8A005700C9 /* MyTransferPrococalViewController.m in Sources */,
+				04EF61C01B818C8A005700C9 /* ChangeLoginPWViewController.m in Sources */,
 				04E8B7C81B72F179000332F0 /* ASIDownloadCache.m in Sources */,
-				04E8B7261B72EEDA000332F0 /* ProductProcoalViewController.m in Sources */,
-				04E8B70A1B72EEDA000332F0 /* PublicViewController.m in Sources */,
 				04E8B7C61B72F179000332F0 /* ASIDataCompressor.m in Sources */,
-				04E8B6DA1B72EEDA000332F0 /* AddRechargeViewController.m in Sources */,
-				04E8B7401B72EEDA000332F0 /* TransferSuccessViewController.m in Sources */,
-				04E8B7001B72EEDA000332F0 /* MyTransferSuccessViewController.m in Sources */,
-				04E8B7161B72EEDA000332F0 /* FoggterAgainViewController.m in Sources */,
+				04EF61841B818C8A005700C9 /* FriendsViewController.m in Sources */,
 				04E8B83B1B72F916000332F0 /* ProductViewCtrl.m in Sources */,
-				04E8B71E1B72EEDA000332F0 /* ConfirmViewController.m in Sources */,
-				04E8B7081B72EEDA000332F0 /* AboutViewController.m in Sources */,
+				04EF61CA1B818C8A005700C9 /* PassWordMangerViewController.m in Sources */,
+				04EF617A1B818C8A005700C9 /* WithdrawFirstViewController.m in Sources */,
+				04EF617E1B818C8A005700C9 /* AccountInfoViewController.m in Sources */,
+				04EF61A81B818C8A005700C9 /* RegesterViewController.m in Sources */,
+				04EF61C41B818C8A005700C9 /* CheckVersonViewController.m in Sources */,
+				04EF61E41B818C8A005700C9 /* ProviousViewController.m in Sources */,
 				04E8B8361B72F8FA000332F0 /* FirstViewCtrl.m in Sources */,
-				04E8B6D81B72EEDA000332F0 /* PorductViewController.m in Sources */,
-				04E8B7221B72EEDA000332F0 /* EstimateViewController.m in Sources */,
+				04EF61701B818C8A005700C9 /* AddRechargeViewController.m in Sources */,
+				04EF61B01B818C8A005700C9 /* LoginViewController.m in Sources */,
+				04EF618E1B818C8A005700C9 /* MyGainViewController.m in Sources */,
+				04EF61D01B818C8A005700C9 /* InvestmentApplicationsViewController.m in Sources */,
+				04EF61AE1B818C8A005700C9 /* FoggterViewController.m in Sources */,
+				04EF61901B818C8A005700C9 /* MyMoneyViewController.m in Sources */,
+				04EF616E1B818C8A005700C9 /* PorductViewController.m in Sources */,
+				04EF61DA1B818C8A005700C9 /* BindCardViewController.m in Sources */,
+				04EF61E81B818C8A005700C9 /* UnBindCardViewController.m in Sources */,
 				04E8B5D61B72E8DC000332F0 /* ViewController.m in Sources */,
-				04E8B6E41B72EEDA000332F0 /* WithdrawFirstViewController.m in Sources */,
+				04EF61AC1B818C8A005700C9 /* FoggterAgainViewController.m in Sources */,
 				04E8B7A41B72F15B000332F0 /* SBJsonStreamWriterState.m in Sources */,
+				04EF61B21B818C8A005700C9 /* LogOutViewController.m in Sources */,
 				04E8B7F41B72F24D000332F0 /* ColorUtil.m in Sources */,
-				04E8B7321B72EEDA000332F0 /* NameRealSuccessViewController.m in Sources */,
-				04E8B6F41B72EEDA000332F0 /* MoneyInfoViewController.m in Sources */,
+				04EF61BE1B818C8A005700C9 /* SuccessViewController.m in Sources */,
+				04EF61A61B818C8A005700C9 /* PhoneViewController.m in Sources */,
 				04E8B8161B72F2A1000332F0 /* UIImageView+WebCache.m in Sources */,
+				04EF617C1B818C8A005700C9 /* WithdrawViewController.m in Sources */,
 				04E8B8111B72F2A1000332F0 /* SDWebImageDecoder.m in Sources */,
-				04E8B7301B72EEDA000332F0 /* LoginPassWordViewController.m in Sources */,
 				04E8B5D31B72E8DC000332F0 /* AppDelegate.m in Sources */,
-				04E8B74A1B72EEDA000332F0 /* ClassBankCardViewController.m in Sources */,
-				04E8B6F21B72EEDA000332F0 /* MoneyAccountViewController.m in Sources */,
 				04E8B7C91B72F179000332F0 /* ASIFormDataRequest.m in Sources */,
-				04E8B71A1B72EEDA000332F0 /* LoginViewController.m in Sources */,
-				04E8B6E01B72EEDA000332F0 /* RechargeViewController.m in Sources */,
+				04EF61D81B818C8A005700C9 /* AddreesssViewController.m in Sources */,
 				04E8B8101B72F2A1000332F0 /* SDImageCache.m in Sources */,
-				04E8B6DC1B72EEDA000332F0 /* AddWithdrawViewController.m in Sources */,
-				04E8B6EA1B72EEDA000332F0 /* BussizeDetailViewController.m in Sources */,
-				04E8B73E1B72EEDA000332F0 /* TransferProcoalViewController.m in Sources */,
+				04EF61671B818C8A005700C9 /* AccountViewController.m in Sources */,
+				04EF61E61B818C8A005700C9 /* TradingAccountViewController.m in Sources */,
+				04EF61741B818C8A005700C9 /* RechargeFirstViewController.m in Sources */,
 				04E8B81D1B72F2BD000332F0 /* GTMBase64XD.m in Sources */,
-				04E8B7141B72EEDA000332F0 /* UserProcrolViewController.m in Sources */,
-				04E8B7581B72EEDA000332F0 /* UserBackViewController.m in Sources */,
+				04EF61DE1B818C8A005700C9 /* CityViewController.m in Sources */,
+				04EF61F51B818F03005700C9 /* MoreViewController.m in Sources */,
 				04E8B7641B72EFA4000332F0 /* MyLabel.m in Sources */,
-				04E8B7101B72EEDA000332F0 /* PhoneViewController.m in Sources */,
+				04EF61B61B818C8A005700C9 /* DetailViewController.m in Sources */,
 				04E8B7CC1B72F179000332F0 /* ASINetworkQueue.m in Sources */,
+				04EF61DC1B818C8A005700C9 /* CardBindViewController.m in Sources */,
 				04E8B76C1B72EFC3000332F0 /* MDRadialProgressView.m in Sources */,
+				04EF61981B818C8A005700C9 /* MyTransferViewController.m in Sources */,
+				04EF61EE1B818C8A005700C9 /* UserBackViewController.m in Sources */,
+				04EF61D21B818C8A005700C9 /* TransferDetailsViewController.m in Sources */,
+				04EF620A1B819ACD005700C9 /* PublicViewController.m in Sources */,
+				04EF61761B818C8A005700C9 /* RechargeViewController.m in Sources */,
+				04EF61E01B818C8A005700C9 /* ClassBankCardViewController.m in Sources */,
 				04E8B8121B72F2A1000332F0 /* SDWebImageDownloader.m in Sources */,
+				04EF61801B818C8A005700C9 /* BussizeDetailViewController.m in Sources */,
 				04E8B8131B72F2A1000332F0 /* SDWebImageManager.m in Sources */,
 				04E8B7761B72F050000332F0 /* DOPDropDownMenu.m in Sources */,
 				04E8B7ED1B72F236000332F0 /* Https.m in Sources */,
 				04E8B7A21B72F15B000332F0 /* SBJsonUTF8Stream.m in Sources */,
 				04E8B7C41B72F179000332F0 /* Reachability.m in Sources */,
-				04E8B7341B72EEDA000332F0 /* PassWordMangerViewController.m in Sources */,
 				04E8B7C51B72F179000332F0 /* ASIAuthenticationDialog.m in Sources */,
 				04E8B7721B72EFE9000332F0 /* Child.m in Sources */,
+				04EF61A41B818C8A005700C9 /* PassWordViewController.m in Sources */,
+				04EF61961B818C8A005700C9 /* MyTransferSuccessViewController.m in Sources */,
+				04EF61B41B818C8A005700C9 /* ConfirmViewController.m in Sources */,
+				04EF61821B818C8A005700C9 /* DelegateTodayViewController.m in Sources */,
 				04E8B7D81B72F1EA000332F0 /* SRSlimeView.m in Sources */,
 				04E8B8401B72F932000332F0 /* TransferViewCtrl.m in Sources */,
-				04E8B6D11B72EEDA000332F0 /* AccountViewController.m in Sources */,
 				04E8B8141B72F2A1000332F0 /* SDWebImagePrefetcher.m in Sources */,
 				04E8B7861B72F0FD000332F0 /* MBProgressHUD.m in Sources */,
-				04E8B7041B72EEDA000332F0 /* TransferApplicationViewController.m in Sources */,
 				04E8B77A1B72F069000332F0 /* LPLabel.m in Sources */,
 				04E8B5D01B72E8DC000332F0 /* main.m in Sources */,
+				04EF61C21B818C8A005700C9 /* ChangerPassWordViewController.m in Sources */,
 				04E8B7C71B72F179000332F0 /* ASIDataDecompressor.m in Sources */,
-				04E8B6FC1B72EEDA000332F0 /* MyTransferDetailViewController.m in Sources */,
-				04E8B6EC1B72EEDA000332F0 /* DelegateTodayViewController.m in Sources */,
-				04E8B72C1B72EEDA000332F0 /* ChangerPassWordViewController.m in Sources */,
-				04E8B71C1B72EEDA000332F0 /* LogOutViewController.m in Sources */,
-				04E8B6FE1B72EEDA000332F0 /* MyTransferPrococalViewController.m in Sources */,
+				04EF61C81B818C8A005700C9 /* NameRealSuccessViewController.m in Sources */,
 				04E8B7AA1B72F15B000332F0 /* SBJsonStreamParser.m in Sources */,
-				04E8B6E81B72EEDA000332F0 /* AccountInfoViewController.m in Sources */,
-				04E8B7121B72EEDA000332F0 /* RegesterViewController.m in Sources */,
-				04E8B7381B72EEDA000332F0 /* ConfirmTransferViewController.m in Sources */,
-				04E8B7521B72EEDA000332F0 /* UnBindCardViewController.m in Sources */,
+				04EF61881B818C8A005700C9 /* MoneyAccountViewController.m in Sources */,
+				04EF62081B819ACD005700C9 /* AboutViewController.m in Sources */,
 				04E8B7A61B72F15B000332F0 /* SBJsonStreamWriter.m in Sources */,
-				04E8B7361B72EEDA000332F0 /* ReSetPassWordViewController.m in Sources */,
-				04E8B7561B72EEDA000332F0 /* MyUserMangerViewController.m in Sources */,
-				04E8B72A1B72EEDA000332F0 /* ChangeLoginPWViewController.m in Sources */,
-				04E8B7461B72EEDA000332F0 /* CardBindViewController.m in Sources */,
+				04EF616C1B818C8A005700C9 /* MyInvestViewController.m in Sources */,
 				04E8B8151B72F2A1000332F0 /* UIButton+WebCache.m in Sources */,
-				04E8B73C1B72EEDA000332F0 /* TransferDetailsViewController.m in Sources */,
-				04E8B70E1B72EEDA000332F0 /* PassWordViewController.m in Sources */,
 				04E8B7AB1B72F15B000332F0 /* SBJsonParser.m in Sources */,
-				04E8B6FA1B72EEDA000332F0 /* MyMoneyViewController.m in Sources */,
 				04E8B76E1B72EFC3000332F0 /* MDRadialProgressLabel.m in Sources */,
+				04EF61BA1B818C8A005700C9 /* ProductDetailViewController.m in Sources */,
 				04E8B7CB1B72F179000332F0 /* ASIInputStream.m in Sources */,
+				04EF61AA1B818C8A005700C9 /* UserProcrolViewController.m in Sources */,
+				04EF61EA1B818C8A005700C9 /* MessgeCenterViewController.m in Sources */,
+				04EF61E21B818C8A005700C9 /* NoBindCardViewController.m in Sources */,
 				04E8B7CA1B72F179000332F0 /* ASIHTTPRequest.m in Sources */,
-				04E8B72E1B72EEDA000332F0 /* CheckVersonViewController.m in Sources */,
-				04E8B7061B72EEDA000332F0 /* TransferViewController.m in Sources */,
-				04E8B7501B72EEDA000332F0 /* TradingAccountViewController.m in Sources */,
-				04E8B7021B72EEDA000332F0 /* MyTransferViewController.m in Sources */,
-				04E8B6F61B72EEDA000332F0 /* MyBuyViewController.m in Sources */,
-				04E8B6D61B72EEDA000332F0 /* MyInvestViewController.m in Sources */,
-				04E8B70C1B72EEDA000332F0 /* CheckViewController.m in Sources */,
-				04E8B7181B72EEDA000332F0 /* FoggterViewController.m in Sources */,
 				04E8B7AC1B72F15B000332F0 /* NSObject+SBJson.m in Sources */,
+				04EF61CC1B818C8A005700C9 /* ReSetPassWordViewController.m in Sources */,
+				04EF61681B818C8A005700C9 /* MainViewController1.m in Sources */,
+				04EF61A21B818C8A005700C9 /* CheckViewController.m in Sources */,
 				04E8B7F81B72F272000332F0 /* SHLUILabel.m in Sources */,
 				04E8B7A91B72F15B000332F0 /* SBJsonStreamParserAccumulator.m in Sources */,
 			);
@@ -1729,9 +1728,11 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d1351066-8803-492d-a024-4bcd69018fb7";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1744,9 +1745,11 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d1351066-8803-492d-a024-4bcd69018fb7";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
