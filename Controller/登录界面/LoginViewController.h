@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class LoginViewController;
-@protocol LoginVCDelegate <NSObject>
 
-//LoginView专用
--(void)LoginViewVC:(LoginViewController *)widgetsVC loginOK:(id)nilplaceholder;
-@end
 
 #import "AppDelegate.h"
 @interface LoginViewController : UIViewController<NetworkModuleDelegate,MBProgressHUDDelegate>
@@ -25,7 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak,nonatomic) id<LoginVCDelegate> delegate;
 - (IBAction)push:(id)sender;
 - (IBAction)loginBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *rember;

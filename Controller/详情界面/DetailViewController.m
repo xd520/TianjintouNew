@@ -751,6 +751,8 @@
 
 -(void)changeUI:(UIButton *)btn{
    
+    
+    
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (delegate.logingUser.count > 0) {
         if ([[delegate.logingUser objectForKey:@"success"] boolValue] == YES) {

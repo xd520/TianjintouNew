@@ -354,4 +354,21 @@
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(void)dealloc {
+   
+    [_longtime removeFromSuperview];
+    _longtime = nil;
+    [_longtime1 removeFromSuperview];
+    _longtime1 = nil;
+    [_table removeFromSuperview];
+    _table = nil;
+    [_logoutBtn removeFromSuperview];
+    _logoutBtn = nil;
+
+}
+
+
+
+
 @end

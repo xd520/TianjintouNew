@@ -116,7 +116,7 @@
     valueLabelTip.textAlignment = NSTextAlignmentLeft;
     
     
-    NSString *kyzi = [NSString stringWithFormat:@"%.2f",[[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KYZJ"] doubleValue]];
+    NSString *kyzi = [NSString stringWithFormat:@"%.2f",[[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KQZJ"] doubleValue]];
     
     
     NSRange range1 = [kyzi rangeOfString:@"."];//匹配得到的下标
@@ -525,7 +525,6 @@
     }
     
     
-    
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
 }
 
@@ -593,7 +592,13 @@
                 } else {
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        if ([jsonDic objectForKey:@"object"] == nil || [[jsonDic objectForKey:@"object"] count] == 0) {
+                             [self.view makeToast:@"充值结果正在处理，请到转账充值中查询" duration:2 position:@"center"];
+                        } else {
+                        
+                        
                        [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
+                        }
                     });
                     timeout--;
                 }
@@ -678,19 +683,20 @@
     NSString *valstr=[NSString stringWithFormat:@"%.2f",numberals];
     NSString *prefix;
     NSString *suffix;
-    if (valstr.length<=2) {
-        prefix=@"零元";
-        if (valstr.length==0) {
+    if (numberals < 1) {
+       // prefix=@"零元";
+        prefix=@"";
+        if (numberals == 0) {
             suffix=@"零角零分";
         }
-        else if (valstr.length==1)
+        else if (numberals < 0.1)
         {
             suffix=[NSString stringWithFormat:@"%@分",[numberchar objectAtIndex:[valstr intValue]]];
         }
         else
         {
-            NSString *head=[valstr substringToIndex:1];
-            NSString *foot=[valstr substringFromIndex:1];
+            NSString *head=[valstr substringWithRange:NSMakeRange(2,1)];
+            NSString *foot=[valstr substringFromIndex:3];
             suffix=[NSString stringWithFormat:@"%@角%@分",[numberchar objectAtIndex:[head intValue]],[numberchar objectAtIndex:[foot intValue]]];
         }
     }
@@ -779,16 +785,8 @@
     {
         NSInteger MyData=[[moneyStr substringWithRange:NSMakeRange(moneyStr.length-i, 1)] integerValue];
         [M appendString:MyBase[MyData]];
-        
-        
-    
-        
-        
         if([[moneyStr substringFromIndex:moneyStr.length-i+1] integerValue] == 0&& i != 1 && i != 2 && moneyStr.length > 2)
         {
-          
-            
-            
             [M appendString:MyScale[i-1]];
             [M appendString:str];
            

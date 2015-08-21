@@ -678,14 +678,23 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc {
+    
+   [scrollViewImage removeFromSuperview];
+    scrollViewImage = nil;
+    
+    [pageControl removeFromSuperview];
+    pageControl = nil;
+    [imageArray removeAllObjects];
+    imageArray = nil;
+    [dataListFirst removeAllObjects];
+    dataListFirst = nil;
+    
+    [backScrollView removeFromSuperview];
+    backScrollView = nil;
+   
+
 }
-*/
 
 @end

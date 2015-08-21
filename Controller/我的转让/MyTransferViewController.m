@@ -219,7 +219,7 @@
     
     UIButton *procoalBtn = [[UIButton alloc] init];
     procoalBtn.frame = CGRectMake(115, descHeight + 170, 115, 15);
-    [procoalBtn setTitle:@"《认购协议》" forState:UIControlStateNormal];
+    [procoalBtn setTitle:@"《转让协议》" forState:UIControlStateNormal];
     [procoalBtn setTitleColor:[ColorUtil colorWithHexString:@"087dcd"] forState:UIControlStateNormal];
     procoalBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     

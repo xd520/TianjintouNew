@@ -468,7 +468,7 @@
        
     }else if (count % 2 == 0) {
         
-        [self.view makeToast:@"请同意个人协议" duration:1.0 position:@"center"];
+        [self.view makeToast:@"请阅读并同意《个人会员协议》" duration:1.0 position:@"center"];
         
         
     } else if ([self.phoneNum.text isEqualToString:@""]) {

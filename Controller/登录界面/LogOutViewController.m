@@ -387,6 +387,28 @@
 }
 
 
+-(void)dealloc {
+    _code.delegate = nil;
+    [_code removeFromSuperview];
+    _code = nil;
+    
+    _userName.delegate = nil;
+    [_userName removeFromSuperview];
+    _userName = nil;
+    
+    
+    _password.delegate = nil;
+    [_password removeFromSuperview];
+    _password = nil;
+    
+    [_loginBtn removeFromSuperview];
+    _loginBtn = nil;
+    
+    [_codeImgve removeFromSuperview];
+    _codeImgve = nil;
+    
+    
+}
 
 
 @end

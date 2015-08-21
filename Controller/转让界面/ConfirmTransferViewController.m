@@ -302,7 +302,7 @@
     
     UIButton *procoalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     procoalBtn.frame = CGRectMake(105, 100, 115, 15);
-    [procoalBtn setTitle:@"《认购协议》" forState:UIControlStateNormal];
+    [procoalBtn setTitle:@"《转让协议》" forState:UIControlStateNormal];
     [procoalBtn setTitleColor:[ColorUtil colorWithHexString:@"087dcd"] forState:UIControlStateNormal];
     procoalBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     
@@ -523,7 +523,7 @@
     
      UIButton *procoalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     procoalBtn.frame = CGRectMake(105, 25*dataList.count +60 + 60, 115, 15);
-    [procoalBtn setTitle:@"《认购协议》" forState:UIControlStateNormal];
+    [procoalBtn setTitle:@"《转让协议》" forState:UIControlStateNormal];
     procoalBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [procoalBtn setTitleColor:[ColorUtil colorWithHexString:@"087dcd"] forState:UIControlStateNormal];
     

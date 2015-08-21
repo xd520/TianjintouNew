@@ -113,7 +113,7 @@
     [valueLabelTip setTextColor:[ColorUtil colorWithHexString:@"fe8103"]];
     valueLabelTip.textAlignment = NSTextAlignmentLeft;
     
-     NSString *kyzi = [NSString stringWithFormat:@"%.2f",[[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KYZJ"] doubleValue]];
+     NSString *kyzi = [NSString stringWithFormat:@"%.2f",[[[self.dic objectForKey:@"zjzhResultBean"] objectForKey:@"FID_KQZJ"] doubleValue]];
     
     NSRange range1 = [kyzi rangeOfString:@"."];//匹配得到的下标
     
@@ -532,19 +532,20 @@
     NSString *valstr=[NSString stringWithFormat:@"%.2f",numberals];
     NSString *prefix;
     NSString *suffix;
-    if (valstr.length<=2) {
-        prefix=@"零元";
-        if (valstr.length==0) {
+    if (numberals < 1) {
+        // prefix=@"零元";
+        prefix=@"";
+        if (numberals == 0) {
             suffix=@"零角零分";
         }
-        else if (valstr.length==1)
+        else if (numberals < 0.1)
         {
             suffix=[NSString stringWithFormat:@"%@分",[numberchar objectAtIndex:[valstr intValue]]];
         }
         else
         {
-            NSString *head=[valstr substringToIndex:1];
-            NSString *foot=[valstr substringFromIndex:1];
+            NSString *head=[valstr substringWithRange:NSMakeRange(2,1)];
+            NSString *foot=[valstr substringFromIndex:3];
             suffix=[NSString stringWithFormat:@"%@角%@分",[numberchar objectAtIndex:[head intValue]],[numberchar objectAtIndex:[foot intValue]]];
         }
     }
@@ -568,7 +569,7 @@
         
         for (int i=0; i<ch.count; i++) {
             int index=(ch.count -i-1)%4;//取段内位置
-            int indexloc = (ch.count -i-1)/4;//取段位置
+            int indexloc=(ch.count -i-1)/4;//取段位置
             if ([[ch objectAtIndex:i]isEqualToString:@"0"]) {
                 zeronum++;
             }
@@ -783,7 +784,13 @@
                 } else {
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
+                        if ([jsonDic objectForKey:@"object"] == nil || [[jsonDic objectForKey:@"object"] count] == 0) {
+                            [self.view makeToast:@"提现结果正在处理，请到转账充值中查询" duration:2 position:@"center"];
+                        } else {
+                            
+                            
+                            [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
+                        }
                     });
                     timeout--;
                 }

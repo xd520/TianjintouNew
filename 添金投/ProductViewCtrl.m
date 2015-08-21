@@ -1685,14 +1685,54 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc {
+    
+    [table removeFromSuperview];
+    table = nil;
+    
+    [tablePast removeFromSuperview];
+    tablePast = nil;
+    [dataList removeAllObjects];
+    dataList = nil;
+    [dataListPast removeAllObjects];
+    dataListPast = nil;
+    
+    [moreCell removeFromSuperview];
+    moreCell = nil;
+    [moreCellPast removeFromSuperview];
+    moreCellPast = nil;
+    [_slimeViewPast removeFromSuperview];
+    _slimeViewPast = nil;
+    [_slimeView removeFromSuperview];
+    _slimeView = nil;
+   
+   
+    [lab1 removeFromSuperview];
+    lab1 = nil;
+    [lab2 removeFromSuperview];
+    lab2 = nil;
+    [lab3 removeFromSuperview];
+    lab3 = nil;
+    [lab4 removeFromSuperview];
+    lab4 = nil;
+    
+    
+    [tiplab1 removeFromSuperview];
+    tiplab1 = nil;
+    [tiplab2 removeFromSuperview];
+    tiplab2 = nil;
+    [tiplab3 removeFromSuperview];
+    tiplab3 = nil;
+    [tiplab4 removeFromSuperview];
+    tiplab4 = nil;
+    
+    
+    [segmentedControl removeFromSuperview];
+    segmentedControl = nil;
+    [segmented removeFromSuperview];
+    segmented = nil;
+    
+    
 }
-*/
 
 @end

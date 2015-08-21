@@ -821,7 +821,7 @@
                     }
                     */
                     
-                    reLab.text =[NSString stringWithFormat:@"%.2f",[[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue]];
+                    reLab.text =[NSString stringWithFormat:@"%.2f",[[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] doubleValue]];
                     reLab.font = [UIFont systemFontOfSize:15];
                     reLab.textColor = [ColorUtil colorWithHexString:@"333333"];
                     [backView addSubview:reLab];
@@ -991,7 +991,7 @@
                     
                     
                     UILabel *reLab = [[UILabel alloc] initWithFrame:CGRectMake(10 + 65, 32,ScreenWidth - 75 , 15)];
-                     reLab.text = [NSString stringWithFormat:@"%.2f元",[[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue]];
+                     reLab.text = [NSString stringWithFormat:@"%.2f元",[[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] doubleValue]];
                     
                     /*
                     if ([[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue] > 1 && [[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue] < 900000000) {

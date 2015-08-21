@@ -47,7 +47,7 @@
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
        // NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/app/info/detail?id=%@&&classId=999",SERVERURL,_Id]];
-         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/website/infonews/detail?id=%@",SERVERURL,_Id]];
+         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/website/infonews/appDetail?id=%@",SERVERURL,_Id]];
         
        // /page/website/infonews/detail?id=560
         

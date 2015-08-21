@@ -121,7 +121,7 @@
     
     [segmented addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];
     
-    [self.view addSubview:segmented];
+    //[self.view addSubview:segmented];
     float scrollViewHeight = 0;
     scrollViewHeight = ScreenHeight  - 64 - 50;
     
@@ -135,16 +135,19 @@
     [self.scrollView setContentSize:CGSizeMake(ScreenWidth*2, scrollViewHeight)];
     [self.scrollView scrollRectToVisible:CGRectMake(0, 44 + addHight, ScreenWidth, scrollViewHeight) animated:NO];
     [self.scrollView setDelegate:self];
-    [self.view addSubview:self.scrollView];
+   // [self.view addSubview:self.scrollView];
     
     
-    table = [[UITableView alloc] initWithFrame:CGRectMake(0 , 0, ScreenWidth,  ScreenHeight - 114)];
+    table = [[UITableView alloc] initWithFrame:CGRectMake(0 , 44 + addHight, ScreenWidth,  ScreenHeight - 114)];
     [table setDelegate:self];
     [table setDataSource:self];
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     [table setBackgroundColor:[UIColor clearColor]];    table.tableFooterView = [[UIView alloc] init];
     
-    [self.scrollView addSubview:table];
+   // [self.scrollView addSubview:table];
+    
+    [self.view addSubview:table];
+    
     
     //加入下拉刷新
     _slimeView = [[SRRefreshView alloc] init];
@@ -166,7 +169,7 @@
     [tablePast setBackgroundColor:[UIColor clearColor]];
     tablePast.tableFooterView = [[UIView alloc] init];
     
-    [self.scrollView addSubview:tablePast];
+    //[self.scrollView addSubview:tablePast];
     
     //加入下拉刷新
     _slimeViewPast = [[SRRefreshView alloc] init];
@@ -192,7 +195,7 @@
         [self requestCategoryList:@"999" tag:kBusinessTagGetJRinfolist];
         
         //夏金所新闻
-        [self requestCategoryList:@"997" tag:kBusinessTagGetJRinfolist1];
+      //  [self requestCategoryList:@"997" tag:kBusinessTagGetJRinfolist1];
         
         
         dispatch_async(dispatch_get_main_queue(), ^{

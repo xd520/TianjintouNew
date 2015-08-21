@@ -52,41 +52,41 @@
     
     if (array.count == 2) {
         [array removeObjectAtIndex:array.count-1];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
         
         
-       // [array removeObjectAtIndex:array.count-1];
+        // [array removeObjectAtIndex:array.count-1];
         /*
-        DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
+         DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
          MainViewController *mainController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-       
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
-        
-        [menuController setRootController:mainController animated:YES];
-        
-        */
+         
+         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
+         
+         [menuController setRootController:mainController animated:YES];
+         
+         */
         
     } else {
-    
-    
-    UIViewController *vc = [array objectAtIndex:array.count-3];
-   
-    if ([vc.nibName isEqualToString:@"PhoneViewController"]) {
-        //LoginViewController *vc = [[LoginViewController alloc] init];
         
-        //[self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],vc]];
         
-        [array removeObjectAtIndex:array.count-1];
-        [array removeObjectAtIndex:array.count-1];
-        [array removeObjectAtIndex:array.count-1];
-        [array removeObjectAtIndex:array.count-1];
-        [self.navigationController setViewControllers:array];
-    } else{
-        [array removeObjectAtIndex:array.count-1];
-        [array removeObjectAtIndex:array.count-1];
+        UIViewController *vc = [array objectAtIndex:array.count-3];
         
-        [self.navigationController setViewControllers:array];
-    
+        if ([vc.nibName isEqualToString:@"PhoneViewController"]) {
+            //LoginViewController *vc = [[LoginViewController alloc] init];
+            
+            //[self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],vc]];
+            
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            [self.navigationController setViewControllers:array];
+        } else{
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            
+            [self.navigationController setViewControllers:array];
+            
         }
     }
 }
