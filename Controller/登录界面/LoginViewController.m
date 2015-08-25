@@ -343,11 +343,7 @@
         
         NSError *error = request.error;
         NSLog(@"请求网络出错：%@",error);
-        
     }];
-    
-    
-    
 }
 
 

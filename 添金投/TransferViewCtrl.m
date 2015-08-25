@@ -39,11 +39,40 @@
     int hasMore;
     float addHight;
     
+     float sizeScaleX;
+    UIImageView *headerImgView;
+    
+    
     int count;
 }
 @end
 
 @implementation TransferViewCtrl
+
+
+CG_INLINE CGRect
+CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
+{
+    float autoSizeScaleX;
+    
+    if(ScreenWidth > 320){
+        
+        autoSizeScaleX = ScreenWidth/320;
+        
+        
+    }else{
+        autoSizeScaleX = 1.0;
+    }
+    
+    
+    
+    CGRect rect;
+    rect.origin.x = x * autoSizeScaleX; rect.origin.y = y * autoSizeScaleX;
+    rect.size.width = width * autoSizeScaleX;
+    rect.size.height = height * autoSizeScaleX;
+    return rect;
+}
+
 
 -(void)viewWillAppear:(BOOL)animated {
     
@@ -72,35 +101,43 @@
         addHight = 0;
     }
     
-    UIImageView *baseImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, addHight, ScreenWidth, 44)];
-    baseImage.image = [UIImage imageNamed:@"title_bg"];
-    nameTitle = [[UILabel alloc] initWithFrame:CGRectMake(50, 13, ScreenWidth - 100, 17)];
+    
+    if(ScreenWidth > 320){
+        sizeScaleX = ScreenWidth/320;
+    }else{
+        sizeScaleX = 1.0;
+    }
+
+    
+    
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,  addHight, ScreenWidth, ScreenHeight - 49 - 20)];
+    scrollView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
+    
+    UIImageView *baseImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 175*sizeScaleX)];
+    baseImage.image = [UIImage imageNamed:@"ninhao_bg"];
+    baseImage.userInteractionEnabled = YES;
+   
+  
+    nameTitle = [[UILabel alloc] initWithFrame:CGRectMake1(50, 13, 320 - 100, 17)];
     nameTitle.text = @"我的账户";
     nameTitle.backgroundColor = [UIColor clearColor];
     nameTitle.textAlignment = NSTextAlignmentCenter;
     nameTitle.textColor = [UIColor whiteColor];
-    nameTitle.font = [UIFont systemFontOfSize:17];
+    nameTitle.font = [UIFont systemFontOfSize:16*sizeScaleX];
     [baseImage addSubview:nameTitle];
     
     
     UIButton *userBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    userBtn.frame = CGRectMake(ScreenWidth - 70, 11, 60, 22);
+    userBtn.frame = CGRectMake1(320 - 70, 11, 60, 22);
     // [userBtn setBackgroundImage:[UIImage imageNamed:@"my_info"] forState:UIControlStateNormal];
     [userBtn setTitle:@"账户信息" forState:UIControlStateNormal];
     [userBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    userBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    
-    
+    userBtn.titleLabel.font = [UIFont systemFontOfSize:13*sizeScaleX];
     
     [userBtn addTarget:self action:@selector(pushToUserInfoVC) forControlEvents:UIControlEventTouchUpInside];
     baseImage.userInteractionEnabled = YES;
     [baseImage addSubview:userBtn];
-    [self.view addSubview:baseImage];
     
-    
-    
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44 + addHight, ScreenWidth, ScreenHeight - 49 - 64)];
-    scrollView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
     
     // scrollView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     
@@ -118,136 +155,140 @@
      UIViewAutoresizingFlexibleHeight       = 1 << 4,
      UIViewAutoresizingFlexibleBottomMargin
      */
-    
-    
-    
     //
     
     
-    UIImageView *baseImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
-    baseImage1.image = [UIImage imageNamed:@"title_bg"];
+   // UIImageView *baseImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
+   // baseImage1.image = [UIImage imageNamed:@"title_bg"];
     
     
-    UILabel *totalTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, (ScreenWidth - 20)/2, 14)];
-    totalTip.font = [UIFont systemFontOfSize:13];
-    //totalTip.textAlignment = NSTextAlignmentCenter;
-    totalTip.backgroundColor = [UIColor clearColor];
-    totalTip.textColor = [UIColor whiteColor];
-    totalTip.text = @"我的总资产(元)";
-    [baseImage1 addSubview:totalTip];
-    
-    //总资产
-    total = [[UILabel alloc] initWithFrame:CGRectMake(10, 32, ScreenWidth - 20, 30)];
-    total.textAlignment = NSTextAlignmentCenter;
-    total.font = [UIFont boldSystemFontOfSize:30];
-    total.backgroundColor = [UIColor clearColor];
-    total.textColor = [UIColor whiteColor];
-    total.text = @"0.0";
-    [baseImage1 addSubview:total];
-    
-    UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 79, ScreenWidth - 20, 1)];
-    tipImg.image = [UIImage imageNamed:@"hen_line_icon"];
-    [baseImage1 addSubview:tipImg];
-    
-    [scrollView addSubview:baseImage1];
+    UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake1(0, 34, 320,60/19*32)];
+    tipImg.image = [UIImage imageNamed:@"ninhao"];
+    [baseImage addSubview:tipImg];
     
     
     
-    UIImageView *totlaImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80,ScreenWidth, 50)];
-    totlaImg.image = [UIImage imageNamed:@"title_bg"];
+    
+   headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake1(120, 8,80, 80)];
+    headerImgView.backgroundColor = [UIColor redColor];
+  
+    headerImgView.layer.cornerRadius = headerImgView.frame.size.width / 2;
+    headerImgView.clipsToBounds = YES;
+    headerImgView.layer.borderWidth = 3.0f;
+    headerImgView.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
+    
+    [tipImg addSubview:headerImgView];
+    
+    
+    
+    
+    
     
     
     //今日收益
-    accumulatedLab = [[UILabel alloc] initWithFrame:CGRectMake(20, 28, (ScreenWidth - 20)/2, 14)];
+    accumulatedLab = [[UILabel alloc] initWithFrame:CGRectMake1(20, 58, (320 - 20)/2, 14)];
     // accumulatedLab.textAlignment = NSTextAlignmentCenter;
-    accumulatedLab.font = [UIFont systemFontOfSize:14];
+    accumulatedLab.font = [UIFont systemFontOfSize:14*sizeScaleX];
     accumulatedLab.textColor = [UIColor whiteColor];
     accumulatedLab.backgroundColor = [UIColor clearColor];
     accumulatedLab.text = @"0.0";
-    [totlaImg addSubview:accumulatedLab];
-    
-    UIImageView *backLineView = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth/2, 9.5, 1, 30)];
-    backLineView.image = [UIImage imageNamed:@"shu_line_icon"];
-    [totlaImg addSubview:backLineView];
+    [tipImg addSubview:accumulatedLab];
     
     
     
-    UILabel *incomeTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 7, (ScreenWidth - 40)/2, 14)];
-    incomeTip.font = [UIFont systemFontOfSize:14];
+    
+    
+    UILabel *incomeTip = [[UILabel alloc] initWithFrame:CGRectMake1(20, 37, (320 - 40)/2, 14)];
+    incomeTip.font = [UIFont systemFontOfSize:13*sizeScaleX];
     //incomeTip.textAlignment = NSTextAlignmentCenter;
     incomeTip.textColor = [UIColor whiteColor];
     incomeTip.backgroundColor = [UIColor clearColor];
     incomeTip.text = @"累计已收益(元)";
-    [totlaImg addSubview:incomeTip];
+    [tipImg addSubview:incomeTip];
     
     //累计收益
-    incomeLab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 20, 28, (ScreenWidth - 20)/2, 14)];
+    incomeLab = [[UILabel alloc] initWithFrame:CGRectMake1(320/2 + 65, 58, (320 - 65)/2, 14)];
     //incomeLab.textAlignment = NSTextAlignmentCenter;
     incomeLab.font = [UIFont systemFontOfSize:14];
     incomeLab.textColor = [UIColor whiteColor];
     incomeLab.backgroundColor = [UIColor clearColor];
     incomeLab.text = @"0.0";
-    [totlaImg addSubview:incomeLab];
+    [tipImg addSubview:incomeLab];
     
-    UILabel *foodTip = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 20, 7, (ScreenWidth - 40)/2, 14)];
-    foodTip.font = [UIFont systemFontOfSize:14];
+    UILabel *foodTip = [[UILabel alloc] initWithFrame:CGRectMake1(320/2 + 65, 37, (320 - 65)/2, 14)];
+    foodTip.font = [UIFont systemFontOfSize:13*sizeScaleX];
     // foodTip.textAlignment = NSTextAlignmentCenter;
     foodTip.textColor = [UIColor whiteColor];
     foodTip.backgroundColor = [UIColor clearColor];
     foodTip.text = @"预期待收益(元)";
-    [totlaImg addSubview:foodTip];
+    [tipImg addSubview:foodTip];
     
-    [scrollView addSubview:totlaImg];
-    
-    
+   
     
     
+    UILabel *totalTip = [[UILabel alloc] initWithFrame:CGRectMake1(80, 145 - 14 + 5, (320 - 160), 14)];
+    totalTip.font = [UIFont systemFontOfSize:14*sizeScaleX];
+    totalTip.textAlignment = NSTextAlignmentCenter;
+    totalTip.backgroundColor = [UIColor clearColor];
+    totalTip.textColor = [UIColor whiteColor];
+    totalTip.text = @"我的总资产(元)";
+    [baseImage addSubview:totalTip];
     
+    //总资产
+    total = [[UILabel alloc] initWithFrame:CGRectMake1(80, 145 - 14 + 5 + 15, 320 - 160, 15)];
+    total.textAlignment = NSTextAlignmentCenter;
+    total.font = [UIFont boldSystemFontOfSize:15*sizeScaleX];
+    total.backgroundColor = [UIColor clearColor];
+    total.textColor = [UIColor whiteColor];
+    total.text = @"0.0";
+    [baseImage addSubview:total];
+    
+    
+     
     //提现
     UIButton *tixianBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
-    tixianBtn.frame = CGRectMake(ScreenWidth/2, 145 - 14, ScreenWidth/2, 40);
+    tixianBtn.frame = CGRectMake1(320 - 70, 145 - 14 + 5, 60, 30);
+   
     
-    UIImageView *tipTX = [[UIImageView alloc] initWithFrame:CGRectMake(20,3, 30, 30)];
-    tipTX.image = [UIImage imageNamed:@"我的账户_03-02(1)"];
-    [tixianBtn addSubview:tipTX];
-    
-    UILabel *tipTXLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + 35, 25/2, 30, 15)];
-    tipTXLabel.font = [UIFont systemFontOfSize:15];
+    UILabel *tipTXLabel = [[UILabel alloc] initWithFrame:CGRectMake1(15, 15/2, 30, 15)];
+    tipTXLabel.font = [UIFont systemFontOfSize:15*sizeScaleX];
     //tipLabel.textAlignment = NSTextAlignmentRight;
     // tipTXLabel.textColor = [UIColor whiteColor];
     tipTXLabel.backgroundColor = [UIColor clearColor];
     tipTXLabel.text =  @"提现";
+    tipTXLabel.textColor = [UIColor whiteColor];
+    tipTXLabel.textAlignment = NSTextAlignmentRight;
     [tixianBtn addSubview:tipTXLabel];
-    [tixianBtn setBackgroundImage:[UIImage imageNamed:@"head_bg"] forState:UIControlStateNormal];
+    tixianBtn.backgroundColor = [ColorUtil colorWithHexString:@"f18101"];
+    tixianBtn.layer.cornerRadius = 15*sizeScaleX;
+    tixianBtn.layer.masksToBounds = YES;
     tixianBtn.tag = 1001;
     [tixianBtn addTarget:self action:@selector(getMoneyMethods:) forControlEvents:UIControlEventTouchUpInside];
-    [scrollView addSubview:tixianBtn];
+    [baseImage addSubview:tixianBtn];
     
     
     
     //充值
     UIButton *chongzhiBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
-    chongzhiBtn.frame = CGRectMake(0, 145 - 14, ScreenWidth/2, 40);
-    UIImageView *tipCZ = [[UIImageView alloc] initWithFrame:CGRectMake(20,4, 30, 30)];
-    tipCZ.image = [UIImage imageNamed:@"我的账户_03(2)"];
-    [chongzhiBtn addSubview:tipCZ];
+    chongzhiBtn.frame = CGRectMake1(10, 145 - 14 + 5, 60, 30);
     
-    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth/2 - 1, 12.5, 1, 15)];
-    img.image = [UIImage imageNamed:@"line_iocn"];
-    [chongzhiBtn addSubview:img];
-    
-    UILabel *tipCZLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + 35, 25/2, 30, 15)];
-    tipCZLabel.font = [UIFont systemFontOfSize:15];
-    //tipLabel.textAlignment = NSTextAlignmentRight;
-    //tipCZLabel.textColor = [UIColor whiteColor];
+    UILabel *tipCZLabel = [[UILabel alloc] initWithFrame:CGRectMake1(15, 15/2, 30, 15)];
+    tipCZLabel.font = [UIFont systemFontOfSize:15*sizeScaleX];
+    tipCZLabel.textColor = [UIColor whiteColor];
+    tipCZLabel.textAlignment = NSTextAlignmentRight;
     tipCZLabel.text =  @"充值";
     tipCZLabel.backgroundColor = [UIColor clearColor];
     [chongzhiBtn addSubview:tipCZLabel];
-    [chongzhiBtn setBackgroundImage:[UIImage imageNamed:@"head_bg"] forState:UIControlStateNormal];
+    chongzhiBtn.backgroundColor = [ColorUtil colorWithHexString:@"f18101"];
+    
+    chongzhiBtn.layer.cornerRadius = 15*sizeScaleX;
+    chongzhiBtn.layer.masksToBounds = YES;
+    
     chongzhiBtn.tag = 1002;
     [chongzhiBtn addTarget:self action:@selector(getMoneyMethods:) forControlEvents:UIControlEventTouchUpInside];
-    [scrollView addSubview:chongzhiBtn];
+    [baseImage addSubview:chongzhiBtn];
     
+    [scrollView addSubview:baseImage];
     
     
     /*
@@ -274,7 +315,7 @@
         
         if (i < 3) {
             
-            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 179  + i*40, ScreenWidth, 40)];
+            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 175*sizeScaleX + 5 + i*40, ScreenWidth, 40)];
             oneView1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
             oneView1.userInteractionEnabled = YES;
             
@@ -304,7 +345,7 @@
             
             
         } else if (i < 6&&i>=3) {
-            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 307 + (i - 3)*40, ScreenWidth, 40)];
+            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 307 - 175 + 175*sizeScaleX + (i - 3)*40, ScreenWidth, 40)];
             oneView1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
             oneView1.userInteractionEnabled = YES;
             
@@ -333,7 +374,7 @@
             [scrollView addSubview:oneView1];
             
         } else {
-            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 435 + (i - 6)*40, ScreenWidth, 40)];
+            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 435 - 175 + 175*sizeScaleX + (i - 6)*40, ScreenWidth, 40)];
             
             oneView1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
             oneView1.userInteractionEnabled = YES;
@@ -369,39 +410,39 @@
         }
     }
     
-    UIView *lineView0 = [[UIView alloc] initWithFrame:CGRectMake(0,179, ScreenWidth, 0.5)];
+    UIView *lineView0 = [[UIView alloc] initWithFrame:CGRectMake(0,5 + 175*sizeScaleX , ScreenWidth, 0.5)];
     lineView0.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView0];
     
     
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10,179  + 39.5, ScreenWidth - 10, 0.5)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10,5 + 175*sizeScaleX  + 39.5, ScreenWidth - 10, 0.5)];
     lineView.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView];
     
     
-    UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(10,219  + 39.5, ScreenWidth - 10, 0.5)];
+    UIView *lineView1 = [[UIView alloc] initWithFrame:CGRectMake(10,219 - 179 + 5 + 175*sizeScaleX  + 39.5, ScreenWidth - 10, 0.5)];
     lineView1.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     // lineView1.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     [scrollView addSubview:lineView1];
     
     
     
-    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0,179 + 119.5, ScreenWidth, 0.5)];
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(0,5 + 175*sizeScaleX + 119.5, ScreenWidth, 0.5)];
     lineView2.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView2];
     
     
-    UIView *lineView21 = [[UIView alloc] initWithFrame:CGRectMake(0,307, ScreenWidth, 0.5)];
+    UIView *lineView21 = [[UIView alloc] initWithFrame:CGRectMake(0,307 - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
     lineView21.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView21];
     
     
-    UIView *lineView22 = [[UIView alloc] initWithFrame:CGRectMake(0,426.5, ScreenWidth, 0.5)];
+    UIView *lineView22 = [[UIView alloc] initWithFrame:CGRectMake(0,426.5 - - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
     lineView22.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView22];
@@ -410,12 +451,12 @@
     
     
     
-    UILabel *lineView3 = [[UILabel alloc] initWithFrame:CGRectMake(10,307 +39.5, ScreenWidth - 10, 0.5)];
+    UILabel *lineView3 = [[UILabel alloc] initWithFrame:CGRectMake(10,307 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth - 10, 0.5)];
     lineView3.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView3];
     
-    UILabel *lineView4 = [[UILabel alloc] initWithFrame:CGRectMake(10,347 +39.5, ScreenWidth - 10, 0.5)];
+    UILabel *lineView4 = [[UILabel alloc] initWithFrame:CGRectMake(10,347 - 179 + 5 + 175*sizeScaleX +39.5, ScreenWidth - 10, 0.5)];
     lineView4.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     [scrollView addSubview:lineView4];
     
@@ -423,32 +464,65 @@
     
     
     
-    UILabel *lineView6 = [[UILabel alloc] initWithFrame:CGRectMake(10,435 + 39.5, ScreenWidth - 10, 0.5)];
+    UILabel *lineView6 = [[UILabel alloc] initWithFrame:CGRectMake(10,435 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth - 10, 0.5)];
     lineView6.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     [scrollView addSubview:lineView6];
     
     
-    UILabel *lineView7 = [[UILabel alloc] initWithFrame:CGRectMake(0,475 + 39.5, ScreenWidth, 0.5)];
+    UILabel *lineView7 = [[UILabel alloc] initWithFrame:CGRectMake(0,475 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth, 0.5)];
     lineView7.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     [scrollView addSubview:lineView7];
     
-    
-   
-    
-    
-   
-    
-    
-    
-    
     scrollView.bounces = NO;
     
+     if(ScreenWidth > 320){
     
-    
-    [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 - 82)];
+    [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 20 - 49)];
+     } else {
+     
+     [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 - 82)];
+     }
+         
     [self.view addSubview:scrollView];
     
 }
+
+//获取验证图形
+- (void)requestCategoryList:(NSString *)strUrl
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/LbFiles?type=tx&id=%@&catch=false",SERVERURL,strUrl]];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];//创建数据请求对象
+    [request setRequestMethod:@"GET"];
+    [request setTimeOutSeconds:5];
+    [request setDelegate:self];//设置代理
+    [request startAsynchronous];//发送异步请求
+    
+    //设置网络请求完成后调用的block
+    [request setCompletionBlock:^{
+        
+        //         NSLog(@"%@",request.responseHeaders);
+        
+        //NSData *data = request.responseData;
+       headerImgView.image = [UIImage imageWithData:request.responseData];
+        
+        //---------------判断数据的来源:网络 or缓存------------------
+        if (request.didUseCachedResponse) {
+            NSLog(@"数据来自缓存");
+        } else {
+            NSLog(@"数据来自网络");
+        }
+        
+    }];
+    
+    //请求失败调用的block
+    [request setFailedBlock:^{
+        
+        NSError *error = request.error;
+        NSLog(@"请求网络出错：%@",error);
+    }];
+}
+
+
 
 -(void)pushToUserInfoVC{
     
@@ -598,6 +672,10 @@
                 
                 
             }
+            
+            nameTitle.text = [[delegate.logingUser objectForKey:@"object"] objectForKey:@"username"];
+           // [self requestCategoryList:<#(NSString *)#>]
+            
         } else {
             
             //delegate.strlogin = @"1";
@@ -819,6 +897,7 @@
             } else {
                 AccountInfoViewController *cv = [[AccountInfoViewController alloc] init];
                 cv.dicData = [[jsonDic objectForKey:@"object"] objectAtIndex:0];
+                cv.headImage = headerImgView.image;
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];
             }
@@ -985,7 +1064,8 @@
     accumulatedLab = nil;
     [nameTitle removeFromSuperview];
     nameTitle = nil;
-    
+    [headerImgView removeFromSuperview];
+    headerImgView = nil;
 
 }
 

@@ -17,10 +17,14 @@
     UIScrollView *scrollView;
     NSMutableDictionary *dic;
     float addHight;
+    UIImageView *imgHeadVeiw;
+    BOOL success;
+    BOOL hasLoadedCamera;
 }
 @end
 
 @implementation AccountInfoViewController
+@synthesize dicData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +51,48 @@
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44 + addHight, ScreenWidth, ScreenHeight - 64)];
     scrollView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
+    
+    //头像
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 90)];
+    headView.backgroundColor = [UIColor whiteColor];
+    headView.tag = 100001;
+    UITapGestureRecognizer *headTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
+    //单点触摸
+    headTap.numberOfTouchesRequired = 1;
+    //点击几次，如果是1就是单击
+    headTap.numberOfTapsRequired = 1;
+    [headView addGestureRecognizer:headTap];
+    
+    
+    UILabel *headImage = [[UILabel alloc] initWithFrame:CGRectMake(10, 35, 70, 20)];
+    headImage.font = [UIFont systemFontOfSize:15];
+    headImage.textColor = [ColorUtil colorWithHexString:@"333333"];
+    //headImage.textAlignment = NSTextAlignmentRight;
+    headImage.text = @"头像";
+    [headView addSubview:headImage];
+    
+    imgHeadVeiw = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 20 - 70 - 15, 10, 70, 70)];
+    imgHeadVeiw.backgroundColor = [UIColor redColor];
+    
+    imgHeadVeiw.layer.cornerRadius = imgHeadVeiw.frame.size.width / 2;
+    imgHeadVeiw.clipsToBounds = YES;
+    imgHeadVeiw.layer.borderWidth = 2.0f;
+    imgHeadVeiw.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
+    [headView addSubview:imgHeadVeiw];
+    
+    
+    UIImageView *headTip = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 30, 35, 20, 20)];
+    headTip.image = [UIImage imageNamed:@"next_icon"];
+    [headView addSubview:headTip];
+    
+   UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, 89, ScreenWidth - 30, 1)];
+    lineView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
+    [headView addSubview:lineView];
+    
+    
+    [scrollView addSubview:headView];
+    scrollView.bounces = NO;
+    
      
     [self.view addSubview:scrollView];
     
@@ -67,7 +113,7 @@
 
 -(void)reloadDataWith:(NSMutableDictionary *)dictiongary{
     dic = dictiongary;
-    UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth , 150)];
+    UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 90, ScreenWidth , 150)];
     baseView.backgroundColor = [UIColor whiteColor];
 //    baseView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //    
@@ -148,7 +194,7 @@
     
     [scrollView addSubview:baseView];
     //交易账户
-    UILabel *buyTip = [[UILabel alloc] initWithFrame:CGRectMake(10 , 155 + 17.5, 60, 15)];
+    UILabel *buyTip = [[UILabel alloc] initWithFrame:CGRectMake(10 ,90 + 155 + 17.5, 60, 15)];
     buyTip.text = @"交易账户";
     buyTip.backgroundColor = [UIColor clearColor];
     buyTip.font = [UIFont systemFontOfSize:15];
@@ -160,7 +206,7 @@
     buyTip.textAlignment = NSTextAlignmentLeft;
     [scrollView addSubview:buyTip];
     
-    UILabel *litterLab = [[UILabel alloc] initWithFrame:CGRectMake(75 ,155 + 19 , ScreenWidth - 80, 12)];
+    UILabel *litterLab = [[UILabel alloc] initWithFrame:CGRectMake(75 ,90 + 155 + 19 , ScreenWidth - 80, 12)];
     litterLab.text = @"下列信息可提供给银行绑定银行账户";
     litterLab.font = [UIFont systemFontOfSize:12];
     litterLab.backgroundColor = [UIColor clearColor];
@@ -170,7 +216,7 @@
     [scrollView addSubview:litterLab];
     
     //
-    UIView *base = [[UIView alloc] initWithFrame:CGRectMake(0, 205, ScreenWidth, 100)];
+    UIView *base = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 205, ScreenWidth, 100)];
     base.backgroundColor = [UIColor whiteColor];
 //    base.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //    
@@ -233,7 +279,7 @@
     
     
     //银行账户
-    UILabel *accountTip = [[UILabel alloc] initWithFrame:CGRectMake(10 , 305 + 17.5, 60, 15)];
+    UILabel *accountTip = [[UILabel alloc] initWithFrame:CGRectMake(10 ,90 + 305 + 17.5, 60, 15)];
     accountTip.text = @"银行账户";
     accountTip.font = [UIFont systemFontOfSize:15];
     accountTip.backgroundColor = [UIColor clearColor];
@@ -249,7 +295,7 @@
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if ([[delegate.dictionary objectForKey:@"isBingingCard"] boolValue] == NO) {
     
-    UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0, 355, ScreenWidth , 50)];
+    UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 355, ScreenWidth , 50)];
     lastView.backgroundColor = [UIColor whiteColor];
 //    lastView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //    
@@ -292,7 +338,7 @@
     
     } else {
         
-        UIView *nameView = [[UIView alloc] initWithFrame:CGRectMake(0, 354, ScreenWidth, 50)];
+        UIView *nameView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 354, ScreenWidth, 50)];
         nameView.backgroundColor = [UIColor whiteColor];
 //        nameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //        
@@ -310,9 +356,9 @@
         [nameView addSubview:nameLabel];
         
         UILabel *vauleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 ,17.5, ScreenWidth - 20 - 110, 15)];
-        if ([[_dicData objectForKey:@"FID_YHDM"] isEqualToString:@"JSYH"]) {
+        if ([[dicData objectForKey:@"FID_YHDM"] isEqualToString:@"JSYH"]) {
              vauleLabel.text = @"建设银行";
-        } else if ([[_dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"XYYH"]) {
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"XYYH"]) {
         
          vauleLabel.text = @"兴业银行";
         
@@ -330,7 +376,7 @@
         
         
     
-        UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0, 405, ScreenWidth, 50)];
+        UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 405, ScreenWidth, 50)];
         lastView.backgroundColor = [UIColor whiteColor];
 //        lastView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //        
@@ -353,7 +399,7 @@
         
         UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 ,17.5, ScreenWidth - 20 - 110, 15)];
         
-        NSString *string =[[_dicData objectForKey:@"FID_YHZH"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString *string =[[dicData objectForKey:@"FID_YHZH"] stringByReplacingOccurrencesOfString:@" " withString:@""];
         
         NSRange range;
         NSString *strZJBH;
@@ -416,8 +462,13 @@
         */
      
         [scrollView addSubview:lastView];
-        [scrollView setContentSize:CGSizeMake(ScreenWidth, 460)];
         
+        if (ScreenWidth > 320) {
+         [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 64)];
+        } else {
+        
+        [scrollView setContentSize:CGSizeMake(ScreenWidth, 550)];
+        }
     
     }
     //[scrollView setContentSize:CGSizeMake(ScreenWidth, 410)];
@@ -443,11 +494,312 @@
     
     UnBindCardViewController *vc = [[UnBindCardViewController alloc] init];
        // vc.dic = dic;
-        vc.cardBankStr = [_dicData objectForKey:@"yhzhEncode"];
+        vc.cardBankStr = [dicData objectForKey:@"yhzhEncode"];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
+    } else if (view.tag == 100001) {
+        UIActionSheet *sheet;
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从相册选择", nil];
+            
+        } else {
+            sheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从相册选择", nil];
+        }
+        sheet.tag = 255;
+        [sheet showInView:self.view];
+        
     }
 }
+
+#pragma caramer Methods
+
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (actionSheet.tag == 255) {
+        NSUInteger sourceType = 0;
+        // 判断是否支持相机
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            switch (buttonIndex) {
+                case 0:
+                    // 取消
+                    return;
+                case 1:{
+                    // 相机
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                    hasLoadedCamera = YES;
+                }
+                    break;
+                case 2:{
+                    // 相册
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    // hasLoadedCamera = YES;
+                }
+                    break;
+            }
+        }else {
+            if (buttonIndex == 0) {
+                return;
+            } else {
+                sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+        }
+        
+        [self showcamera:sourceType];
+        
+    }
+}
+
+- (void)showcamera:(NSInteger)tag {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [imagePicker setDelegate:self];
+    //[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [imagePicker setAllowsEditing:YES];
+    imagePicker.sourceType = tag;
+    [self presentViewController:imagePicker animated:YES completion:^{}];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // NSLog(@"u a is sb");
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    UIImage *image = [self scaleImage:[info objectForKey:UIImagePickerControllerEditedImage]];
+    /* 此处info 有六个值
+     * UIImagePickerControllerMediaType; // an NSString UTTypeImage)
+     * UIImagePickerControllerOriginalImage;  // a UIImage 原始图片
+     * UIImagePickerControllerEditedImage;    // a UIImage 裁剪后图片
+     * UIImagePickerControllerCropRect;       // an NSValue (CGRect)
+     * UIImagePickerControllerMediaURL;       // an NSURL
+     * UIImagePickerControllerReferenceURL    // an NSURL that references an asset in the AssetsLibrary framework
+     * UIImagePickerControllerMediaMetadata    // an NSDictionary containing metadata from a captured photo
+     */
+    
+    // 保存图片至本地，方法见下文
+    
+    
+    
+    [self saveImage:image withName:@"currentImage.png"];
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
+    //UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    
+    
+    //添加指示器及遮罩
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES; //加层阴影
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"加载中...";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        ASIFormDataRequest *requestReport  = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/service/psncenter/userinfo/appUploadPhotoSubmit",SERVERURL]]];
+        NSLog(@"%@",requestReport);
+        
+        
+        
+        [requestReport setFile:fullPath forKey:@"upfile"];
+        
+        [requestReport buildPostBody];
+        
+        requestReport.delegate = self;
+        [requestReport setTimeOutSeconds:5];
+        [requestReport setDidFailSelector:@selector(urlRequestField:)];
+        [requestReport setDidFinishSelector:@selector(urlRequestSueccss:)];
+        
+        
+        [requestReport startAsynchronous];//异步传输
+        
+       // isFullScreen = NO;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    });
+    
+    
+    // [self.imageView setImage:savedImage];
+    
+    //self.imageView.tag = 100;
+    
+}
+
+//图片压缩
+
+- (UIImage *)scaleImage:(UIImage *)image {
+    int kMaxResolution = 1000;
+    CGImageRef imgRef = image.CGImage;
+    
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CGRect bounds = CGRectMake(0, 0, width, height);
+    if (width > kMaxResolution || height > kMaxResolution) {
+        CGFloat ratio = width/height;
+        if (ratio > 1) {
+            bounds.size.width = kMaxResolution;
+            bounds.size.height = roundf(bounds.size.width / ratio);
+        }
+        else {
+            bounds.size.height = kMaxResolution;
+            bounds.size.width = roundf(bounds.size.height * ratio);
+        }
+    }
+    
+    NSLog(@"boudns image =%@",NSStringFromCGRect(bounds));
+    CGFloat scaleRatio = bounds.size.width / width;
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));
+    CGFloat boundHeight;
+    UIImageOrientation orient = image.imageOrientation;
+    
+    switch(orient) {
+        case UIImageOrientationUp:
+            transform = CGAffineTransformIdentity;
+            break;
+            
+        case UIImageOrientationUpMirrored:
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            break;
+            
+        case UIImageOrientationDown:
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationLeft:
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRightMirrored:
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRight:
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+            //        default:
+            //            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
+    }
+    
+    UIGraphicsBeginImageContext(bounds.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {
+        CGContextScaleCTM(context, -scaleRatio, scaleRatio);
+        CGContextTranslateCTM(context, -height, 0);
+    }
+    else {
+        CGContextScaleCTM(context, scaleRatio, -scaleRatio);
+        CGContextTranslateCTM(context, 0, -height);
+    }
+    
+    CGContextConcatCTM(context, transform);
+    
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
+    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return imageCopy;
+}
+
+
+
+
+
+-(void) urlRequestField:(ASIHTTPRequest *)request {
+    NSError *error = [request error];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.view makeToast:[NSString stringWithFormat:@"%@",error]];
+}
+
+-(void) urlRequestSueccss:(ASIHTTPRequest *)request {
+    NSData *data =[request responseData];
+    NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
+    NSLog(@"%@",parser);
+    NSLog(@"xml data = %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    [parser setDelegate:self];
+    [parser parse];
+    
+    NSString *strss = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSMutableDictionary *dic = [strss JSONValue];
+    if ([[dic objectForKey:@"success"] boolValue]) {
+        [self.view makeToast:@"更新图片成功"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
+        
+        
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        /*
+        Customer *cuser = [delegate.array objectAtIndex:0];
+        cuser.icon = nil;
+        UIImage *icon = [[UIImage alloc] initWithContentsOfFile:fullPath];
+        cuser.icon = icon;
+         */
+        imgHeadVeiw.image = [[UIImage alloc] initWithContentsOfFile:fullPath];
+        //删除本地化文件
+        /*
+         NSFileManager *fileMgr = [NSFileManager defaultManager];
+         BOOL bRet = [fileMgr fileExistsAtPath:fullPath];
+         if (bRet) {
+         NSError *err;
+         [fileMgr removeItemAtPath:fullPath error:&err];
+         }
+         */
+        
+    } else {
+        [self.view makeToast:@"更新图片失败"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }
+    
+}
+
+#pragma mark - 保存图片至沙盒
+- (void) saveImage:(UIImage *)currentImage withName:(NSString *)imageName
+{
+    NSData *imageData = UIImageJPEGRepresentation(currentImage, 0.5);
+    // 获取沙盒目录
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
+    // 将图片写入文件
+    [imageData writeToFile:fullPath atomically:NO];
+    
+}
+
+
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+}
+
+
+
 
 #pragma mark - Request Methods
 //请求登陆
