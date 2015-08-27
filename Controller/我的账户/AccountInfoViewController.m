@@ -334,7 +334,7 @@
     singleTap1.numberOfTapsRequired = 1;
     //[lastView addGestureRecognizer:singleTap1];
     [scrollView addSubview:lastView];
-    [scrollView setContentSize:CGSizeMake(ScreenWidth, 410)];
+    [scrollView setContentSize:CGSizeMake(ScreenWidth, 500)];
     
     } else {
         
@@ -362,10 +362,37 @@
         
          vauleLabel.text = @"兴业银行";
         
-        } else {
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZGYH"]){
         
-         vauleLabel.text = @"其他银行";
+         vauleLabel.text = @"中国银行";
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"NYYH"]) {
+            vauleLabel.text = @"农业银行";
+        
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GSYH"]) {
+            
+             vauleLabel.text = @"工商银行";
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZSYH"]) {
+               vauleLabel.text = @"招商银行";
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GDYH"]) {
+             vauleLabel.text = @"光大银行";
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GFYH"]) {
+             vauleLabel.text = @"广发银行";
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZXYH"]) {
+             vauleLabel.text = @"中信银行";
+            
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JTYH"]) {
+            vauleLabel.text = @"交通银行";
+            
+        } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"PFYH"]) {
+            vauleLabel.text = @"浦发银行";
+            
         }
+        
+        
+        
         
        
         vauleLabel.font = [UIFont systemFontOfSize:15];

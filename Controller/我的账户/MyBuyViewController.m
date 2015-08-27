@@ -630,7 +630,7 @@
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [cell setBackgroundColor:[UIColor clearColor]];
                 //添加背景View
-                UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,10, ScreenWidth , 30)];
+                UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,0, ScreenWidth , 30)];
                 [backView setBackgroundColor:[ColorUtil colorWithHexString:@"fdfdfd"]];
                 
                 //品牌
@@ -651,7 +651,7 @@
                 moneyLabel.text = [NSString stringWithFormat:@"%@",[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQSL"]];
                 [backView addSubview:moneyLabel];
   //secondView
-                UIView *secondView  = [[UIView alloc] initWithFrame:CGRectMake(0,41, ScreenWidth , 49)];
+                UIView *secondView  = [[UIView alloc] initWithFrame:CGRectMake(0,31, ScreenWidth , 49)];
                 [secondView setBackgroundColor:[ColorUtil colorWithHexString:@"fdfdfd"]];
                 
                 UILabel *classLab = [[UILabel alloc] initWithFrame:CGRectMake(20, 8,ScreenWidth/2 - 20 , 13)];
@@ -687,7 +687,7 @@
                 
                 //投资金额(元)
                 
-                UIView *viewYQ = [[UIView alloc] initWithFrame:CGRectMake(0,91, (ScreenWidth - 2)/3, 49)];
+                UIView *viewYQ = [[UIView alloc] initWithFrame:CGRectMake(0,81, (ScreenWidth - 2)/3, 49)];
                 [viewYQ setBackgroundColor:[ColorUtil colorWithHexString:@"fdfdfd"]];
                 
                 UILabel *lab1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, 99, 13)];
@@ -709,7 +709,7 @@
                 
                 //投资日期
                 
-                UIView *viewRQ = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - 2)/3 + 1,91, (ScreenWidth - 2)/3, 49)];
+                UIView *viewRQ = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - 2)/3 + 1,81, (ScreenWidth - 2)/3, 49)];
                 [viewRQ setBackgroundColor:[ColorUtil colorWithHexString:@"fdfdfd"]];
                 
                 UILabel *labRQ = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, 99, 13)];
@@ -735,7 +735,7 @@
                 
                 //已认购金额
                 
-                UIView *viewFX = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - 2)*2/3 + 2,91, (ScreenWidth - 2)/3, 49)];
+                UIView *viewFX = [[UIView alloc] initWithFrame:CGRectMake((ScreenWidth - 2)*2/3 + 2,81, (ScreenWidth - 2)/3, 49)];
                 [viewFX setBackgroundColor:[ColorUtil colorWithHexString:@"fdfdfd"]];
                 
                 UILabel *labFX = [[UILabel alloc] initWithFrame:CGRectMake(0, 8, 99, 13)];
