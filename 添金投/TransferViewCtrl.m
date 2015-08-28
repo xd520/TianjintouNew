@@ -50,6 +50,25 @@
 @implementation TransferViewCtrl
 
 
+CG_INLINE CGPoint
+CGPointMake1(CGFloat x, CGFloat y)
+{
+    float autoSizeScaleX;
+    
+    if(ScreenWidth > 320){
+        
+        autoSizeScaleX = ScreenWidth/320;
+        
+        
+    }else{
+        autoSizeScaleX = 1.0;
+    }
+    
+    CGPoint p; p.x = x* autoSizeScaleX; p.y = y* autoSizeScaleX; return p;
+}
+
+
+
 CG_INLINE CGRect
 CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
@@ -169,15 +188,56 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     
     
-   headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake1(120, 8,80, 80)];
+   headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake1(0, 0,80, 90)];
     headerImgView.backgroundColor = [UIColor redColor];
   
-    headerImgView.layer.cornerRadius = headerImgView.frame.size.width / 2;
-    headerImgView.clipsToBounds = YES;
-    headerImgView.layer.borderWidth = 3.0f;
-    headerImgView.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
+   // headerImgView.layer.cornerRadius = headerImgView.frame.size.width / 2;
+   // headerImgView.clipsToBounds = YES;
+   // headerImgView.layer.borderWidth = 3.0f;
+   // headerImgView.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
     
-    [tipImg addSubview:headerImgView];
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.backgroundColor = [UIColor whiteColor].CGColor;
+    // UIBezierPath *layerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(1, 1, 78, 78)];
+    
+    UIBezierPath* aPath = [UIBezierPath bezierPath];
+    aPath.lineWidth = 5.0;
+    
+    aPath.lineCapStyle = kCGLineCapRound;  //线条拐角
+    aPath.lineJoinStyle = kCGLineCapRound;  //终点处理
+    
+    // Set the starting point of the shape.
+    [aPath moveToPoint:CGPointMake1(41.0, 0.0)];
+    
+    // Draw the lines
+    [aPath addLineToPoint:CGPointMake1(80.0, 22.0)];
+    [aPath addLineToPoint:CGPointMake1(80, 89 - 22)];
+    [aPath addLineToPoint:CGPointMake1(41.0, 89)];
+    [aPath addLineToPoint:CGPointMake1(0.0, 89 - 22)];
+    [aPath addLineToPoint:CGPointMake1(0.0, 22.0)];
+    [aPath closePath]; //第五条线通过调用closePath方法得到的
+    
+    [aPath fill]; //Draws line 根据坐标点连线
+    
+    
+    maskLayer.path = aPath.CGPath;
+    maskLayer.fillColor = [UIColor blackColor].CGColor;
+    
+    UIView *clippingViewForLayerMask = [[UIView alloc] initWithFrame:CGRectMake1(120, 4 , 80, 90)];
+    clippingViewForLayerMask.backgroundColor = [UIColor whiteColor];
+    clippingViewForLayerMask.layer.mask = maskLayer;
+    // clippingViewForLayerMask.clipsToBounds = YES;
+    
+    [clippingViewForLayerMask addSubview:headerImgView];
+    [tipImg addSubview:clippingViewForLayerMask];
+    
+    
+    
+    
+    
+    
+    //[tipImg addSubview:headerImgView];
     
     
     
@@ -523,6 +583,43 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 }
 
 
+- (void)requestCategoryList
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/res/images/avatar.jpg",SERVERURL]];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];//创建数据请求对象
+    [request setRequestMethod:@"GET"];
+    [request setTimeOutSeconds:5];
+    [request setDelegate:self];//设置代理
+    [request startAsynchronous];//发送异步请求
+    
+    //设置网络请求完成后调用的block
+    [request setCompletionBlock:^{
+        
+        //         NSLog(@"%@",request.responseHeaders);
+        
+        //NSData *data = request.responseData;
+        headerImgView.image = [UIImage imageWithData:request.responseData];
+        
+        //---------------判断数据的来源:网络 or缓存------------------
+        if (request.didUseCachedResponse) {
+            NSLog(@"数据来自缓存");
+        } else {
+            NSLog(@"数据来自网络");
+        }
+        
+    }];
+    
+    //请求失败调用的block
+    [request setFailedBlock:^{
+        
+        NSError *error = request.error;
+        NSLog(@"请求网络出错：%@",error);
+    }];
+}
+
+
+
+
 
 -(void)pushToUserInfoVC{
     
@@ -674,8 +771,19 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             }
             
             nameTitle.text = [[delegate.logingUser objectForKey:@"object"] objectForKey:@"username"];
-           // [self requestCategoryList:<#(NSString *)#>]
             
+            if ([[delegate.logingUser objectForKey:@"object"] objectForKey:@"isTX"] == [NSNull null]) {
+                [self requestCategoryList];
+            } else {
+            
+            if ([[[delegate.logingUser objectForKey:@"object"] objectForKey:@"isTX"] boolValue] == 0 ) {
+                [self requestCategoryList];
+            } else {
+            
+            
+            [self requestCategoryList:[[delegate.logingUser objectForKey:@"object"] objectForKey:@"USERID"]];
+                }
+            }
         } else {
             
             //delegate.strlogin = @"1";
@@ -892,11 +1000,14 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
                 AccountInfoViewController *cv = [[AccountInfoViewController alloc] init];
                 cv.dicData = @{};
+                cv.headImage = headerImgView.image;
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];
             } else {
                 AccountInfoViewController *cv = [[AccountInfoViewController alloc] init];
                 cv.dicData = [[jsonDic objectForKey:@"object"] objectAtIndex:0];
+                
+                
                 cv.headImage = headerImgView.image;
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];

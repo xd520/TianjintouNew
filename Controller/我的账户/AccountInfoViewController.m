@@ -78,6 +78,7 @@
     imgHeadVeiw.clipsToBounds = YES;
     imgHeadVeiw.layer.borderWidth = 2.0f;
     imgHeadVeiw.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
+    imgHeadVeiw.image = _headImage;
     [headView addSubview:imgHeadVeiw];
     
     
@@ -781,6 +782,12 @@
         
         
         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        NSNumber *num = [NSNumber numberWithBool:true];
+        
+        [[delegate.logingUser objectForKey:@"object"] setObject:num forKey:@"isTX"];
+        
+        
         /*
         Customer *cuser = [delegate.array objectAtIndex:0];
         cuser.icon = nil;
