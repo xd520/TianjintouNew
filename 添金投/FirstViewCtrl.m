@@ -108,6 +108,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     backScrollView.showsVerticalScrollIndicator = FALSE;
     backScrollView.showsHorizontalScrollIndicator = FALSE;
+   // backScrollView.delegate = self;
     backScrollView.bounces = NO;
      backScrollView.pagingEnabled = YES;
     //backScrollView.contentInset = UIEdgeInsetsZero;
@@ -626,7 +627,13 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 }
 
 
-
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    CGFloat pagewidth = scrollViewImage.frame.size.width;
+    int page = floor((scrollViewImage.contentOffset.x - pagewidth/([imageArray count]+2))/pagewidth)+1;
+    page --;  // 默认从第二页开始
+    pageControl.currentPage = page;
+}
 
 
 // scrollview 委托函数
@@ -644,6 +651,8 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     {
         [scrollViewImage scrollRectToVisible:CGRectMake(ScreenWidth,0,ScreenWidth,150) animated:NO]; // 最后+1,循环第1页
     }
+    //pageControl.currentPage = currentPage;
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

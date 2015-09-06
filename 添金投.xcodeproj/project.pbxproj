@@ -1726,7 +1726,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
-				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
+				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1743,7 +1743,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
-				GCC_PREFIX_HEADER = "/Users/mac/Desktop/添金投/添金投/tianjintou.pch";
+				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

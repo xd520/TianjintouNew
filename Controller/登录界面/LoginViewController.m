@@ -263,7 +263,6 @@
     
     
     
-    
     CGRect frame = textField.frame;
     int offset = frame.origin.y + 76 - (self.view.frame.size.height - 256.0);//键盘高度216
     //动画
@@ -282,8 +281,6 @@
     [UIView commitAnimations];
     
 }
-
-
 
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
