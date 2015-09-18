@@ -66,6 +66,7 @@
     
     sheetLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.sheetBtn.frame.size.width, self.sheetBtn.frame.size.height)];
     sheetLab.text = @"获取验证码";
+    sheetLab.textColor = [UIColor whiteColor];
     sheetLab.textAlignment = NSTextAlignmentCenter;
     sheetLab.font = [UIFont systemFontOfSize:15];
     sheetLab.textColor = [ColorUtil colorWithHexString:@"999999"];
@@ -224,7 +225,6 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         ASIFormDataRequest *requestReport  = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/sendVcode"]]];
         NSLog(@"%@",requestReport);
-        
         NSString *cookieString = [NSString stringWithFormat:@"JSESSIONID=%@",seddionId];
         
         [requestReport addRequestHeader:@"Cookie" value:cookieString];
@@ -235,7 +235,6 @@
         [requestReport setTimeOutSeconds:5];
         [requestReport setDidFailSelector:@selector(urlRequestField:)];
         [requestReport setDidFinishSelector:@selector(urlRequestSueccss:)];
-        
         
         [requestReport startAsynchronous];//异步传输
         dispatch_async(dispatch_get_main_queue(), ^{

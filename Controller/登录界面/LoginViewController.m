@@ -108,6 +108,7 @@
     
     self.password.autocorrectionType = UITextAutocorrectionTypeNo;
     _userName.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.code.autocorrectionType = UITextAutocorrectionTypeNo;
     //是否自动纠错
     
     _codeImgve.userInteractionEnabled = YES;
@@ -435,7 +436,7 @@
     FoggterViewController *vc = [[FoggterViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-     */
+    */
     [self.view makeToast:@"该功能还未实现，请先到PC端操作"];
     
 }

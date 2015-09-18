@@ -38,3 +38,11 @@
 
 #define UIModalTransitionStyle UIModalTransitionStyleFlipHorizontal
 
+
+#ifdef DEBUG
+#define DMLog(...) NSLog(@"%s %@",[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define DMLog(...) do { } while (0)
+#endif
+
+

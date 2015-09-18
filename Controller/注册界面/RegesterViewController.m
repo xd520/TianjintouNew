@@ -11,6 +11,7 @@
 #import "PhoneViewController.h"
 #import "Child.h"
 #import "UserProcrolViewController.h"
+#import "Base64XD.h"
 
 @interface RegesterViewController ()
 {
@@ -71,6 +72,14 @@
     lineView4.backgroundColor = [ColorUtil  colorWithHexString:@"dedede"];
     [self.allView addSubview:lineView4];
     
+    UIView *lineView5 = [[UIView alloc] initWithFrame:CGRectMake(10, 159.5, ScreenWidth - 20, 0.5)];
+    lineView5.backgroundColor = [ColorUtil  colorWithHexString:@"dedede"];
+    [self.allView addSubview:lineView5];
+    
+    UIView *lineView6 = [[UIView alloc] initWithFrame:CGRectMake(10, 199.5, ScreenWidth - 20, 0.5)];
+    lineView6.backgroundColor = [ColorUtil  colorWithHexString:@"dedede"];
+    [self.allView addSubview:lineView6];
+    
     
     //按钮设置
     self.sheetBtn.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
@@ -127,13 +136,19 @@
 }
 
 
+//匹配是否为email地址。
+- (BOOL)validateEmail:(NSString *)candidate{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:candidate];
+}
+
+
+
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField == _userName) {
    
-        
-        
-        
         
     NSString *emailRegex = @"^[a-zA-Z]\\w{5,17}$";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
@@ -166,8 +181,6 @@
         
     } else if (textField == _password||textField == _passwordAgain) {
         
-       
-        
         
         self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
@@ -179,6 +192,11 @@
             //[self HUDShow:@"请输入正确的身份证号" delay:1.5];
            // [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
             textField.text = @"";
+        }
+    
+    } else if(textField == _email && ![textField.text isEqualToString:@""]){
+        if (![self validateEmail:_email.text]) {
+          [self.view makeToast:@"请输入有效的邮箱" duration:1.0 position:@"center"];
         }
     
     }
@@ -209,9 +227,6 @@
         
     }else {
         
-       
-        
-        
         _passWordView.frame = CGRectMake(_passWordView.frame.origin.x,addHight + 44 + 40, _passWordView.frame.size.width, _passWordView.frame.size.height);
         _allView.frame = CGRectMake(_allView.frame.origin.x,addHight + 44 + 80, _allView.frame.size.width, _allView.frame.size.height);
         
@@ -220,8 +235,15 @@
 
     
     CGRect frame = textField.frame;
+    int offset;
+    if (textField == _email||textField == _invitationCode||textField ==_code) {
+        offset =_allView.frame.origin.y + frame.origin.y + 76 - (self.view.frame.size.height - 256.0);//键盘高度216
+        
+    } else {
+     offset = frame.origin.y + 76 - (self.view.frame.size.height - 256.0);//键盘高度216
     
-    int offset = frame.origin.y + 76 - (self.view.frame.size.height - 256.0);//键盘高度216
+    }
+    
     //动画
     /*
      NSTimeInterval animationDuration = 0.3f;
@@ -466,7 +488,12 @@
     } else if (![self.passwordAgain.text isEqualToString:self.password.text]){
         [self.view makeToast:@"两者密码不一致" duration:1.0 position:@"center"];
        
-    }else if (count % 2 == 0) {
+    }else if(![_email.text isEqualToString:@""]){
+        if (![self validateEmail:_email.text]) {
+            [self.view makeToast:@"请输入有效的邮箱" duration:1.0 position:@"center"];
+        }
+        
+    } else if (count % 2 == 0) {
         
         [self.view makeToast:@"请阅读并同意《个人会员协议》" duration:1.0 position:@"center"];
         
@@ -483,12 +510,24 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
         
-       
+        Base64XD * passwordBase64 = [Base64XD encodeBase64String:self.password.text];
         
         [paraDic setObject:_userName.text forKey:@"username"];
-        [paraDic setObject:_password.text forKey:@"password"];
+        [paraDic setObject:passwordBase64.strBase64 forKey:@"password"];
         [paraDic setObject:_phoneNum.text forKey:@"mobilePhone"];
         [paraDic setObject:_code.text forKey:@"phoneCaptcha"];
+        if (_email == nil || [_email.text isEqualToString:@""]) {
+         [paraDic setObject:@"" forKey:@"email"];
+        } else {
+        [paraDic setObject:_email.text forKey:@"email"];
+        }
+        
+        if (_invitationCode == nil || [_invitationCode.text isEqualToString:@""]) {
+            [paraDic setObject:@"" forKey:@"referee"];
+        } else {
+            [paraDic setObject:_email.text forKey:@"referee"];
+        }
+        
         [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRregisterdoPersonal owner:self];
         
         dispatch_async(dispatch_get_main_queue(), ^{

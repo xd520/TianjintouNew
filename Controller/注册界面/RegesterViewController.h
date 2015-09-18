@@ -29,9 +29,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nameView;
 @property (weak, nonatomic) IBOutlet UIView *passWordView;
-
 @property (weak, nonatomic) IBOutlet UIView *allView;
 
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *invitationCode;
 
 
 

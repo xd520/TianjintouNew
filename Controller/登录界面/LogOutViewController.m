@@ -77,6 +77,7 @@
     
     self.password.autocorrectionType = UITextAutocorrectionTypeNo;
     _userName.autocorrectionType = UITextAutocorrectionTypeNo;
+     self.code.autocorrectionType = UITextAutocorrectionTypeNo;
     //是否自动纠错
     
     _codeImgve.userInteractionEnabled = YES;
