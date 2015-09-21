@@ -525,7 +525,7 @@
         [paraDic setObject:_realName.text forKey:@"name"];
         [paraDic setObject:@"" forKey:@"province"];
         [paraDic setObject:@"" forKey:@"city"];
-        [paraDic setObject:_oldPassWord.text forKey:@"password"];
+        [paraDic setObject:[[Base64XD encodeBase64String:_oldPassWord.text] strBase64] forKey:@"password"];
         [paraDic setObject:_passWordAgain.text forKey:@"phoneCaptcha"];
         if ([_falemLab.text isEqualToString:@"男"]) {
             [paraDic setObject:@"1" forKey:@"xb"];

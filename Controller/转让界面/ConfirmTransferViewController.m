@@ -377,7 +377,7 @@
 {
     NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [paraDic setObject:[self.dic objectForKey:@"FID_GQDM"] forKey:@"gqdm"];
     [paraDic setObject:[_dic objectForKey:@"FID_WTJE"] forKey:@"wtje"];//委托金额除 以委托价格
     [paraDic setObject:[self.dic objectForKey:@"FID_WTSL"] forKey:@"wtsl"];
@@ -393,7 +393,7 @@
 {
     NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [paraDic setObject:_wtsl forKey:@"keyid"];
     [paraDic setObject:[self.dic objectForKey:@"FID_GQDM"] forKey:@"gqdm"];
     [paraDic setObject:[_dic objectForKey:@"FID_WTJE"] forKey:@"wtje"];//委托金额除 以委托价格

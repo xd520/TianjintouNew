@@ -262,7 +262,7 @@
     NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
     
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [paraDic setObject:[self.dic objectForKey:@"gqdm"] forKey:@"gqdm"];
     [paraDic setObject:_str forKey:@"wtsl"];
     //转让本金

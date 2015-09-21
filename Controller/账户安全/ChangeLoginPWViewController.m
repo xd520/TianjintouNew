@@ -189,9 +189,10 @@
         hud.labelText = @"加载中...";
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-            [paraDic setObject:_oldPW.text forKey:@"oldPwd"];
-            [paraDic setObject:_password.text forKey:@"newPwd1"];
-            [paraDic setObject:_passwordAgain.text forKey:@"newPwd2"];
+            
+            [paraDic setObject:[[Base64XD encodeBase64String:_oldPW.text] strBase64] forKey:@"oldPwd"];
+            [paraDic setObject:[[Base64XD encodeBase64String:_password.text] strBase64] forKey:@"newPwd1"];
+            [paraDic setObject:[[Base64XD encodeBase64String:_passwordAgain.text] strBase64] forKey:@"newPwd2"];
             [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRmodifyLoginPwdSubmit owner:self];
             dispatch_async(dispatch_get_main_queue(), ^{
                 

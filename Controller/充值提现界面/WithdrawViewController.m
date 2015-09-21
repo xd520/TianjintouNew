@@ -689,7 +689,7 @@
     [paraDic setObject:[[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_YHZH"] forKey:@"yhzh"];
     [paraDic setObject:_zzje forKey:@"zzje"];
     [paraDic setObject:_yzm forKey:@"yzm"];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     
     if ([[self.dic objectForKey:@"bankInfoResult"] objectForKey:@"FID_JGDM"] == nil) {
         NSLog(@"1233");

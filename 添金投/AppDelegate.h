@@ -19,6 +19,7 @@
 #import "HMSegmentedControl.h"
 #import "LogOutViewController.h"
 #import "LoginViewController.h"
+#import "Base64XD.h"
 
 #define NUMBERS @"0123456789\n"
 //#define SERVERURL @"http://192.168.1.110:8803"
