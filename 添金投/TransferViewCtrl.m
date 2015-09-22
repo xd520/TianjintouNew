@@ -103,7 +103,6 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 }
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     hasMore = 0 ;
@@ -1145,10 +1144,6 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
 
-
-
-
-
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -1157,6 +1152,10 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     //UIStatusBarStyleLightContent = 1 白色文字，深色背景时使用
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self getUIFirst];
+}
 
 
 - (void)didReceiveMemoryWarning {
