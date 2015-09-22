@@ -252,7 +252,6 @@
         
     }else if (view.tag == 0){
         
-        
         [self.view makeToast:@"该功能未实现，请先到PC端操作"];
     }else if (view.tag == 3){
         ChangeLoginPWViewController *vc = [[ChangeLoginPWViewController alloc] init];
@@ -280,12 +279,10 @@
  */
             
             if ([[dicData objectForKey:@"isSetCert"] boolValue]){
-                [self.view makeToast:@"该功能未实现，请先到PC端操作"];
-               // BindCardViewController *vc = [[BindCardViewController alloc] init];
-               // vc.hidesBottomBarWhenPushed = YES;
-               // [self.navigationController pushViewController:vc animated:YES];
-                
-                
+               // [self.view makeToast:@"该功能未实现，请先到PC端操作"];
+                BindCardViewController *vc = [[BindCardViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
                 
             
             }else {

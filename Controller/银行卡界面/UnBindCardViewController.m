@@ -227,6 +227,9 @@
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRsendVcodeBindCard owner:self];
 }
 - (IBAction)remberMethods:(id)sender {
+    
+    
+    
 }
 - (IBAction)biandMethods:(id)sender {
     

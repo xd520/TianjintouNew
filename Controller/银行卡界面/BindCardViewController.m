@@ -136,23 +136,21 @@
     //singleTap2.numberOfTapsRequired = 1;
    // [lab addGestureRecognizer:singleTap2];
     
-   
-    
-    
 }
 
 
 - (void)reloadCityTableView:(NSDictionary *)_code{
-    
     self.addressLab.text = [_code objectForKey:@"FID_XZQYMC"];
     cityDic = _code;
     
 }
 
 - (void)reloadProviousTableView:(NSDictionary *)_code{
-    self.proviousLab.text = [_code objectForKey:@"FID_XZQYMC"];
+    if (![self.proviousLab.text isEqualToString:[_code objectForKey:@"FID_XZQYMC"]]) {
+       self.proviousLab.text = [_code objectForKey:@"FID_XZQYMC"];
+       self.addressLab.text = @"";
+    }
     proviceDic = _code;
-
 }
 
 
@@ -221,7 +219,7 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
-    NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+   // NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
     if (tag == kBusinessTagGetJRisNeedPsw){
         
         if ([[jsonDic objectForKey:@"success"] boolValue]== YES) {

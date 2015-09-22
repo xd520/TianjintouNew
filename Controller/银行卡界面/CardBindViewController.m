@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "AccountViewController.h"
 #import "Child.h"
+#import "PassWordMangerViewController.h"
+#import "LoginViewController.h"
 
 @interface CardBindViewController ()
 {
@@ -86,9 +88,9 @@
     
     [paraDic setObject:_code forKey:@"yhdm"];
     [paraDic setObject:_yhzh forKey:@"yhzh"];
-    [paraDic setObject:_yhmm forKey:@"yhmm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_yhmm] strBase64] forKey:@"yhmm"];
     [paraDic setObject:_yzm forKey:@"yzm"];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
 }
@@ -143,35 +145,26 @@
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             [self.view makeToast:[dataArray objectForKey:@"mag"] duration:2 position:@"center"];
         }else {
-            __block int timeout = 2; //倒计时时间
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-            dispatch_source_set_event_handler(_timer, ^{
-                if (timeout <= 0) { //倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //设置界面的按钮显示 根据自己需求设置
-                        
+           
                         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                         
                         [delegate.dictionary setObject:[NSNumber numberWithBool:1] forKey:@"isBingingCard"];
-                        
-                        AccountViewController *VC = [[AccountViewController alloc]init];
-                        //VC.hidesBottomBarWhenPushed = YES;
-                        [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-                    });
-                    
-                    
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
-                    });
-                    timeout--;
-                }
-            });
-            dispatch_resume(_timer);
+            
+            
+            NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+            //删除最后一个，也就是自己
+            UIViewController *vc = [array objectAtIndex:array.count-3];
+            if ([vc.nibName isEqualToString:@"PassWordMangerViewController"]) {
+                PassWordMangerViewController *vc = [[PassWordMangerViewController alloc]init];
+                [self.navigationController popToViewController:vc animated:YES];
+            } else {
+            
+                LoginViewController *vc = [[LoginViewController alloc]init];
+                [self.navigationController popToViewController:vc animated:YES];
+            
+            }
+            
+            [self.navigationController.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
             
         }
     }

@@ -425,7 +425,8 @@
         [lastView addSubview:accountLabel];
         lastView.userInteractionEnabled = YES;
         
-        UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 ,17.5, ScreenWidth - 20 - 110, 15)];
+        
+        UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 ,17.5, ScreenWidth  - 120 - 30, 15)];
         
         NSString *string =[[dicData objectForKey:@"FID_YHZH"] stringByReplacingOccurrencesOfString:@" " withString:@""];
         
@@ -446,21 +447,36 @@
         cardBandLabel.textAlignment = NSTextAlignmentRight;
         [lastView addSubview:cardBandLabel];
         
+        UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 30, 15, 20, 20)];
+        tipImg.image = [UIImage imageNamed:@"next_icon"];
+        [lastView addSubview:tipImg];
+        
+        UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
+        lastView.tag = 1;
+        //单点触摸
+        singleTap1.numberOfTouchesRequired = 1;
+        //点击几次，如果是1就是单击
+        singleTap1.numberOfTapsRequired = 1;
+        [lastView addGestureRecognizer:singleTap1];
+        
+        
+        
+        
         
        
-       /*
+      /*
         //是否允许线上解绑
-        if ([[_dicData objectForKey:@"FID_ZQYW"] isEqualToString:@"16"]) {
-            
+        if ([[dicData objectForKey:@"FID_ZQYW"] isEqualToString:@"16"]) {
+       
             UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(110 ,17.5, ScreenWidth - 20 - 110 - 20, 15)];
-            cardBandLabel.text = [_dicData objectForKey:@"FID_YHZH"];
+            cardBandLabel.text = [dicData objectForKey:@"FID_YHZH"];
             cardBandLabel.font = [UIFont systemFontOfSize:15];
             
             cardBandLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
             
             cardBandLabel.textAlignment = NSTextAlignmentRight;
             [lastView addSubview:cardBandLabel];
-            
+       
             
             
             UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 10 - 30, 15, 20, 20)];
@@ -475,19 +491,19 @@
             singleTap1.numberOfTapsRequired = 1;
             [lastView addGestureRecognizer:singleTap1];
         } else {
-        
+       
             UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(110 ,17.5, ScreenWidth - 20 - 110, 15)];
-            cardBandLabel.text = [_dicData objectForKey:@"FID_YHZH"];
+            cardBandLabel.text = [dicData objectForKey:@"FID_YHZH"];
             cardBandLabel.font = [UIFont systemFontOfSize:15];
             
             cardBandLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
             
             cardBandLabel.textAlignment = NSTextAlignmentRight;
             [lastView addSubview:cardBandLabel];
-        
+       
         
         }
-        */
+       */
      
         [scrollView addSubview:lastView];
         
