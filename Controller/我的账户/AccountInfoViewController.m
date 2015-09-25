@@ -526,6 +526,8 @@
         
     if ([dic objectForKey:@"name"] == [NSNull null]){
         [self.view makeToast:@"请先完善我的资料" duration:2 position:@"center"];
+        
+        
     } else {
       
         BindCardViewController *vc = [[BindCardViewController alloc] init];

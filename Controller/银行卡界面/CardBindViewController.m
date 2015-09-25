@@ -157,7 +157,10 @@
             if ([vc.nibName isEqualToString:@"PassWordMangerViewController"]) {
                 PassWordMangerViewController *vc = [[PassWordMangerViewController alloc]init];
                 [self.navigationController popToViewController:vc animated:YES];
-            } else {
+            } else if ([vc.nibName isEqualToString:@"AccountInfoViewController"]){
+               [self.navigationController popToRootViewControllerAnimated:YES];
+                
+            } else{
             
                 LoginViewController *vc = [[LoginViewController alloc]init];
                 [self.navigationController popToViewController:vc animated:YES];
