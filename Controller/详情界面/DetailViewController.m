@@ -604,10 +604,22 @@
     NSInteger miaoCount = minCount%1000;
     NSInteger miao = (minCount - miaoCount)/1000;
     
-     _longtime1.text = [NSString stringWithFormat:@"%ld天%ld小时%ld分钟%ld秒",day, hour, min,miao];
+    if (day > 0) {
+       _longtime1.text = [NSString stringWithFormat:@"%ld天%ld小时%ld分钟%ld秒",day, hour, min,miao];
+    } else {
     
+        if (hour > 0) {
+          _longtime1.text = [NSString stringWithFormat:@"%ld小时%ld分钟%ld秒", hour, min,miao];
+        } else {
+            if (min > 0) {
+              _longtime1.text = [NSString stringWithFormat:@"%ld分钟%ld秒", min,miao];
+            } else {
+                _longtime1.text = [NSString stringWithFormat:@"%ld秒",miao];
+            }
+        }
+    }
     
-}
+ }
 
 
 
