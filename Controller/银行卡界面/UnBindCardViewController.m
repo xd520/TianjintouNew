@@ -89,8 +89,89 @@
     sheetLab.textColor = [ColorUtil colorWithHexString:@"999999"];
     [_sheetBtn addSubview:sheetLab];
     
+    self.bankName.textColor = [ColorUtil colorWithHexString:@"333333"];
+    self.bankAccount.textColor = [ColorUtil colorWithHexString:@"666666"];
+    
+    [self getBankUIData:self.bankcodeStr withLab:self.bankName withImgView:self.bank withTail:self.bankAccount];
     
 }
+
+
+-(void)getBankUIData:(NSString *)str withLab:(UILabel *)lab withImgView:(UIImageView *)img withTail:(UILabel *)tail{
+    NSString *string =[self.bankcodeStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSRange range;
+    NSString *strZJBH;
+    
+    range.length = [string length] - 9;
+    range.location = 5;
+    strZJBH  = [string stringByReplacingCharactersInRange:range withString:@"******"];
+    
+    
+    
+    if ([str isEqualToString:@"ZGYH"]) {
+        lab.text = @"中国银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_zgyh"];
+    } else if ([str isEqualToString:@"JSYH"]){
+        lab.text = @"建设银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jsyh"];
+    } else if ([str isEqualToString:@"NYYH"]) {
+        lab.text = @"农业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_nyyh"];
+        
+    } else if ([str isEqualToString:@"GSYH"]) {
+        lab.text = @"工商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gsyh"];
+        
+    }else if ([str isEqualToString:@"ZSYH"]) {
+        lab.text = @"招商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_yh"];
+        
+    }else if ([str isEqualToString:@"GDYH"]) {
+        lab.text = @"光大银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gdyh"];
+        
+    }else if ([str isEqualToString:@"GFYH"]) {
+        lab.text = @"广发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gfyh"];
+        
+    }else if ([str isEqualToString:@"XYYH"]) {
+        lab.text = @"兴业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_xyyh"];
+        
+    } else if ([str isEqualToString:@"ZXYH"]) {
+        lab.text = @"中信银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_zxyh"];
+        
+    } else if ([str isEqualToString:@"JTYH"]) {
+        lab.text = @"交通银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jtyh"];
+        
+    } else if ([str isEqualToString:@"PAYH"]) {
+        lab.text = @"平安银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_payh"];
+        
+    } else if ([str isEqualToString:@"PFYH"]) {
+        lab.text = @"浦发银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_pfyh"];
+        
+    }
+    
+}
+
+
 
 -(void)pushVCProtocal{
     

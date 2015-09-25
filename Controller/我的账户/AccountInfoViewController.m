@@ -541,6 +541,9 @@
     UnBindCardViewController *vc = [[UnBindCardViewController alloc] init];
        // vc.dic = dic;
         vc.cardBankStr = [dicData objectForKey:@"yhzhEncode"];
+        vc.bankAccountStr = [dicData objectForKey:@"FID_YHZH"];
+         vc.bankcodeStr = [dicData objectForKey:@"FID_YHDM"];
+        
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (view.tag == 100001) {

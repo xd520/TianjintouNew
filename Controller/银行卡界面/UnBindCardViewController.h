@@ -10,9 +10,13 @@
 #import "AppDelegate.h"
 
 @interface UnBindCardViewController : UIViewController<NetworkModuleDelegate>
+
 - (IBAction)back:(id)sender;
 //@property (nonatomic,strong) NSDictionary *dic;
 @property (nonatomic,strong) NSString *cardBankStr;
+
+@property (nonatomic,strong) NSString *bankAccountStr;
+@property (nonatomic,strong) NSString *bankcodeStr;
 
 @property (weak, nonatomic) IBOutlet UITextField *codeNum;
 @property (weak, nonatomic) IBOutlet UITextField *jiaoyiPW;
@@ -22,5 +26,13 @@
 - (IBAction)remberMethods:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *bindBtn;
 - (IBAction)biandMethods:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *bank;
+
+@property (weak, nonatomic) IBOutlet UILabel *bankName;
+
+@property (weak, nonatomic) IBOutlet UILabel *bankAccount;
+
+
 
 @end
