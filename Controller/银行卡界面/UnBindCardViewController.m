@@ -108,9 +108,9 @@
     NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
     
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:_yhmm forKey:@"bankCardNo"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_yhmm] strBase64] forKey:@"bankCardNo"];
     [paraDic setObject:_yzm forKey:@"yzm"];
-    [paraDic setObject:_jymm forKey:@"jymm"];
+    [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
 }
 
