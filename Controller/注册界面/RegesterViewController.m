@@ -488,21 +488,20 @@
     } else if (![self.passwordAgain.text isEqualToString:self.password.text]){
         [self.view makeToast:@"两者密码不一致" duration:1.0 position:@"center"];
        
-    }else if(![_email.text isEqualToString:@""]){
-        if (![self validateEmail:_email.text]) {
-            [self.view makeToast:@"请输入有效的邮箱" duration:1.0 position:@"center"];
-        }
-        
     } else if (count % 2 == 0) {
-        
-        [self.view makeToast:@"请阅读并同意《个人会员协议》" duration:1.0 position:@"center"];
-        
-        
+        [self.view makeToast:@"请阅读并同意《添金投服务协议》" duration:1.0 position:@"center"];
     } else if ([self.phoneNum.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入有效手机号码" duration:2.0 position:@"center"];
     }else if ([self.code.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入手机验证码" duration:2.0 position:@"center"];
+    }else if (_email == nil || [_email.text isEqualToString:@""]){
+    [self.view makeToast:@"邮箱不能为空" duration:2.0 position:@"center"];
     } else {
+        
+            if (![self validateEmail:_email.text]) {
+                [self.view makeToast:@"请输入有效邮箱" duration:2.0 position:@"center"];
+            } else {
+        
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -516,11 +515,7 @@
         [paraDic setObject:passwordBase64.strBase64 forKey:@"password"];
         [paraDic setObject:_phoneNum.text forKey:@"mobilePhone"];
         [paraDic setObject:_code.text forKey:@"phoneCaptcha"];
-        if (_email == nil || [_email.text isEqualToString:@""]) {
-         [paraDic setObject:@"" forKey:@"email"];
-        } else {
         [paraDic setObject:_email.text forKey:@"email"];
-        }
         
         if (_invitationCode == nil || [_invitationCode.text isEqualToString:@""]) {
             [paraDic setObject:@"" forKey:@"referee"];
@@ -534,6 +529,7 @@
             
         });
     });
+    }
     }
 }
 

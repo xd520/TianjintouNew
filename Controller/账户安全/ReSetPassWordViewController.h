@@ -15,4 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 - (IBAction)sureMethods:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *code;
+
+@property (weak, nonatomic) IBOutlet UIButton *sheetCodeBtn;
+- (IBAction)sheetCodeMethods:(id)sender;
+
+
+
 @end

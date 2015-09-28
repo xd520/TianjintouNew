@@ -343,7 +343,7 @@
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/step2"];
             break;
         case 110:
-            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/account/savePWD"];
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/account/resetJyPWD"];
             break;
         case 111:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/account/modifyTranPwdSubmit"];
@@ -482,6 +482,9 @@
             break;
         case 156:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/wdyhk/hftx/bindCard/cityData"];
+            break;
+        case 157:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/account/sendVcode"];
             break;
         default:
             break;

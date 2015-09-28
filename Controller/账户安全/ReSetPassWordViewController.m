@@ -8,10 +8,13 @@
 
 #import "ReSetPassWordViewController.h"
 #import "AppDelegate.h"
+#import "Child.h"
 
 @interface ReSetPassWordViewController ()
 {
     float addHight;
+    UILabel *sheetLab;
+     Child *child;
 }
 @end
 
@@ -48,8 +51,23 @@
     view2.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
     [self.view addSubview:view2];
     
-   
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, 164 + addHight, ScreenWidth, 1)];
+    view3.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
+    [self.view addSubview:view3];
     
+    
+    //按钮设置
+    self.sheetCodeBtn.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
+    self.sheetCodeBtn.layer.masksToBounds = YES;
+    self.sheetCodeBtn.layer.cornerRadius = 2;
+    
+    sheetLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.sheetCodeBtn.frame.size.width, self.sheetCodeBtn.frame.size.height)];
+    sheetLab.text = @"获取验证码";
+    sheetLab.textAlignment = NSTextAlignmentCenter;
+    
+    sheetLab.font = [UIFont systemFontOfSize:15];
+    sheetLab.textColor = [UIColor whiteColor];
+    [_sheetCodeBtn addSubview:sheetLab];
     
     
     _sureBtn.layer.masksToBounds = YES;
@@ -78,30 +96,32 @@
             //数据异常处理
             [self.view makeToast:@"重置交易密码失败"];
         } else {
-            //[self recivedCategoryList:dataArray];
-            __block int timeout = 2; //倒计时时间
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-            dispatch_source_set_event_handler(_timer, ^{
-                if (timeout <= 0) { //倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //设置界面的按钮显示 根据自己需求设置
-                        
-                        [self.navigationController popViewControllerAnimated:YES];
-                    });
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [self.view makeToast:@"重置交易密码成功" duration:2 position:@"center"];
-                    });
-                    timeout--;
-                }
-            });
-            dispatch_resume(_timer);
             
+             [self.navigationController.view makeToast:@"重置交易密码成功" duration:2 position:@"center"];
+            [self.navigationController popViewControllerAnimated:YES];
+           
+        }
+    } else  if (tag== kBusinessTagGetJRwdzhsendVcode) {
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [self.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
+            
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            //[self.view makeToast:@"登录成功!"];
+            //self.titleLabel.text = [NSString stringWithFormat:@"已向%@发送短信,请填写验证码",[[jsonDic objectForKey:@"object"] objectForKey:@"showPhone"]];
+            // str = [[jsonDic objectForKey:@"object"] objectForKey:@"sessionId"];
+            
+            
+            //cookieStr = [[jsonDic objectForKey:@"object"] objectForKey:@"sessionId"];
+            
+            child.age = 0;
+            //注册观察者
+            child = [[Child alloc] init];
+            child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
+            [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
             
         }
     }
@@ -190,7 +210,9 @@
         [self.view makeToast:@"请再一次输入密码" duration:2 position:@"center"];
     }else if (_passWord.text.length != 6||_passWordAgain.text.length != 6) {
         [self.view makeToast:@"请输入6位数交易密码" duration:1.0 position:@"center"];
-    } else {
+    } else if ([_code.text isEqualToString:@""]) {
+        [self.view makeToast:@"请输入手机验证码" duration:1.0 position:@"center"];
+    }else {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.dimBackground = YES;
@@ -201,6 +223,8 @@
             NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
             [paraDic setObject:[[Base64XD encodeBase64String:_passWord.text] strBase64] forKey:@"password"];
             [paraDic setObject:[[Base64XD encodeBase64String:_passWordAgain.text] strBase64] forKey:@"password2"];
+             [paraDic setObject:_code.text forKey:@"yzm"];
+            
             [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRsavePWD owner:self];
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -209,5 +233,35 @@
         
     }
 
+}
+
+
+//监听方法
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if ([[change objectForKey:@"new"] integerValue] <= 0) {
+        sheetLab.text = @"获取验证码";
+        _sheetCodeBtn.enabled = YES;
+        _sheetCodeBtn.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
+        [child removeObserver:self forKeyPath:@"age"];
+    } else {
+        sheetLab.text = [NSString stringWithFormat:@"%@秒后获取",[change objectForKey:@"new"]];
+        _sheetCodeBtn.enabled = NO;
+        _sheetCodeBtn.backgroundColor = [UIColor grayColor];
+        
+    }
+    
+    
+}
+
+
+
+
+
+- (IBAction)sheetCodeMethods:(id)sender {
+    
+    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+    
+    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRwdzhsendVcode owner:self];
 }
 @end

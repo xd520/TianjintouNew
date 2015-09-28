@@ -480,10 +480,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             //[self.navigationController pushViewController:cv animated:YES];
         }
     }else {
-        
-        
-        
-        if (tag== kBusinessTagGetJRhotproject) {
+            if (tag== kBusinessTagGetJRhotproject) {
             NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
             
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {

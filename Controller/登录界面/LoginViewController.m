@@ -34,14 +34,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   // UIView *baseView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    
-    // darkGrayColor;
-    //lightGrayColor;
-   // baseView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
-    //baseView.backgroundColor = [UIColor lightGrayColor];
-    // self.view = baseView;
-   // [baseView addSubview:self.view];
+  
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (delegate.logingUser.count > 0) {
+        if ([[delegate.logingUser objectForKey:@"success"] boolValue] == YES) {
+     [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 
@@ -393,6 +392,8 @@
             [userDefault setBool:self.rember.selected forKey:@"isRemember"];
             [userDefault synchronize];
         }
+        
+        [ASIHTTPRequest setSessionCookies:nil];
         
         Base64XD * passwordBase64 = [Base64XD encodeBase64String:self.password.text];
         NSLog(@"%@",passwordBase64.strBase64);

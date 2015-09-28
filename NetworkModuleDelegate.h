@@ -169,6 +169,8 @@ enum kBusinessTag
     kBusinessTagGetJRjrzcjywdsyDate = 154,
     kBusinessTagGetJRprovinceData = 155,//省份
     kBusinessTagGetJRcityData = 156,//地区
+    kBusinessTagGetJRwdzhsendVcode = 157,//重置交易密码验证码
+    
     
 };
 typedef enum kBusinessTag kBusinessTag;

@@ -36,7 +36,8 @@
     UILabel *accumulatedLab;
     UILabel *nameTitle;
     
-    int hasMore;
+   
+    
     float addHight;
     
      float sizeScaleX;
@@ -96,16 +97,17 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    if (count == 1) {
-        [self getUIFirst];
-    }
+   // if (count == 1) {
+       // [self getUIFirst];
+  //  }
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    hasMore = 0 ;
+   
+    
     count = 1;
     
     if ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0) {
@@ -262,7 +264,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     //incomeTip.textAlignment = NSTextAlignmentCenter;
     incomeTip.textColor = [UIColor whiteColor];
     incomeTip.backgroundColor = [UIColor clearColor];
-    incomeTip.text = @"累计已收益(元)";
+    incomeTip.text = @"累计总收益(元)";
     [tipImg addSubview:incomeTip];
     
     //累计收益
@@ -279,7 +281,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     // foodTip.textAlignment = NSTextAlignmentCenter;
     foodTip.textColor = [UIColor whiteColor];
     foodTip.backgroundColor = [UIColor clearColor];
-    foodTip.text = @"预期待收益(元)";
+    foodTip.text = @"累计待收益(元)";
     [tipImg addSubview:foodTip];
     
    
@@ -752,7 +754,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (delegate.logingUser.count > 0) {
         if ([[delegate.logingUser objectForKey:@"success"] boolValue] == YES) {
-            if (hasMore != 1&& hasMore == 0) {
+           
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 hud.dimBackground = YES; //加层阴影
                 hud.mode = MBProgressHUDModeIndeterminate;
@@ -767,7 +769,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 });
                 
                 
-            }
+            
             
             nameTitle.text = [[delegate.logingUser objectForKey:@"object"] objectForKey:@"username"];
             
@@ -1136,9 +1138,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
-    if (tag==kBusinessTagGetJRMyzc) {
-        hasMore = 1;
-    }
+    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     //}
     [[NetworkModule sharedNetworkModule] cancel:tag];
@@ -1154,7 +1154,9 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self getUIFirst];
+    if (count == 1) {
+        [self getUIFirst];
+    }
 }
 
 
