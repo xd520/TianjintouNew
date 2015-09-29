@@ -301,7 +301,7 @@
     [_longtime1 setTextColor:[ColorUtil colorWithHexString:@"fe8103"]];
     _longtime1.textAlignment = NSTextAlignmentLeft;
     
-    _longtime1.frame = CGRectMake(10,descHeight + 155, ScreenWidth/2 - 10, 14);
+    _longtime1.frame = CGRectMake(10,descHeight + 155, ScreenWidth/2 , 14);
     
      if ([_flagStr isEqualToString:@"false"]) {
      _longtime1.text = @"募集结束";

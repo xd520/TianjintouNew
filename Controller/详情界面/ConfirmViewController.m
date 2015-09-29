@@ -64,7 +64,7 @@
     }
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44 + addHight, ScreenWidth, ScreenHeight - 44 - addHight)];
-    
+    scrollView.bounces = NO;
     [self.view addSubview:scrollView];
     
    

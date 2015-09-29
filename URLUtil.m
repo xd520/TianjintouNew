@@ -295,7 +295,7 @@
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/zjgl/index/transAccount/applyOutMoneySubmit"];
             break;
         case 94:
-            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/jrzcjy/cpzx/doTrade"];
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/service/jrzcjy/cpzx/doTrade_app"];
             break;
         case 95:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/wdyhk/getSupBankList"];
@@ -485,6 +485,15 @@
             break;
         case 157:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/account/sendVcode"];
+            break;
+        case 158:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/validateMobilePhone"];
+            break;
+        case 159:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/sendVcode"];
+            break;
+        case 160:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/resetPwd"];
             break;
         default:
             break;

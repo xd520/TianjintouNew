@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "RegesterViewController.h"
 #import "AppDelegate.h"
-#import "FoggterViewController.h"
+#import "ForgetPWDViewController.h"
 #import "Base64XD.h"
 
 
@@ -433,12 +433,12 @@
 
 - (IBAction)foggoterPW:(id)sender {
     [self.view endEditing:YES];
-    /*
-    FoggterViewController *vc = [[FoggterViewController alloc] init];
+   
+    ForgetPWDViewController *vc = [[ForgetPWDViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    */
-    [self.view makeToast:@"该功能还未实现，请先到PC端操作"];
+    
+   // [self.view makeToast:@"该功能还未实现，请先到PC端操作"];
     
 }
 

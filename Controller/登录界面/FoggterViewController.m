@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "FoggterAgainViewController.h"
 #import "Child.h"
+#import "LoginViewController.h"
 
 @interface FoggterViewController ()
 {
@@ -69,7 +70,7 @@
     sheetLab.textColor = [UIColor whiteColor];
     sheetLab.textAlignment = NSTextAlignmentCenter;
     sheetLab.font = [UIFont systemFontOfSize:15];
-    sheetLab.textColor = [ColorUtil colorWithHexString:@"999999"];
+    sheetLab.textColor = [UIColor whiteColor];
     [_sheetBtn addSubview:sheetLab];
     
     _phoneNum.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -102,7 +103,7 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
-    if (tag== kBusinessTagGetJRstep2) {
+    if (tag== kBusinessTagGetJRforgetpwdsendVcode) {
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -110,16 +111,27 @@
             //            subing = NO;
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.view makeToast:@"该手机号码验证成功!"];
+           
+            child.age = 0;
+            //注册观察者
+            child = [[Child alloc] init];
+            child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
+            [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
+           
+        }
+    } else if (tag == kBusinessTagGetJRforgetpwdresetPwd){
+     child.age = 0;
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:[jsonDic objectForKey:@"msg"]];
+            //            subing = NO;
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.navigationController.view makeToast:[jsonDic objectForKey:@"msg"]];
             
-            _sheetBtn.backgroundColor = [UIColor lightTextColor];
-            _sheetBtn.enabled = YES;
-            seddionId = [dataArray objectForKey:@"sessionId"];
+            [self.navigationController popToViewController:[[LoginViewController alloc] init] animated:YES];
             
-           // AppDelegate *delate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-           // delate.loginVC.delegate = self.delegate;
-            //delate.logingUser = dataArray;
-            //[self.delegate LoginViewVC:self loginOK:nil];
             
         }
     }
@@ -138,30 +150,21 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
-    if (textField == _phoneNum) {
+    if (textField == _phoneNum ||textField == _passWord) {
     
-    if (textField.text.length > 0) {
+        NSString *emailRegex = @"^(?=.{6,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$";
+        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+        bool sfzNo = [emailTest evaluateWithObject:[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         
-    
-    NSString *emailRegex = @"^1[3|4|5|8][0-9]\\d{8}$";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    bool sfzNo = [emailTest evaluateWithObject:[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
-    
-    if (!sfzNo) {
-        //[self HUDShow:@"请输入正确的身份证号" delay:1.5];
-        [self.view makeToast:@"请输入正确的手机号码" duration:1.0 position:@"center"];
-        textField.text = @"";
-    } else {
-        NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-        [paraDic setObject:_phoneNum.text forKey:@"mobilePhone"];
-        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRstep2 owner:self];
-        
-    }
-    }else {
-     [self.view makeToast:@"请输入正确的手机号码" duration:1.0 position:@"center"];
-    }
- }
+        if (!sfzNo) {
+            //[self HUDShow:@"请输入正确的身份证号" delay:1.5];
+            [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
+            textField.text = @"";
+            }
+        }
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -175,75 +178,58 @@
     // dispatch_resume(_timer);
 }
 - (IBAction)sureMethods:(id)sender {
-    if ([_phoneNum.text isEqualToString:@""]) {
-        [self.view makeToast:@"请输入手机号码" duration:2 position:@"center"];
+    
+    if ([_passWord.text isEqualToString:@""]) {
+        [self.view makeToast:@"请输入有效密码" duration:1 position:@"center"];
+    } else if (![_passWord.text isEqualToString:_phoneNum.text]){
+    [self.view makeToast:@"请与上密码一致" duration:1 position:@"center"];
+    _phoneNum.text = @"";
     } else if ([_codeText.text isEqualToString:@""]){
-     [self.view makeToast:@"请输入验证码" duration:2 position:@"center"];
+    
+    [self.view makeToast:@"请输入手机验证码" duration:1 position:@"center"];
     
     } else {
-    
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        ASIFormDataRequest *requestReport  = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/step3"]]];
-        NSLog(@"%@",requestReport);
+       
+        NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+        [paraDic setObject:_passWord.text forKey:@"newPwd1"];
+        [paraDic setObject:_phoneNum.text forKey:@"newPwd2"];
+        [paraDic setObject:_codeText.text forKey:@"yzm"];
+        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRforgetpwdresetPwd owner:self];
         
-        NSString *cookieString = [NSString stringWithFormat:@"JSESSIONID=%@",seddionId];
-        
-        [requestReport addRequestHeader:@"Cookie" value:cookieString];
-        //[requestReport setRequestMehtod :@"POST"];
-        [requestReport setPostValue:_codeText.text forKey:@"vcode"];
-        requestReport.delegate = self;
-        [requestReport setTimeOutSeconds:5];
-        [requestReport setDidFailSelector:@selector(urlRequestField:)];
-        [requestReport setDidFinishSelector:@selector(urlRequestSueccss1:)];
-        
-        
-        [requestReport startAsynchronous];//异步传输
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
     });
     
     }
-    
 }
 
 - (IBAction)sheetMehtods:(id)sender {
-    
-    if ([seddionId isEqualToString:@""]) {
-        [self.view makeToast:@"请先输入手机号码" duration:2 position:@"center"];
-    } else {
+   
     //添加指示器及遮罩
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"注册中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        ASIFormDataRequest *requestReport  = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/sendVcode"]]];
-        NSLog(@"%@",requestReport);
-        NSString *cookieString = [NSString stringWithFormat:@"JSESSIONID=%@",seddionId];
+       
+        NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+        [paraDic setObject:_phoneNumStr forKey:@"mobilePhone"];
+        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRforgetpwdsendVcode owner:self];
         
-        [requestReport addRequestHeader:@"Cookie" value:cookieString];
-        [requestReport setRequestMethod:@"POST"];
-       //[requestReport setRequestMehtod :@"POST"];
-        
-        requestReport.delegate = self;
-        [requestReport setTimeOutSeconds:5];
-        [requestReport setDidFailSelector:@selector(urlRequestField:)];
-        [requestReport setDidFinishSelector:@selector(urlRequestSueccss:)];
-        
-        [requestReport startAsynchronous];//异步传输
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
     });
     
-    }
 }
+
 
 -(void) urlRequestField:(ASIHTTPRequest *)request {
     NSError *error = [request error];

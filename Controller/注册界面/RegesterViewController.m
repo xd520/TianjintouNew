@@ -190,7 +190,7 @@
         
         if (!sfzNo) {
             //[self HUDShow:@"请输入正确的身份证号" delay:1.5];
-           // [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
+            [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
             textField.text = @"";
         }
     

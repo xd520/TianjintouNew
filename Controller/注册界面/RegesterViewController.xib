@@ -265,7 +265,7 @@
                             <rect key="frame" x="74" y="127" width="232" height="24"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="CwR-1a-VKg"/>
                             </connections>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
+		04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04E8B5D01B72E8DC000332F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5CF1B72E8DC000332F0 /* main.m */; };
 		04E8B5D31B72E8DC000332F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5D21B72E8DC000332F0 /* AppDelegate.m */; };
 		04E8B5D61B72E8DC000332F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5D51B72E8DC000332F0 /* ViewController.m */; };
@@ -235,6 +237,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C1ACDA1BBA2E1A00BBBE51 /* ForgetPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPWDViewController.h; sourceTree = "<group>"; };
+		04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPWDViewController.m; sourceTree = "<group>"; };
+		04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPWDViewController.xib; sourceTree = "<group>"; };
 		04E8B5CA1B72E8DC000332F0 /* 添金投.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "添金投.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8B5CE1B72E8DC000332F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E8B5CF1B72E8DC000332F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1157,6 +1162,9 @@
 				04EF61021B818C89005700C9 /* LogOutViewController.h */,
 				04EF61031B818C89005700C9 /* LogOutViewController.m */,
 				04EF61041B818C89005700C9 /* LogOutViewController.xib */,
+				04C1ACDA1BBA2E1A00BBBE51 /* ForgetPWDViewController.h */,
+				04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */,
+				04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */,
 			);
 			path = "登录界面";
 			sourceTree = "<group>";
@@ -1427,6 +1435,7 @@
 				04EF61C11B818C8A005700C9 /* ChangeLoginPWViewController.xib in Resources */,
 				04EF61C51B818C8A005700C9 /* CheckVersonViewController.xib in Resources */,
 				04EF61D71B818C8A005700C9 /* TransferSuccessViewController.xib in Resources */,
+				04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */,
 				04EF61B51B818C8A005700C9 /* ConfirmViewController.xib in Resources */,
 				04EF61CF1B818C8A005700C9 /* ConfirmTransferViewController.xib in Resources */,
 				04EF61A71B818C8A005700C9 /* PhoneViewController.xib in Resources */,
@@ -1551,6 +1560,7 @@
 				04EF61D81B818C8A005700C9 /* AddreesssViewController.m in Sources */,
 				04E8B8101B72F2A1000332F0 /* SDImageCache.m in Sources */,
 				04EF61671B818C8A005700C9 /* AccountViewController.m in Sources */,
+				04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */,
 				04EF61E61B818C8A005700C9 /* TradingAccountViewController.m in Sources */,
 				04EF61741B818C8A005700C9 /* RechargeFirstViewController.m in Sources */,
 				04E8B81D1B72F2BD000332F0 /* GTMBase64XD.m in Sources */,

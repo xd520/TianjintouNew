@@ -170,7 +170,9 @@ enum kBusinessTag
     kBusinessTagGetJRprovinceData = 155,//省份
     kBusinessTagGetJRcityData = 156,//地区
     kBusinessTagGetJRwdzhsendVcode = 157,//重置交易密码验证码
-    
+    kBusinessTagGetJRappvalidateMobilePhone = 158,//验证手机信息
+    kBusinessTagGetJRforgetpwdsendVcode = 159,//发送验证码
+    kBusinessTagGetJRforgetpwdresetPwd = 160,//重置登录密码
     
 };
 typedef enum kBusinessTag kBusinessTag;

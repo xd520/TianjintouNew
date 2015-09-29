@@ -13,7 +13,15 @@
    NSString *seddionId;
 }
 
+
+@property (nonatomic,strong) NSString *phoneNumStr;
+
+
 - (IBAction)back:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *passWord;
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneNum;
 - (IBAction)sureMethods:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *codeText;
