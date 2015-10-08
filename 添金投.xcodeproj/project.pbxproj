@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04E8B5D01B72E8DC000332F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5CF1B72E8DC000332F0 /* main.m */; };
@@ -237,6 +239,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskEvaluationViewController.h; sourceTree = "<group>"; };
+		04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskEvaluationViewController.m; sourceTree = "<group>"; };
+		04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskEvaluationViewController.xib; sourceTree = "<group>"; };
 		04C1ACDA1BBA2E1A00BBBE51 /* ForgetPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPWDViewController.h; sourceTree = "<group>"; };
 		04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPWDViewController.m; sourceTree = "<group>"; };
 		04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPWDViewController.xib; sourceTree = "<group>"; };
@@ -1218,6 +1223,9 @@
 				04EF612B1B818C8A005700C9 /* ReSetPassWordViewController.h */,
 				04EF612C1B818C8A005700C9 /* ReSetPassWordViewController.m */,
 				04EF612D1B818C8A005700C9 /* ReSetPassWordViewController.xib */,
+				04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */,
+				04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */,
+				04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */,
 			);
 			path = "账户安全";
 			sourceTree = "<group>";
@@ -1445,6 +1453,7 @@
 				04EF61ED1B818C8A005700C9 /* MyUserMangerViewController.xib in Resources */,
 				04EF61991B818C8A005700C9 /* MyTransferViewController.xib in Resources */,
 				04EF61BD1B818C8A005700C9 /* ProductProcoalViewController.xib in Resources */,
+				04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */,
 				04EF618B1B818C8A005700C9 /* MoneyInfoViewController.xib in Resources */,
 				04EF61CD1B818C8A005700C9 /* ReSetPassWordViewController.xib in Resources */,
 				04EF61931B818C8A005700C9 /* MyTransferDetailViewController.xib in Resources */,
@@ -1511,6 +1520,7 @@
 				04EF61781B818C8A005700C9 /* WithdarwProtroclViewController.m in Sources */,
 				04EF618C1B818C8A005700C9 /* MyBuyViewController.m in Sources */,
 				04EF61721B818C8A005700C9 /* AddWithdrawViewController.m in Sources */,
+				04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */,
 				04EF619A1B818C8A005700C9 /* TransferApplicationViewController.m in Sources */,
 				04EF61CE1B818C8A005700C9 /* ConfirmTransferViewController.m in Sources */,
 				04EF61B81B818C8A005700C9 /* EstimateViewController.m in Sources */,
@@ -1688,7 +1698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1726,7 +1736,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1739,14 +1749,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LongTang Xiao (A248892LNJ)";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55e6434a-121d-477c-b681-cbeb42751acc";
+				PROVISIONING_PROFILE = "f7f3d769-c79d-4619-a89c-9d8da7923150";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1756,14 +1767,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LongTang Xiao (A248892LNJ)";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55e6434a-121d-477c-b681-cbeb42751acc";
+				PROVISIONING_PROFILE = "f7f3d769-c79d-4619-a89c-9d8da7923150";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

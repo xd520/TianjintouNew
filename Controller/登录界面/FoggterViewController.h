@@ -15,6 +15,7 @@
 
 
 @property (nonatomic,strong) NSString *phoneNumStr;
+@property (nonatomic,strong) NSString *sessionId;
 
 
 - (IBAction)back:(id)sender;

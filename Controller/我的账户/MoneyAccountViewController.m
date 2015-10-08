@@ -519,8 +519,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 -(void)reloadDataWith:(NSMutableDictionary *)arraydata {
-    NSArray *titleTip = @[@"总资产(元)",@"金融资产市值(元)",@"可取资金(元)",@"冻结资金(元)",@"昨日收益(元)",@"累计总收益(元)",@"累计待收益(元)"];
-    NSArray *charTip = @[[arraydata objectForKey:@"zzc"],[arraydata objectForKey:@"jrZsz"],[arraydata objectForKey:@"kqzj"],[arraydata objectForKey:@"djje"],[arraydata objectForKey:@"zrljsy"],[arraydata objectForKey:@"jrljzsy"],[arraydata objectForKey:@"jrljdsy"]];
+    NSArray *titleTip = @[@"总资产(元)",@"股权市值(元)",@"可取资金(元)",@"冻结资金(元)",@"昨日收益(元)",@"累计总收益(元)",@"累计待收益(元)"];
+    NSArray *charTip = @[[arraydata objectForKey:@"zzc"],[arraydata objectForKey:@"gqZsz"],[arraydata objectForKey:@"kqzj"],[arraydata objectForKey:@"djje"],[arraydata objectForKey:@"zrljsy"],[arraydata objectForKey:@"jrljzsy"],[arraydata objectForKey:@"jrljdsy"]];
     
     for (int i = 0; i < 7;i++) {
         //int hight = addHight + 44 + 50;

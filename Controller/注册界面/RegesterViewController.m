@@ -157,10 +157,10 @@
     if (!sfzNo) {
         
         if (textField.text.length < 6 || textField.text.length > 18) {
-           [self.view makeToast:@"请输入英文字母开头，6-18位字符" duration:1.0 position:@"center"];
+           [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
         } else {
         
-        [self.view makeToast:@"请输入英文字母开头，6-18位字符" duration:1.0 position:@"center"];
+        [self.view makeToast:@"请输入正确的密码格式" duration:1.0 position:@"center"];
         
         }
         

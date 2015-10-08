@@ -232,6 +232,7 @@
 -(void)pushVCProtocal{
     
     MyTransferPrococalViewController *vc = [[MyTransferPrococalViewController alloc] init];
+    vc.str = [self.dic objectForKey:@"gqdm"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

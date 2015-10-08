@@ -142,7 +142,7 @@
         addHight = 0;
     }
     
-    NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"购买记录",@"购买申请",@"转账记录",@"转账申请",nil];
+    NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"购买记录",@"购买申请",@"转让记录",@"转让申请",nil];
     segmented = [[UISegmentedControl alloc]initWithItems:segmentedArray];
     
     segmented.frame = CGRectMake(10, 54 + addHight, ScreenWidth - 20, 30);

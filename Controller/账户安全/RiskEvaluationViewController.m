@@ -1,37 +1,27 @@
 //
-//  ProductProcoalViewController.m
-//  贵州金融资产股权交易
+//  RiskEvaluationViewController.m
+//  添金投
 //
-//  Created by Yonghui Xiong on 15-4-24.
-//  Copyright (c) 2015年 ApexSoft. All rights reserved.
+//  Created by mac on 15/9/30.
+//  Copyright © 2015年 ApexSoft. All rights reserved.
 //
 
-#import "ProductProcoalViewController.h"
+#import "RiskEvaluationViewController.h"
 #import "AppDelegate.h"
 
-@interface ProductProcoalViewController ()
+@interface RiskEvaluationViewController ()
 
 @end
 
-@implementation ProductProcoalViewController
+@implementation RiskEvaluationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     if ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0) {
         
         UIView *statusBarView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 20)];
         
-       statusBarView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"title_bg"]];
+        statusBarView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"title_bg"]];
         
         [self.view addSubview:statusBarView];
     }
@@ -44,7 +34,7 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/website/agreement/index_app?code=RGXY%@",SERVERURL,_str]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/fxcp/fxcp_wap",SERVERURL]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [_webView loadRequest:request];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -82,9 +72,6 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
-
-
-
 
 
 - (void)didReceiveMemoryWarning

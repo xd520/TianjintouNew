@@ -55,7 +55,6 @@
     
     self.sheetBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
    
-    self.sheetBtn.enabled = NO;
     self.sheetBtn.backgroundColor =  [ColorUtil colorWithHexString:@"087dcd"];
     self.sheetBtn.layer.borderWidth = 1;
     
@@ -102,7 +101,7 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
-    NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+    //NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
     if (tag== kBusinessTagGetJRforgetpwdsendVcode) {
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
@@ -124,13 +123,20 @@
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if ([[jsonDic objectForKey:@"object"] isMemberOfClass:[NSNull class]]) {
+              [self.view makeToast:@"重置密码失败"];
+            } else {
             [self.view makeToast:[jsonDic objectForKey:@"msg"]];
+            }
             //            subing = NO;
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.navigationController.view makeToast:[jsonDic objectForKey:@"msg"]];
             
-            [self.navigationController popToViewController:[[LoginViewController alloc] init] animated:YES];
+            NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            [self.navigationController setViewControllers:array];
             
             
         }
@@ -195,13 +201,36 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+       /*
+        ASIFormDataRequest *requestReport  = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/resetPwd"]]];
+        NSLog(@"%@",requestReport);
+        
+        NSString *cookieString = [NSString stringWithFormat:@"JSESSIONID=%@",_sessionId];
+        
+        [requestReport addRequestHeader:@"Cookie" value:cookieString];
+        
+        [requestReport setPostValue:[[Base64XD encodeBase64String:_passWord.text] strBase64] forKey:@"newPwd1"];
+        [requestReport setPostValue:[[Base64XD encodeBase64String:_phoneNum.text] strBase64] forKey:@"newPwd2"];
+        [requestReport setPostValue:_codeText.text forKey:@"yzm"];
+        
+        requestReport.delegate = self;
+        [requestReport setTimeOutSeconds:5];
+        [requestReport setDidFailSelector:@selector(urlRequestField:)];
+        [requestReport setDidFinishSelector:@selector(urlRequestSueccss:)];
+        
+        
+        [requestReport startAsynchronous];
+        */
+        
+        
+        
        
         NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-        [paraDic setObject:_passWord.text forKey:@"newPwd1"];
-        [paraDic setObject:_phoneNum.text forKey:@"newPwd2"];
+        [paraDic setObject:[[Base64XD encodeBase64String:_passWord.text] strBase64] forKey:@"newPwd1"];
+        [paraDic setObject:[[Base64XD encodeBase64String:_phoneNum.text] strBase64] forKey:@"newPwd2"];
         [paraDic setObject:_codeText.text forKey:@"yzm"];
         [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRforgetpwdresetPwd owner:self];
-        
+       
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
@@ -216,7 +245,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"注册中...";
+    hud.labelText = @"短信发送中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
        
         NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];

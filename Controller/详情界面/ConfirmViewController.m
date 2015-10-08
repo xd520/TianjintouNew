@@ -352,6 +352,7 @@
 -(void)pushVCProtocal{
     
     ProductProcoalViewController *vc = [[ProductProcoalViewController alloc] init];
+    vc.str = [self.dic objectForKey:@"GQDM"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -759,7 +760,7 @@
     if ([sureText.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入交易密码" duration:2 position:@"center"];
     }else if (count % 2 == 0) {
-        [self.view makeToast:@"请同意投资协议" duration:1.0 position:@"center"];
+        [self.view makeToast:@"请阅读并同意认购协议" duration:1.0 position:@"center"];
         
     } else {
         

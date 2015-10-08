@@ -13,6 +13,7 @@
 #import "ReSetPassWordViewController.h"
 #import "ChangeLoginPWViewController.h"
 #import "BindCardViewController.h"
+#import "RiskEvaluationViewController.h"
 
 @interface PassWordMangerViewController ()
 {
@@ -30,6 +31,8 @@
     }
     return self;
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -129,6 +132,7 @@
 }
 
 -(void)reloadDataWith:(NSDictionary *)dic {
+    
     dicData = dic;
     self.forthLab.text = @"修改|找回";
       if ([[dic objectForKey:@"isSetCert"] boolValue]) {
@@ -166,11 +170,16 @@
         self.thirdLab.text = @"未设置";
     }
     
-    if ([[dic objectForKey:@"isSetPwdAnswer"] boolValue]) {
-            self.firstLab.text = @"修改|找回";
+    if ([[dic objectForKey:@"isFXCP"] boolValue]) {
+            self.firstLab.text = @"已测评";
+        self.riskImgView.hidden = YES;
+        self.loginView.userInteractionEnabled = NO;
+        
     } else {
        
-        self.firstLab.text = @"立即设置";
+        self.firstLab.text = @"未测评";
+        self.riskImgView.hidden = NO;
+        self.loginView.userInteractionEnabled = YES;
     }
    
 }
@@ -252,7 +261,11 @@
         
     }else if (view.tag == 0){
         
-        [self.view makeToast:@"该功能未实现，请先到PC端操作"];
+        RiskEvaluationViewController *vc = [[RiskEvaluationViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        // [self.view makeToast:@"该功能未实现，请先到PC端操作"];
     }else if (view.tag == 3){
         ChangeLoginPWViewController *vc = [[ChangeLoginPWViewController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;

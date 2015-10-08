@@ -604,6 +604,7 @@
 -(void)pushVCProtocal{
     
     TransferProcoalViewController *vc = [[TransferProcoalViewController alloc] init];
+    vc.str = [self.dic objectForKey:@"FID_GQDM"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

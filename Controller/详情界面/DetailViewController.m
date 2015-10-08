@@ -25,8 +25,9 @@
     float addHight;
     UILabel * _longtime1;
     NSString *timeStr;
-    NSInteger day;
-    NSInteger timeAll;
+    long long day;
+    long long timeAll;
+    
 }
 @end
 
@@ -291,10 +292,13 @@
     [firstVeiw addSubview:remindLab];
     
     
-    NSLog(@"dqsj = %ld  nowDate = %ld  last == %ld ",[[dataArr objectForKey:@"DQSJ"] integerValue],[[dataArr objectForKey:@"nowDate"] integerValue],[[dataArr objectForKey:@"DQSJ"] integerValue] - [[dataArr objectForKey:@"nowDate"] integerValue]);
+    NSLog(@"dqsj = %@ ,   %lld",[dataArr objectForKey:@"DQSJ"],[[dataArr objectForKey:@"DQSJ"] longLongValue]);
     
     
-     timeAll = ([[dataArr objectForKey:@"DQSJ"] integerValue] - [[dataArr objectForKey:@"nowDate"] integerValue]);
+    NSLog(@"dqsj = %lld  nowDate = %lld  last == %lld ",[[dataArr objectForKey:@"DQSJ"] longLongValue],[[dataArr objectForKey:@"nowDate"] longLongValue],[[dataArr objectForKey:@"DQSJ"] longLongValue] - [[dataArr objectForKey:@"nowDate"] longLongValue]);
+    
+    
+     timeAll = ([[dataArr objectForKey:@"DQSJ"] longLongValue] - [[dataArr objectForKey:@"nowDate"] longLongValue]);
     
     _longtime1 = [[UILabel alloc] init];
     _longtime1.font = [UIFont boldSystemFontOfSize:14];
@@ -591,30 +595,34 @@
     timeAll = timeAll - 1000;
    
     //day
-    NSInteger dayCount = timeAll%(3600*24*1000);
+    long long dayCount = timeAll%(3600*24*1000);
     day = (timeAll - dayCount)/(3600*24*1000);
     
     //hour
-    NSInteger hourCount = dayCount%3600000;
-    NSInteger hour = (dayCount - hourCount)/3600000;
+    long long hourCount = dayCount%3600000;
+    long long hour = (dayCount - hourCount)/3600000;
     //min
-    NSInteger minCount = hourCount%60000;
-    NSInteger min = (hourCount - minCount)/60000;
+    long long minCount = hourCount%60000;
+    long long min = (hourCount - minCount)/60000;
     
-    NSInteger miaoCount = minCount%1000;
-    NSInteger miao = (minCount - miaoCount)/1000;
+    long long miaoCount = minCount%1000;
+    long long miao = (minCount - miaoCount)/1000;
     
     if (day > 0) {
-       _longtime1.text = [NSString stringWithFormat:@"%ld天%ld小时%ld分钟%ld秒",day, hour, min,miao];
+       _longtime1.text = [NSString stringWithFormat:@"%lld天%lld小时%lld分钟%lld秒",day, hour, min,miao];
     } else {
     
         if (hour > 0) {
-          _longtime1.text = [NSString stringWithFormat:@"%ld小时%ld分钟%ld秒", hour, min,miao];
+          _longtime1.text = [NSString stringWithFormat:@"%lld小时%lld分钟%lld秒", hour, min,miao];
         } else {
             if (min > 0) {
-              _longtime1.text = [NSString stringWithFormat:@"%ld分钟%ld秒", min,miao];
+              _longtime1.text = [NSString stringWithFormat:@"%lld分钟%lld秒", min,miao];
             } else {
-                _longtime1.text = [NSString stringWithFormat:@"%ld秒",miao];
+                if (miao == 0) {
+                   _longtime1.text = @"募集结束";
+                } else {
+                _longtime1.text = [NSString stringWithFormat:@"%lld秒",miao];
+                }
             }
         }
     }

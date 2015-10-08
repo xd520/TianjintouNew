@@ -27,4 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIView *resetView;//交易密码
 @property (weak, nonatomic) IBOutlet UIView *sureLoginView;//登录密码
 
+@property (weak, nonatomic) IBOutlet UIImageView *riskImgView;
+
+
+
 @end

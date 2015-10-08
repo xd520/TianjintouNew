@@ -10,6 +10,8 @@
 
 @interface TransferProcoalViewController : UIViewController
 - (IBAction)back:(id)sender;
+
+@property(nonatomic,strong)NSString *str;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

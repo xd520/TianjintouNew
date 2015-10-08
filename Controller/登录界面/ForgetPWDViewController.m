@@ -90,6 +90,8 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.navigationController.view makeToast:@"该手机号码验证成功!"];
             FoggterViewController *vc = [[FoggterViewController alloc] init];
+            vc.sessionId = [dataArray objectForKey:@"sessionId"];
+            
             vc.phoneNumStr = _phoneNum.text;
             [self.navigationController pushViewController:vc animated:YES];
            

@@ -736,6 +736,7 @@
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.view makeToast:[jsonDic objectForKey:@"msg"]];
+            sheetLab.userInteractionEnabled = YES;
             //            subing = NO;
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -832,6 +833,8 @@
     NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+    
+    sheetLab.userInteractionEnabled = YES;
     // if (tag==kBusinessTagGetProjectDetail) {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     //}
@@ -944,6 +947,8 @@
     }
 }
 - (IBAction)codeMethodes:(id)sender {
+    
+    sheetLab.userInteractionEnabled = NO;
     
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     

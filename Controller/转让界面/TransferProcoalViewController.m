@@ -44,7 +44,7 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/app/jrzcjy/cpzx/contract_wytz",SERVERURL]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/website/agreement/index_app?code=RGXY%@",SERVERURL,_str]];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [_webView loadRequest:request];
         dispatch_async(dispatch_get_main_queue(), ^{
