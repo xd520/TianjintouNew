@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040801751BC7959E00114994 /* MyAuthorityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408017B1BC795E500114994 /* MyVoucherViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -239,6 +243,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040801741BC7959E00114994 /* MyAuthorityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAuthorityViewController.h; sourceTree = "<group>"; };
+		040801751BC7959E00114994 /* MyAuthorityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAuthorityViewController.m; sourceTree = "<group>"; };
+		040801761BC7959E00114994 /* MyAuthorityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAuthorityViewController.xib; sourceTree = "<group>"; };
+		040801791BC795E500114994 /* MyVoucherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVoucherViewController.h; sourceTree = "<group>"; };
+		0408017A1BC795E500114994 /* MyVoucherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVoucherViewController.m; sourceTree = "<group>"; };
+		0408017B1BC795E500114994 /* MyVoucherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVoucherViewController.xib; sourceTree = "<group>"; };
 		04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskEvaluationViewController.h; sourceTree = "<group>"; };
 		04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskEvaluationViewController.m; sourceTree = "<group>"; };
 		04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskEvaluationViewController.xib; sourceTree = "<group>"; };
@@ -1101,6 +1111,12 @@
 				04EF60CB1B818C89005700C9 /* MyMoneyViewController.h */,
 				04EF60CC1B818C89005700C9 /* MyMoneyViewController.m */,
 				04EF60CD1B818C89005700C9 /* MyMoneyViewController.xib */,
+				040801741BC7959E00114994 /* MyAuthorityViewController.h */,
+				040801751BC7959E00114994 /* MyAuthorityViewController.m */,
+				040801761BC7959E00114994 /* MyAuthorityViewController.xib */,
+				040801791BC795E500114994 /* MyVoucherViewController.h */,
+				0408017A1BC795E500114994 /* MyVoucherViewController.m */,
+				0408017B1BC795E500114994 /* MyVoucherViewController.xib */,
 			);
 			path = "我的账户";
 			sourceTree = "<group>";
@@ -1454,6 +1470,7 @@
 				04EF61991B818C8A005700C9 /* MyTransferViewController.xib in Resources */,
 				04EF61BD1B818C8A005700C9 /* ProductProcoalViewController.xib in Resources */,
 				04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */,
+				0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */,
 				04EF618B1B818C8A005700C9 /* MoneyInfoViewController.xib in Resources */,
 				04EF61CD1B818C8A005700C9 /* ReSetPassWordViewController.xib in Resources */,
 				04EF61931B818C8A005700C9 /* MyTransferDetailViewController.xib in Resources */,
@@ -1465,6 +1482,7 @@
 				04EF61C31B818C8A005700C9 /* ChangerPassWordViewController.xib in Resources */,
 				04E8B5DB1B72E8DC000332F0 /* Images.xcassets in Resources */,
 				04EF61BF1B818C8A005700C9 /* SuccessViewController.xib in Resources */,
+				040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */,
 				04E8B83C1B72F916000332F0 /* ProductViewCtrl.xib in Resources */,
 				04EF61E11B818C8A005700C9 /* ClassBankCardViewController.xib in Resources */,
 				04EF61D51B818C8A005700C9 /* TransferProcoalViewController.xib in Resources */,
@@ -1564,6 +1582,7 @@
 				04EF61A61B818C8A005700C9 /* PhoneViewController.m in Sources */,
 				04E8B8161B72F2A1000332F0 /* UIImageView+WebCache.m in Sources */,
 				04EF617C1B818C8A005700C9 /* WithdrawViewController.m in Sources */,
+				040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */,
 				04E8B8111B72F2A1000332F0 /* SDWebImageDecoder.m in Sources */,
 				04E8B5D31B72E8DC000332F0 /* AppDelegate.m in Sources */,
 				04E8B7C91B72F179000332F0 /* ASIFormDataRequest.m in Sources */,
@@ -1603,6 +1622,7 @@
 				04E8B7D81B72F1EA000332F0 /* SRSlimeView.m in Sources */,
 				04E8B8401B72F932000332F0 /* TransferViewCtrl.m in Sources */,
 				04E8B8141B72F2A1000332F0 /* SDWebImagePrefetcher.m in Sources */,
+				0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */,
 				04E8B7861B72F0FD000332F0 /* MBProgressHUD.m in Sources */,
 				04E8B77A1B72F069000332F0 /* LPLabel.m in Sources */,
 				04E8B5D01B72E8DC000332F0 /* main.m in Sources */,

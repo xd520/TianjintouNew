@@ -26,6 +26,8 @@
 #import "RechargeViewController.h"
 #import "AddRechargeViewController.h"
 #import "LoginPassWordViewController.h"
+#import "MyAuthorityViewController.h"
+#import "MyVoucherViewController.h"
 
 @interface TransferViewCtrl ()
 {
@@ -368,7 +370,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
    // NSArray *arr = @[@"我的资产",@"当日申请",@"我的投资",@"我的已获收益",@"充值/提现记录",@"资金变动记录",@"账户安全",@"我的收藏",@"我的厦金币",@"邀请好友"];
     
     
-    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账充值",@"资金变动",@"我的添金币",@"账户安全"];
+    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账充值",@"资金变动",@"我的添金币",@"账户安全",@"我的权限",@"我的活动券"];
     
     
     
@@ -434,7 +436,8 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             
             [scrollView addSubview:oneView1];
             
-        } else {
+        } else if (i < 9&& i>=6){
+            
             UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 435 - 175 + 175*sizeScaleX + (i - 6)*40, ScreenWidth, 40)];
             
             oneView1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
@@ -453,21 +456,46 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             
             [oneView1 addSubview:pushView1];
             UITapGestureRecognizer *singleTap1;
-            if (i == 9) {
-                singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonClicked:)];
-                
-            } else {
+
                 singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
-            }
             oneView1.tag = i;
             //单点触摸
             singleTap1.numberOfTouchesRequired = 1;
             //点击几次，如果是1就是单击
             singleTap1.numberOfTapsRequired = 1;
             [oneView1 addGestureRecognizer:singleTap1];
-            
             [scrollView addSubview:oneView1];
             
+        } else {
+            
+            UIView *oneView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 443 - 175 + 175*sizeScaleX + (i - 6)*40, ScreenWidth, 40)];
+            
+            oneView1.backgroundColor = [ColorUtil colorWithHexString:@"fdfdfd"];
+            oneView1.userInteractionEnabled = YES;
+            
+            UILabel *starLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10,13, 100, 14)];
+            starLabel1.font = [UIFont systemFontOfSize:14];
+            starLabel1.text = [arr objectAtIndex:i];
+            starLabel1.textColor = [ColorUtil colorWithHexString:@"333333"];
+            [oneView1 addSubview:starLabel1];
+            
+            UIImageView *pushView1 = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth - 25, 10, 20, 20)];
+            pushView1.image = [UIImage imageNamed:@"next_icon"];
+            
+            
+            
+            [oneView1 addSubview:pushView1];
+            UITapGestureRecognizer *singleTap1;
+            
+            singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
+            oneView1.tag = i;
+            //单点触摸
+            singleTap1.numberOfTouchesRequired = 1;
+            //点击几次，如果是1就是单击
+            singleTap1.numberOfTapsRequired = 1;
+            [oneView1 addGestureRecognizer:singleTap1];
+            [scrollView addSubview:oneView1];
+        
         }
     }
     
@@ -497,13 +525,13 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [scrollView addSubview:lineView2];
     
     
-    UIView *lineView21 = [[UIView alloc] initWithFrame:CGRectMake(0,307 - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
+    UIView *lineView21 = [[UIView alloc] initWithFrame:CGRectMake(0,306.5 - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
     lineView21.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView21];
     
     
-    UIView *lineView22 = [[UIView alloc] initWithFrame:CGRectMake(0,426.5 - - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
+    UIView *lineView22 = [[UIView alloc] initWithFrame:CGRectMake(0,426.5 - 179 + 5 + 175*sizeScaleX, ScreenWidth, 0.5)];
     lineView22.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     
     [scrollView addSubview:lineView22];
@@ -541,7 +569,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 20 - 49)];
      } else {
      
-     [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 - 82)];
+     [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 + 6)];
      }
          
     [self.view addSubview:scrollView];
@@ -743,6 +771,17 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         
         
         PassWordMangerViewController *cv = [[PassWordMangerViewController alloc] init];
+        cv.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:cv animated:YES];
+        
+    } else if (view.tag == 8){
+        
+        MyAuthorityViewController *cv = [[MyAuthorityViewController alloc] init];
+        cv.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:cv animated:YES];
+    
+    } else if (view.tag == 9){
+        MyVoucherViewController *cv = [[MyVoucherViewController alloc] init];
         cv.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:cv animated:YES];
         

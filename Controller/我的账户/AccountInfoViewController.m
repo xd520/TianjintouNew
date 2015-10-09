@@ -544,7 +544,7 @@
         vc.bankAccountStr = [dicData objectForKey:@"FID_YHZH"];
          vc.bankcodeStr = [dicData objectForKey:@"FID_YHDM"];
         
-        vc.hidesBottomBarWhenPushed = YES;
+       // vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (view.tag == 100001) {
         UIActionSheet *sheet;

@@ -98,7 +98,7 @@
 
 
 -(void)getBankUIData:(NSString *)str withLab:(UILabel *)lab withImgView:(UIImageView *)img withTail:(UILabel *)tail{
-    NSString *string =[self.bankcodeStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *string =[self.bankAccountStr stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     NSRange range;
     NSString *strZJBH;
