@@ -495,6 +495,15 @@
         case 160:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/forgetpwd/resetPwd"];
             break;
+        case 161:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/service/wdzh/wdqx/appCxTzqx"];
+            break;
+        case 162:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/service/wdzh/wdqx/tzqx"];
+            break;
+        case 163:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/service/jrzcjy/cpzx/appMyLpq"];
+            break;
         default:
             break;
     }

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyVoucherViewController : UIViewController
+- (IBAction)back:(id)sender;
 
 @end

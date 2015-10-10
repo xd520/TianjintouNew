@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "ConfirmTransferViewController.h"
 #import "EstimateViewController.h"
+#import "RiskEvaluationViewController.h"
+#import "MyAuthorityViewController.h"
 
 @interface TransferDetailsViewController ()
 {
@@ -18,6 +20,7 @@
     float addHight;
     UILabel * _longtime1;
     NSString *timeStr;
+    NSDictionary *dicFirst;
     int day;
     int timeAll;
 }
@@ -462,10 +465,22 @@
                 
                 if ([[[dataArray objectAtIndex:0] objectForKey:@"FID_KYZJ"] floatValue] > [[[dataArray objectAtIndex:0] objectForKey:@"FID_WTJE"] floatValue]) {
                     
+                    if (![[[dataArray objectAtIndex:0] objectForKey:@"isFxcp"] boolValue]) {
+                        RiskEvaluationViewController *vc = [[RiskEvaluationViewController alloc] init];
+                        [self.navigationController pushViewController:vc animated:YES];
+                        
+                    } else if (![[[dataArray objectAtIndex:0] objectForKey:@"isTzqx"] boolValue]){
+                        MyAuthorityViewController *vc = [[MyAuthorityViewController alloc] init];
+                        [self.navigationController pushViewController:vc animated:YES];
+                        
+                    } else {
+                    
+                    
                     ConfirmTransferViewController *vc = [[ConfirmTransferViewController alloc] init];
                     vc.dic = [dataArray objectAtIndex:0];
                     vc.hidesBottomBarWhenPushed = YES;
                     [self.navigationController pushViewController:vc animated:YES];
+                    }
                 }else {
                     [self.view makeToast:@"您的可用少于转让价格，请先充值" duration:1 position:@"center"];
                 }
@@ -584,6 +599,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+
 - (IBAction)timeTouziMethods:(id)sender{
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -591,10 +609,7 @@
     if (delegate.logingUser.count > 0) {
         
         if ([[delegate.logingUser objectForKey:@"success"] boolValue] == YES) {
-            
              [self requestLogin:_gqdm withWTH:_wth tag:kBusinessTagGetJRSellingAgain];
-            
-            
         } else {
             
            // delegate.strlogin = @"2";

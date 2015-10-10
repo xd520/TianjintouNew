@@ -14,6 +14,9 @@
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 #import "MDRadialProgressLabel.h"
+#import "RiskEvaluationViewController.h"
+#import "MyAuthorityViewController.h"
+
 
 @interface DetailViewController ()
 {
@@ -126,9 +129,6 @@
    
     UIView *firstVeiw = [[UIView alloc] init];
     firstVeiw.backgroundColor = [UIColor whiteColor];
-    
-    
-    
     
     
 //产品名称
@@ -776,6 +776,17 @@
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (delegate.logingUser.count > 0) {
         if ([[delegate.logingUser objectForKey:@"success"] boolValue] == YES) {
+            if (![[dicFirst objectForKey:@"isFxcp"] boolValue]) {
+                RiskEvaluationViewController *vc = [[RiskEvaluationViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+                
+            } else if (![[dicFirst objectForKey:@"isTzqx"] boolValue]){
+                MyAuthorityViewController *vc = [[MyAuthorityViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+            
+            } else {
+            
+            
             if ([sureText.text isEqualToString:@""]||[sureText.text floatValue] == 0) {
                 [self.view makeToast:@"请输入认购金额" duration:1.0 position:@"center"];
             }else if ([[dicFirst objectForKey:@"KHH"] isEqualToString:@""]) {
@@ -800,7 +811,7 @@
                 
             }
             
-
+            }
         } else {
            // delegate.strlogin = @"2";
             LoginViewController *VC = [[LoginViewController alloc] init];

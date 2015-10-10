@@ -173,6 +173,9 @@ enum kBusinessTag
     kBusinessTagGetJRappvalidateMobilePhone = 158,//验证手机信息
     kBusinessTagGetJRforgetpwdsendVcode = 159,//发送验证码
     kBusinessTagGetJRforgetpwdresetPwd = 160,//重置登录密码
+    kBusinessTagGetJRforappCxTzqx = 161,//查询投资权限
+    kBusinessTagGetJRforwdqxtzqx = 162,//投资权限申请
+    kBusinessTagGetJRforappMyLpq = 163,//礼品券
     
 };
 typedef enum kBusinessTag kBusinessTag;

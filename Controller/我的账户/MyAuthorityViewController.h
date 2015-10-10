@@ -10,6 +10,13 @@
 
 @interface MyAuthorityViewController : UIViewController
 - (IBAction)back:(id)sender;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *myAuthority;
+@property (weak, nonatomic) IBOutlet UILabel *authority;
+@property (weak, nonatomic) IBOutlet UIButton *rember;
+- (IBAction)remberMethods:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *commitBtn;
+- (IBAction)commitMethods:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *firstView;
 
 @end
