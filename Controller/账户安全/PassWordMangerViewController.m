@@ -278,7 +278,7 @@
         
     } else {
     
-    if (![[dicData objectForKey:@"isBingingCard"] boolValue]) {
+    if ([[dicData objectForKey:@"isBingingCard"] boolValue]) {
         if (view.tag == 1){
             /*
              获取银行卡界面更新信息

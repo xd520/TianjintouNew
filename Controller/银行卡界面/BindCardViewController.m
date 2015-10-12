@@ -242,6 +242,7 @@
         } else {
             AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             [delegate.dictionary setObject:[NSNumber numberWithBool:1] forKey:@"isBingingCard"];
+            
            [self.navigationController.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
            
             NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
