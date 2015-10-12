@@ -14,6 +14,8 @@
 #import "AccountViewController.h"
 #import "NoBindCardViewController.h"
 #import "CardBindViewController.h"
+#import "PassWordMangerViewController.h"
+#import "LoginViewController.h"
 
 @interface BindCardViewController ()
 {
@@ -22,6 +24,7 @@
     int count;
     NSDictionary *cityDic;
     NSDictionary *proviceDic;
+    NSDictionary *bankCardDic;
 }
 @end
 
@@ -168,19 +171,8 @@
 - (void)reloadTableView:(NSDictionary *)_code{
    bankStr = [_code objectForKey:@"FID_YHDM"];
      _bindCardLab.text = [_code objectForKey:@"FID_YHMC"];
+    bankCardDic = _code;
     
-    
-//    if ([_code isEqualToString:@"JSYH"]) {
-//        _bindCardLab.text = @"建设银行";
-//        
-//    } else if ([_code isEqualToString:@"XYYH"]) {
-//        _bindCardLab.text = @"兴业银行";
-//        
-//    } else {
-//        
-//        _bindCardLab.text = @"其他银行";
-//    }
-
 }
 
 
@@ -238,6 +230,34 @@
             cv.code = bankStr;
             cv.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:cv animated:YES];
+        }
+    }  else if (tag== kBusinessTagGetJRbindBankCardSubmit) {
+        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+        
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
+            //            subing = NO;
+        } else {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.dictionary setObject:[NSNumber numberWithBool:1] forKey:@"isBingingCard"];
+           [self.navigationController.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
+           
+            NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+            //删除最后一个，也就是自己
+            UIViewController *vc = [array objectAtIndex:array.count-2];
+            if ([vc.nibName isEqualToString:@"PassWordMangerViewController"]) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } else if ([vc.nibName isEqualToString:@"AccountInfoViewController"]){
+                
+                [self.navigationController popViewControllerAnimated:YES];
+            } else{
+                
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+            }
+ 
         }
     }
     
@@ -321,10 +341,21 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        
+        /*
         NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
         [paraDic setObject:bankStr forKey:@"yhdm"];
-        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRisNeedPsw owner:self];
+        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRisNeedPsw owner:self];kBusinessTagGetJRbindBankCardSubmit
+        */
+        
+        NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+        [paraDic setObject:@"0" forKey:@"khfs"];
+        [paraDic setObject:bankStr forKey:@"yhdm"];
+        [paraDic setObject:[bankCardDic objectForKey:@"FID_JGDM"] forKey:@"jgdm"];
+        [paraDic setObject:_bankAccount.text forKey:@"yhzh"];
+        [paraDic setObject:[proviceDic objectForKey:@"FID_XZQYDM"] forKey:@"province"];
+        [paraDic setObject:[cityDic objectForKey:@"FID_XZQYDM"] forKey:@"city"];
+        
+        [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRbindBankCardSubmit owner:self];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "PhoneViewController.h"
 #import "LoginViewController.h"
+#import "BindCardViewController.h"
 
 @interface NameRealSuccessViewController ()
 
@@ -101,6 +102,11 @@
 }
 
 - (IBAction)bankCarBindMethods:(id)sender {
-    [self.view makeToast:@"该功能还未实现，请先到PC端绑定"];
+    //[self.view makeToast:@"该功能还未实现，请先到PC端绑定"];
+    AppDelegate *delete = [UIApplication sharedApplication].delegate;
+    BindCardViewController *vc = [[BindCardViewController alloc] init];
+    vc.dic = delete.dic;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 @end

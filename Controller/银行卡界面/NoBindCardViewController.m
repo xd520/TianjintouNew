@@ -331,6 +331,8 @@
     //[self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)sheetMethods:(id)sender {
+    
+    
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     [paraDic setObject:@"bindCard" forKey:@"action"];
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRsendVcodeBindCard owner:self];

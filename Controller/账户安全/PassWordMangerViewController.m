@@ -32,12 +32,30 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES;
+    hud.delegate = self;
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"加载中...";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self requestLogin:kBusinessTagGetJRIndex];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    });
+}
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    /*
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [self reloadDataWith:delegate.dictionary];
+     */
+   
 }
 
 
@@ -114,20 +132,6 @@
     [subView4 setBackgroundColor:[ColorUtil colorWithHexString:@"dedede"]];
     [_loginView addSubview:subView4];
     
-    
-    
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.dimBackground = YES;
-    hud.delegate = self;
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"加载中...";
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        [self requestLogin:kBusinessTagGetJRIndex];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-    });
     
 }
 
@@ -293,11 +297,11 @@
             
             if ([[dicData objectForKey:@"isSetCert"] boolValue]){
                // [self.view makeToast:@"该功能未实现，请先到PC端操作"];
+                AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                 BindCardViewController *vc = [[BindCardViewController alloc] init];
+                vc.dic = delegate.dic;
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
-                
-            
             }else {
                 LoginPassWordViewController *vc = [[LoginPassWordViewController alloc] initWithNibName:@"LoginPassWordViewController" bundle:nil];
                 vc.hidesBottomBarWhenPushed = YES;
