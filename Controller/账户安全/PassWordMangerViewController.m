@@ -207,6 +207,20 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+
+    
     if (tag== kBusinessTagGetJRIndex) {
         NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -229,13 +243,14 @@
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             BindCardViewController *vc = [[BindCardViewController alloc] init];
-            vc.dic = dataArray;
+           // vc.dic = dataArray;
             vc.pushStr = @"1";
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
+            }
         }
     }
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
 -(void)errorPost:(NSError *)err business:(kBusinessTag)tag{
@@ -278,7 +293,7 @@
         
     } else {
     
-    if ([[dicData objectForKey:@"isBingingCard"] boolValue]) {
+    if (! [[dicData objectForKey:@"isBingingCard"] boolValue]) {
         if (view.tag == 1){
             /*
              获取银行卡界面更新信息
@@ -299,7 +314,7 @@
                // [self.view makeToast:@"该功能未实现，请先到PC端操作"];
                 AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
                 BindCardViewController *vc = [[BindCardViewController alloc] init];
-                vc.dic = delegate.dic;
+                //vc.dic = delegate.dic;
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }else {

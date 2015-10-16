@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MddDownLoadTask.h"
 
-@interface WebDetailViewController : UIViewController
+@interface WebDetailViewController : UIViewController<MddDownLoadTaskDelegate>
 
 
 @property(strong,nonatomic)NSString *name;

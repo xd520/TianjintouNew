@@ -398,9 +398,9 @@
             break;
         case 128:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/smrz/sendVcode"];
-            break;
+            break;///app/wdzh/wdyhk/sfcg/bindCard/checkResult
         case 129:
-            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/wdyhk/sfcg/bindCard/checkResult"];
+            return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/wdzh/wdyhk/hftx/bindCard/checkResult"];
             break;
         case 130:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/app/jrzcjy/cpzr/doTrade"];

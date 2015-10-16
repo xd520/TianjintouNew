@@ -11,6 +11,7 @@
 #import "BindCardViewController.h"
 #import "UnBindCardViewController.h"
 #import "NoBindCardViewController.h"
+#import "LoginPassWordViewController.h"
 
 @interface AccountInfoViewController ()
 {
@@ -20,11 +21,16 @@
     UIImageView *imgHeadVeiw;
     BOOL success;
     BOOL hasLoadedCamera;
+    
+    UIView *lastView;
+    UIView *nameView;
+    UIView *lastViewFirst;
+    int count;
 }
 @end
 
 @implementation AccountInfoViewController
-@synthesize dicData;
+@synthesize dicData,headImg;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,9 +41,21 @@
     return self;
 }
 
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (count == 1) {
+        [self getBankBindCardMethods];
+    }
+    
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    count = 0;
     if ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0) {
         addHight = 20;
         UIView *statusBarView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 20)];
@@ -78,7 +96,7 @@
     imgHeadVeiw.clipsToBounds = YES;
     imgHeadVeiw.layer.borderWidth = 2.0f;
     imgHeadVeiw.layer.borderColor = [ColorUtil colorWithHexString:@"eeeeee"].CGColor;
-    imgHeadVeiw.image = _headImage;
+    imgHeadVeiw.image = headImg;
     [headView addSubview:imgHeadVeiw];
     
     
@@ -291,63 +309,77 @@
     accountTip.textAlignment = NSTextAlignmentLeft;
     [scrollView addSubview:accountTip];
     
+    //[scrollView setContentSize:CGSizeMake(ScreenWidth, 410)];
     
-// 尚未绑定银行账户
+    [self getBankBindCardMethods];
+    
+    count = 1;
+}
+
+
+//判定是否绑定银行卡
+-(void)getBankBindCardMethods{
+
+    if (lastViewFirst) {
+        [lastViewFirst removeFromSuperview];
+    }
+    
+    if (lastView) {
+        [lastView removeFromSuperview];
+    }
+    
+    if (nameView) {
+        [nameView removeFromSuperview];
+    }
+    
+    // 尚未绑定银行账户
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if ([[delegate.dictionary objectForKey:@"isBingingCard"] boolValue] == NO) {
-    
-    UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 355, ScreenWidth , 50)];
-    lastView.backgroundColor = [UIColor whiteColor];
-//    lastView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    
-//    lastView.layer.borderWidth = 1;
-//    
-//    lastView.layer.masksToBounds = YES;
-//    
-//    lastView.layer.cornerRadius = 4;
-
-    
-    UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 15, 20, 20)];
-    tipImg.image = [UIImage imageNamed:@"icon_nof2"];
-    [lastView addSubview:tipImg];
-    
-    UILabel *accountLabel = [[UILabel alloc] initWithFrame:CGRectMake(40 ,17.5, 150, 15)];
-    accountLabel.text = @"尚未绑定银行帐号";
-    accountLabel.font = [UIFont systemFontOfSize:15];
-    
-    // lab.textColor = [ColorUtil colorWithHexString:@"333333"];
-    
-    accountLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
-    
-    accountLabel.textAlignment = NSTextAlignmentLeft;
-    [lastView addSubview:accountLabel];
-    lastView.userInteractionEnabled = YES;
-    
-     tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 10 - 30, 15, 20, 20)];
-    tipImg.image = [UIImage imageNamed:@"next"];
-    //[lastView addSubview:tipImg];
-    
-    UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
-    lastView.tag = 0;
-    //单点触摸
-    singleTap1.numberOfTouchesRequired = 1;
-    //点击几次，如果是1就是单击
-    singleTap1.numberOfTapsRequired = 1;
-    //[lastView addGestureRecognizer:singleTap1];
-    [scrollView addSubview:lastView];
-    [scrollView setContentSize:CGSizeMake(ScreenWidth, 500)];
-    
+        
+        lastViewFirst = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 355, ScreenWidth , 50)];
+        lastViewFirst.backgroundColor = [UIColor whiteColor];
+        
+        UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(10, 15, 20, 20)];
+        tipImg.image = [UIImage imageNamed:@"icon_nof2"];
+        [lastViewFirst addSubview:tipImg];
+        
+        UILabel *accountLabel = [[UILabel alloc] initWithFrame:CGRectMake(40 ,17.5, 150, 15)];
+        accountLabel.text = @"尚未绑定银行帐号";
+        accountLabel.font = [UIFont systemFontOfSize:15];
+        
+        // lab.textColor = [ColorUtil colorWithHexString:@"333333"];
+        
+        accountLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
+        
+        accountLabel.textAlignment = NSTextAlignmentLeft;
+        [lastViewFirst addSubview:accountLabel];
+        lastViewFirst.userInteractionEnabled = YES;
+        
+        tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 30, 15, 20, 20)];
+        tipImg.image = [UIImage imageNamed:@"next_icon"];
+        [lastViewFirst addSubview:tipImg];
+        
+        UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
+        lastViewFirst.tag = 0;
+        //单点触摸
+        singleTap1.numberOfTouchesRequired = 1;
+        //点击几次，如果是1就是单击
+        singleTap1.numberOfTapsRequired = 1;
+        [lastViewFirst addGestureRecognizer:singleTap1];
+        [scrollView addSubview:lastViewFirst];
+        [scrollView setContentSize:CGSizeMake(ScreenWidth, 500)];
+        
     } else {
         
-        UIView *nameView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 354, ScreenWidth, 50)];
+        nameView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 354, ScreenWidth, 50)];
         nameView.backgroundColor = [UIColor whiteColor];
-//        nameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//        
-//        nameView.layer.borderWidth = 1;
-//        
-//        nameView.layer.masksToBounds = YES;
-//        
-//        nameView.layer.cornerRadius = 4;
+        //        nameView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        //
+        //        nameView.layer.borderWidth = 1;
+        //
+        //        nameView.layer.masksToBounds = YES;
+        //
+        //        nameView.layer.cornerRadius = 4;
         
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10 ,17.5, 100, 15)];
         nameLabel.text = @"开户银行";
@@ -358,31 +390,45 @@
         
         UILabel *vauleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120 ,17.5, ScreenWidth - 20 - 110, 15)];
         if ([[dicData objectForKey:@"FID_YHDM"] isEqualToString:@"JSYH"]) {
-             vauleLabel.text = @"建设银行";
+            vauleLabel.text = @"建设银行";
+        }else if ([[dicData objectForKey:@"FID_YHDM"] isEqualToString:@"JGJS"]) {
+            vauleLabel.text = @"建设银行";
         } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"XYYH"]) {
-        
-         vauleLabel.text = @"兴业银行";
-        
+            
+            vauleLabel.text = @"兴业银行";
+            
         } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZGYH"]){
-        
-         vauleLabel.text = @"中国银行";
+            
+            vauleLabel.text = @"中国银行";
         } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"NYYH"]) {
             vauleLabel.text = @"农业银行";
-        
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JGNY"]) {
+            vauleLabel.text = @"农业银行";
+            
         } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GSYH"]) {
             
-             vauleLabel.text = @"工商银行";
+            vauleLabel.text = @"工商银行";
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JGGS"]) {
+            
+            vauleLabel.text = @"工商银行";
         }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZSYH"]) {
-               vauleLabel.text = @"招商银行";
+            vauleLabel.text = @"招商银行";
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JGZS"]) {
+            vauleLabel.text = @"招商银行";
             
         }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GDYH"]) {
-             vauleLabel.text = @"光大银行";
+            vauleLabel.text = @"光大银行";
+            
+        }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JGGD"]) {
+            vauleLabel.text = @"光大银行";
             
         }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"GFYH"]) {
-             vauleLabel.text = @"广发银行";
+            vauleLabel.text = @"广发银行";
             
         }else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"ZXYH"]) {
-             vauleLabel.text = @"中信银行";
+            vauleLabel.text = @"中信银行";
             
         } else if ([[dicData  objectForKey:@"FID_YHDM"] isEqualToString:@"JTYH"]) {
             vauleLabel.text = @"交通银行";
@@ -395,24 +441,24 @@
         
         
         
-       
+        
         vauleLabel.font = [UIFont systemFontOfSize:15];
         vauleLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
         vauleLabel.textAlignment = NSTextAlignmentRight;
         [nameView addSubview:vauleLabel];
-         [scrollView addSubview:nameView];
+        [scrollView addSubview:nameView];
         
         
-    
-        UIView *lastView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 405, ScreenWidth, 50)];
+        
+        lastView = [[UIView alloc] initWithFrame:CGRectMake(0,90 + 405, ScreenWidth, 50)];
         lastView.backgroundColor = [UIColor whiteColor];
-//        lastView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//        
-//        lastView.layer.borderWidth = 1;
-//        
-//        lastView.layer.masksToBounds = YES;
-//        
-//        lastView.layer.cornerRadius = 4;
+        //        lastView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        //
+        //        lastView.layer.borderWidth = 1;
+        //
+        //        lastView.layer.masksToBounds = YES;
+        //
+        //        lastView.layer.cornerRadius = 4;
         
         
         UILabel *accountLabel = [[UILabel alloc] initWithFrame:CGRectMake(10 ,17.5, 110, 15)];
@@ -460,79 +506,38 @@
         [lastView addGestureRecognizer:singleTap1];
         
         
-        
-        
-        
-       
-      /*
-        //是否允许线上解绑
-        if ([[dicData objectForKey:@"FID_ZQYW"] isEqualToString:@"16"]) {
-       
-            UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(110 ,17.5, ScreenWidth - 20 - 110 - 20, 15)];
-            cardBandLabel.text = [dicData objectForKey:@"FID_YHZH"];
-            cardBandLabel.font = [UIFont systemFontOfSize:15];
-            
-            cardBandLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
-            
-            cardBandLabel.textAlignment = NSTextAlignmentRight;
-            [lastView addSubview:cardBandLabel];
-       
-            
-            
-            UIImageView *tipImg = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 10 - 30, 15, 20, 20)];
-            tipImg.image = [UIImage imageNamed:@"next"];
-            [lastView addSubview:tipImg];
-            
-            UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
-            lastView.tag = 1;
-            //单点触摸
-            singleTap1.numberOfTouchesRequired = 1;
-            //点击几次，如果是1就是单击
-            singleTap1.numberOfTapsRequired = 1;
-            [lastView addGestureRecognizer:singleTap1];
-        } else {
-       
-            UILabel *cardBandLabel = [[UILabel alloc] initWithFrame:CGRectMake(110 ,17.5, ScreenWidth - 20 - 110, 15)];
-            cardBandLabel.text = [dicData objectForKey:@"FID_YHZH"];
-            cardBandLabel.font = [UIFont systemFontOfSize:15];
-            
-            cardBandLabel.textColor = [ColorUtil colorWithHexString:@"333333"];
-            
-            cardBandLabel.textAlignment = NSTextAlignmentRight;
-            [lastView addSubview:cardBandLabel];
-       
-        
-        }
-       */
-     
         [scrollView addSubview:lastView];
         
         if (ScreenWidth > 320) {
-         [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 64)];
+            [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 64)];
         } else {
-        
-        [scrollView setContentSize:CGSizeMake(ScreenWidth, 550)];
+            
+            [scrollView setContentSize:CGSizeMake(ScreenWidth, 550)];
         }
-    
+        
     }
-    //[scrollView setContentSize:CGSizeMake(ScreenWidth, 410)];
 
 }
+
 
 - (IBAction)callPhone:(UITouch *)sender
 {
      UIView *view = [sender view];
     if (view.tag == 0) {
+       
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         
-    if ([dic objectForKey:@"name"] == [NSNull null]){
-        [self.view makeToast:@"请先完善我的资料" duration:2 position:@"center"];
+        
+    if (![[appDelegate.dictionary objectForKey:@"isSetCert"] boolValue]){
+        
+        LoginPassWordViewController *vc =  [[LoginPassWordViewController alloc] init];
+     [self.navigationController pushViewController:vc animated:YES];
         
         
     } else {
       
         BindCardViewController *vc = [[BindCardViewController alloc] init];
-        vc.dic = dic;
-        vc.hidesBottomBarWhenPushed = YES;
+       // vc.dic = dic;
         [self.navigationController pushViewController:vc animated:YES];
    
         }
@@ -874,19 +879,34 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
 	if (tag== kBusinessTagGetJRupdateUserInfoAgain) {
         NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+           // [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.view makeToast:@"获取数据异常处理"];
             //            subing = NO;
         } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+           // [MBProgressHUD hideHUDForView:self.view animated:YES];
             // [self.view makeToast:@"登录成功!"];
             [self reloadDataWith:dataArray];
+            }
         }
     }
+    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
@@ -923,4 +943,31 @@
    
    [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+-(void)dealloc {
+
+    scrollView.delegate = nil;
+    [scrollView removeFromSuperview];
+    scrollView = nil;
+    [dic removeAllObjects];
+    dic = nil;
+    
+    [imgHeadVeiw removeFromSuperview];
+    imgHeadVeiw = nil;
+   
+    headImg = nil;
+    dicData = nil;
+    
+    [lastView removeFromSuperview];
+    lastView = nil;
+    [nameView removeFromSuperview];
+    nameView = nil;
+    [lastViewFirst removeFromSuperview];
+    lastViewFirst = nil;
+
+}
+
+
+
 @end

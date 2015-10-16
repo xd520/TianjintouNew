@@ -13,7 +13,7 @@
 #import "MyBuyViewController.h"
 #import "BussizeDetailViewController.h"
 #import "MoneyInfoViewController.h"
-#import "TradingAccountViewController.h"
+//#import "TradingAccountViewController.h"
 #import "RechargeFirstViewController.h"
 #import "WithdrawFirstViewController.h"
 #import "BindCardViewController.h"
@@ -133,6 +133,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,  addHight, ScreenWidth, ScreenHeight - 49 - 20)];
+    scrollView.bounces = NO;
     scrollView.backgroundColor = [ColorUtil colorWithHexString:@"eeeeee"];
     
     UIImageView *baseImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 175*sizeScaleX)];
@@ -188,11 +189,8 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     tipImg.image = [UIImage imageNamed:@"ninhao"];
     [baseImage addSubview:tipImg];
     
-    
-    
-    
    headerImgView = [[UIImageView alloc] initWithFrame:CGRectMake1(0, 0,80, 90)];
-    headerImgView.backgroundColor = [UIColor redColor];
+    headerImgView.backgroundColor = [UIColor grayColor];
   
    // headerImgView.layer.cornerRadius = headerImgView.frame.size.width / 2;
    // headerImgView.clipsToBounds = YES;
@@ -370,7 +368,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
    // NSArray *arr = @[@"我的资产",@"当日申请",@"我的投资",@"我的已获收益",@"充值/提现记录",@"资金变动记录",@"账户安全",@"我的收藏",@"我的厦金币",@"邀请好友"];
     
     
-    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账充值",@"资金变动",@"我的添金币",@"账户安全",@"我的权限",@"我的活动券"];
+    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账记录",@"资金变动",@"我的添金币",@"账户安全",@"我的权限",@"我的活动券"];
     
     
     
@@ -807,8 +805,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                     });
                 });
                 
-                
-            
+            [self requestLogin:kBusinessTagGetJRIndex];
             
             nameTitle.text = [[delegate.logingUser objectForKey:@"object"] objectForKey:@"username"];
             
@@ -874,10 +871,17 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         } else {
             // NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
             //[[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRupdateUserInfo owner:self];
-            [self.view makeToast:@"请先绑定银行卡" duration:2 position:@"center"];
+           // [self.view makeToast:@"请先绑定银行卡" duration:2 position:@"center"];
+            BindCardViewController *vc =   [[BindCardViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }
     } else {
-        [self.view makeToast:@"请先实名认证" duration:2 position:@"center"];
+        
+        LoginPassWordViewController *vc = [[LoginPassWordViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        //[self.view makeToast:@"请先实名认证" duration:2 position:@"center"];
         
     }
     
@@ -1015,9 +1019,10 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             [delegate.logingUser removeAllObjects];
             [delegate.dictionary removeAllObjects];
             [ASIHTTPRequest setSessionCookies:nil];
-            LogOutViewController *cv = [[LogOutViewController alloc] init];
-            cv.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:cv animated:YES];
+            
+            LoginViewController *VC = [[LoginViewController alloc] init];
+            VC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:VC animated:YES];
             
         }
     }else {
@@ -1040,7 +1045,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
                 AccountInfoViewController *cv = [[AccountInfoViewController alloc] init];
                 cv.dicData = @{};
-                cv.headImage = headerImgView.image;
+                cv.headImg = headerImgView.image;
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];
             } else {
@@ -1048,7 +1053,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 cv.dicData = [[jsonDic objectForKey:@"object"] objectAtIndex:0];
                 
                 
-                cv.headImage = headerImgView.image;
+                cv.headImg = headerImgView.image;
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];
             }
@@ -1056,10 +1061,13 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         } else if (tag== kBusinessTagGetJRapplyOutMoney) {
             NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
-                
+                /*
                 TradingAccountViewController *cv = [[TradingAccountViewController alloc] init];
                 cv.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:cv animated:YES];
+                 */
+                [self.view makeToast:@"绑卡申请待处理，请稍候；其结果可在转账记录中查看。"];
+                
             } else {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -1108,11 +1116,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 //[self.view makeToast:bankNumStr];
                 //            subing = NO;
                 
-                TradingAccountViewController *cv = [[TradingAccountViewController alloc] init];
-                cv.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:cv animated:YES];
-                
-                
+              [self.view makeToast:@"绑卡申请待处理，请稍候；其结果可在转账记录中查看。"];
                 
             } else {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -1163,11 +1167,26 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 //[self.view makeToast:bankNumStr];
                 //            subing = NO;
                 
-                TradingAccountViewController *cv = [[TradingAccountViewController alloc] init];
-                cv.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:cv animated:YES];
+               [self.view makeToast:@"绑卡申请待处理，请稍候；其结果可在转账记录中查看。"];
+            }
+        }else if (tag== kBusinessTagGetJRIndex) {
+            NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+            if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+                //数据异常处理
+                // [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [self.view makeToast:@"获取数据异常"];
+                //            subing = NO;
+            } else {
+                AppDelegate *delate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                if (delate.dictionary.count > 0) {
+                    [delate.dictionary removeAllObjects];
+                }
+                
+                delate.dictionary = dataArray;
+                
             }
         }
+
     }
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];

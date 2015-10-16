@@ -195,41 +195,12 @@
             [self saveData];
             
             
-             [self requestLogin:kBusinessTagGetJRIndex];
-            
             AppDelegate *delate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             //delate.loginVC.delegate = self.delegate;
             delate.logingUser = jsonDic;
             delate.strlogin = @"2";
-            
-            
-            //[self.delegate LoginViewVC:self loginOK:nil];
-            
-           
+            [self.navigationController popViewControllerAnimated:YES];
 
-        }
-    }else if (tag== kBusinessTagGetJRIndex) {
-        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
-        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
-            //数据异常处理
-            // [MBProgressHUD hideHUDForView:self.view animated:YES];
-            //[self.view makeToast:@"获取数据异常"];
-            //            subing = NO;
-        } else {
-             AppDelegate *delate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            delate.dictionary = dataArray;
-            
-            
-                [self.navigationController popViewControllerAnimated:YES];
-          
-        
-
-            
-            
-         //  [self dismissViewControllerAnimated:YES completion:nil];
-            
-            
-            // [self.navigationController popViewControllerAnimated:YES];
         }
     }
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -279,6 +250,7 @@
     // [[UIApplication sharedApplication] setStatusBarHidden:TRUE];
     //[[UIApplication sharedApplication]setStatusBarHidden:YES animated:YES];
     [UIView commitAnimations];
+
     
 }
 
@@ -290,9 +262,6 @@
     //    }else{
     // [[UIApplication sharedApplication] setStatusBarHidden:NO animated:NO];
      self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
-    
-    
     
     
     //    }
@@ -393,7 +362,7 @@
             [userDefault synchronize];
         }
         
-        [ASIHTTPRequest setSessionCookies:nil];
+       // [ASIHTTPRequest setSessionCookies:nil];
         
         Base64XD * passwordBase64 = [Base64XD encodeBase64String:self.password.text];
         NSLog(@"%@",passwordBase64.strBase64);

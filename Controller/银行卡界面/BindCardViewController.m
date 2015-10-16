@@ -77,7 +77,10 @@
     [self.diquView addSubview:lineView4];
     
     self.proviousLab.text = @"";
-    self.userName.text = [self.dic objectForKey:@"KHXM"];
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    
+   
     //self.passID.text = [self.dic objectForKey:@"FID_ZJBH"];
     
    // _commit.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -139,7 +142,24 @@
     //singleTap2.numberOfTapsRequired = 1;
    // [lab addGestureRecognizer:singleTap2];
     
+    
+    
+    [self requestLogin:kBusinessTagGetJRupdateUserInfoAgain];
+    
+    
+    
+    
 }
+
+- (void)requestLogin:(kBusinessTag)_tag
+{
+    NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
+    
+    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
+}
+
+
 
 
 - (void)reloadCityTableView:(NSDictionary *)_code{
@@ -211,7 +231,19 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
-   // NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+   
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     if (tag == kBusinessTagGetJRisNeedPsw){
         
         if ([[jsonDic objectForKey:@"success"] boolValue]== YES) {
@@ -240,11 +272,32 @@
             [self.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
             //            subing = NO;
         } else {
-            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            [delegate.dictionary setObject:[NSNumber numberWithBool:1] forKey:@"isBingingCard"];
             
-           [self.navigationController.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
-           
+            NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+            
+            [paraDic setObject:[dataArray objectForKey:@"FID_SQH"] forKey:@"sqh"];
+            
+            [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRbindCardcheckResult owner:self];
+        }
+    } else if (tag == kBusinessTagGetJRbindCardcheckResult){
+        NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+        
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            
+            [self.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
+            
+        }else {
+            //AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+           // [delegate.dictionary setObject:[NSNumber numberWithBool:1] forKey:@"isBingingCard"];
+            
+            if ([dataArray count] == 0) {
+               [self.navigationController.view makeToast:@"绑卡申请提交成功！" duration:2 position:@"center"];
+            } else {
+            
+            [self.navigationController.view makeToast:[[dataArray objectAtIndex:0]objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
+            }
+            
+            /*
             NSMutableArray * array =[[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
             //删除最后一个，也就是自己
             UIViewController *vc = [array objectAtIndex:array.count-2];
@@ -254,14 +307,24 @@
                 
                 [self.navigationController popViewControllerAnimated:YES];
             } else{
-                
+              */
                 [self.navigationController popToRootViewControllerAnimated:YES];
                 
             }
- 
+    } if (tag== kBusinessTagGetJRupdateUserInfoAgain) {
+        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:@"获取数据异常处理"];
+            //            subing = NO;
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            self.userName.text = [dataArray objectForKey:@"KHXM"];
         }
     }
-    
+        
+    }
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
     

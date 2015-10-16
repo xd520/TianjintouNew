@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) NSString *pushStr;
 
-@property (nonatomic,strong) NSDictionary *dic;
+//@property (nonatomic,strong) NSDictionary *dic;
 
 @property (weak, nonatomic) IBOutlet UIView *chikarenView;
 
@@ -31,7 +31,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *bankAccount;
 @property (weak, nonatomic) IBOutlet UILabel *proviousLab;//开户省份
 @property (weak, nonatomic) IBOutlet UILabel *addressLab;//开户地区
-
 
 - (IBAction)commitBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *commit;

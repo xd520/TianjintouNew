@@ -396,6 +396,8 @@
     }
 }
 
+
+
 #pragma mark - NetworkModuleDelegate Methods
 -(void)beginPost:(kBusinessTag)tag{
     
@@ -403,6 +405,19 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
+    
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     
     if (tag== kBusinessTagGetJRsmrzsendVcode) {
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -444,16 +459,18 @@
             NameRealSuccessViewController *nameVC = [[NameRealSuccessViewController alloc] initWithNibName:@"NameRealSuccessViewController" bundle:nil];
             nameVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:nameVC animated:YES];
-            
+            }
         }
     }
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
 -(void)errorPost:(NSError *)err business:(kBusinessTag)tag{
     NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+    _sheetBtn.enabled = NO;
+    
     // if (tag==kBusinessTagGetProjectDetail) {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     //}
@@ -476,6 +493,9 @@
 }
 
 - (IBAction)sheetMethods:(id)sender {
+    
+    _sheetBtn.enabled = NO;
+    
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRsmrzsendVcode owner:self];
@@ -550,7 +570,6 @@
 
     [child removeObserver:self forKeyPath:@"age"];
     
-
 }
 
 

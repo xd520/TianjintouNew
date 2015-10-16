@@ -1218,16 +1218,9 @@
             [delegate.logingUser removeAllObjects];
             [delegate.dictionary removeAllObjects];
             [ASIHTTPRequest setSessionCookies:nil];
-            LogOutViewController *cv = [[LogOutViewController alloc] init];
-            cv.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:cv animated:YES];
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
-        
-        
     } else {
-    
-    
-    
     
     if (tag==kBusinessTagGetJRFundsList) {
         NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];

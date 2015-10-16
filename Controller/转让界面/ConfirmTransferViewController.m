@@ -607,8 +607,6 @@
     vc.str = [self.dic objectForKey:@"FID_GQDM"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    
-    
 }
 
 
@@ -666,6 +664,19 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
     if (tag== kBusinessTagGetJRcpzrdoTrade) {
        // NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -687,9 +698,9 @@
         } else {
             
             [self recivedNoOrderList:[jsonDic objectForKey:@"object"]];
+            }
         }
     }
-
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }

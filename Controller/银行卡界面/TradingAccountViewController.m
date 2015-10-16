@@ -140,7 +140,7 @@
    
     BindCardViewController *vc = [[BindCardViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
-    vc.dic = self.dic;
+   // vc.dic = self.dic;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

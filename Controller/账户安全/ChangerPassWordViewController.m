@@ -112,41 +112,32 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
-    NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     if (tag==kBusinessTagGetJRmodifyTranPwdSubmit) {
         
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [self.view makeToast:@"修改交易密码失败"];
         } else {
-            //[self recivedCategoryList:dataArray];
-            __block int timeout = 2; //倒计时时间
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-            dispatch_source_set_event_handler(_timer, ^{
-                if (timeout <= 0) { //倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //设置界面的按钮显示 根据自己需求设置
+          
+                //设置界面的按钮显示 根据自己需求设置
                         
-                        [self.navigationController popViewControllerAnimated:YES];
-                    });
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [self.view makeToast:@"修改交易密码成功" duration:2 position:@"center"];
-                    });
-                    timeout--;
-                }
-            });
-            dispatch_resume(_timer);
-        
-            
+                [self.navigationController popViewControllerAnimated:YES];
+                [self.navigationController.view makeToast:@"修改交易密码成功" duration:2 position:@"center"];
+            }
         }
     }
-    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
     

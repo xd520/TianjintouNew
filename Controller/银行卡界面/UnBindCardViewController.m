@@ -8,13 +8,14 @@
 
 #import "UnBindCardViewController.h"
 #import "AppDelegate.h"
-#import "AccountViewController.h"
 #import "LPLabel.h"
 #import "WithdarwProtroclViewController.h"
+#import "Child.h"
 
 @interface UnBindCardViewController ()
 {
     UILabel *sheetLab;
+     Child *child;
 
 }
 @end
@@ -73,7 +74,7 @@
     //[self.sheetBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     // _sheetBtn.titleLabel.text = @"获取验证码";
     
-    self.sheetBtn.backgroundColor = [UIColor whiteColor];
+    
     self.sheetBtn.layer.borderWidth = 1;
     
     self.sheetBtn.layer.masksToBounds = YES;
@@ -84,9 +85,10 @@
     
     sheetLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.sheetBtn.frame.size.width, self.sheetBtn.frame.size.height)];
     sheetLab.text = @"获取验证码";
+    sheetLab.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
     sheetLab.textAlignment = NSTextAlignmentCenter;
     sheetLab.font = [UIFont systemFontOfSize:15];
-    sheetLab.textColor = [ColorUtil colorWithHexString:@"999999"];
+    sheetLab.textColor = [UIColor whiteColor];
     [_sheetBtn addSubview:sheetLab];
     
     self.bankName.textColor = [ColorUtil colorWithHexString:@"333333"];
@@ -108,7 +110,6 @@
     strZJBH  = [string stringByReplacingCharactersInRange:range withString:@"******"];
     
     
-    
     if ([str isEqualToString:@"ZGYH"]) {
         lab.text = @"中国银行";
         tail.text = strZJBH;
@@ -117,12 +118,26 @@
         lab.text = @"建设银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_jsyh"];
+    }else if ([str isEqualToString:@"JGJS"]){
+        lab.text = @"建设银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jsyh"];
     } else if ([str isEqualToString:@"NYYH"]) {
         lab.text = @"农业银行";
         tail.text = strZJBH;
-        img.image = [UIImage imageNamed:@"icon_nyyh"];
+        img.image = [UIImage imageNamed:@"com_nyyh"];
         
-    } else if ([str isEqualToString:@"GSYH"]) {
+    } else if ([str isEqualToString:@"JGNY"]) {
+        lab.text = @"农业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"com_nyyh"];
+        
+    }else if ([str isEqualToString:@"GSYH"]) {
+        lab.text = @"工商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gsyh"];
+        
+    } else if ([str isEqualToString:@"JGGS"]) {
         lab.text = @"工商银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_gsyh"];
@@ -132,7 +147,17 @@
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_yh"];
         
+    }else if ([str isEqualToString:@"JGZS"]) {
+        lab.text = @"招商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_yh"];
+        
     }else if ([str isEqualToString:@"GDYH"]) {
+        lab.text = @"光大银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gdyh"];
+        
+    }else if ([str isEqualToString:@"JGGD"]) {
         lab.text = @"光大银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_gdyh"];
@@ -169,8 +194,72 @@
         
     }
     
+    
 }
 
+
+/*
+ if ([str isEqualToString:@"ZGYH"]) {
+ lab.text = @"中国银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_zgyh"];
+ } else if ([str isEqualToString:@"JSYH"]){
+ lab.text = @"建设银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_jsyh"];
+ } else if ([str isEqualToString:@"NYYH"]) {
+ lab.text = @"农业银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_nyyh"];
+ 
+ } else if ([str isEqualToString:@"GSYH"]) {
+ lab.text = @"工商银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_gsyh"];
+ 
+ }else if ([str isEqualToString:@"ZSYH"]) {
+ lab.text = @"招商银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_yh"];
+ 
+ }else if ([str isEqualToString:@"GDYH"]) {
+ lab.text = @"光大银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_gdyh"];
+ 
+ }else if ([str isEqualToString:@"GFYH"]) {
+ lab.text = @"广发银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_gfyh"];
+ 
+ }else if ([str isEqualToString:@"XYYH"]) {
+ lab.text = @"兴业银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_xyyh"];
+ 
+ } else if ([str isEqualToString:@"ZXYH"]) {
+ lab.text = @"中信银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_zxyh"];
+ 
+ } else if ([str isEqualToString:@"JTYH"]) {
+ lab.text = @"交通银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_jtyh"];
+ 
+ } else if ([str isEqualToString:@"PAYH"]) {
+ lab.text = @"平安银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_payh"];
+ 
+ } else if ([str isEqualToString:@"PFYH"]) {
+ lab.text = @"浦发银行";
+ tail.text = strZJBH;
+ img.image = [UIImage imageNamed:@"icon_pfyh"];
+ 
+ }
+
+ */
 
 
 -(void)pushVCProtocal{
@@ -189,7 +278,8 @@
     NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
     
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:[[Base64XD encodeBase64String:_yhmm] strBase64] forKey:@"bankCardNo"];
+    //[paraDic setObject:[[Base64XD encodeBase64String:_yhmm] strBase64] forKey:@"bankCardNo"];
+    [paraDic setObject:_yhmm forKey:@"bankCardNo"];
     [paraDic setObject:_yzm forKey:@"yzm"];
     [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
@@ -204,6 +294,19 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+
     if (tag== kBusinessTagGetJRsendVcodeBindCard) {
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
@@ -214,10 +317,16 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             //[self.view makeToast:@"登录成功!"];
             
-            [self startTime:(int)[[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue]];
+            //注册观察者
+            child = [[Child alloc] init];
+            child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
+            [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
+            
         }
     } else if (tag== kBusinessTagGetJRunBindBankCardSubmit) {
         //NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+         child.age = 0;
+        
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -225,20 +334,23 @@
             
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-            AccountViewController *VC = [[AccountViewController alloc]init];
-            //VC.hidesBottomBarWhenPushed = YES;
-            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-            
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.dictionary setObject:[NSNumber numberWithBool:0] forKey:@"isBingingCard"];
+
+            //[self.navigationController.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
+            [self.navigationController.view makeToast:@"解绑成功！" duration:2 position:@"center"];
+            [self.navigationController popViewControllerAnimated:YES];
+            }
         }
     }
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
 -(void)errorPost:(NSError *)err business:(kBusinessTag)tag{
     NSLog(@"%s Error:%@", __FUNCTION__, @"连接数据服务器超时");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"无法连接" message:@"您所在地的网络信号微弱，无法连接到服务" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+    _sheetBtn.enabled = YES;
     // if (tag==kBusinessTagGetProjectDetail) {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     //}
@@ -251,36 +363,33 @@
     [self.view endEditing:YES];
 }
 
-// 倒计时
-- (void)startTime:(int)num {
+//监听方法
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     
-    __block int timeout = num; //倒计时时间
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_timer, ^{
-        if (timeout <= 0) { //倒计时结束，关闭
-            dispatch_source_cancel(_timer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                sheetLab.text = @"获取验证码";
-                _sheetBtn.enabled = YES;
-            });
-        } else {
-            //            int minutes = timeout / 60;
-            int seconds = timeout % 120;
-            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //设置界面的按钮显示 根据自己需求设置
-                NSLog(@"%@",strTime);
-                sheetLab.text = [NSString stringWithFormat:@"%@秒后获取",strTime];
-                _sheetBtn.enabled = NO;
-                
-            });
-            timeout--;
-        }
-    });
-    dispatch_resume(_timer);
+    NSLog(@"%@",change);
+    
+    if ([[change objectForKey:@"new"] integerValue] <= 0) {
+        
+        sheetLab.text = @"获取验证码";
+        _sheetBtn.enabled = YES;
+       // sheetLab.userInteractionEnabled = YES;
+        sheetLab.backgroundColor = [ColorUtil colorWithHexString:@"087dcd"];
+        [child removeObserver:self forKeyPath:@"age"];
+    } else {
+        
+        sheetLab.text = [NSString stringWithFormat:@"%@秒后获取",[change objectForKey:@"new"]];
+        
+         _sheetBtn.enabled = NO;
+        sheetLab.backgroundColor = [UIColor grayColor];
+        
+    }
+}
+
+-(void)dealloc {
+    
+    [child removeObserver:self forKeyPath:@"age"];
+    
 }
 
 
@@ -303,6 +412,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)sheetMethods:(id)sender {
+    
+    _sheetBtn.enabled = NO;
+    
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     [paraDic setObject:@"unbindCard" forKey:@"action"];
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRsendVcodeBindCard owner:self];

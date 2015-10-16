@@ -303,6 +303,19 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
     if (tag== kBusinessTagGetJRforappMyLpq) {
         NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -314,9 +327,9 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             // [self.view makeToast:@"登录成功!"];
             [self recivedCategoryList:dataArray];
+            }
         }
     }
-    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }

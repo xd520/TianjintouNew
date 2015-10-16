@@ -306,11 +306,9 @@
 
 
 - (IBAction)loginBtn:(id)sender {
-    
     [self.userName resignFirstResponder];
     [self.password resignFirstResponder];
     [self.code resignFirstResponder];
-    
     if ([self.userName.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入用户名" duration:1.0 position:@"center"];
     } else if ([self.password.text isEqualToString:@""]){
@@ -318,40 +316,31 @@
     }else if ([self.code.text isEqualToString:@""]){
         [self.view makeToast:@"请输入验证码" duration:1.0 position:@"center"];
     }  else {
-        
-        
         Base64XD * passwordBase64 = [Base64XD encodeBase64String:self.password.text];
         NSLog(@"%@",passwordBase64.strBase64);
-        
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.dimBackground = YES; //加层阴影
         hud.mode = MBProgressHUDModeIndeterminate;
         hud.labelText = @"加载中...";
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            
             [self requestLogin:self.userName.text withPass:passwordBase64.strBase64 withCode:_code.text tag:kBusinessTagGetJRLogin];
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 
             });
         });
-        
-        
-        
     }
-    
 }
 
 
 
 - (IBAction)foggoterPW:(id)sender {
     [self.view endEditing:YES];
-    /*
+    
      FoggterViewController *vc = [[FoggterViewController alloc] init];
      vc.hidesBottomBarWhenPushed = YES;
      [self.navigationController pushViewController:vc animated:YES];
-     */
-    [self.view makeToast:@"该功能还未实现，请先到PC端操作"];
+     
+    //[self.view makeToast:@"该功能还未实现，请先到PC端操作"];
     
 }
 
@@ -392,23 +381,16 @@
     _code.delegate = nil;
     [_code removeFromSuperview];
     _code = nil;
-    
     _userName.delegate = nil;
     [_userName removeFromSuperview];
     _userName = nil;
-    
-    
     _password.delegate = nil;
     [_password removeFromSuperview];
     _password = nil;
-    
     [_loginBtn removeFromSuperview];
     _loginBtn = nil;
-    
     [_codeImgve removeFromSuperview];
     _codeImgve = nil;
-    
-    
 }
 
 

@@ -8,8 +8,12 @@
 
 #import "WebDetailViewController.h"
 #import "AppDelegate.h"
+#import "MddDownLoadTask.h"
 
 @interface WebDetailViewController ()
+{
+    MBProgressHUD *hud;
+}
 
 @end
 
@@ -38,10 +42,13 @@
     
     _titleLab.text = _name;
     
-    //_webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕
+    _webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕
+    
+    
+    
     
     //添加指示器及遮罩
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
@@ -54,6 +61,9 @@
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [_webView loadRequest:request];
+       // [_webView loadHTMLString:<#(nonnull NSString *)#> baseURL:request];
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
@@ -61,6 +71,115 @@
     
     
 }
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    NSLog(@"%@",request.URL);
+    
+    
+    switch (navigationType)
+    {
+            //点击连接
+        case UIWebViewNavigationTypeLinkClicked:
+        {
+            NSLog(@"clicked");
+            
+           
+            //拷贝
+            
+            NSString *saveLocalPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
+            
+            NSString *documentPath = [saveLocalPath  stringByAppendingPathComponent:@"/txt.txt"];
+            
+            
+            NSMutableDictionary * DownLoadParam=[NSMutableDictionary dictionary];
+            
+          
+            [DownLoadParam setObject:documentPath forKey:@"saveAsFilePath"];
+            [DownLoadParam setObject:request.URL forKey:@"downloadUrl"];
+            
+            MddDownLoadTask  * tDownLoadTask=[[MddDownLoadTask alloc] initWithDic:DownLoadParam];
+            tDownLoadTask.mddDelegate=self;
+            [tDownLoadTask runTask];
+            
+            
+           // [self DownLoadFile:request.URL withpath:documentPath];
+            }
+            break;
+            //提交表单
+        case UIWebViewNavigationTypeFormSubmitted:
+        {
+            NSLog(@"submitted");
+        }
+        default:
+            break;
+    }
+    
+    
+    
+    return YES;
+}
+
+
+-(void) mddDownLoadErrorCallBack:(NSError *)pError{
+    
+    [self.view makeToast:@"下载失败!"];
+
+}
+//完成
+-(void) mddDownLoadSuccessCallBack:(NSMutableDictionary *)pValue{
+
+    [_webView goBack];
+    
+    [self.view makeToast:@"下载成功!"];
+    NSLog(@"%@",pValue);
+
+}
+
+
+
+- (void) DownLoadFile:(NSURL *)url withpath:(NSString *)path{
+    //    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //    [self.view bringSubviewToFront:hud];
+    //    hud.mode = MBProgressHUDModeIndeterminate;
+    
+    if(hud){
+        [hud hide:YES];
+        
+    }
+    
+    hud.labelText = @"正在下载文档...";
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        if(data!=nil&&data.length!=0){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *err = nil;
+                
+                hud.labelText = @"下载成功";
+                [hud hide:YES afterDelay:0.5];
+                
+                if([data writeToFile:path options:NSDataWritingAtomic error:&err]){
+                   // [self QuickLookDoc];
+                    
+                }
+            });
+        }
+        else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"下载失败";
+                [hud hide:YES afterDelay:0.5];
+            });
+        }
+    });
+}
+
+
+
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     
@@ -81,7 +200,6 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
-
 
 
 

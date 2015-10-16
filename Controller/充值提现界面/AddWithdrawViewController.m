@@ -62,7 +62,7 @@
     [scrollView addSubview:tip];
     
     UILabel *tiplab = [[UILabel alloc] initWithFrame:CGRectMake(32, 10, ScreenWidth - 42, 15)];
-    tiplab.text = @"请在周一到周五9：00-16：00时间段提现";
+    tiplab.text = @"提现时间为24小时为您服务";
     tiplab.font = [UIFont systemFontOfSize:13];
      tiplab.backgroundColor = [UIColor clearColor];
     tiplab.textColor = [ColorUtil colorWithHexString:@"999999"];
@@ -382,19 +382,32 @@
     
     if ([str isEqualToString:@"ZGYH"]) {
         lab.text = @"中国银行";
-        
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_zgyh"];
     } else if ([str isEqualToString:@"JSYH"]){
         lab.text = @"建设银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_jsyh"];
+    }else if ([str isEqualToString:@"JGJS"]){
+        lab.text = @"建设银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_jsyh"];
     } else if ([str isEqualToString:@"NYYH"]) {
         lab.text = @"农业银行";
         tail.text = strZJBH;
-        img.image = [UIImage imageNamed:@"icon_nyyh"];
+        img.image = [UIImage imageNamed:@"com_nyyh"];
         
-    } else if ([str isEqualToString:@"GSYH"]) {
+    } else if ([str isEqualToString:@"JGNY"]) {
+        lab.text = @"农业银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"com_nyyh"];
+        
+    }else if ([str isEqualToString:@"GSYH"]) {
+        lab.text = @"工商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gsyh"];
+        
+    } else if ([str isEqualToString:@"JGGS"]) {
         lab.text = @"工商银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_gsyh"];
@@ -404,7 +417,17 @@
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_yh"];
         
+    }else if ([str isEqualToString:@"JGZS"]) {
+        lab.text = @"招商银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_yh"];
+        
     }else if ([str isEqualToString:@"GDYH"]) {
+        lab.text = @"光大银行";
+        tail.text = strZJBH;
+        img.image = [UIImage imageNamed:@"icon_gdyh"];
+        
+    }else if ([str isEqualToString:@"JGGD"]) {
         lab.text = @"光大银行";
         tail.text = strZJBH;
         img.image = [UIImage imageNamed:@"icon_gdyh"];
@@ -731,6 +754,18 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     if (tag== kBusinessTagGetJRReCharger) {
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
@@ -757,7 +792,7 @@
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.view makeToast:@"获取数据异常处理"];
+          [self.view makeToast:[jsonDic objectForKey:@"msg"] duration:2 position:@"center"];
             //            subing = NO;
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -773,58 +808,16 @@
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             [self.view makeToast:[dataArray objectForKey:@"msg"] duration:2 position:@"center"];
         }else {
-            __block int timeout = 2; //倒计时时间
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-            dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
-            dispatch_source_set_event_handler(_timer, ^{
-                if (timeout <= 0) { //倒计时结束，关闭
-                    dispatch_source_cancel(_timer);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        //设置界面的按钮显示 根据自己需求设置
-                       /*
-                        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-                        if ([delegate.strVC isEqualToString:@"1"]) {
-                            
-                            MoneyAccountViewController *VC = [[MoneyAccountViewController alloc]init];
-                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-                            
-                            
-                            
-                        } else {
-                            AccountViewController *VC = [[AccountViewController alloc]init];
-                            VC.view.tag = 3;
-                            [self.navigationController setViewControllers:@[[self.navigationController.viewControllers firstObject],VC]];
-                            
-                            
-                        }
-                        */
-                        //[self.navigationController popViewControllerAnimated:YES];
-                       [self.navigationController popViewControllerAnimated:YES];
-                        
-                        
-                    });
-                    
-                    
-                } else {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        if ([jsonDic objectForKey:@"object"] == nil || [[jsonDic objectForKey:@"object"] count] == 0) {
-                            [self.view makeToast:@"提现结果正在处理，请到转账充值中查询" duration:2 position:@"center"];
-                        } else {
-                            
-                            
-                            [self.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"] duration:2 position:@"center"];
-                        }
-                    });
-                    timeout--;
-                }
-            });
-            dispatch_resume(_timer);
-            
-            
+            if ([jsonDic objectForKey:@"object"] == nil || [[jsonDic objectForKey:@"object"] count] == 0) {
+                [self.navigationController.view makeToast:@"提现结果正在处理，请到转账充值中查询"];
+            } else {
+                
+                
+                [self.navigationController.view makeToast:[[[jsonDic objectForKey:@"object"] objectAtIndex:0] objectForKey:@"FID_JGSM"]];
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+            }
         }
-        
     }
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
@@ -872,6 +865,11 @@
     }
 }
 
+-(void)dealloc {
+    
+    [child removeObserver:self forKeyPath:@"age"];
+    
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

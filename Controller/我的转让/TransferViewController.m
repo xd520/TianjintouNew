@@ -422,6 +422,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     NSMutableDictionary *jsonDic = [result JSONValue];
     NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
     if (tag==kBusinessTagGetJRcpzrwyzrloadData ) {
         // NSMutableDictionary *dataArr = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == 0) {
@@ -447,9 +460,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [dataList removeAllObjects];
             [self recivedCategoryList:[dataArray objectForKey:@"dataList"]];
+            }
         }
     }
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }
 

@@ -1707,8 +1707,19 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     
-    // NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
     if (tag==kBusinessTagGetJRtodayEntrustPage) {
         
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -1846,9 +1857,9 @@
             [self requestRecordPastList:@"6" tag:kBusinessTagGetJRtodayEntrustPage2Again];
             shipStart = @"1";
             [self requestRecordPastList:@"8" tag:kBusinessTagGetJRtodayEntrustPage3Again];
+            }
         }
     }
-    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
     

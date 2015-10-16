@@ -964,10 +964,6 @@
                     
                 }
                 
-                
-                
-                
-                
             }
         } else if (tag== kBusinessTagGetJRupdateUserInfo) {
             NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];

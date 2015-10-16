@@ -11,6 +11,7 @@
 		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408017B1BC795E500114994 /* MyVoucherViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; settings = {ASSET_TAGS = (); }; };
 		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -249,6 +250,8 @@
 		040801791BC795E500114994 /* MyVoucherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVoucherViewController.h; sourceTree = "<group>"; };
 		0408017A1BC795E500114994 /* MyVoucherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVoucherViewController.m; sourceTree = "<group>"; };
 		0408017B1BC795E500114994 /* MyVoucherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVoucherViewController.xib; sourceTree = "<group>"; };
+		046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MddDownLoadTask.m; sourceTree = "<group>"; };
+		046C4C031BD0E0EE00B31F4E /* MddDownLoadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MddDownLoadTask.h; sourceTree = "<group>"; };
 		04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskEvaluationViewController.h; sourceTree = "<group>"; };
 		04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskEvaluationViewController.m; sourceTree = "<group>"; };
 		04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskEvaluationViewController.xib; sourceTree = "<group>"; };
@@ -644,6 +647,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046C4C011BD0E0C200B31F4E /* MddDoc */ = {
+			isa = PBXGroup;
+			children = (
+				046C4C031BD0E0EE00B31F4E /* MddDownLoadTask.h */,
+				046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */,
+			);
+			name = MddDoc;
+			sourceTree = "<group>";
+		};
 		04E8B5C11B72E8DC000332F0 = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +730,7 @@
 		04E8B75C1B72EF38000332F0 /* Modle */ = {
 			isa = PBXGroup;
 			children = (
+				046C4C011BD0E0C200B31F4E /* MddDoc */,
 				04E8B8171B72F2A9000332F0 /* Base6464 */,
 				04E8B7FD1B72F28E000332F0 /* SDImage */,
 				04E8B7F91B72F278000332F0 /* UDID */,
@@ -1626,6 +1639,7 @@
 				04E8B7861B72F0FD000332F0 /* MBProgressHUD.m in Sources */,
 				04E8B77A1B72F069000332F0 /* LPLabel.m in Sources */,
 				04E8B5D01B72E8DC000332F0 /* main.m in Sources */,
+				046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */,
 				04EF61C21B818C8A005700C9 /* ChangerPassWordViewController.m in Sources */,
 				04E8B7C71B72F179000332F0 /* ASIDataDecompressor.m in Sources */,
 				04EF61C81B818C8A005700C9 /* NameRealSuccessViewController.m in Sources */,

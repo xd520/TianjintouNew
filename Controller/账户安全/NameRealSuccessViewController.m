@@ -37,7 +37,63 @@
         
         [self.view addSubview:statusBarView];
     }
+    
+     [self requestLogin:kBusinessTagGetJRupdateUserInfoAgain];
+    
 }
+
+
+
+
+- (void)requestLogin:(kBusinessTag)_tag
+{
+    NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
+    
+    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
+}
+
+#pragma mark - NetworkModuleDelegate Methods
+-(void)beginPost:(kBusinessTag)tag{
+    
+}
+-(void)endPost:(NSString *)result business:(kBusinessTag)tag{
+    NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
+    NSMutableDictionary *jsonDic = [result JSONValue];
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
+    if (tag== kBusinessTagGetJRupdateUserInfoAgain) {
+        //NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+        if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            //数据异常处理
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.view makeToast:@"获取数据异常处理"];
+            //            subing = NO;
+        } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+            if (delegate.logingUser.count > 0) {
+                [delegate.logingUser removeAllObjects];
+            }
+            delegate.logingUser = jsonDic;
+            }
+        }
+    }
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[NetworkModule sharedNetworkModule] cancel:tag];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -82,12 +138,21 @@
             [array removeObjectAtIndex:array.count-1];
             [array removeObjectAtIndex:array.count-1];
             [self.navigationController setViewControllers:array];
-        } else{
+        } else if ([vc.nibName isEqualToString:@"PassWordMangerViewController"]) {
             [array removeObjectAtIndex:array.count-1];
             [array removeObjectAtIndex:array.count-1];
             
             [self.navigationController setViewControllers:array];
             
+        }else if ([vc.nibName isEqualToString:@"AccountInfoViewController"]) {
+            [array removeObjectAtIndex:array.count-1];
+            [array removeObjectAtIndex:array.count-1];
+            
+            [self.navigationController setViewControllers:array];
+            
+        } else {
+        
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }
 }
@@ -103,9 +168,9 @@
 
 - (IBAction)bankCarBindMethods:(id)sender {
     //[self.view makeToast:@"该功能还未实现，请先到PC端绑定"];
-    AppDelegate *delete = [UIApplication sharedApplication].delegate;
+    
     BindCardViewController *vc = [[BindCardViewController alloc] init];
-    vc.dic = delete.dic;
+   // vc.dic = delete.dic;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

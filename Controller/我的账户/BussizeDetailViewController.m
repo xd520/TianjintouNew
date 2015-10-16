@@ -710,22 +710,16 @@
         } else {
             cell = [tbleView dequeueReusableCellWithIdentifier:RepairCellIdentifier];
             if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
+                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [cell setBackgroundColor:[UIColor clearColor]];
                 //添加背景View
                 
-                UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,0, ScreenWidth, 80)];
+                UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,0, ScreenWidth, 100)];
                 [backView setBackgroundColor:[UIColor whiteColor]];
                 //业务类别
                 UILabel *classLabTip = [[UILabel alloc] initWithFrame:CGRectMake(10, 10,65 , 15)];
-                
-                if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"] isEqualToString:@"1"]) {
-                    classLabTip.text = @"充值金额";
-                } else{
-                    
-                    classLabTip.text = @"提现金额";
-                }
+                classLabTip.text = @"转账类型";
                 classLabTip.font = [UIFont systemFontOfSize:15];
                 classLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                 [backView addSubview:classLabTip];
@@ -733,43 +727,22 @@
                 
                 //发生余额(元)
                 UILabel *remainLab = [[UILabel alloc] init];
-                NSString *adc = [NSString stringWithFormat:@"%.2f",[[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_FSJE"]  floatValue]];
-                
-                NSRange range1 = [adc rangeOfString:@"."];//匹配得到的下标
-                
-                NSString *string = [adc substringFromIndex:range1.location];
-                
-                NSString *str = [adc substringToIndex:range1.location];
-                
-                remainLab.text = [NSString stringWithFormat:@"%@%@",[self AddComma:str],string];
+                remainLab.text = [self getClassMethod:[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"]];
                 
                 remainLab.font = [UIFont systemFontOfSize:15];
                 
-                if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"] isEqualToString:@"1"]) {
-                    remainLab.textColor = [ColorUtil colorWithHexString:@"fe8103"];
-                } else{
-                    
-                    remainLab.textColor = [ColorUtil colorWithHexString:@"047f47"];
-                }
-                
-                
+                remainLab.textColor = [ColorUtil colorWithHexString:@"333333"];
+               
                 CGSize titleSize = [remainLab.text sizeWithFont:remainLab.font constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
                 remainLab.frame = CGRectMake(75, 10,titleSize.width, 15);
                 [backView addSubview:remainLab];
                 
                 
-                UILabel *flagLabel = [[UILabel alloc] initWithFrame:CGRectMake(remainLab.frame.size.width + remainLab.frame.origin.x, 10, 15, 15)];
-                flagLabel.font = [UIFont systemFontOfSize:14];
-                [flagLabel setTextColor:[ColorUtil colorWithHexString:@"333333"]];
-                flagLabel.textAlignment = NSTextAlignmentLeft;
-                flagLabel.text = @"元";
-                [backView addSubview:flagLabel];
-                
                 
                 //资金余额(元)
                 
                 UILabel *reLabTip = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 10, 10,65 , 15)];
-                reLabTip.text = @"资金余额";
+                reLabTip.text = @"发生余额";
                 reLabTip.font = [UIFont systemFontOfSize:15];
                 reLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                 [backView addSubview:reLabTip];
@@ -811,13 +784,30 @@
                 [backView addSubview:endLabTip];
                 
                 UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth - 85 , 15)];
-                endLab.text =[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
+                endLab.text =[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_CLJG"];
                 endLab.font = [UIFont systemFontOfSize:15];
                 endLab.textColor = [ColorUtil colorWithHexString:@"333333"];
                 [backView addSubview:endLab];
                 
+            //结果说明
                 
-                UILabel *dateLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 54,ScreenWidth - 20 , 14)];
+                UILabel *endSmLabTip = [[UILabel alloc] initWithFrame:CGRectMake(10, 54,65 , 15)];
+                endSmLabTip.text = @"结果说明";
+                endSmLabTip.font = [UIFont systemFontOfSize:15];
+                endSmLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
+                [backView addSubview:endSmLabTip];
+                
+                UILabel *endSmLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 54,ScreenWidth - 85 , 15)];
+                endSmLab.text =[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
+                endSmLab.font = [UIFont systemFontOfSize:15];
+                endSmLab.textColor = [ColorUtil colorWithHexString:@"333333"];
+                [backView addSubview:endSmLab];
+                
+                
+                
+                
+                
+                UILabel *dateLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 76,ScreenWidth - 20 , 14)];
                 //日期格式转化
                 NSMutableString *strDate = [[NSMutableString alloc] initWithString:[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_SQRQ"]];
                 // NSString *newStr = [strDate insertring:@"-" atIndex:3];
@@ -881,22 +871,16 @@
             } else {
                 cell = [tbleView dequeueReusableCellWithIdentifier:RepairCellIdentifier];
                 if (cell == nil) {
-                    cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 80)];
+                    cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     [cell setBackgroundColor:[UIColor clearColor]];
                     //添加背景View
                     
-                    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,0, ScreenWidth, 80)];
+                    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0,0, ScreenWidth, 100)];
                     [backView setBackgroundColor:[UIColor whiteColor]];
                     //业务类别
                     UILabel *classLabTip = [[UILabel alloc] initWithFrame:CGRectMake(10, 10,65 , 15)];
-                    
-                    if ([[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"] isEqualToString:@"1"]) {
-                        classLabTip.text = @"充值金额";
-                    } else{
-                        
-                        classLabTip.text = @"提现金额";
-                    }
+                        classLabTip.text = @"转账类型";
                     classLabTip.font = [UIFont systemFontOfSize:15];
                     classLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                     [backView addSubview:classLabTip];
@@ -904,43 +888,30 @@
                     
                     //发生余额(元)
                     UILabel *remainLab = [[UILabel alloc] init];
-                    NSString *adc = [NSString stringWithFormat:@"%.2f",[[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_FSJE"]  floatValue]];
-                    
-                    NSRange range1 = [adc rangeOfString:@"."];//匹配得到的下标
-                    
-                    NSString *string = [adc substringFromIndex:range1.location];
-                    
-                    NSString *str = [adc substringToIndex:range1.location];
-                    
-                    remainLab.text = [NSString stringWithFormat:@"%@%@",[self AddComma:str],string];
+                    remainLab.text = [self getClassMethod:[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"]];
                     
                     remainLab.font = [UIFont systemFontOfSize:15];
                     
-                    if ([[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_YWLB"] isEqualToString:@"1"]) {
-                        remainLab.textColor = [ColorUtil colorWithHexString:@"fe8103"];
-                    } else{
-                        
-                       remainLab.textColor = [ColorUtil colorWithHexString:@"047f47"];
-                    }
+                        remainLab.textColor = [ColorUtil colorWithHexString:@"333333"];
                     
                    
                     CGSize titleSize = [remainLab.text sizeWithFont:remainLab.font constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
                     remainLab.frame = CGRectMake(75, 10,titleSize.width, 15);
                     [backView addSubview:remainLab];
                     
-                    
+                    /*
                     UILabel *flagLabel = [[UILabel alloc] initWithFrame:CGRectMake(remainLab.frame.size.width + remainLab.frame.origin.x, 10, 15, 15)];
                     flagLabel.font = [UIFont systemFontOfSize:14];
                     [flagLabel setTextColor:[ColorUtil colorWithHexString:@"333333"]];
                     flagLabel.textAlignment = NSTextAlignmentLeft;
                     flagLabel.text = @"元";
                     [backView addSubview:flagLabel];
-                    
+                    */
                     
                     //资金余额(元)
                     
                     UILabel *reLabTip = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 10, 10,65 , 15)];
-                    reLabTip.text = @"资金余额";
+                    reLabTip.text = @"发生余额";
                     reLabTip.font = [UIFont systemFontOfSize:15];
                     reLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                     [backView addSubview:reLabTip];
@@ -983,13 +954,33 @@
                     [backView addSubview:endLabTip];
                     
                     UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 32,ScreenWidth - 85 , 15)];
-                    endLab.text =[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
+                  
+                   // endLab.text =[self getEndMethod:[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_CLJG"]];
+                    endLab.text =[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_CLJG"];
+                    
                     endLab.font = [UIFont systemFontOfSize:15];
                     endLab.textColor = [ColorUtil colorWithHexString:@"333333"];
                     [backView addSubview:endLab];
                     
+                    //结果说明
+                    
+                    UILabel *endSmLabTip = [[UILabel alloc] initWithFrame:CGRectMake(10, 54,65 , 15)];
+                    endSmLabTip.text = @"结果说明";
+                    endSmLabTip.font = [UIFont systemFontOfSize:15];
+                    endSmLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
+                    [backView addSubview:endSmLabTip];
+                    
+                    UILabel *endSmLab = [[UILabel alloc] initWithFrame:CGRectMake(75, 54,ScreenWidth - 85 , 15)];
+                    endSmLab.text =[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_JGSM"];
+                    endSmLab.font = [UIFont systemFontOfSize:15];
+                    endSmLab.textColor = [ColorUtil colorWithHexString:@"333333"];
+                    [backView addSubview:endSmLab];
+                    
+
+                    
+                    
  
-                    UILabel *dateLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 54,ScreenWidth - 20 , 14)];
+                    UILabel *dateLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 76,ScreenWidth - 20 , 14)];
                     //日期格式转化
                     NSMutableString *strDate = [[NSMutableString alloc] initWithString:[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_SQRQ"]];
                     // NSString *newStr = [strDate insertring:@"-" atIndex:3];
@@ -1017,32 +1008,51 @@
     return nil;
 }
 
+
+
+
 -(NSString *)getClassMethod:(NSString *)str {
     NSString *string;
     if ([str isEqualToString:@"1"]) {
-        string = @"充值";
+        string = @"银转商";
     } else if ([str isEqualToString:@"2"]){
-     string = @"提现";
-    } else if ([str isEqualToString:@"4"]){
-        string = @"查询";
+     string = @"商转银";
+    } else if ([str isEqualToString:@"8192"]){
+        string = @"银转商申请";
+    }else if ([str isEqualToString:@"16384"]){
+        string = @"商转银申请";
+    }else if ([str isEqualToString:@"4"]){
+        string = @"余额查询";
     } else if ([str isEqualToString:@"8"]){
-        string = @" 开户";
+        string = @" 绑定银行卡";
+    }else if ([str isEqualToString:@"32768"]){
+        string = @" 绑定银行卡";
     }else if ([str isEqualToString:@"16"]){
-        string = @"销户";
+        string = @"银行卡解绑";
+    }else if ([str isEqualToString:@"65536"]){
+        string = @"银行卡解绑";
+    }else if ([str isEqualToString:@"32"]){
+        string = @"冲正银转商";
+    }else if ([str isEqualToString:@"64"]){
+        string = @"冲正商转银";
+    }else if ([str isEqualToString:@"128"]){
+        string = @"交易核实";
     }
     return string;
 }
 
 -(NSString *)getEndMethod:(NSString *)str {
     NSString *string;
-    if ([str isEqualToString:@"0"]) {
-        string = @"银行";
+    if ([str isEqualToString:@"111"]) {
+        string = @"成功";
+    } else if ([str isEqualToString:@"-11"]){
+        string = @"失败";
+    } else if ([str isEqualToString:@"0"]){
+        string = @"待处理";
     } else if ([str isEqualToString:@"1"]){
-        string = @"交易所";
-    } else if ([str isEqualToString:@"-812"]){
-        string = @"交易状态查询返回结果为处理中";
-    } else if ([str isEqualToString:@"111"]){
-        string = @" 交易成功";
+        string = @"处理中";
+    }else if ([str isEqualToString:@"-52"]){
+        string = @"银行处理中";
     }
     return string;
     
@@ -1056,14 +1066,14 @@
     if ([indexPath row] == [dataList count]) {
         return 40;
     } else {
-        return 80;
+        return 100;
     }
    
     } else {
         if ([indexPath row] == [dataListPast count]) {
             return 40;
         } else {
-            return 80;
+            return 100;
         }
     }
      return 95;
@@ -1184,6 +1194,21 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
+    
+    
    if (tag==kBusinessTagGetJRtransRecordList) {
         NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == 0) {
@@ -1262,13 +1287,10 @@
                 [self recivedPastDataList:dataArray];
             } else {
                 [_slimeView endRefresh];
+                }
             }
-            
-            
         }
-        
     }
-    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
 }

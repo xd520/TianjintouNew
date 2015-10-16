@@ -436,6 +436,19 @@
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+    
     if (tag== kBusinessTagGetJRSelling) {
         NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -484,26 +497,14 @@
                 }else {
                     [self.view makeToast:@"您的可用少于转让价格，请先充值" duration:1 position:@"center"];
                 }
- 
-                
-                
-                
             } else {
                 
                 [self.view makeToast:@"请先绑定银行卡" duration:1 position:@"center"];
                 
+                }
             }
-
-            
-            
-          
-            
-            
-              //  firstDic = [dataArray objectAtIndex:0];
         }
     }
-
-    
    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];

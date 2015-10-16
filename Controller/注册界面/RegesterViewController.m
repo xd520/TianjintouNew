@@ -418,6 +418,11 @@
 }
 
 
+-(void)dealloc {
+    
+    [child removeObserver:self forKeyPath:@"age"];
+    
+}
 
 
 - (void)didReceiveMemoryWarning

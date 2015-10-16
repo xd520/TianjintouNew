@@ -89,7 +89,18 @@
 -(void)endPost:(NSString *)result business:(kBusinessTag)tag{
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
-    NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
     if (tag==kBusinessTagGetJRsavePWD) {
         
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
@@ -122,7 +133,7 @@
             child = [[Child alloc] init];
             child.age = [[[jsonDic objectForKey:@"object"] objectForKey:@"time"] integerValue];
             [child addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:@"xxxx"];
-            
+            }
         }
     }
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -255,7 +266,11 @@
 }
 
 
-
+-(void)dealloc {
+    
+    [child removeObserver:self forKeyPath:@"age"];
+    
+}
 
 
 - (IBAction)sheetCodeMethods:(id)sender {

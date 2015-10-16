@@ -11,7 +11,7 @@
 @interface AccountInfoViewController : UIViewController
 
 @property(nonatomic,strong)NSDictionary *dicData;
-@property(nonatomic,strong)UIImage *headImage;
+@property(nonatomic,strong)UIImage *headImg;
 
 
 - (IBAction)back:(id)sender;

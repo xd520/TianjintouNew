@@ -210,6 +210,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     NSLog(@"%s %d 收到数据:%@", __FUNCTION__, __LINE__, result);
     NSMutableDictionary *jsonDic = [result JSONValue];
     NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+    if ([[jsonDic objectForKey:@"object"] isKindOfClass:[NSString class]]) {
+        
+        if ([[jsonDic objectForKey:@"object"] isEqualToString:@"loginTimeout"]&&[[jsonDic objectForKey:@"success"] boolValue] == NO) {
+            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [delegate.logingUser removeAllObjects];
+            [delegate.dictionary removeAllObjects];
+            [ASIHTTPRequest setSessionCookies:nil];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
+    }else {
+
+    
     if (tag==kBusinessTagGetJRProvinceData) {
         
         if (dataArray == nil) {
@@ -227,9 +241,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         } else {
             [dataList removeAllObjects];
             [self recivedCategoryList:dataArray];
+            }
         }
     }
-    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [[NetworkModule sharedNetworkModule] cancel:tag];
     
