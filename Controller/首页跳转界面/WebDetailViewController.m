@@ -9,10 +9,12 @@
 #import "WebDetailViewController.h"
 #import "AppDelegate.h"
 #import "MddDownLoadTask.h"
+#import "ReadViewController.h"
 
 @interface WebDetailViewController ()
 {
     MBProgressHUD *hud;
+    NSString *filePath;
 }
 
 @end
@@ -90,19 +92,44 @@
             
             NSString *saveLocalPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
             
-            NSString *documentPath = [saveLocalPath  stringByAppendingPathComponent:@"/txt.txt"];
+            NSArray *array = [self convertURLToArray:request.URL.absoluteString];
+            
+            [self suburlString:[array objectAtIndex:2]];
             
             
-            NSMutableDictionary * DownLoadParam=[NSMutableDictionary dictionary];
+            NSLog(@"%@  %@",array,[self suburlString:[array objectAtIndex:2]]);
             
-          
-            [DownLoadParam setObject:documentPath forKey:@"saveAsFilePath"];
-            [DownLoadParam setObject:request.URL forKey:@"downloadUrl"];
+           // NSString *documentPath = [saveLocalPath  stringByAppendingPathComponent:@"pdf.pdf"];
             
-            MddDownLoadTask  * tDownLoadTask=[[MddDownLoadTask alloc] initWithDic:DownLoadParam];
-            tDownLoadTask.mddDelegate=self;
-            [tDownLoadTask runTask];
+            if ([[self suburlString:[array objectAtIndex:2]] isEqualToString:@"txt"]) {
+                NSString* fileName = @"down_form.txt";
+                NSString* documentPath = [saveLocalPath stringByAppendingPathComponent:fileName];
+                filePath = documentPath;
+            } else if ([[self suburlString:[array objectAtIndex:2]] isEqualToString:@"pdf"]){
             
+                NSString* fileName = @"down_form.pdf";
+                NSString* documentPath = [saveLocalPath stringByAppendingPathComponent:fileName];
+                filePath = documentPath;
+            }
+            
+           
+            //添加指示器及遮罩
+            hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.dimBackground = YES; //加层阴影
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.labelText = @"正在下载中...";
+           
+               
+                NSMutableDictionary * DownLoadParam=[NSMutableDictionary dictionary];
+                
+                
+                [DownLoadParam setObject:filePath forKey:@"saveAsFilePath"];
+                [DownLoadParam setObject:request.URL forKey:@"downloadUrl"];
+                
+                MddDownLoadTask  * tDownLoadTask=[[MddDownLoadTask alloc] initWithDic:DownLoadParam];
+                tDownLoadTask.mddDelegate=self;
+                [tDownLoadTask runTask];
+
             
            // [self DownLoadFile:request.URL withpath:documentPath];
             }
@@ -122,63 +149,82 @@
 }
 
 
--(void) mddDownLoadErrorCallBack:(NSError *)pError{
-    
-    [self.view makeToast:@"下载失败!"];
 
+- (NSArray *)convertURLToArray:(NSString *)string{
+    if([string rangeOfString:@"?"].length != 0){
+        int i = [string rangeOfString:@"?"].location;
+        NSString *newString = [string substringFromIndex:i+1];
+        return [newString componentsSeparatedByString:@"&"];
+    }
+    else{
+        return  nil;
+    }
+}
+
+
+//将?后面的字符串截掉
+- (NSString *)suburlString:(NSString *)urlString{
+    
+    //return  [urlString substringFromIndex:[urlString rangeOfString:@"="].location + 1];
+    
+    return [urlString substringFromIndex:urlString.length - 3];
+    
+}
+
+
+-(void) mddDownLoadErrorCallBack:(NSError *)pError{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.view makeToast:@"下载失败!"];
+    
 }
 //完成
 -(void) mddDownLoadSuccessCallBack:(NSMutableDictionary *)pValue{
 
-    [_webView goBack];
-    
-    [self.view makeToast:@"下载成功!"];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[_webView goBack];
+    //[self.view makeToast:@"下载成功!"];
     NSLog(@"%@",pValue);
+    
+      
+    
+//    QLPreviewController *vc = [[QLPreviewController alloc] init];
+//    vc.delegate = self;
+//    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    
+   
+    
+   // [documentController presentPreviewAnimated:YES];
+    
+    
+    
+    ReadViewController *vc = [[ReadViewController alloc] init];
+    vc.path = filePath;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+ }
 
+/*
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)previewController
+{
+    return 1;
+}
+//====================================================================================//
+- (void)previewControllerDidDismiss:(QLPreviewController *)controller
+{
+    
 }
 
 
-
-- (void) DownLoadFile:(NSURL *)url withpath:(NSString *)path{
-    //    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //    [self.view bringSubviewToFront:hud];
-    //    hud.mode = MBProgressHUDModeIndeterminate;
+- (id)previewController:(QLPreviewController *)previewController previewItemAtIndex:(NSInteger)idx
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *docPath = [documentsDirectory stringByAppendingString:@"/down_form.pdf"];
     
-    if(hud){
-        [hud hide:YES];
-        
-    }
-    
-    hud.labelText = @"正在下载文档...";
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        if(data!=nil&&data.length!=0){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSError *err = nil;
-                
-                hud.labelText = @"下载成功";
-                [hud hide:YES afterDelay:0.5];
-                
-                if([data writeToFile:path options:NSDataWritingAtomic error:&err]){
-                   // [self QuickLookDoc];
-                    
-                }
-            });
-        }
-        else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                hud.mode = MBProgressHUDModeText;
-                hud.labelText = @"下载失败";
-                [hud hide:YES afterDelay:0.5];
-            });
-        }
-    });
+    return [NSURL fileURLWithPath:docPath];
 }
-
-
-
+*/
 
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
@@ -187,6 +233,10 @@
     
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    
+    
+    
     
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"WebKitCacheModelPreferenceKey"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];//自己添加的，原文没有提到。
@@ -220,6 +270,8 @@
 }
 
 - (IBAction)back:(id)sender {
+    
+    //[_webView goForward];
     _webView.delegate = nil;
     [_webView loadHTMLString:@"" baseURL:nil];
     [_webView stopLoading];

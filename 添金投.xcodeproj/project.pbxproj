@@ -11,6 +11,9 @@
 		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408017B1BC795E500114994 /* MyVoucherViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0408273E1BD4BE0800BB2662 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408273C1BD4BE0800BB2662 /* ReadViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0408273F1BD4BE0800BB2662 /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408273D1BD4BE0800BB2662 /* ReadViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		040827411BD4DEDE00BB2662 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040827401BD4DEDE00BB2662 /* QuickLook.framework */; };
 		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; settings = {ASSET_TAGS = (); }; };
 		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -250,6 +253,10 @@
 		040801791BC795E500114994 /* MyVoucherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVoucherViewController.h; sourceTree = "<group>"; };
 		0408017A1BC795E500114994 /* MyVoucherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVoucherViewController.m; sourceTree = "<group>"; };
 		0408017B1BC795E500114994 /* MyVoucherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVoucherViewController.xib; sourceTree = "<group>"; };
+		0408273B1BD4BE0800BB2662 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
+		0408273C1BD4BE0800BB2662 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		0408273D1BD4BE0800BB2662 /* ReadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
+		040827401BD4DEDE00BB2662 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MddDownLoadTask.m; sourceTree = "<group>"; };
 		046C4C031BD0E0EE00B31F4E /* MddDownLoadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MddDownLoadTask.h; sourceTree = "<group>"; };
 		04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskEvaluationViewController.h; sourceTree = "<group>"; };
@@ -625,6 +632,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040827411BD4DEDE00BB2662 /* QuickLook.framework in Frameworks */,
 				04E8B8301B72F391000332F0 /* libz.1.2.5.dylib in Frameworks */,
 				04E8B82E1B72F387000332F0 /* QuartzCore.framework in Frameworks */,
 				04E8B82C1B72F37A000332F0 /* CFNetwork.framework in Frameworks */,
@@ -659,6 +667,7 @@
 		04E8B5C11B72E8DC000332F0 = {
 			isa = PBXGroup;
 			children = (
+				040827401BD4DEDE00BB2662 /* QuickLook.framework */,
 				04EF60891B818C89005700C9 /* Controller */,
 				04E8B82F1B72F391000332F0 /* libz.1.2.5.dylib */,
 				04E8B82D1B72F387000332F0 /* QuartzCore.framework */,
@@ -1330,6 +1339,9 @@
 				04EF61641B818C8A005700C9 /* WebDetailViewController.h */,
 				04EF61651B818C8A005700C9 /* WebDetailViewController.m */,
 				04EF61661B818C8A005700C9 /* WebDetailViewController.xib */,
+				0408273B1BD4BE0800BB2662 /* ReadViewController.h */,
+				0408273C1BD4BE0800BB2662 /* ReadViewController.m */,
+				0408273D1BD4BE0800BB2662 /* ReadViewController.xib */,
 			);
 			path = "首页跳转界面";
 			sourceTree = "<group>";
@@ -1494,6 +1506,7 @@
 				04EF617F1B818C8A005700C9 /* AccountInfoViewController.xib in Resources */,
 				04EF61C31B818C8A005700C9 /* ChangerPassWordViewController.xib in Resources */,
 				04E8B5DB1B72E8DC000332F0 /* Images.xcassets in Resources */,
+				0408273F1BD4BE0800BB2662 /* ReadViewController.xib in Resources */,
 				04EF61BF1B818C8A005700C9 /* SuccessViewController.xib in Resources */,
 				040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */,
 				04E8B83C1B72F916000332F0 /* ProductViewCtrl.xib in Resources */,
@@ -1546,6 +1559,7 @@
 				04EF61BC1B818C8A005700C9 /* ProductProcoalViewController.m in Sources */,
 				04E8B7E11B72F211000332F0 /* DDList.m in Sources */,
 				04E8B7EC1B72F236000332F0 /* PostRequest.m in Sources */,
+				0408273E1BD4BE0800BB2662 /* ReadViewController.m in Sources */,
 				04E8B7EB1B72F236000332F0 /* NetworkModule.m in Sources */,
 				04EF61F01B818C8A005700C9 /* WebDetailViewController.m in Sources */,
 				04EF61781B818C8A005700C9 /* WithdarwProtroclViewController.m in Sources */,
