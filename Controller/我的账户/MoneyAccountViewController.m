@@ -66,7 +66,7 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     if ([isRefresh isEqualToString:@"1"]) {
@@ -322,19 +322,36 @@
                 
                 if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"sell"] isEqualToString:@"can"]) {
                     
-                    if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"98"]||[[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"Z9"]) {
+                    if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_KMCSL"] integerValue] > 0 ) {
                         
-                        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 80, 30, 70, 30)];
-                        lab.backgroundColor = [UIColor grayColor];
-                        lab.font = [UIFont systemFontOfSize:14];
-                        //lab.layer.borderWidth = 1;
-                        lab.textColor = [UIColor whiteColor];
-                        lab.layer.masksToBounds = YES;
+                        if (![[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"Z9"]) {
+                            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 90, 30, 80, 30)];
+                            lab.backgroundColor = [ColorUtil colorWithHexString:@"fe8103"];
+                            lab.font = [UIFont systemFontOfSize:14];
+                            //lab.layer.borderWidth = 1;
+                            
+                            lab.layer.masksToBounds = YES;
+                            lab.layer.cornerRadius = 4;
+                            lab.text = @"转让";
+                            lab.textColor = [UIColor whiteColor];
+                            lab.textAlignment = NSTextAlignmentCenter;
+                            [backView addSubview:lab];
+                            
+                            
+                        } else {
                         
-                        lab.layer.cornerRadius = 4;
-                        lab.text = @"转让";
-                        lab.textAlignment = NSTextAlignmentCenter;
-                        [backView addSubview:lab];
+                            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 80, 30, 70, 30)];
+                            lab.backgroundColor = [UIColor grayColor];
+                            lab.font = [UIFont systemFontOfSize:14];
+                            //lab.layer.borderWidth = 1;
+                            lab.textColor = [UIColor whiteColor];
+                            lab.layer.masksToBounds = YES;
+                            
+                            lab.layer.cornerRadius = 4;
+                            lab.text = @"转让";
+                            lab.textAlignment = NSTextAlignmentCenter;
+                            [backView addSubview:lab];
+                        }
                         
                     } else {
                     
@@ -456,13 +473,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         
         if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"sell"] isEqualToString:@"can"]) {
         
-             if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"98"]||[[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"Z9"]) {
-             }else {
-        MyTransferDetailViewController *cv = [[MyTransferDetailViewController alloc] init];
-        
-        cv.gqdm = [[dataList objectAtIndex:indexPath.row] objectForKey:@"FID_GQDM"];
-        cv.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:cv animated:YES];
+             if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_KMCSL"] integerValue] > 0 ) {
+                
+                 if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_GQLB"] isEqualToString:@"Z9"] == NO) {
+                 MyTransferDetailViewController *cv = [[MyTransferDetailViewController alloc] init];
+                 
+                 cv.gqdm = [[dataList objectAtIndex:indexPath.row] objectForKey:@"FID_GQDM"];
+                 cv.hidesBottomBarWhenPushed = YES;
+                 [self.navigationController pushViewController:cv animated:YES];
+                     
+              }
+                     
              }
         }
     }
