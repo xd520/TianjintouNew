@@ -1797,15 +1797,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: LongTang Xiao (A248892LNJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGo;
+				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7f3d769-c79d-4619-a89c-9d8da7923150";
+				PROVISIONING_PROFILE = "55e6434a-121d-477c-b681-cbeb42751acc";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1815,15 +1815,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: LongTang Xiao (A248892LNJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian Apex Software Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/xd/添金投/添金投/tianjintou.pch";
 				INFOPLIST_FILE = "添金投/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGo;
+				PRODUCT_BUNDLE_IDENTIFIER = InHouse.com.apex.TouGou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7f3d769-c79d-4619-a89c-9d8da7923150";
+				PROVISIONING_PROFILE = "55e6434a-121d-477c-b681-cbeb42751acc";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -125,7 +125,7 @@
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.view makeToast:[jsonDic objectForKey:@"mag"]];
+            [self.view makeToast:[jsonDic objectForKey:@"msg"]];
             //            subing = NO;
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
