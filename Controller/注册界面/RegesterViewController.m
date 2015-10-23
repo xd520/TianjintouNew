@@ -150,7 +150,10 @@
     if (textField == _userName) {
    
         
-    NSString *emailRegex = @"^[a-zA-Z]\\w{5,17}$";
+   // NSString *emailRegex = @"^[a-zA-Z]\\w{5,17}$";
+        
+    NSString *emailRegex = @"^[a-zA-Z0-9_]{4,30}$";
+        
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     bool sfzNo = [emailTest evaluateWithObject:[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     

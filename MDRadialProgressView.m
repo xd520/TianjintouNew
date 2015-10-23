@@ -282,8 +282,14 @@
 	
 	self.accessibilityValue = [NSString stringWithFormat:@"%.2f", percentageCompleted];
     self.label.font = [UIFont systemFontOfSize:10];
+    
+    if ((int)percentageCompleted == 100) {
+     self.label.text = @"已抢光";
+    } else {
+    
 	self.label.text = [NSString stringWithFormat:@"%.f%@", percentageCompleted,@"%"];
-	
+    }
+    
 	NSString *notificationText = [NSString stringWithFormat:@"%@ %@",
 								  NSLocalizedString(@"Progress changed to:", nil),
 								  self.accessibilityValue];

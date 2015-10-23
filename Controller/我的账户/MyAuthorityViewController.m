@@ -61,7 +61,7 @@
         
     } else if ([[dic objectForKey:@"FID_JYQX"] isEqualToString:@"3"]) {
          strNum = @"3";
-        _myAuthority.text = @"甲级合格投资者";
+        _myAuthority.text = @"甲类合格投资者";
         _firstView.hidden = YES;
         _authority.hidden = YES;
     
@@ -200,7 +200,7 @@
             [paraDic setObject:@"申请乙级合格投资者权限" forKey:@"FID_ZY"];
         } else if ([strNum isEqualToString:@"2"]){
             [paraDic setObject:@"3" forKey:@"FID_JYQX"];
-            [paraDic setObject:@"申请甲级合格投资者权限" forKey:@"FID_ZY"];
+            [paraDic setObject:@"申请甲类合格投资者权限" forKey:@"FID_ZY"];
         }
         [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRforwdqxtzqx owner:self];
         
