@@ -528,7 +528,7 @@
         if (_invitationCode == nil || [_invitationCode.text isEqualToString:@""]) {
             [paraDic setObject:@"" forKey:@"referee"];
         } else {
-            [paraDic setObject:_email.text forKey:@"referee"];
+            [paraDic setObject:_invitationCode.text forKey:@"referee"];
         }
         
         [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRregisterdoPersonal owner:self];
