@@ -78,7 +78,7 @@
     [super viewDidLoad];
     
     start = @"1";
-    limit = @"10";
+    limit = @"20";
     startBak = @"";
     startPast = @"1";
     limitPast = @"10";
@@ -664,7 +664,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     } else {
         dataList = dataArray;
     }
-    if ([dataArray count] < 10) {
+    if ([dataArray count] < 20) {
         hasMore = NO;
     } else {
         hasMore = YES;

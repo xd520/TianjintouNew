@@ -402,10 +402,10 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     labNew.textAlignment = NSTextAlignmentCenter;
     labNew.font = [UIFont systemFontOfSize:16*sizeScaleX];
     lab.backgroundColor = [UIColor clearColor];
-    [backimgView addSubview:labNew];
+    //[backimgView addSubview:labNew];
     
     
-    UIButton *buyBtn = [[UIButton alloc] initWithFrame:CGRectMake1(30, 245,260 , 35)];
+    UIButton *buyBtn = [[UIButton alloc] initWithFrame:CGRectMake1(30, 225,260 , 35)];
     buyBtn.backgroundColor = [ColorUtil colorWithHexString:@"f6c209"];
     buyBtn.layer.cornerRadius = 17.5*sizeScaleX;
     buyBtn.layer.masksToBounds = YES;
@@ -504,7 +504,12 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 [self.view makeToast:@"下载图片失败"];
                 //            subing = NO;
             } else {
+                if (dataArray.count == 0 || dataArray == nil) {
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                } else{
+                
                 [self recivedUpdateLinkMan:dataArray];
+                }
             }
         }
     

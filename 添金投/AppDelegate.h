@@ -30,11 +30,11 @@
 //#define SERVERURL @"http://192.168.2.207:8082"
 
 //天津投
-#define SERVERURL @"http://192.168.2.11:8080/account"
+//#define SERVERURL @"http://192.168.2.11:8080/account"
 
-//#define SERVERURL @"http://192.168.1.110:8805"
+#define SERVERURL @"http://192.168.1.110:8805"
 //天津投生产环境
-//#define SERVERURL @"http://www.tjtou.cn"
+//#define SERVERURL @"https://www.tjtou.cn"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     UIBackgroundTaskIdentifier bgTask;
