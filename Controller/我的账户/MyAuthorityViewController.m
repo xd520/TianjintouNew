@@ -36,6 +36,12 @@
     _commitBtn.layer.cornerRadius = 4;
     _commitBtn.layer.masksToBounds = YES;
     
+    _commit1.backgroundColor = [ColorUtil colorWithHexString:@"fe8103"];
+    _commit1.layer.cornerRadius = 4;
+    _commit1.layer.masksToBounds = YES;
+
+    
+    
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
@@ -56,19 +62,22 @@
 -(void)reloadDataWith:(NSMutableDictionary *)dic{
     if ([[dic objectForKey:@"FID_JYQX"] isEqualToString:@"2"]) {
         strNum = @"2";
-        _myAuthority.text = @"乙级合格投资者";
+        _myAuthority.text = @"乙类合格投资者";
         _authority.text = @"甲类合格投资者";
+        _firstView.hidden = YES;
         
     } else if ([[dic objectForKey:@"FID_JYQX"] isEqualToString:@"3"]) {
          strNum = @"3";
         _myAuthority.text = @"甲类合格投资者";
         _firstView.hidden = YES;
+        _secondView.hidden = YES;
         _authority.hidden = YES;
     
     } else {
          strNum = @"";
        _authority.text = @"乙类合格投资者";
         _myAuthority.text = @"普通投资者";
+        _secondView.hidden = YES;
     
     }
 
@@ -208,6 +217,45 @@
             
         });
     });
+    }
+}
+- (IBAction)remeber1Methods:(id)sender {
+    
+    count++;
+    if (count % 2 == 0) {
+        [self.rember setBackgroundImage:[UIImage imageNamed:@"select_0.png"] forState:UIControlStateNormal];
+        
+    } else {
+        
+        [self.rember setBackgroundImage:[UIImage imageNamed:@"select_1.png"] forState:UIControlStateNormal];
+        
+    }
+ 
+}
+
+
+- (IBAction)commit1Methods:(id)sender {
+    if (count % 2 == 0) {
+        [self.view makeToast:@"请仔细阅读并同意接受以上承诺" duration:1.0 position:@"center"];
+    } else {
+        
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.dimBackground = YES; //加层阴影
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"加载中...";
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            
+            NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+           
+                [paraDic setObject:@"3" forKey:@"FID_JYQX"];
+                [paraDic setObject:@"申请甲类合格投资者权限" forKey:@"FID_ZY"];
+            [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRforwdqxtzqx owner:self];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        });
     }
 }
 @end

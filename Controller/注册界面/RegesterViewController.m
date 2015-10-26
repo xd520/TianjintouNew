@@ -488,9 +488,9 @@
     
     [self.view endEditing:YES];
     if ([self.userName.text isEqualToString:@""]) {
-        [self.view makeToast:@"请输入用户名" duration:2.0 position:@"center"];
-    }else if (self.userName.text.length < 6 || self.userName.text.length > 18) {
-        [self.view makeToast:@"请输入用户名" duration:2.0 position:@"center"];
+        [self.view makeToast:@"请输入正确的用户名" duration:2.0 position:@"center"];
+    }else if (self.userName.text.length < 4 || self.userName.text.length > 18) {
+        [self.view makeToast:@"请输入用户名长度4~30位字符" duration:2.0 position:@"center"];
     }  else if ([self.password.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入密码" duration:1.0 position:@"center"];
     } else if (![self.passwordAgain.text isEqualToString:self.password.text]){

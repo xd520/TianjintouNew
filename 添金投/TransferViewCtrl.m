@@ -773,10 +773,31 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         [self.navigationController pushViewController:cv animated:YES];
         
     } else if (view.tag == 8){
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        if ([[delegate.dictionary objectForKey:@"isSetCert"] boolValue]) {
+            
+            if ([[delegate.dictionary objectForKey:@"isBingingCard"] boolValue]) {
+                MyAuthorityViewController *cv = [[MyAuthorityViewController alloc] init];
+                cv.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:cv animated:YES];
+                
+            } else {
+                // NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
+                //[[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:kBusinessTagGetJRupdateUserInfo owner:self];
+                // [self.view makeToast:@"请先绑定银行卡" duration:2 position:@"center"];
+                BindCardViewController *vc =   [[BindCardViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        } else {
+            
+            LoginPassWordViewController *vc = [[LoginPassWordViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            //[self.view makeToast:@"请先实名认证" duration:2 position:@"center"];
+            
+        }
         
-        MyAuthorityViewController *cv = [[MyAuthorityViewController alloc] init];
-        cv.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:cv animated:YES];
     
     } else if (view.tag == 9){
         MyVoucherViewController *cv = [[MyVoucherViewController alloc] init];

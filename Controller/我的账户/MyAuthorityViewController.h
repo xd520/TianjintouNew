@@ -19,4 +19,13 @@
 - (IBAction)commitMethods:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *firstView;
 
+@property (weak, nonatomic) IBOutlet UIView *secondView;
+
+@property (weak, nonatomic) IBOutlet UIButton *remeber1;
+
+- (IBAction)remeber1Methods:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *commit1;
+- (IBAction)commit1Methods:(id)sender;
+
 @end
