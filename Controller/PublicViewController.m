@@ -162,26 +162,7 @@
     [table addSubview:_slimeView];
     
     
-    tablePast = [[UITableView alloc] initWithFrame:CGRectMake(ScreenWidth , 0, ScreenWidth,  ScreenHeight - 114)];
-    [tablePast setDelegate:self];
-    [tablePast setDataSource:self];
-    tablePast.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [tablePast setBackgroundColor:[UIColor clearColor]];
-    tablePast.tableFooterView = [[UIView alloc] init];
     
-    //[self.scrollView addSubview:tablePast];
-    
-    //加入下拉刷新
-    _slimeViewPast = [[SRRefreshView alloc] init];
-    _slimeViewPast.delegate = self;
-    _slimeViewPast.upInset = 0;
-    _slimeViewPast.slimeMissWhenGoingBack = YES;
-    _slimeViewPast.slime.bodyColor = [UIColor blackColor];
-    _slimeViewPast.slime.skinColor = [UIColor whiteColor];
-    _slimeViewPast.slime.lineWith = 1;
-    _slimeViewPast.slime.shadowBlur = 4;
-    _slimeViewPast.slime.shadowColor = [UIColor blackColor];
-    [tablePast addSubview:_slimeViewPast];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES;
@@ -352,7 +333,7 @@
     //[tableView setScrollEnabled:NO]; tableView 不能滑动
     static NSString *RepairCellIdentifier = @"RepairCellIdentifier";
     UITableViewCell *cell;
-    cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+   // cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
     
     if (tbleView == table) {
         
@@ -379,6 +360,9 @@
             }
         } else {
             if ([indexPath row] == [dataList count]) {
+                
+                cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+                
                 moreCell = [tbleView dequeueReusableCellWithIdentifier:@"loadMoreCell"];
                 moreCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"loadMoreCell"];
                 [moreCell setBackgroundColor:[UIColor clearColor]];
@@ -395,24 +379,50 @@
             } else {
                 cell = [tbleView dequeueReusableCellWithIdentifier:RepairCellIdentifier];
                 if (cell == nil) {
-                    cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+                    cell = [[UITableViewCell alloc] init];
+                   
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     [cell setBackgroundColor:[UIColor clearColor]];
                     //添加背景View
-                    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+                    UIView *backView = [[UIView alloc] init];
                     [backView setBackgroundColor:[ColorUtil colorWithHexString:@"fafafa"]];
+                   
                     //品牌
                     
+                    SHLUILabel *descPriceLabel = [[SHLUILabel alloc] init];
+                    descPriceLabel.text = [[dataList objectAtIndex:[indexPath row]] objectForKey:@"TITLE"];
+                    
+                    //使用自定义字体
+                    descPriceLabel.font = [UIFont systemFontOfSize:15];    //设置字体颜色
+                    //descPriceLabel.textColor = [ColorUtil colorWithHexString:@"1b1b1b"];
+                    descPriceLabel.textColor = [UIColor blackColor];
+                    descPriceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+                    descPriceLabel.linesSpacing = 2.0f;
+                    //0:6 1:7 2:8 3:9 4:10
+                    //linesSpacing_
+                    descPriceLabel.numberOfLines = 0;
+                    //根据字符串长度和Label显示的宽度计算出contentLab的高
+                    int descHeight = [descPriceLabel getAttributedStringHeightWidthValue:ScreenWidth - 120];
+                    NSLog(@"SHLLabel height:%d", descHeight);
+                    descPriceLabel.frame = CGRectMake(10.f, 25/2, ScreenWidth - 120, descHeight);
+                    NSLog(@"%d",descHeight - 32);
+                    
+                    backView.frame = CGRectMake(0, 0, ScreenWidth, descHeight + 25);
+                    cell.frame = CGRectMake(0, 0, ScreenWidth, descHeight + 25);
+                    
+                    /*
                     UILabel *brandLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, ScreenWidth - 120, 39)];
                     brandLabel.backgroundColor = [UIColor clearColor];
                     brandLabel.font = [UIFont boldSystemFontOfSize:15];
                     [brandLabel setTextColor:[ColorUtil colorWithHexString:@"646464"]];
                     [brandLabel setBackgroundColor:[UIColor clearColor]];
                     brandLabel.text = [[dataList objectAtIndex:[indexPath row]] objectForKey:@"TITLE"];
-                    [backView addSubview:brandLabel];
+                    */
+                    
+                    [backView addSubview:descPriceLabel];
                     
                     
-                    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 0, ScreenWidth - 240, 39)];
+                    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, (descHeight + 25 - 13)/2, ScreenWidth - 240, 13)];
                     timeLabel.font = [UIFont systemFontOfSize:13];
                     [timeLabel setTextColor:[ColorUtil colorWithHexString:@"646464"]];
                     [timeLabel setBackgroundColor:[UIColor clearColor]];
@@ -435,18 +445,16 @@
                     
                    
                     if ([indexPath row] != [dataList count] - 1) {
-                        UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(10, 39, ScreenWidth - 10, 1)];
+                        UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(10, descHeight + 24, ScreenWidth - 10, 1)];
                         [subView setBackgroundColor:[ColorUtil colorWithHexString:@"dcdcdc"]];
                         [backView addSubview:subView];
                     } else {
                     
-                        UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, 39, ScreenWidth, 1)];
+                        UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, descHeight + 24, ScreenWidth, 1)];
                         [subView setBackgroundColor:[ColorUtil colorWithHexString:@"dcdcdc"]];
                       [backView addSubview:subView];
                     }
-                    
                     [cell.contentView addSubview:backView];
-                    
                     
                 }
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -558,7 +566,22 @@
         if ([indexPath row] == [dataList count]) {
             return 40;
         } else {
-            return 40;
+            SHLUILabel *descPriceLabel = [[SHLUILabel alloc] init];
+            descPriceLabel.text = [[dataList objectAtIndex:[indexPath row]] objectForKey:@"TITLE"];
+            
+            //使用自定义字体
+            descPriceLabel.font = [UIFont systemFontOfSize:15];    //设置字体颜色
+            //descPriceLabel.textColor = [ColorUtil colorWithHexString:@"1b1b1b"];
+            descPriceLabel.textColor = [UIColor blackColor];
+            descPriceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            descPriceLabel.linesSpacing = 2.0f;
+            //0:6 1:7 2:8 3:9 4:10
+            //linesSpacing_
+            descPriceLabel.numberOfLines = 0;
+            //根据字符串长度和Label显示的宽度计算出contentLab的高
+            int descHeight = [descPriceLabel getAttributedStringHeightWidthValue:ScreenWidth - 120];
+            
+            return descHeight + 25;
         }
         
     } else if (tableView == tablePast){

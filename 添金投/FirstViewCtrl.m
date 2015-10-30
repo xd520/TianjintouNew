@@ -67,7 +67,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         hud.labelText = @"加载中...";
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             
-            [self requestLogin:kBusinessTagGetJRhotproject];
+            [self requestLogin:kBusinessTagGetJRwdtzloadData];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -144,7 +144,10 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        [self requestLogin:kBusinessTagGetJRhotproject];
+        //[self requestLogin:kBusinessTagGetJRhotproject];
+        
+        [self requestLogin:kBusinessTagGetJRwdtzloadData];
+        
         //[self requestUpdateLinkMan];
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -177,6 +180,12 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     //[paraDic setObject:_userN forKey:@"username"];
+    
+    //[paraDic setObject:_sort forKey:@"sortName"];
+    //[paraDic setObject:_val forKey:@"sortVal"];
+    [paraDic setObject:@"1" forKey:@"pageSize"];
+    [paraDic setObject:@"1" forKey:@"pageIndex"];
+    
     
     [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
 }
@@ -314,7 +323,6 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
     dataListFirst = dataArray;
    
-    
     UIImageView *backimgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 150*sizeScaleX + 10, ScreenWidth,ScreenWidth*400/320)];
     backimgView.image = [UIImage imageNamed:@"big_bg-1"];
     backimgView.userInteractionEnabled = YES;
@@ -322,7 +330,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake1(160 + 45, 20, 50, 20)];
-    lab.text = [NSString stringWithFormat:@"%@天",[[dataListFirst objectAtIndex:0] objectForKey:@"QX"]];
+    lab.text = [NSString stringWithFormat:@"%@天",[[dataListFirst objectAtIndex:0] objectForKey:@"tzqx"]];
     lab.textColor = [UIColor whiteColor];
     lab.textAlignment = NSTextAlignmentCenter;
     lab.font = [UIFont systemFontOfSize:15*sizeScaleX];
@@ -330,7 +338,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [backimgView addSubview:lab];
     
      UILabel *lab1 = [[UILabel alloc] init];
-    lab1.text = [[dataArray objectAtIndex:0] objectForKey:@"SYL"];
+    lab1.text = [[dataArray objectAtIndex:0] objectForKey:@"gzll"];
     lab1.textColor = [ColorUtil colorWithHexString:@"f08200"];
    // lab1.textAlignment = NSTextAlignmentCenter;
     
@@ -363,7 +371,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
     float kt;
     if ([[[dataListFirst objectAtIndex:0] objectForKey:@"flag"] boolValue]) {
-        kt = [[[dataListFirst objectAtIndex:0] objectForKey:@"TZJD"] floatValue];
+        kt = [[[dataListFirst objectAtIndex:0] objectForKey:@"tzjd"] floatValue];
         
     } else {
         kt = 100;
@@ -387,12 +395,12 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [backimgView addSubview:labStar];
     
     
-    UILabel *labStarTip = [[UILabel alloc] initWithFrame:CGRectMake1(320 - 130, 170, 70, 25)];
-    labStarTip.text = [NSString stringWithFormat:@"%.2f元",[[[dataListFirst objectAtIndex:0] objectForKey:@"QDJE"] floatValue]];
+    UILabel *labStarTip = [[UILabel alloc] initWithFrame:CGRectMake1(320 - 130, 170, 320 - 130 -20, 25)];
+    labStarTip.text = [NSString stringWithFormat:@"%@元",[[dataListFirst objectAtIndex:0] objectForKey:@"tzje"]];
     labStarTip.textColor = [ColorUtil colorWithHexString:@"898989"];
-    labStarTip.textAlignment = NSTextAlignmentCenter;
+   // labStarTip.textAlignment = NSTextAlignmentCenter;
     labStarTip.font = [UIFont systemFontOfSize:15*sizeScaleX];
-    lab.backgroundColor = [UIColor clearColor];
+    labStarTip.backgroundColor = [UIColor clearColor];
     [backimgView addSubview:labStarTip];
     
     
@@ -442,10 +450,20 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     DetailViewController *cv = [[DetailViewController alloc] init];
     
     
-    cv.flagStr = [[dataListFirst objectAtIndex:0] objectForKey:@"flag"];
+    if ([[[dataListFirst objectAtIndex:0] objectForKey:@"flag"] isEqualToString:@"1"]||[[[dataListFirst objectAtIndex:0] objectForKey:@"cz" ] isEqualToString:@"1"]|| [[[dataListFirst objectAtIndex:0] objectForKey:@"JYZT" ] isEqualToString:@"0"] ) {
+        cv.flagbtn = YES;
+    }else {
+        cv.flagbtn = NO;
+        
+    }
+
     
-    cv.title = [[dataListFirst objectAtIndex:0] objectForKey:@"GQMC"];
-    cv.strGqdm = [[dataListFirst objectAtIndex:0] objectForKey:@"GQDM"];
+    
+    
+   // cv.flagStr = [[dataListFirst objectAtIndex:0] objectForKey:@"flag"];
+    
+    cv.title = [[dataListFirst objectAtIndex:0] objectForKey:@"cpmc"];
+    cv.strGqdm = [[dataListFirst objectAtIndex:0] objectForKey:@"gqdm"];
      cv.hidesBottomBarWhenPushed = YES;
     //  [menuController pushViewController:cv animated:YES];
     
@@ -480,8 +498,8 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
             //[self.navigationController pushViewController:cv animated:YES];
         }
     }else {
-            if (tag== kBusinessTagGetJRhotproject) {
-            NSMutableArray *dataArray = [jsonDic objectForKey:@"object"];
+            if (tag== kBusinessTagGetJRwdtzloadData) {
+            NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
             
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
                 //数据异常处理
@@ -492,7 +510,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 // [MBProgressHUD hideHUDForView:self.view animated:YES];
                 //[self.view makeToast:@"登录成功!"];
                 flagHub = @"1";
-                [self recivedCategoryListFirst:dataArray];
+                [self recivedCategoryListFirst:[dataArray objectForKey:@"dataList"]];
                 
             }
             

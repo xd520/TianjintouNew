@@ -79,11 +79,33 @@
 -(void)reloadViewUIData:(NSMutableDictionary *)dataArr {
     //产品名称
     
-    UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 240)];
+    UIView *firstView = [[UIView alloc] init];
     firstView.backgroundColor = [UIColor whiteColor];
     
     
     //产品名称
+    SHLUILabel *descPriceLabel = [[SHLUILabel alloc] init];
+    descPriceLabel.text = [dataArr objectForKey:@"FID_CPMC"];
+    //使用自定义字体
+    descPriceLabel.font = [UIFont systemFontOfSize:15];    //设置字体颜色
+    //descPriceLabel.textColor = [ColorUtil colorWithHexString:@"1b1b1b"];
+    descPriceLabel.textColor = [UIColor blackColor];
+    descPriceLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    descPriceLabel.linesSpacing = 2.0f;
+    //0:6 1:7 2:8 3:9 4:10
+    //linesSpacing_
+    descPriceLabel.numberOfLines = 0;
+    //根据字符串长度和Label显示的宽度计算出contentLab的高
+    int descHeight = [descPriceLabel getAttributedStringHeightWidthValue:ScreenWidth - 20];
+    NSLog(@"SHLLabel height:%d", descHeight);
+    descPriceLabel.frame = CGRectMake(10.f, 15, ScreenWidth - 20, descHeight);
+    NSLog(@"%d",descHeight - 32);
+    
+    
+    firstView.frame = CGRectMake(0, 0, ScreenWidth, 240 - 15 + descHeight);
+    
+    
+    /*
     UILabel *descPriceLabel = [[UILabel alloc] init];
     descPriceLabel.text = [dataArr objectForKey:@"FID_CPMC"];
     //使用自定义字体
@@ -97,10 +119,27 @@
     
     descPriceLabel.frame = CGRectMake(10, 15, titleSize.width, 15);
     int descHeight = 15;
+     
+    
+    
+     CGSize titleSize = [descPriceLabel.text sizeWithFont:descPriceLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
+    
+    if (descHeight > 15) {
+        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(50 + titleSize.width - ScreenWidth + 20, 30 + 10, 15, 15)];
+        imgView.image = [UIImage imageNamed:@"icon_transfer"];
+        [firstView addSubview:imgView];
+        
+    } else {
+    
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15 + titleSize.width, 15, 15, 15)];
     imgView.image = [UIImage imageNamed:@"icon_transfer"];
      [firstView addSubview:imgView];
-    
+    }
+    */
+     
+     
+     
     [firstView addSubview:descPriceLabel];
     
     
@@ -108,7 +147,7 @@
     numYQH.text = [dataArr  objectForKey:@"FID_SYL"];
     numYQH.font = [UIFont systemFontOfSize:30];
     numYQH.textColor = [ColorUtil colorWithHexString:@"fe8103"];
-    titleSize = [numYQH.text sizeWithFont:numYQH.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
+   CGSize titleSize = [numYQH.text sizeWithFont:numYQH.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
     numYQH.frame = CGRectMake(10,10 + descHeight + 17.5, titleSize.width, 30);
     
     [firstView addSubview:numYQH];

@@ -1152,13 +1152,25 @@
                     brandLabel.text = [[dataListPast objectAtIndex:indexPath.row] objectForKey:@"FID_CPMC"];
                     CGSize titleSize = [brandLabel.text sizeWithFont:brandLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 15)];
                     
-                    brandLabel.frame = CGRectMake(10, 15, titleSize.width, 15);
-                    
-                    [backView addSubview:brandLabel];
-                    
                     
                     if ([[[dataListPast objectAtIndex:indexPath.row] objectForKey:@"FID_KHH"] isEqualToString:[[dataListPast objectAtIndex:indexPath.row] objectForKey:@"khh"]]) {
+                        
+                        if (titleSize.width > ScreenWidth - 40) {
+                            titleSize.width = ScreenWidth - 20 -10 -45;
+                        } else {
+                            if (titleSize.width > ScreenWidth - 75) {
+                                titleSize.width = ScreenWidth - 75;
+                            }
+                        
+                        }
+
+                        
+                        
+                        
                         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15 + titleSize.width, 15 , 15, 15)];
+                        
+                        
+                        
                         
                         imageView.image = [UIImage imageNamed:@"icon_my"];
                         [backView addSubview:imageView];
@@ -1170,10 +1182,20 @@
                         [backView addSubview:imageView1];
                         
                         
-                        
-                        
-                        
                     } else {
+                        
+                        
+                        if (titleSize.width > ScreenWidth - 40) {
+                            titleSize.width = ScreenWidth - 20 -10 -25;
+                        } else {
+                            if (titleSize.width > ScreenWidth - 55) {
+                                titleSize.width = ScreenWidth - 55;
+                            }
+                            
+                        }
+
+                        
+                        
                         
                         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15 + titleSize.width, 15 , 15, 15)];
                         
@@ -1182,17 +1204,18 @@
                         [backView addSubview:imageView];
                         
                         
-                        
                     }
                     
+                    brandLabel.frame = CGRectMake(10, 15, titleSize.width, 15);
                     
+                    [backView addSubview:brandLabel];
                     
                     //预期年化收益率
                     UILabel *yuqiLabel = [[UILabel alloc] init];
                     yuqiLabel.font = [UIFont systemFontOfSize:28];
                     [yuqiLabel setTextColor:[ColorUtil colorWithHexString:@"fe8103"]];
                     // yuqiLabel.textAlignment = NSTextAlignmentRight;
-                    yuqiLabel.text = [[dataListPast objectAtIndex:indexPath.row] objectForKey:@"FID_SYL"];
+                    yuqiLabel.text = [NSString stringWithFormat:@"%.2f",[[[dataListPast objectAtIndex:indexPath.row] objectForKey:@"FID_SYL"] doubleValue]];
                     titleSize = [yuqiLabel.text sizeWithFont:yuqiLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 28)];
                     
                     yuqiLabel.frame = CGRectMake(10, 48, titleSize.width, 28);

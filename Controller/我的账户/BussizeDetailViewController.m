@@ -750,7 +750,7 @@
                 
                 
                 UILabel *reLab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 75, 10,ScreenWidth/2 - 85 , 15)];
-                
+                /*
                 if ([[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue] > 0) {
                     
                     
@@ -771,6 +771,10 @@
                 } else {
                     reLab.text = @"0.00元";
                 }
+                
+                 */
+                
+                reLab.text = [NSString stringWithFormat:@"%@元",[[dataList objectAtIndex:[indexPath row]] objectForKey:@"FID_FSJE"]];
                 
                 reLab.font = [UIFont systemFontOfSize:15];
                 reLab.textColor = [ColorUtil colorWithHexString:@"333333"];
@@ -919,7 +923,7 @@
                     
                     
                     UILabel *reLab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 75, 10,ScreenWidth/2 - 85 , 15)];
-                   
+                   /*
                     if ([[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_BCZJYE"] floatValue] > 0) {
                        
                         
@@ -940,6 +944,8 @@
                     } else {
                         reLab.text = @"0.00元";
                     }
+                    */
+                    reLab.text = [NSString stringWithFormat:@"%@元",[[dataListPast objectAtIndex:[indexPath row]] objectForKey:@"FID_FSJE"]];
                     
                     reLab.font = [UIFont systemFontOfSize:15];
                     reLab.textColor = [ColorUtil colorWithHexString:@"333333"];
