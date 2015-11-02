@@ -12,6 +12,7 @@
 #import "EstimateViewController.h"
 #import "RiskEvaluationViewController.h"
 #import "MyAuthorityViewController.h"
+#import "ClassEstmateViewController.h"
 
 @interface TransferDetailsViewController ()
 {
@@ -615,9 +616,9 @@
 
 -(void)pushVCMethod:(id)sender {
     
-    EstimateViewController *vc = [[EstimateViewController alloc] init];
+    ClassEstmateViewController *vc = [[ClassEstmateViewController alloc] init];
     vc.gqdm = [firstDic objectForKey:@"FID_GQDM"];
-    vc.gqlb = [firstDic objectForKey:@"FID_GQLB"];
+   // vc.gqlb = [firstDic objectForKey:@"FID_GQLB"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

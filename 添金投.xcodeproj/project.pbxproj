@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040801751BC7959E00114994 /* MyAuthorityViewController.m */; settings = {ASSET_TAGS = (); }; };
-		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408017B1BC795E500114994 /* MyVoucherViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0408273E1BD4BE0800BB2662 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408273C1BD4BE0800BB2662 /* ReadViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0408273F1BD4BE0800BB2662 /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408273D1BD4BE0800BB2662 /* ReadViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040801751BC7959E00114994 /* MyAuthorityViewController.m */; };
+		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; };
+		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; };
+		0408017D1BC795E500114994 /* MyVoucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408017B1BC795E500114994 /* MyVoucherViewController.xib */; };
+		0408273E1BD4BE0800BB2662 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408273C1BD4BE0800BB2662 /* ReadViewController.m */; };
+		0408273F1BD4BE0800BB2662 /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408273D1BD4BE0800BB2662 /* ReadViewController.xib */; };
 		040827411BD4DEDE00BB2662 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040827401BD4DEDE00BB2662 /* QuickLook.framework */; };
-		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; settings = {ASSET_TAGS = (); }; };
-		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
-		04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		045EC08F1BE6F891006AA0F9 /* ClassEstmateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */; };
+		045EC0901BE6F891006AA0F9 /* ClassEstmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */; };
+		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; };
+		04A0A1471BBB8121004A617A /* RiskEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0A1451BBB8121004A617A /* RiskEvaluationViewController.m */; };
+		04A0A1481BBB8121004A617A /* RiskEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A0A1461BBB8121004A617A /* RiskEvaluationViewController.xib */; };
+		04C1ACDD1BBA2E1A00BBBE51 /* ForgetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1ACDB1BBA2E1A00BBBE51 /* ForgetPWDViewController.m */; };
+		04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C1ACDC1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib */; };
 		04E8B5D01B72E8DC000332F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5CF1B72E8DC000332F0 /* main.m */; };
 		04E8B5D31B72E8DC000332F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5D21B72E8DC000332F0 /* AppDelegate.m */; };
 		04E8B5D61B72E8DC000332F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8B5D51B72E8DC000332F0 /* ViewController.m */; };
@@ -257,6 +259,9 @@
 		0408273C1BD4BE0800BB2662 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		0408273D1BD4BE0800BB2662 /* ReadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
 		040827401BD4DEDE00BB2662 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		045EC08C1BE6F890006AA0F9 /* ClassEstmateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEstmateViewController.h; sourceTree = "<group>"; };
+		045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEstmateViewController.m; sourceTree = "<group>"; };
+		045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassEstmateViewController.xib; sourceTree = "<group>"; };
 		046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MddDownLoadTask.m; sourceTree = "<group>"; };
 		046C4C031BD0E0EE00B31F4E /* MddDownLoadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MddDownLoadTask.h; sourceTree = "<group>"; };
 		04A0A1441BBB8121004A617A /* RiskEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskEvaluationViewController.h; sourceTree = "<group>"; };
@@ -1221,6 +1226,9 @@
 				04EF61091B818C89005700C9 /* DetailViewController.h */,
 				04EF610A1B818C89005700C9 /* DetailViewController.m */,
 				04EF610B1B818C89005700C9 /* DetailViewController.xib */,
+				045EC08C1BE6F890006AA0F9 /* ClassEstmateViewController.h */,
+				045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */,
+				045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */,
 				04EF610C1B818C89005700C9 /* EstimateViewController.h */,
 				04EF610D1B818C89005700C9 /* EstimateViewController.m */,
 				04EF610E1B818C89005700C9 /* EstimateViewController.xib */,
@@ -1483,6 +1491,7 @@
 				04EF61E91B818C8A005700C9 /* UnBindCardViewController.xib in Resources */,
 				04EF61C11B818C8A005700C9 /* ChangeLoginPWViewController.xib in Resources */,
 				04EF61C51B818C8A005700C9 /* CheckVersonViewController.xib in Resources */,
+				045EC0901BE6F891006AA0F9 /* ClassEstmateViewController.xib in Resources */,
 				04EF61D71B818C8A005700C9 /* TransferSuccessViewController.xib in Resources */,
 				04C1ACDE1BBA2E1A00BBBE51 /* ForgetPWDViewController.xib in Resources */,
 				04EF61B51B818C8A005700C9 /* ConfirmViewController.xib in Resources */,
@@ -1591,6 +1600,7 @@
 				04EF61C41B818C8A005700C9 /* CheckVersonViewController.m in Sources */,
 				04EF61E41B818C8A005700C9 /* ProviousViewController.m in Sources */,
 				04E8B8361B72F8FA000332F0 /* FirstViewCtrl.m in Sources */,
+				045EC08F1BE6F891006AA0F9 /* ClassEstmateViewController.m in Sources */,
 				04EF61701B818C8A005700C9 /* AddRechargeViewController.m in Sources */,
 				04EF61B01B818C8A005700C9 /* LoginViewController.m in Sources */,
 				04EF618E1B818C8A005700C9 /* MyGainViewController.m in Sources */,

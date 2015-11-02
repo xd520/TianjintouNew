@@ -10,8 +10,9 @@
 
 @interface EstimateViewController : UIViewController
 
-@property(nonatomic,strong)NSString *gqdm;
-@property(nonatomic,strong)NSString *gqlb;
+@property (weak, nonatomic) IBOutlet UILabel *titleName;
+@property(nonatomic,strong)NSString *name;
+@property(nonatomic,strong)NSString *Id;
 - (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 

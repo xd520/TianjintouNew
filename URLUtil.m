@@ -504,6 +504,12 @@
         case 163:
             return [NSString stringWithFormat:@"%@%@", SERVERURL, @"/service/jrzcjy/cpzx/appMyLpq"];
             break;
+        case 164:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL,@"/service/website/zxlist/zxlistForAPP"];
+            break;
+        case 165:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL,@"/service/website/zxlist/zxlistForAPP"];
+            break;
         default:
             break;
     }

@@ -16,6 +16,7 @@
 #import "MDRadialProgressLabel.h"
 #import "RiskEvaluationViewController.h"
 #import "MyAuthorityViewController.h"
+#import "ClassEstmateViewController.h"
 
 
 @interface DetailViewController ()
@@ -732,9 +733,9 @@
 
 -(void)pushVCMethod:(id)sender {
     
-    EstimateViewController *vc = [[EstimateViewController alloc] init];
+    ClassEstmateViewController *vc = [[ClassEstmateViewController alloc] init];
     vc.gqdm = [dicFirst objectForKey:@"GQDM"];
-    vc.gqlb = [dicFirst objectForKey:@"GQLB"];
+   // vc.gqlb = [dicFirst objectForKey:@"GQLB"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     

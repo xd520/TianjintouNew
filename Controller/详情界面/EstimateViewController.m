@@ -41,13 +41,19 @@
     addHight = 0;
     }
     
+    _titleName.text = _name;
+    
+    
     //添加指示器及遮罩
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/introduction/introduction?gqdm=%@&&gqlb=%@",SERVERURL,_gqdm,_gqlb]];
+       // NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/introduction/introduction?gqdm=%@&&gqlb=%@",SERVERURL,_gqdm,_gqlb]];
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/page/website/infonews/appDetail?id=%@",SERVERURL,_Id]];
+        
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [_webView loadRequest:request];
         dispatch_async(dispatch_get_main_queue(), ^{
