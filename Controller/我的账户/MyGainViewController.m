@@ -482,7 +482,7 @@
     starLabel.textAlignment = NSTextAlignmentCenter;
     [self.scrollView addSubview:starLabel];
     
-    dateLStarabel = [[UILabel alloc] initWithFrame:CGRectMake( 5, 0, 80 , 30)];
+    dateLStarabel = [[UILabel alloc] initWithFrame:CGRectMake( 5, 0, startView.frame.size.width - 35 , 30)];
     dateLStarabel.backgroundColor = [UIColor whiteColor];
     
     dateLStarabel.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -495,7 +495,7 @@
     
     [startView addSubview:dateLStarabel];
     
-    UIImageView *startImg = [[UIImageView alloc] initWithFrame:CGRectMake(90, 5, 20, 20)];
+    UIImageView *startImg = [[UIImageView alloc] initWithFrame:CGRectMake(startView.frame.size.width - 30, 5, 20, 20)];
     startImg.image = [UIImage imageNamed:@"history"];
     startImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone:)];
@@ -507,7 +507,7 @@
     
     //截止日期
     
-    UIView *endView = [[UIView alloc] initWithFrame:CGRectMake(180, 10, 120, 30)];
+    UIView *endView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth/2 + 20, 10, ScreenWidth/2 - 40, 30)];
     endView.backgroundColor = [UIColor whiteColor];
     //endView.layer.borderWidth = 1;
     //endView.layer.borderColor = [[UIColor blackColor] CGColor];
@@ -515,14 +515,14 @@
     
     
     
-    dateLEndabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 80, 30)];
+    dateLEndabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0,endView.frame.size.width - 35, 30)];
     dateLEndabel.font = [UIFont systemFontOfSize:14];
     dateLEndabel.textAlignment = NSTextAlignmentLeft;
     dateLEndabel.text = [self dateToStringDate:[NSDate date]];
     [endView addSubview:dateLEndabel];
     
     
-    startImg = [[UIImageView alloc] initWithFrame:CGRectMake(90, 5, 20, 20)];
+    startImg = [[UIImageView alloc] initWithFrame:CGRectMake(endView.frame.size.width - 30, 5, 20, 20)];
     startImg.image = [UIImage imageNamed:@"history"];
     startImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone1:)];
@@ -554,19 +554,19 @@
     
     //起始日期
     
-    UIView *startView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth*2 + 20, 10, 120, 30)];
+    UIView *startView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth*2 + 20, 10, ScreenWidth/2 - 40, 30)];
     startView.backgroundColor = [UIColor whiteColor];
     //startView.layer.borderWidth = 1;
     //startView.layer.borderColor = [[UIColor blackColor] CGColor];
     startView.layer.cornerRadius = 3;
     
-    UILabel *starLabel = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth*2 + 140,10, 40, 30)];
+    UILabel *starLabel = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth*2 + ScreenWidth/2 - 20,10, 40, 30)];
     starLabel.font = [UIFont systemFontOfSize:13];
     starLabel.text = @"至";
     starLabel.textAlignment = NSTextAlignmentCenter;
     [self.scrollView addSubview:starLabel];
     
-    dateLStarabelPast = [[UILabel alloc] initWithFrame:CGRectMake( 5, 0, 80 , 30)];
+    dateLStarabelPast = [[UILabel alloc] initWithFrame:CGRectMake( 5, 0, startView.frame.size.width - 35 , 30)];
     dateLStarabelPast.backgroundColor = [UIColor whiteColor];
     
     dateLStarabelPast.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -579,7 +579,7 @@
     
     [startView addSubview:dateLStarabelPast];
     
-    UIImageView *startImg = [[UIImageView alloc] initWithFrame:CGRectMake(90, 5, 20, 20)];
+    UIImageView *startImg = [[UIImageView alloc] initWithFrame:CGRectMake(startView.frame.size.width - 30, 5, 20, 20)];
     startImg.image = [UIImage imageNamed:@"history"];
     startImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhonePast:)];
@@ -593,7 +593,7 @@
     
     //截止日期
     
-    UIView *endView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth*2 + 180, 10, 120, 30)];
+    UIView *endView = [[UIView alloc] initWithFrame:CGRectMake(ScreenWidth*2 + ScreenWidth/2 + 20, 10, ScreenWidth/2 - 40, 30)];
     endView.backgroundColor = [UIColor whiteColor];
     //endView.layer.borderWidth = 1;
     //endView.layer.borderColor = [[UIColor blackColor] CGColor];
@@ -601,14 +601,14 @@
     
     
     
-    dateLEndabelPast = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 80, 30)];
+    dateLEndabelPast = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, endView.frame.size.width - 35, 30)];
     dateLEndabelPast.font = [UIFont systemFontOfSize:14];
     dateLEndabelPast.textAlignment = NSTextAlignmentLeft;
     dateLEndabelPast.text = [self dateToStringDate:[NSDate date]];
     [endView addSubview:dateLEndabelPast];
     
     
-    startImg = [[UIImageView alloc] initWithFrame:CGRectMake(90, 5, 20, 20)];
+    startImg = [[UIImageView alloc] initWithFrame:CGRectMake(endView.frame.size.width - 30, 5, 20, 20)];
     startImg.image = [UIImage imageNamed:@"history"];
     startImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callPhone1Past:)];
@@ -1363,7 +1363,7 @@
                     [firstView addSubview:endLab];
                     
                     UILabel *endLabTip = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 23 - titleSize.width - 5 - 13*4, 36,13*4 , 13)];
-                    endLabTip.text = @"购买金额";
+                    endLabTip.text = @"转让金额";
                     endLabTip.font = [UIFont systemFontOfSize:13];
                     endLabTip.textColor = [ColorUtil colorWithHexString:@"999999"];
                     [firstView addSubview:endLabTip];

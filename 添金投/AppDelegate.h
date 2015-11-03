@@ -31,8 +31,10 @@
 
 //天津投
 //#define SERVERURL @"http://192.168.2.11:8080/account"
+
 //测试环境的外网地址
 //118.242.27.51:8080
+//#define SERVERURL @"http://118.242.27.51:8080"
 
 #define SERVERURL @"http://192.168.1.110:8805"
 //天津投生产环境

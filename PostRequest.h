@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASIHTTPRequest.h"
+//#import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "NetworkModuleDelegate.h"
 

@@ -100,10 +100,10 @@
         //[self requestCategoryList:start limit:limit tag:kBusinessTagGetJRwdtzloadData];
         
         //夏金所公告
-        //[self requestCategoryList:_gqdm tag:kBusinessTagGetJRintroduction];
+        [self requestCategoryList:_gqdm tag:kBusinessTagGetJRintroduction];
         
         
-        [self requestCategoryList:@"ZC0001" tag:kBusinessTagGetJRintroduction];
+       // [self requestCategoryList:@"ZC0001" tag:kBusinessTagGetJRintroduction];
         
         
         //夏金所新闻
@@ -131,10 +131,10 @@
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
            
             
-            //[self requestCategoryList:_gqdm tag:kBusinessTagGetJRintroductionAgain];
+            [self requestCategoryList:_gqdm tag:kBusinessTagGetJRintroductionAgain];
             
             
-            [self requestCategoryList:@"ZC0001" tag:kBusinessTagGetJRintroductionAgain];
+            //[self requestCategoryList:@"ZC0001" tag:kBusinessTagGetJRintroductionAgain];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -260,7 +260,7 @@
                 [tipLabel setTextAlignment:NSTextAlignmentCenter];
                 [tipLabel setTextColor:[ColorUtil colorWithHexString:@"404040"]];
                 tipLabel.backgroundColor = [UIColor clearColor];
-                [tipLabel setText:@"没有任何商品哦~"];
+                [tipLabel setText:@"没有任何介绍哦~"];
                 [backView addSubview:tipLabel];
                 [cell.contentView addSubview:backView];
                 

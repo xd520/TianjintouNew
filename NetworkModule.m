@@ -113,7 +113,12 @@ static NetworkModule *sharedGizmoNetworkModule = nil;
     req.owner=owner;
     
     req.url=[URLUtil getURLByBusinessTag:tag];
+    
+    
+    
+    
     NSLog(@"%s:%@",__FUNCTION__,req.url);
+    
     [req postDictionaryAndData:dic number:num name:str data:(NSData *)data delegate:self];
     
     if(owner!=nil) [owner beginPost:tag];

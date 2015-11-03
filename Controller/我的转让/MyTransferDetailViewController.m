@@ -179,8 +179,6 @@
                 
                 [self.view makeToast:@"请输入递增数量的整数倍" duration:2 position:@"center"];
                 
-            } else if ([sureText.text floatValue] > [transferText.text floatValue] + [[firstDic objectForKey:@"wslx"] floatValue]) {
-                [self.view makeToast:@"您的转让价格导致投资收益率为负，请重新输入。" duration:1.0 position:@"center"];
             }else if ([transferText.text isEqualToString:@""]) {
                 [self.view makeToast:@"请输入转让价格" duration:1.0 position:@"center"];
             }else {
@@ -222,7 +220,12 @@
     }
 }
 
-
+/*
+ else if ([sureText.text floatValue] > [transferText.text floatValue] + [[firstDic objectForKey:@"wslx"] floatValue]) {
+ [self.view makeToast:@"您的转让价格导致投资收益率为负，请重新输入。" duration:1.0 position:@"center"];
+ }
+ 
+ */
 
 
 

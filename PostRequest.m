@@ -66,6 +66,8 @@
     
     NSLog(@"%@",str);
     
+    
+    
     /*
    if ([[_request.url scheme] isEqualToString:@"https"]){
     
@@ -92,6 +94,12 @@
     }
     [enumerator release];
     }
+ 
+  //设置请求头
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setValue:@"ios" forKey:@"Request-By"];
+   [_request setRequestHeaders:dictionary];
+    
     _request.tag = self.businessTag;
     [_request setDelegate:delegate];
     postStatus = kPostStatusBeging;

@@ -564,7 +564,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     
      if(ScreenWidth > 320){
     
-    [scrollView setContentSize:CGSizeMake(ScreenWidth, ScreenHeight - 20 - 49)];
+    [scrollView setContentSize:CGSizeMake(ScreenWidth, 640)];
      } else {
      
      [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 + 6)];
