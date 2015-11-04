@@ -176,14 +176,14 @@
     
     if ([[dic objectForKey:@"isFXCP"] boolValue]) {
             self.firstLab.text = @"已测评";
-        self.riskImgView.hidden = YES;
-        self.loginView.userInteractionEnabled = NO;
+        //self.riskImgView.hidden = YES;
+       // self.loginView.userInteractionEnabled = NO;
         
     } else {
        
         self.firstLab.text = @"未测评";
-        self.riskImgView.hidden = NO;
-        self.loginView.userInteractionEnabled = YES;
+        //self.riskImgView.hidden = NO;
+        //self.loginView.userInteractionEnabled = YES;
     }
    
 }
