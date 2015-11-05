@@ -17,6 +17,7 @@
 #import "RiskEvaluationViewController.h"
 #import "MyAuthorityViewController.h"
 #import "ClassEstmateViewController.h"
+#import "YuYueViewController.h"
 
 
 @interface DetailViewController ()
@@ -191,6 +192,14 @@
     radialView.startingSlice = 75;
     radialView.theme.thickness = 10;
     radialView.theme.sliceDividerHidden = YES;
+    
+    if ([[dataArr objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
+        radialView.yuYueEnd = YES;
+    } else {
+        radialView.yuYueEnd = NO;
+    }
+    
+    
     int kt;
     
     if ([_flagStr isEqualToString:@"false"]) {
@@ -393,6 +402,26 @@
     transferLabTip.textAlignment = NSTextAlignmentRight;
     transferLabTip.font = [UIFont systemFontOfSize:14];
     [firstVeiw addSubview:transferLabTip];
+    
+    if ([[dataArr objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
+    
+     UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 110, descHeight + 225, 100, 14)];
+     endLab.textColor = [ColorUtil colorWithHexString:@"999999"];
+     endLab.text = @"预约截止日期";
+    endLab.textAlignment = NSTextAlignmentRight;
+     endLab.font = [UIFont systemFontOfSize:14];
+     [firstVeiw addSubview:endLab];
+     
+     
+     UILabel *endLabTip = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 110, descHeight + 245, 100, 14)];
+     endLabTip.textColor = [ColorUtil colorWithHexString:@"333333"];
+    endLabTip.textAlignment = NSTextAlignmentRight;
+     endLabTip.text = [dataArr objectForKey:@"YSJZRQ"];
+     endLabTip.font = [UIFont systemFontOfSize:14];
+     [firstVeiw addSubview:endLabTip];
+    
+ }
+    
     [scrollView addSubview:firstVeiw];
     
  //投资金额文本框设计
@@ -444,6 +473,12 @@
         sureBtn.enabled = NO;
         sureBtn.backgroundColor = [UIColor grayColor];
     } else {
+        if ([[dataArr objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
+            [sureBtn setTitle:@"立即预约" forState:UIControlStateNormal];
+            sureBtn.enabled = YES;
+            sureBtn.backgroundColor = [ColorUtil colorWithHexString:@"fe8103"];
+        } else {
+        
         [sureBtn setTitle:@"立即投资" forState:UIControlStateNormal];
         if ([dataArr objectForKey:@"flag"]&&[[dataArr objectForKey:@"jyr"] isEqualToString:@"0"]) {
             sureBtn.enabled = YES;
@@ -452,8 +487,8 @@
             
             sureBtn.enabled = NO;
             sureBtn.backgroundColor = [UIColor grayColor];
+            }
         }
-        
     }
 }
     [scrollView addSubview:sureBtn];
@@ -804,13 +839,23 @@
                 [self.view makeToast:@"账户可用资金小于投资金额，请充值" duration:1.0 position:@"center"];
             } else {
                 
+                if ([[dicFirst objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
+                    YuYueViewController *vc = [[YuYueViewController alloc] init];
+                    vc.dic = dicFirst;
+                    vc.str = sureText.text;
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                    
+                } else {
+                
                 ConfirmViewController *vc = [[ConfirmViewController alloc] init];
                 vc.dic = dicFirst;
                 vc.str = sureText.text;
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 
-            }
+                    }
+                }
             
             }
         } else {

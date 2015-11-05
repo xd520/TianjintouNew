@@ -14,6 +14,12 @@
 		0408273E1BD4BE0800BB2662 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408273C1BD4BE0800BB2662 /* ReadViewController.m */; };
 		0408273F1BD4BE0800BB2662 /* ReadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408273D1BD4BE0800BB2662 /* ReadViewController.xib */; };
 		040827411BD4DEDE00BB2662 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040827401BD4DEDE00BB2662 /* QuickLook.framework */; };
+		04103F121BEB3CFD007C90E2 /* YuYueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103F101BEB3CFD007C90E2 /* YuYueViewController.m */; };
+		04103F131BEB3CFD007C90E2 /* YuYueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04103F111BEB3CFD007C90E2 /* YuYueViewController.xib */; };
+		04103F181BEB40FD007C90E2 /* YuSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103F161BEB40FD007C90E2 /* YuSuccessViewController.m */; };
+		04103F191BEB40FD007C90E2 /* YuSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04103F171BEB40FD007C90E2 /* YuSuccessViewController.xib */; };
+		04103F1D1BEB46E8007C90E2 /* YuMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103F1B1BEB46E8007C90E2 /* YuMoneyViewController.m */; };
+		04103F1E1BEB46E8007C90E2 /* YuMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04103F1C1BEB46E8007C90E2 /* YuMoneyViewController.xib */; };
 		045EC08F1BE6F891006AA0F9 /* ClassEstmateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */; };
 		045EC0901BE6F891006AA0F9 /* ClassEstmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */; };
 		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; };
@@ -259,6 +265,15 @@
 		0408273C1BD4BE0800BB2662 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		0408273D1BD4BE0800BB2662 /* ReadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadViewController.xib; sourceTree = "<group>"; };
 		040827401BD4DEDE00BB2662 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		04103F0F1BEB3CFD007C90E2 /* YuYueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuYueViewController.h; sourceTree = "<group>"; };
+		04103F101BEB3CFD007C90E2 /* YuYueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuYueViewController.m; sourceTree = "<group>"; };
+		04103F111BEB3CFD007C90E2 /* YuYueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuYueViewController.xib; sourceTree = "<group>"; };
+		04103F151BEB40FD007C90E2 /* YuSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuSuccessViewController.h; sourceTree = "<group>"; };
+		04103F161BEB40FD007C90E2 /* YuSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuSuccessViewController.m; sourceTree = "<group>"; };
+		04103F171BEB40FD007C90E2 /* YuSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuSuccessViewController.xib; sourceTree = "<group>"; };
+		04103F1A1BEB46E8007C90E2 /* YuMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuMoneyViewController.h; sourceTree = "<group>"; };
+		04103F1B1BEB46E8007C90E2 /* YuMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuMoneyViewController.m; sourceTree = "<group>"; };
+		04103F1C1BEB46E8007C90E2 /* YuMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuMoneyViewController.xib; sourceTree = "<group>"; };
 		045EC08C1BE6F890006AA0F9 /* ClassEstmateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEstmateViewController.h; sourceTree = "<group>"; };
 		045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEstmateViewController.m; sourceTree = "<group>"; };
 		045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassEstmateViewController.xib; sourceTree = "<group>"; };
@@ -660,6 +675,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04103F141BEB3D07007C90E2 /* 预约界面 */ = {
+			isa = PBXGroup;
+			children = (
+				04103F0F1BEB3CFD007C90E2 /* YuYueViewController.h */,
+				04103F101BEB3CFD007C90E2 /* YuYueViewController.m */,
+				04103F111BEB3CFD007C90E2 /* YuYueViewController.xib */,
+				04103F151BEB40FD007C90E2 /* YuSuccessViewController.h */,
+				04103F161BEB40FD007C90E2 /* YuSuccessViewController.m */,
+				04103F171BEB40FD007C90E2 /* YuSuccessViewController.xib */,
+				04103F1A1BEB46E8007C90E2 /* YuMoneyViewController.h */,
+				04103F1B1BEB46E8007C90E2 /* YuMoneyViewController.m */,
+				04103F1C1BEB46E8007C90E2 /* YuMoneyViewController.xib */,
+			);
+			name = "预约界面";
+			sourceTree = "<group>";
+		};
 		046C4C011BD0E0C200B31F4E /* MddDoc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,6 +1251,7 @@
 		04EF61051B818C89005700C9 /* 详情界面 */ = {
 			isa = PBXGroup;
 			children = (
+				04103F141BEB3D07007C90E2 /* 预约界面 */,
 				04EF61061B818C89005700C9 /* ConfirmViewController.h */,
 				04EF61071B818C89005700C9 /* ConfirmViewController.m */,
 				04EF61081B818C89005700C9 /* ConfirmViewController.xib */,
@@ -1484,6 +1516,7 @@
 				04EF61E31B818C8A005700C9 /* NoBindCardViewController.xib in Resources */,
 				04E8B5DE1B72E8DC000332F0 /* LaunchScreen.xib in Resources */,
 				04E8B8411B72F932000332F0 /* TransferViewCtrl.xib in Resources */,
+				04103F1E1BEB46E8007C90E2 /* YuMoneyViewController.xib in Resources */,
 				04EF61BB1B818C8A005700C9 /* ProductDetailViewController.xib in Resources */,
 				04EF61D11B818C8A005700C9 /* InvestmentApplicationsViewController.xib in Resources */,
 				04E8B7D51B72F1EA000332F0 /* sr_refresh.png in Resources */,
@@ -1498,6 +1531,8 @@
 				04EF61CF1B818C8A005700C9 /* ConfirmTransferViewController.xib in Resources */,
 				04EF61A71B818C8A005700C9 /* PhoneViewController.xib in Resources */,
 				04EF618D1B818C8A005700C9 /* MyBuyViewController.xib in Resources */,
+				04103F191BEB40FD007C90E2 /* YuSuccessViewController.xib in Resources */,
+				04103F131BEB3CFD007C90E2 /* YuYueViewController.xib in Resources */,
 				04EF61951B818C8A005700C9 /* MyTransferPrococalViewController.xib in Resources */,
 				04EF619B1B818C8A005700C9 /* TransferApplicationViewController.xib in Resources */,
 				04EF61ED1B818C8A005700C9 /* MyUserMangerViewController.xib in Resources */,
@@ -1581,6 +1616,7 @@
 				04E8B76D1B72EFC3000332F0 /* MDRadialProgressTheme.m in Sources */,
 				04EF61EC1B818C8A005700C9 /* MyUserMangerViewController.m in Sources */,
 				04E8B7F31B72F24D000332F0 /* URLUtil.m in Sources */,
+				04103F121BEB3CFD007C90E2 /* YuYueViewController.m in Sources */,
 				04E8B7A11B72F15B000332F0 /* SBJsonWriter.m in Sources */,
 				04E8B7A51B72F15B000332F0 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				04E8B7D71B72F1EA000332F0 /* SRRefreshView.m in Sources */,
@@ -1666,6 +1702,7 @@
 				046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */,
 				04EF61C21B818C8A005700C9 /* ChangerPassWordViewController.m in Sources */,
 				04E8B7C71B72F179000332F0 /* ASIDataDecompressor.m in Sources */,
+				04103F181BEB40FD007C90E2 /* YuSuccessViewController.m in Sources */,
 				04EF61C81B818C8A005700C9 /* NameRealSuccessViewController.m in Sources */,
 				04E8B7AA1B72F15B000332F0 /* SBJsonStreamParser.m in Sources */,
 				04EF61881B818C8A005700C9 /* MoneyAccountViewController.m in Sources */,
@@ -1685,6 +1722,7 @@
 				04EF61CC1B818C8A005700C9 /* ReSetPassWordViewController.m in Sources */,
 				04EF61681B818C8A005700C9 /* MainViewController1.m in Sources */,
 				04EF61A21B818C8A005700C9 /* CheckViewController.m in Sources */,
+				04103F1D1BEB46E8007C90E2 /* YuMoneyViewController.m in Sources */,
 				04E8B7F81B72F272000332F0 /* SHLUILabel.m in Sources */,
 				04E8B7A91B72F15B000332F0 /* SBJsonStreamParserAccumulator.m in Sources */,
 			);

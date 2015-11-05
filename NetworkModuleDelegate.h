@@ -176,9 +176,12 @@ enum kBusinessTag
     kBusinessTagGetJRforappCxTzqx = 161,//查询投资权限
     kBusinessTagGetJRforwdqxtzqx = 162,//投资权限申请
     kBusinessTagGetJRforappMyLpq = 163,//礼品券
-     kBusinessTagGetJRintroduction = 164,
-     kBusinessTagGetJRintroductionAgain = 165,
-    
+    kBusinessTagGetJRintroduction = 164,
+    kBusinessTagGetJRintroductionAgain = 165,
+    kBusinessTagGetJRappYyrgje = 166,
+    kBusinessTagGetJRappYyrgsq = 167,
+    kBusinessTagGetJRappYyrgjl = 168,
+    kBusinessTagGetJRappYyrgjeAgain = 169,
 };
 typedef enum kBusinessTag kBusinessTag;
 

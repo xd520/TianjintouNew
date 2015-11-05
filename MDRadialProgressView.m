@@ -286,8 +286,12 @@
     if ((int)percentageCompleted == 100) {
      self.label.text = @"已抢光";
     } else {
-    
+        if (_yuYueEnd) {
+          self.label.text = @"预约";
+        }else {
+        
 	self.label.text = [NSString stringWithFormat:@"%.f%@", percentageCompleted,@"%"];
+        }
     }
     
 	NSString *notificationText = [NSString stringWithFormat:@"%@ %@",

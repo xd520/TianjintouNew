@@ -1015,6 +1015,13 @@
                     radialView.startingSlice = 75;
                     radialView.theme.thickness = 10;
                     radialView.theme.sliceDividerHidden = YES;
+                    
+                    if ([[[dataList objectAtIndex:indexPath.row] objectForKey:@"jyzt"] isEqualToString:@"-4"]) {
+                        radialView.yuYueEnd = YES;
+                    } else {
+                    radialView.yuYueEnd = NO;
+                    }
+                    
                     int kt;
                     if ([[[dataList objectAtIndex:indexPath.row] objectForKey:@"jyzt"] isEqualToString:@"0"]||[[[dataList objectAtIndex:indexPath.row] objectForKey:@"cz"] isEqualToString:@"1"]||[[[dataList objectAtIndex:indexPath.row] objectForKey:@"flag"] isEqualToString:@"1"]) {
                         kt = 100;
