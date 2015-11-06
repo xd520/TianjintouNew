@@ -11,7 +11,6 @@
 
 @interface YuYueViewController : UIViewController<YuYueViewControllerDelegate>
 
-@property(nonatomic,strong)NSString *str;
 @property(nonatomic,strong)NSDictionary *dic;
 
 - (IBAction)back:(id)sender;

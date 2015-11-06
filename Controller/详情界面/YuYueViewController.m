@@ -44,7 +44,7 @@
         
     }
     
-    [self requestLogin:kBusinessTagGetJRgetSxf];
+   // [self requestLogin:kBusinessTagGetJRgetSxf];
     
     [self reloadDataWith:_dic];
     
@@ -275,21 +275,6 @@
     
     NSDate *newDate = [[NSDate alloc] initWithTimeIntervalSinceReferenceDate:([date1 timeIntervalSinceReferenceDate] + 8*3600)];
     return newDate;
-}
-
-
-
-- (void)requestLogin:(kBusinessTag)_tag
-{
-    NSLog(@"%s %d %@", __FUNCTION__, __LINE__, @"请求登陆");
-    
-    NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
-    [paraDic setObject:@"15" forKey:@"wtlb"];
-    [paraDic setObject:self.str forKey:@"wtsl"];
-    [paraDic setObject:[_dic objectForKey:@"FXJ"] forKey:@"wtjg"];
-    [paraDic setObject:[_dic objectForKey:@"GQDM"] forKey:@"gqdm"];
-    
-    [[NetworkModule sharedNetworkModule] postBusinessReqWithParamters:paraDic tag:_tag owner:self];
 }
 
 
@@ -537,7 +522,7 @@
     NSMutableDictionary *paraDic = [[NSMutableDictionary alloc] init];
     [paraDic setObject:[[Base64XD encodeBase64String:_jymm] strBase64] forKey:@"jymm"];
     [paraDic setObject:[self.dic objectForKey:@"GQDM"] forKey:@"gqdm"];
-    [paraDic setObject:_str forKey:@"yyje"];//委托金额除 以委托价格
+    [paraDic setObject:[moneyDic objectForKey:@"VALUE"] forKey:@"yyje"];//委托金额除 以委托价格
     [paraDic setObject:dateLStarabel.text forKey:@"yjrgrq"];
     
     

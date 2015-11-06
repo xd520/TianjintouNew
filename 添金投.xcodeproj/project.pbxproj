@@ -20,6 +20,8 @@
 		04103F191BEB40FD007C90E2 /* YuSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04103F171BEB40FD007C90E2 /* YuSuccessViewController.xib */; };
 		04103F1D1BEB46E8007C90E2 /* YuMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103F1B1BEB46E8007C90E2 /* YuMoneyViewController.m */; };
 		04103F1E1BEB46E8007C90E2 /* YuMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04103F1C1BEB46E8007C90E2 /* YuMoneyViewController.xib */; };
+		045E00A81BEC36A4000575BE /* YuBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E00A61BEC36A4000575BE /* YuBuyViewController.m */; };
+		045E00A91BEC36A4000575BE /* YuBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045E00A71BEC36A4000575BE /* YuBuyViewController.xib */; };
 		045EC08F1BE6F891006AA0F9 /* ClassEstmateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */; };
 		045EC0901BE6F891006AA0F9 /* ClassEstmateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */; };
 		046C4C041BD0E0EE00B31F4E /* MddDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C4C021BD0E0EE00B31F4E /* MddDownLoadTask.m */; };
@@ -274,6 +276,9 @@
 		04103F1A1BEB46E8007C90E2 /* YuMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuMoneyViewController.h; sourceTree = "<group>"; };
 		04103F1B1BEB46E8007C90E2 /* YuMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuMoneyViewController.m; sourceTree = "<group>"; };
 		04103F1C1BEB46E8007C90E2 /* YuMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuMoneyViewController.xib; sourceTree = "<group>"; };
+		045E00A51BEC36A4000575BE /* YuBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YuBuyViewController.h; sourceTree = "<group>"; };
+		045E00A61BEC36A4000575BE /* YuBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YuBuyViewController.m; sourceTree = "<group>"; };
+		045E00A71BEC36A4000575BE /* YuBuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YuBuyViewController.xib; sourceTree = "<group>"; };
 		045EC08C1BE6F890006AA0F9 /* ClassEstmateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEstmateViewController.h; sourceTree = "<group>"; };
 		045EC08D1BE6F891006AA0F9 /* ClassEstmateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEstmateViewController.m; sourceTree = "<group>"; };
 		045EC08E1BE6F891006AA0F9 /* ClassEstmateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassEstmateViewController.xib; sourceTree = "<group>"; };
@@ -1175,6 +1180,9 @@
 				040801791BC795E500114994 /* MyVoucherViewController.h */,
 				0408017A1BC795E500114994 /* MyVoucherViewController.m */,
 				0408017B1BC795E500114994 /* MyVoucherViewController.xib */,
+				045E00A51BEC36A4000575BE /* YuBuyViewController.h */,
+				045E00A61BEC36A4000575BE /* YuBuyViewController.m */,
+				045E00A71BEC36A4000575BE /* YuBuyViewController.xib */,
 			);
 			path = "我的账户";
 			sourceTree = "<group>";
@@ -1497,6 +1505,7 @@
 				04EF61DD1B818C8A005700C9 /* CardBindViewController.xib in Resources */,
 				04EF61CB1B818C8A005700C9 /* PassWordMangerViewController.xib in Resources */,
 				04EF61731B818C8A005700C9 /* AddWithdrawViewController.xib in Resources */,
+				045E00A91BEC36A4000575BE /* YuBuyViewController.xib in Resources */,
 				04EF616F1B818C8A005700C9 /* PorductViewController.xib in Resources */,
 				04EF617D1B818C8A005700C9 /* WithdrawViewController.xib in Resources */,
 				04EF620B1B819ACD005700C9 /* PublicViewController.xib in Resources */,
@@ -1681,6 +1690,7 @@
 				04EF61E01B818C8A005700C9 /* ClassBankCardViewController.m in Sources */,
 				04E8B8121B72F2A1000332F0 /* SDWebImageDownloader.m in Sources */,
 				04EF61801B818C8A005700C9 /* BussizeDetailViewController.m in Sources */,
+				045E00A81BEC36A4000575BE /* YuBuyViewController.m in Sources */,
 				04E8B8131B72F2A1000332F0 /* SDWebImageManager.m in Sources */,
 				04E8B7761B72F050000332F0 /* DOPDropDownMenu.m in Sources */,
 				04E8B7ED1B72F236000332F0 /* Https.m in Sources */,

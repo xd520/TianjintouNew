@@ -418,7 +418,12 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     buyBtn.layer.cornerRadius = 17.5*sizeScaleX;
     buyBtn.layer.masksToBounds = YES;
     [buyBtn setTintColor:[UIColor whiteColor]];
+    
+    if ([[[dataListFirst objectAtIndex:0] objectForKey:@"flag"] isEqualToString:@"-4"]) {
+       [buyBtn setTitle:@"立即预约" forState:UIControlStateNormal];
+    } else {
     [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+    }
     [buyBtn addTarget:self action:@selector(pushDetail) forControlEvents:UIControlEventTouchUpInside];
      [backimgView addSubview:buyBtn];
     

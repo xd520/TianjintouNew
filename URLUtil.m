@@ -522,6 +522,9 @@
         case 169:
             return [NSString stringWithFormat:@"%@%@", SERVERURL,@"/service/jrzcjy/cpzx/appYyrgje"];
             break;
+        case 170:
+            return [NSString stringWithFormat:@"%@%@", SERVERURL,@"/service/jrzcjy/cpzx/appYyrgjl"];
+            break;
         default:
             break;
     }

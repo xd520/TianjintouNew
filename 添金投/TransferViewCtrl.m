@@ -13,7 +13,7 @@
 #import "MyBuyViewController.h"
 #import "BussizeDetailViewController.h"
 #import "MoneyInfoViewController.h"
-//#import "TradingAccountViewController.h"
+#import "YuBuyViewController.h"
 #import "RechargeFirstViewController.h"
 #import "WithdrawFirstViewController.h"
 #import "BindCardViewController.h"
@@ -368,7 +368,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
    // NSArray *arr = @[@"我的资产",@"当日申请",@"我的投资",@"我的已获收益",@"充值/提现记录",@"资金变动记录",@"账户安全",@"我的收藏",@"我的厦金币",@"邀请好友"];
     
     
-    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账记录",@"资金变动",@"我的添金币",@"账户安全",@"我的权限",@"我的活动券"];
+    NSArray *arr = @[@"我的资产",@"当日申请",@"投资记录",@"我的收益",@"转账记录",@"资金变动",@"我的添金币",@"账户安全",@"我的权限",@"我的活动券",@"预约认购记录"];
     
     
     
@@ -556,20 +556,31 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     [scrollView addSubview:lineView6];
     
     
-    UILabel *lineView7 = [[UILabel alloc] initWithFrame:CGRectMake(0,475 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth, 0.5)];
+    UILabel *lineView7 = [[UILabel alloc] initWithFrame:CGRectMake(10,475 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth - 10, 0.5)];
     lineView7.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
     [scrollView addSubview:lineView7];
     
+    UILabel *lineView8 = [[UILabel alloc] initWithFrame:CGRectMake(0,515 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth , 0.5)];
+    lineView8.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
+    [scrollView addSubview:lineView8];
+    
+    
+    UILabel *lineView9 = [[UILabel alloc] initWithFrame:CGRectMake(10,563 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth - 10, 0.5)];
+    lineView9.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
+    [scrollView addSubview:lineView9];
+    
+    UILabel *lineView10 = [[UILabel alloc] initWithFrame:CGRectMake(0,603 - 179 + 5 + 175*sizeScaleX + 39.5, ScreenWidth , 0.5)];
+    lineView10.backgroundColor = [ColorUtil colorWithHexString:@"dedede"];
+    [scrollView addSubview:lineView10];
+    
+    
+    
     scrollView.bounces = NO;
     
-     if(ScreenWidth > 320){
     
-    [scrollView setContentSize:CGSizeMake(ScreenWidth, 640)];
-     } else {
      
-     [scrollView setContentSize:CGSizeMake(ScreenWidth, 600 + 6)];
-     }
-         
+     [scrollView setContentSize:CGSizeMake(ScreenWidth, 603 - 179 + 5 + 175*sizeScaleX + 39.5)];
+    
     [self.view addSubview:scrollView];
     
 }
@@ -804,6 +815,12 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
         cv.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:cv animated:YES];
         
+    } else {
+    
+        YuBuyViewController *cv = [[YuBuyViewController alloc] init];
+        cv.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:cv animated:YES];
+    
     }
 }
 

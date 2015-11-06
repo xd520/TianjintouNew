@@ -822,7 +822,16 @@
             
             } else {
             
-            
+                if ([[dicFirst objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
+                    YuYueViewController *vc = [[YuYueViewController alloc] init];
+                    vc.dic = dicFirst;
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                    
+                } else {
+                
+                
+                
             if ([sureText.text isEqualToString:@""]||[sureText.text floatValue] == 0) {
                 [self.view makeToast:@"请输入认购金额" duration:1.0 position:@"center"];
             }else if ([[dicFirst objectForKey:@"KHH"] isEqualToString:@""]) {
@@ -839,14 +848,7 @@
                 [self.view makeToast:@"账户可用资金小于投资金额，请充值" duration:1.0 position:@"center"];
             } else {
                 
-                if ([[dicFirst objectForKey:@"JYZT"] isEqualToString:@"-4"]) {
-                    YuYueViewController *vc = [[YuYueViewController alloc] init];
-                    vc.dic = dicFirst;
-                    vc.str = sureText.text;
-                    vc.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:vc animated:YES];
-                    
-                } else {
+               
                 
                 ConfirmViewController *vc = [[ConfirmViewController alloc] init];
                 vc.dic = dicFirst;
@@ -854,10 +856,10 @@
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 
-                    }
+                
                 }
-            
             }
+        }
         } else {
            // delegate.strlogin = @"2";
             LoginViewController *VC = [[LoginViewController alloc] init];
