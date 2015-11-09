@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="myAccountBtn" destination="HOe-lp-Z4l" id="Lhh-SF-fJV"/>
                 <outlet property="myYuyueBtn" destination="lFv-uM-aiU" id="r99-nV-tZo"/>
-                <outlet property="view" destination="uKI-2T-0ge" id="WiY-2Q-XTa"/>
+                <outlet property="view" destination="63E-NR-8Un" id="cxp-wu-5vj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

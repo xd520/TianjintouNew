@@ -36,9 +36,9 @@
 //118.242.27.51:8080
 //#define SERVERURL @"http://118.242.27.51:8080"
 
-#define SERVERURL @"http://192.168.1.110:8805"
+//#define SERVERURL @"http://192.168.1.110:8805"
 //天津投生产环境
-//#define SERVERURL @"https://www.tjtou.cn"
+#define SERVERURL @"https://www.tjtou.cn"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     UIBackgroundTaskIdentifier bgTask;
