@@ -94,6 +94,7 @@
     [_webView removeFromSuperview];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     _webView = nil;
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

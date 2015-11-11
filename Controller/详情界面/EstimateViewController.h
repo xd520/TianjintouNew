@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MddDownLoadTask.h"
 
-@interface EstimateViewController : UIViewController
+@interface EstimateViewController : UIViewController<MddDownLoadTaskDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleName;
 @property(nonatomic,strong)NSString *name;

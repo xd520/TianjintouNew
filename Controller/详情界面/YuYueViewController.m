@@ -95,7 +95,7 @@
     
     //起始日期
     
-    UILabel *endLabTip = [[UILabel alloc] initWithFrame:CGRectMake( 10, 8,100 , 13)];
+    UILabel *endLabTip = [[UILabel alloc] initWithFrame:CGRectMake( 5, 8,100 , 13)];
     endLabTip.text = @"预计认购日期";
     endLabTip.font = [UIFont systemFontOfSize:13];
     endLabTip.backgroundColor = [UIColor clearColor];
@@ -141,7 +141,7 @@
     endView.tag = 2;
  
     
-    UILabel *endTip = [[UILabel alloc] initWithFrame:CGRectMake(10, 8,110 , 13)];
+    UILabel *endTip = [[UILabel alloc] initWithFrame:CGRectMake(5, 8,110 , 13)];
     endTip.text = @"选择预约认购金额";
     endTip.font = [UIFont systemFontOfSize:13];
     endTip.backgroundColor = [UIColor clearColor];
@@ -322,7 +322,7 @@
     
     
     
-    NSArray *arrTitle = @[@"剩余期限",@"收益方式",@"手续费(元)"];
+    NSArray *arrTitle = @[@"剩余期限",@"收益方式",@"手续费"];
     
     
     NSArray *arrNum = @[[NSString stringWithFormat:@"%@天",[dataArr objectForKey:@"QX"]],[dataArr objectForKey:@"FXMS"]];
@@ -351,7 +351,7 @@
             moneLab = [[UILabel alloc] init];
             moneLab.frame = CGRectMake(ScreenWidth*3/4 + 10, descHeight + 95, ScreenWidth/4 - 20, 14);
             moneLab.font = [UIFont systemFontOfSize:14];
-            moneLab.text = @"0.00";
+            moneLab.text = @"￥0.00";
             // moneLab.textAlignment = NSTextAlignmentCenter;
             moneLab.textColor = [ColorUtil colorWithHexString:@"333333"];
             [self.view addSubview:moneLab];

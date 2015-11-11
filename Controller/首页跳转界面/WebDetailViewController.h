@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MddDownLoadTask.h"
-#import <QuickLook/QuickLook.h>
+//#import <QuickLook/QuickLook.h>
 
 @interface WebDetailViewController : UIViewController<MddDownLoadTaskDelegate>
 

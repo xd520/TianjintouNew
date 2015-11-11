@@ -1079,7 +1079,7 @@ CGRectMake1(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
                 [self reloadDataWith:dataArray];
             }
         } else if (tag == kBusinessTagGetJRMyBankcard){
-            NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+            
             if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
                 AccountInfoViewController *cv = [[AccountInfoViewController alloc] init];
                 cv.dicData = @{};

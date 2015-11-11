@@ -159,7 +159,7 @@
     
    
     
-    NSArray *arrTitle = @[@"剩余期限",@"收益方式",@"手续费(元)"];
+    NSArray *arrTitle = @[@"剩余期限",@"收益方式",@"手续费"];
     
     
     NSArray *arrNum = @[[NSString stringWithFormat:@"%@天",[dataArr objectForKey:@"QX"]],[dataArr objectForKey:@"FXMS"]];
@@ -552,7 +552,7 @@
     sureBtn.layer.masksToBounds = YES;
     sureBtn.layer.cornerRadius = 4;
     
-    [sureBtn setTitle:@"支付" forState:UIControlStateNormal];
+    [sureBtn setTitle:@"立即投资" forState:UIControlStateNormal];
     [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     sureBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [sureBtn addTarget:self action:@selector(sureMehtods1:) forControlEvents:UIControlEventTouchUpInside];
@@ -692,7 +692,7 @@
             //            subing = NO;
         } else {
            
-            moneLab.text = [NSString stringWithFormat:@"%.2f",[[dataArray objectForKey:@"FID_QSFY"] floatValue]];
+            moneLab.text = [NSString stringWithFormat:@"￥%.2f",[[dataArray objectForKey:@"FID_QSFY"] floatValue]];
             
         }
     } else if (tag==kBusinessTagGetJRuserCoinData) {

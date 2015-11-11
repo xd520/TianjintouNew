@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04041E3C1BF17E14009C6D2B /* CustomCookieStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04041E3B1BF17E14009C6D2B /* CustomCookieStorage.m */; };
 		040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040801751BC7959E00114994 /* MyAuthorityViewController.m */; };
 		040801781BC7959E00114994 /* MyAuthorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040801761BC7959E00114994 /* MyAuthorityViewController.xib */; };
 		0408017C1BC795E500114994 /* MyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408017A1BC795E500114994 /* MyVoucherViewController.m */; };
@@ -257,6 +258,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04041E3A1BF17E14009C6D2B /* CustomCookieStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCookieStorage.h; sourceTree = "<group>"; };
+		04041E3B1BF17E14009C6D2B /* CustomCookieStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCookieStorage.m; sourceTree = "<group>"; };
 		040801741BC7959E00114994 /* MyAuthorityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAuthorityViewController.h; sourceTree = "<group>"; };
 		040801751BC7959E00114994 /* MyAuthorityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAuthorityViewController.m; sourceTree = "<group>"; };
 		040801761BC7959E00114994 /* MyAuthorityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAuthorityViewController.xib; sourceTree = "<group>"; };
@@ -680,6 +683,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04041E391BF17E08009C6D2B /* cookStore */ = {
+			isa = PBXGroup;
+			children = (
+				04041E3A1BF17E14009C6D2B /* CustomCookieStorage.h */,
+				04041E3B1BF17E14009C6D2B /* CustomCookieStorage.m */,
+			);
+			name = cookStore;
+			sourceTree = "<group>";
+		};
 		04103F141BEB3D07007C90E2 /* 预约界面 */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +792,7 @@
 		04E8B75C1B72EF38000332F0 /* Modle */ = {
 			isa = PBXGroup;
 			children = (
+				04041E391BF17E08009C6D2B /* cookStore */,
 				046C4C011BD0E0C200B31F4E /* MddDoc */,
 				04E8B8171B72F2A9000332F0 /* Base6464 */,
 				04E8B7FD1B72F28E000332F0 /* SDImage */,
@@ -1663,6 +1676,7 @@
 				04EF61BE1B818C8A005700C9 /* SuccessViewController.m in Sources */,
 				04EF61A61B818C8A005700C9 /* PhoneViewController.m in Sources */,
 				04E8B8161B72F2A1000332F0 /* UIImageView+WebCache.m in Sources */,
+				04041E3C1BF17E14009C6D2B /* CustomCookieStorage.m in Sources */,
 				04EF617C1B818C8A005700C9 /* WithdrawViewController.m in Sources */,
 				040801771BC7959E00114994 /* MyAuthorityViewController.m in Sources */,
 				04E8B8111B72F2A1000332F0 /* SDWebImageDecoder.m in Sources */,

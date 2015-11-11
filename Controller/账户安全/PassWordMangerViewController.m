@@ -14,6 +14,7 @@
 #import "ChangeLoginPWViewController.h"
 #import "BindCardViewController.h"
 #import "RiskEvaluationViewController.h"
+#import "UnBindCardViewController.h"
 
 @interface PassWordMangerViewController ()
 {
@@ -155,9 +156,8 @@
     
     if ([[dic objectForKey:@"isBingingCard"] boolValue]) {
        
-        self.secondLab.text = @"已绑定";
-        self.bankCard.hidden = YES;
-        self.changView.userInteractionEnabled = NO;
+        self.secondLab.text = @"解绑";
+       
     } else {
     
        
@@ -175,7 +175,7 @@
     }
     
     if ([[dic objectForKey:@"isFXCP"] boolValue]) {
-            self.firstLab.text = @"已测评";
+            self.firstLab.text = @"重新测评";
         //self.riskImgView.hidden = YES;
        // self.loginView.userInteractionEnabled = NO;
         
@@ -233,20 +233,34 @@
             // [self.view makeToast:@"登录成功!"];
             [self reloadDataWith:dataArray];
         }
-    } else if (tag== kBusinessTagGetJRupdateUserInfo) {
-        NSMutableDictionary *dataArray = [jsonDic objectForKey:@"object"];
+    } else if (tag== kBusinessTagGetJRMyBankcard) {
+        
         if ([[jsonDic objectForKey:@"success"] boolValue] == NO) {
             //数据异常处理
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.view makeToast:@"获取数据异常"];
             //            subing = NO;
         } else {
+            
+            NSMutableDictionary *dataArray = [[jsonDic objectForKey:@"object"] objectAtIndex:0];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            UnBindCardViewController *vc = [[UnBindCardViewController alloc] init];
+            // vc.dic = dic;
+            vc.cardBankStr = [dataArray objectForKey:@"yhzhEncode"];
+            vc.bankAccountStr = [dataArray objectForKey:@"FID_YHZH"];
+            vc.bankcodeStr = [dataArray objectForKey:@"FID_YHDM"];
+            // vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            
+            /*
             BindCardViewController *vc = [[BindCardViewController alloc] init];
            // vc.dic = dataArray;
             vc.pushStr = @"1";
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
+             */
             }
         }
     }
@@ -293,23 +307,8 @@
         
     } else {
     
-    if (! [[dicData objectForKey:@"isBingingCard"] boolValue]) {
-        if (view.tag == 1){
-            /*
-             获取银行卡界面更新信息
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.dimBackground = YES;
-            hud.delegate = self;
-            hud.mode = MBProgressHUDModeIndeterminate;
-            hud.labelText = @"加载中...";
-            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-                [self requestLogin:kBusinessTagGetJRupdateUserInfo];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                });
-            });
- */
-            
+    if (![[dicData objectForKey:@"isBingingCard"] boolValue]) {
+       
             if ([[dicData objectForKey:@"isSetCert"] boolValue]){
                // [self.view makeToast:@"该功能未实现，请先到PC端操作"];
                 AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -324,9 +323,25 @@
             
                 }
            
-            
-            }
-        }
+        
+    } else {
+    
+       
+        // 获取银行卡界面更新信息
+         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+         hud.dimBackground = YES;
+         hud.delegate = self;
+         hud.mode = MBProgressHUDModeIndeterminate;
+         hud.labelText = @"加载中...";
+         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+         [self requestLogin:kBusinessTagGetJRMyBankcard];
+         dispatch_async(dispatch_get_main_queue(), ^{
+         
+         });
+         });
+         
+    
+    }
     }
 }
 

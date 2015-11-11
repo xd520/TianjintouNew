@@ -197,12 +197,17 @@
     sureBtn.layer.masksToBounds = YES;
     sureBtn.layer.cornerRadius = 4;
     
-    [sureBtn setTitle:@"支付" forState:UIControlStateNormal];
+    [sureBtn setTitle:@"立即转让" forState:UIControlStateNormal];
     [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     sureBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [sureBtn addTarget:self action:@selector(transferMethods:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:sureBtn];
+    
+    
+    
+    /*
+    
     //协议
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, descHeight + 170, 15, 15)];
     
@@ -225,7 +230,7 @@
     
     [procoalBtn addTarget:self action:@selector(pushVCProtocal) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:procoalBtn];
-    
+    */
     
 }
 
@@ -426,15 +431,21 @@
 }
 
 
+/*
+ 
+ else if (count % 2 == 0) {
+ [self.view makeToast:@"请同意转让协议" duration:1.0 position:@"center"];
+ 
+ }
+ */
+
+
 - (IBAction)transferMethods:(id)sender {
     [self.view endEditing:YES];
     
     if ([sureText.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入交易密码" duration:2 position:@"center"];
-    } else if (count % 2 == 0) {
-        [self.view makeToast:@"请同意转让协议" duration:1.0 position:@"center"];
-        
-    }else {
+    } else {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.dimBackground = YES;

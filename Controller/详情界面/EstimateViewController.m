@@ -8,10 +8,13 @@
 
 #import "EstimateViewController.h"
 #import "AppDelegate.h"
+#import "ReadViewController.h"
 
 @interface EstimateViewController ()
 {
- 
+    MBProgressHUD *hud;
+    NSString *filePath;
+    
     float addHight;
 }
 @end
@@ -45,7 +48,7 @@
     
     
     //添加指示器及遮罩
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES; //加层阴影
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"加载中...";
@@ -67,6 +70,140 @@
     
 }
 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    NSLog(@"%@",request.URL);
+    
+    
+    switch (navigationType)
+    {
+            //点击连接
+        case UIWebViewNavigationTypeLinkClicked:
+        {
+            NSLog(@"clicked");
+            
+            
+            //拷贝
+            
+            NSString *saveLocalPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
+            
+            NSArray *array = [self convertURLToArray:request.URL.absoluteString];
+            
+            [self suburlString:[array objectAtIndex:2]];
+            
+            
+            NSLog(@"%@  %@",array,[self suburlString:[array objectAtIndex:2]]);
+            
+            // NSString *documentPath = [saveLocalPath  stringByAppendingPathComponent:@"pdf.pdf"];
+            
+            if ([[self suburlString:[array objectAtIndex:2]] isEqualToString:@"txt"]) {
+                NSString* fileName = @"down_form.txt";
+                NSString* documentPath = [saveLocalPath stringByAppendingPathComponent:fileName];
+                filePath = documentPath;
+            } else if ([[self suburlString:[array objectAtIndex:2]] isEqualToString:@"pdf"]){
+                
+                NSString* fileName = @"down_form.pdf";
+                NSString* documentPath = [saveLocalPath stringByAppendingPathComponent:fileName];
+                filePath = documentPath;
+            }
+            
+            
+            //添加指示器及遮罩
+            hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.dimBackground = YES; //加层阴影
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.labelText = @"正在下载中...";
+            
+            
+            NSMutableDictionary * DownLoadParam=[NSMutableDictionary dictionary];
+            
+            
+            [DownLoadParam setObject:filePath forKey:@"saveAsFilePath"];
+            [DownLoadParam setObject:request.URL forKey:@"downloadUrl"];
+            
+            MddDownLoadTask  * tDownLoadTask=[[MddDownLoadTask alloc] initWithDic:DownLoadParam];
+            tDownLoadTask.mddDelegate=self;
+            [tDownLoadTask runTask];
+            
+            
+            // [self DownLoadFile:request.URL withpath:documentPath];
+        }
+            break;
+            //提交表单
+        case UIWebViewNavigationTypeFormSubmitted:
+        {
+            NSLog(@"submitted");
+        }
+        default:
+            break;
+    }
+    
+    
+    
+    return YES;
+}
+
+
+
+- (NSArray *)convertURLToArray:(NSString *)string{
+    if([string rangeOfString:@"?"].length != 0){
+        NSInteger i = [string rangeOfString:@"?"].location;
+        NSString *newString = [string substringFromIndex:i+1];
+        return [newString componentsSeparatedByString:@"&"];
+    }
+    else{
+        return  nil;
+    }
+}
+
+
+//将?后面的字符串截掉
+- (NSString *)suburlString:(NSString *)urlString{
+    
+    //return  [urlString substringFromIndex:[urlString rangeOfString:@"="].location + 1];
+    
+    return [urlString substringFromIndex:urlString.length - 3];
+    
+}
+
+
+-(void) mddDownLoadErrorCallBack:(NSError *)pError{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [self.view makeToast:@"下载失败!"];
+    
+}
+//完成
+-(void) mddDownLoadSuccessCallBack:(NSMutableDictionary *)pValue{
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[_webView goBack];
+    //[self.view makeToast:@"下载成功!"];
+    NSLog(@"%@",pValue);
+    
+    //[[CustomCookieStorage sharedHTTPCookieStorage] cookiesForURL:[pValue valueForKey:@"downloadUrl"]];
+    
+    
+    
+    //    QLPreviewController *vc = [[QLPreviewController alloc] init];
+    //    vc.delegate = self;
+    //    [self.navigationController presentViewController:vc animated:YES completion:nil];
+    
+    
+    
+    // [documentController presentPreviewAnimated:YES];
+    
+    
+    
+    ReadViewController *vc = [[ReadViewController alloc] init];
+    vc.path = filePath;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+
+
+
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
@@ -87,121 +224,6 @@
     
 }
 
-
-/*
--(void)udateUIDeafualt {
-    if (self.dic.count > 0) {
-        int line = 1;
-        int juli = 5;
-        
-        NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-        NSArray *titleArr = @[@"产品名称",@"产品代码",@"发行总规模",@"期限",@"起购金额",@"预期年化",@"起息时间",@"兑付时间",@"取现到账"];
-        NSArray *arr = @[[_dic objectForKey:@"CPMC"],[_dic objectForKey:@"GQDM"],[NSString stringWithFormat:@"%@元",[self AddComma:[numberFormatter stringFromNumber:[_dic objectForKey:@"ZGB"]]]],[NSString stringWithFormat:@"%@天",[_dic objectForKey:@"QX"]],[NSString stringWithFormat:@"%@",[_dic objectForKey:@"TZJD"]],[_dic objectForKey:@"SYL"],[_dic objectForKey:@"FID_JXRQ"],[_dic objectForKey:@"DQRQ"],[_dic objectForKey:@"FXMS"]];
-    for (int i = 0; i < titleArr.count; i++) {
-        if (i < 2) {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, juli + i*line + i*40, ScreenWidth - 10, 40)];
-            view.backgroundColor = [UIColor whiteColor];
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(5, 12.5, 80, 15)];
-            lab.text = [titleArr objectAtIndex:i];
-            lab.font = [UIFont systemFontOfSize:15];
-            lab.textColor = [ColorUtil colorWithHexString:@"999999"];
-            [view addSubview:lab];
-            
-            UILabel *labTip = [[UILabel alloc] initWithFrame:CGRectMake(85, 0, ScreenWidth - 10 - 90, 40)];
-            labTip.text = [arr objectAtIndex:i];
-            labTip.textAlignment = NSTextAlignmentRight;
-            labTip.font = [UIFont systemFontOfSize:14];
-            labTip.numberOfLines = 0;
-            labTip.textColor = [ColorUtil colorWithHexString:@"333333"];
-            [view addSubview:labTip];
-            
-            [scrollView addSubview:view];
-            
-            
-        } else if (i < 5&& i >= 2){
-        
-          UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, juli*2 + i*line + i*40, ScreenWidth - 10, 40)];
-            view.backgroundColor = [UIColor whiteColor];
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(5, 12.5, 80, 15)];
-            lab.text = [titleArr objectAtIndex:i];
-            lab.font = [UIFont systemFontOfSize:15];
-            lab.textColor = [ColorUtil colorWithHexString:@"999999"];
-            [view addSubview:lab];
-            
-            UILabel *labTip = [[UILabel alloc] initWithFrame:CGRectMake(85, 12.5, ScreenWidth - 10 - 90, 15)];
-            labTip.text = [arr objectAtIndex:i];
-            labTip.textAlignment = NSTextAlignmentRight;
-            labTip.font = [UIFont systemFontOfSize:15];
-            labTip.textColor = [ColorUtil colorWithHexString:@"333333"];
-            [view addSubview:labTip];
-            
-            [scrollView addSubview:view];
-            
-        
-        } else if (i >= 5&&i<9) {
-        
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, juli*3 + i*line + i*40, ScreenWidth - 10, 40)];
-            view.backgroundColor = [UIColor whiteColor];
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(5, 12.5, 80, 15)];
-            lab.text = [titleArr objectAtIndex:i];
-            lab.font = [UIFont systemFontOfSize:15];
-            lab.textColor = [ColorUtil colorWithHexString:@"999999"];
-            [view addSubview:lab];
-            
-            UILabel *labTip = [[UILabel alloc] initWithFrame:CGRectMake(85, 12.5, ScreenWidth - 10 - 90, 15)];
-            labTip.text = [arr objectAtIndex:i];
-            labTip.textAlignment = NSTextAlignmentRight;
-            labTip.font = [UIFont systemFontOfSize:15];
-            labTip.textColor = [ColorUtil colorWithHexString:@"333333"];
-            [view addSubview:labTip];
-            
-            [scrollView addSubview:view];
-
-        
-        
-        }else if (i >= 9 &&i < 11){
-        
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, juli*4 + i*line + i*40, ScreenWidth - 10, 40)];
-            view.backgroundColor = [UIColor whiteColor];
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(5, 12.5, 80, 15)];
-            lab.text = [titleArr objectAtIndex:i];
-            lab.font = [UIFont systemFontOfSize:15];
-            lab.textColor = [ColorUtil colorWithHexString:@"999999"];
-            [view addSubview:lab];
-            
-            UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 10 - 35, 7.5, 25, 25)];
-            icon.image = [UIImage imageNamed:@"next"];
-            [view addSubview:icon];
-            [scrollView addSubview:view];
-
-            
-            
-            
-        } else if (i == 11){
-        
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, juli*5 + i*line + i*40, ScreenWidth - 10, 40)];
-            view.backgroundColor = [UIColor whiteColor];
-            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(5, 12.5, 120, 15)];
-            lab.text = [titleArr objectAtIndex:i];
-            lab.font = [UIFont systemFontOfSize:15];
-            lab.textColor = [ColorUtil colorWithHexString:@"999999"];
-            [view addSubview:lab];
-            
-            UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth - 10 - 35, 7.5, 25, 25)];
-            icon.image = [UIImage imageNamed:@"next"];
-            [view addSubview:icon];
-            
-            [scrollView addSubview:view];
-        
-        }
-    }
-    
-
- [scrollView setContentSize:CGSizeMake(ScreenWidth, juli*5 + 12*line + 9*40)];
-    }
-}
-
-*/
 
 
 

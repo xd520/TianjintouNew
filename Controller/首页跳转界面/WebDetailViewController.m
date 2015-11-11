@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MddDownLoadTask.h"
 #import "ReadViewController.h"
+#import "CustomCookieStorage.h"
 
 @interface WebDetailViewController ()
 {
@@ -87,7 +88,7 @@
         {
             NSLog(@"clicked");
             
-           
+          
             //拷贝
             
             NSString *saveLocalPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
@@ -129,7 +130,7 @@
                 MddDownLoadTask  * tDownLoadTask=[[MddDownLoadTask alloc] initWithDic:DownLoadParam];
                 tDownLoadTask.mddDelegate=self;
                 [tDownLoadTask runTask];
-
+           
             
            // [self DownLoadFile:request.URL withpath:documentPath];
             }
@@ -152,7 +153,7 @@
 
 - (NSArray *)convertURLToArray:(NSString *)string{
     if([string rangeOfString:@"?"].length != 0){
-        int i = [string rangeOfString:@"?"].location;
+        NSInteger i = [string rangeOfString:@"?"].location;
         NSString *newString = [string substringFromIndex:i+1];
         return [newString componentsSeparatedByString:@"&"];
     }
@@ -185,7 +186,9 @@
     //[self.view makeToast:@"下载成功!"];
     NSLog(@"%@",pValue);
     
-      
+    //[[CustomCookieStorage sharedHTTPCookieStorage] cookiesForURL:[pValue valueForKey:@"downloadUrl"]];
+    
+    
     
 //    QLPreviewController *vc = [[QLPreviewController alloc] init];
 //    vc.delegate = self;

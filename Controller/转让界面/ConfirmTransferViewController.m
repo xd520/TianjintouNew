@@ -285,6 +285,8 @@
     [sureBtn addTarget:self action:@selector(sureMehtods:) forControlEvents:UIControlEventTouchUpInside];
     
     [view1 addSubview:sureBtn];
+    
+    /*
     //协议
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, 15, 15)];
     btn.tag = 1;
@@ -308,6 +310,7 @@
     
     [procoalBtn addTarget:self action:@selector(pushVCProtocal) forControlEvents:UIControlEventTouchUpInside];
     [view1 addSubview:procoalBtn];
+     */
     
     [scrollView addSubview:view1];
     
@@ -500,13 +503,14 @@
     sureBtn.layer.masksToBounds = YES;
     sureBtn.layer.cornerRadius = 4;
     
-    [sureBtn setTitle:@"支付" forState:UIControlStateNormal];
+    [sureBtn setTitle:@"立即转让" forState:UIControlStateNormal];
     [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     sureBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [sureBtn addTarget:self action:@selector(sureMehtods1:) forControlEvents:UIControlEventTouchUpInside];
     
     [lastView addSubview:sureBtn];
     //协议
+    /*
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 25*dataList.count +60 + 60, 15, 15)];
     btn.tag = 2;
     [btn setImage:[UIImage imageNamed:@"select_0"] forState:UIControlStateNormal];
@@ -529,6 +533,7 @@
     
     [procoalBtn addTarget:self action:@selector(pushVCProtocal) forControlEvents:UIControlEventTouchUpInside];
     [lastView addSubview:procoalBtn];
+     */
     
     lastView.frame = CGRectMake(0, 190, ScreenWidth, 400);
     lastView.userInteractionEnabled = YES;
@@ -758,13 +763,18 @@
 }
 
 
+/*
+ else if (count % 2 == 0) {
+ [self.view makeToast:@"请同意投资协议" duration:1.0 position:@"center"];
+ 
+ }
+ */
+
+
 - (IBAction)sureMehtods:(id)sender {
     [self.view endEditing:YES];
     if ([sureText.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入交易密码" duration:2 position:@"center"];
-    }else if (count % 2 == 0) {
-        [self.view makeToast:@"请同意投资协议" duration:1.0 position:@"center"];
-        
     } else {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -786,13 +796,17 @@
     
 }
 
+/*
+ else if (countPast % 2 == 0) {
+ [self.view makeToast:@"请同意投资协议" duration:1.0 position:@"center"];
+ 
+ }
+ */
+
 - (IBAction)sureMehtods1:(id)sender {
     [self.view endEditing:YES];
     if ([sureText1.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入交易密码" duration:2 position:@"center"];
-    }else if (countPast % 2 == 0) {
-        [self.view makeToast:@"请同意投资协议" duration:1.0 position:@"center"];
-        
     } else {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
